@@ -3,16 +3,19 @@
 Descarga los klines horarios (1h) del proyecto, incorporando la solución
 del Anexo B.1 de la guía operativa: USDCUSDT y BTCUSDC no tienen datos
 entre 2022-09-27 y 2023-03-10/11 (Binance convirtió USDC/USDP/TUSD a BUSD
-en sept. 2022). Se usa BUSDUSDT como proxy en esa ventana y en el día
-puntual del 10 de marzo de 2023 (colapso SVB).
+en sept. 2022). Se usa BUSDUSDT como proxy de USDCUSDT en esa ventana, y
+BTCBUSD como proxy de BTCUSDC en la misma ventana (mismo hueco, mismo par
+BTC cotizado contra la stablecoin sustituta).
 
 Rango fijo del proyecto: 2022-01 a 2023-12 (24 meses), no "hasta hoy".
 
 Uso:
-    python3 descargar_klines.py                  # todo
-    python3 descargar_klines.py --solo-proxy      # solo BUSDUSDT mensual del hueco FTX
-    python3 descargar_klines.py --solo-proxy-svb  # solo BUSDUSDT diario del 10 de marzo
-    python3 descargar_klines.py --solo-marzo      # solo el chequeo del archivo de marzo
+    python3 descargar_klines.py                    # todo
+    python3 descargar_klines.py --solo-proxy        # solo BUSDUSDT mensual
+    python3 descargar_klines.py --solo-proxy-svb    # solo BUSDUSDT diario (10 mar)
+    python3 descargar_klines.py --solo-proxy-btc    # solo BTCBUSD mensual
+    python3 descargar_klines.py --solo-proxy-btc-svb # solo BTCBUSD diario (10 mar)
+    python3 descargar_klines.py --solo-marzo        # chequeo del archivo de marzo
 """
 
 import argparse
@@ -27,6 +30,7 @@ from pathlib import Path
 
 import requests
 
+
 BASE_URL = "https://data.binance.vision/data/spot/monthly/klines"
 CARPETA_SALIDA = Path("zona_cruda") / "klines"
 MISSING_LOG = Path("zona_cruda") / "missing.log"
@@ -35,16 +39,20 @@ INTERVALO = "1h"
 PARES = ["USDCUSDT", "BTCUSDC", "BTCUSDT"]
 
 # Rango FIJO del proyecto (guía v4): 2022-01 a 2023-12, 24 meses exactos.
-# NO usar date.today() como límite superior — eso arrastra años sin ningún
-# evento ancla del proyecto y solo ocupa espacio en el clúster sin aportar
-# nada al análisis.
 DESDE = date(2022, 1, 1)
 HASTA = date(2023, 12, 1)
 
+# Proxy de paridad (USDCUSDT -> BUSDUSDT) en el hueco FTX
 PAR_PROXY = "BUSDUSDT"
 MESES_PROXY = ["2022-10", "2022-11", "2022-12", "2023-01", "2023-02"]
 DIAS_PROXY = ["2023-03-10"]
 BASE_URL_DIARIO = "https://data.binance.vision/data/spot/daily/klines"
+
+# Proxy de BTCUSDC -> BTCBUSD, mismo hueco (BTCUSDC también deja de tener
+# dato en esa ventana, confirmado por el conteo bajo de filas en 2023-03)
+PAR_PROXY_BTC = "BTCBUSD"
+MESES_PROXY_BTC = ["2022-10", "2022-11", "2022-12", "2023-01", "2023-02"]
+DIAS_PROXY_BTC = ["2023-03-10"]
 
 TIMEOUT = 30
 PAUSA = 0.3
@@ -149,6 +157,36 @@ def descargar_proxy_dia_svb():
     print(f"{PAR_PROXY} (proxy diario SVB): {ok} OK, {fallidos} no disponibles.")
 
 
+def descargar_proxy_btc():
+    """Proxy de BTCUSDC (mismo hueco que USDCUSDT): BTCBUSD mensual."""
+    print(f"\n=== Proxy {PAR_PROXY_BTC} para el hueco de BTCUSDC ===")
+    ok, fallidos = 0, 0
+    for periodo in MESES_PROXY_BTC:
+        nombre = f"{PAR_PROXY_BTC}-{INTERVALO}-{periodo}.zip"
+        url = f"{BASE_URL}/{PAR_PROXY_BTC}/{INTERVALO}/{nombre}"
+        destino = CARPETA_SALIDA / PAR_PROXY_BTC / nombre
+        if descargar_archivo(url, destino):
+            ok += 1
+        else:
+            fallidos += 1
+    print(f"{PAR_PROXY_BTC} (proxy): {ok} OK, {fallidos} no disponibles.")
+
+
+def descargar_proxy_btc_dia_svb():
+    """Proxy de BTCUSDC diario para el 10 de marzo 2023."""
+    print(f"\n=== Proxy {PAR_PROXY_BTC} diario para el día puntual de SVB ===")
+    ok, fallidos = 0, 0
+    for dia in DIAS_PROXY_BTC:
+        nombre = f"{PAR_PROXY_BTC}-{INTERVALO}-{dia}.zip"
+        url = f"{BASE_URL_DIARIO}/{PAR_PROXY_BTC}/{INTERVALO}/{nombre}"
+        destino = CARPETA_SALIDA / PAR_PROXY_BTC / "diario" / nombre
+        if descargar_archivo(url, destino):
+            ok += 1
+        else:
+            fallidos += 1
+    print(f"{PAR_PROXY_BTC} (proxy diario SVB): {ok} OK, {fallidos} no disponibles.")
+
+
 def verificar_marzo_2023():
     print("\n=== Verificación del archivo USDCUSDT-1h-2023-03 (evento SVB) ===")
     nombre = f"USDCUSDT-{INTERVALO}-2023-03.zip"
@@ -179,6 +217,8 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--solo-proxy", action="store_true")
     parser.add_argument("--solo-proxy-svb", action="store_true")
+    parser.add_argument("--solo-proxy-btc", action="store_true")
+    parser.add_argument("--solo-proxy-btc-svb", action="store_true")
     parser.add_argument("--solo-marzo", action="store_true")
     args = parser.parse_args()
 
@@ -188,6 +228,10 @@ def main():
         descargar_proxy()
     elif args.solo_proxy_svb:
         descargar_proxy_dia_svb()
+    elif args.solo_proxy_btc:
+        descargar_proxy_btc()
+    elif args.solo_proxy_btc_svb:
+        descargar_proxy_btc_dia_svb()
     elif args.solo_marzo:
         verificar_marzo_2023()
     else:
@@ -195,6 +239,8 @@ def main():
             descargar_klines_par(par, DESDE, HASTA)
         descargar_proxy()
         descargar_proxy_dia_svb()
+        descargar_proxy_btc()
+        descargar_proxy_btc_dia_svb()
 
     print(f"\nListo. Revisa {MISSING_LOG} para ver qué archivos no existen en la fuente.")
 

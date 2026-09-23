@@ -45,7 +45,6 @@ df = df.sort_values(["simbolo", "open_time_ts"]).reset_index(drop=True)
 print(f"Total de filas: {len(df):,}")
 print(f"Símbolos: {sorted(df['simbolo'].unique())}")
 
-# Verificación pedida en la sección 2.2: confirmar que fuente_paridad existe
 assert "fuente_paridad" in df.columns, "Falta la columna fuente_paridad"
 print("\\nValores de fuente_paridad:", df["fuente_paridad"].unique())
 """
@@ -64,7 +63,6 @@ cells.append(nbf.v4.new_code_cell(
 """serie_paridad = df[df["simbolo"].isin(["USDCUSDT", "BUSDUSDT"])].copy()
 serie_paridad = serie_paridad.sort_values("open_time_ts").reset_index(drop=True)
 
-# Confirmar que no hay timestamps duplicados (no debe haber traslape USDCUSDT/proxy)
 duplicados = serie_paridad["open_time_ts"].duplicated().sum()
 print(f"Timestamps duplicados en la serie de paridad: {duplicados}")
 assert duplicados == 0, "Hay traslape entre USDCUSDT y el proxy BUSDUSDT — revisar"
@@ -104,13 +102,12 @@ cells.append(nbf.v4.new_code_cell(
 p90 = serie_paridad["desviacion_paridad"].quantile(0.90)
 p99 = serie_paridad["desviacion_paridad"].quantile(0.99)
 
-# Desviación máxima alcanzada dentro de cada evento (para contrastar con el p99)
 desviacion_minima_por_evento = {}
 for nombre, (inicio, fin) in EVENTOS.items():
     ventana = serie_paridad[
         (serie_paridad["open_time_ts"] >= inicio) & (serie_paridad["open_time_ts"] <= fin)
     ]
-    desviacion_minima_por_evento[nombre] = ventana["desviacion_paridad"].max()  # pico del evento
+    desviacion_minima_por_evento[nombre] = ventana["desviacion_paridad"].max()
 
 print(f"Percentil 90 de desviacion_paridad (histórico completo): {p90:.5f}")
 print(f"Percentil 99 de desviacion_paridad (histórico completo): {p99:.5f}")
@@ -118,8 +115,6 @@ print("\\nPico de desviación (máximo) alcanzado en cada evento ancla:")
 for nombre, valor in desviacion_minima_por_evento.items():
     print(f"  {nombre}: {valor:.5f}")
 
-# Umbral alerta->estrés: el más conservador entre el p99 histórico y el pico
-# más pequeño de los tres eventos, para no dejar fuera al evento más leve (Terra/UST).
 UMBRAL_ALERTA = p90
 UMBRAL_ESTRES = min(p99, min(desviacion_minima_por_evento.values()))
 
@@ -190,20 +185,38 @@ cells.append(nbf.v4.new_markdown_cell(
 
 Diferencia relativa entre el precio de BTC cotizado en USDC y en USDT, en el
 mismo instante. Señal de arbitraje / estrés de liquidez cruzada: si USDC pierde
-confianza, el precio de BTCUSDC se desvía del de BTCUSDT."""
+confianza, el precio de BTCUSDC se desvía del de BTCUSDT.
+
+**Corrección aplicada**: BTCUSDC tiene el mismo hueco de datos que USDCUSDT
+(confirmado en la Fase 3 — conteo bajo de filas en 2023-03). Sin proxy, el
+spread quedaría `NaN` en todo el evento FTX y el `dropna()` de la Fase 5.3
+vaciaría por completo esa combinación de validación cruzada. Se usa **BTCBUSD**
+como proxy de BTCUSDC en la misma ventana (oct-2022 a feb-2023 y 10-mar-2023),
+igual que BUSDUSDT es proxy de USDCUSDT. Se agrega `fuente_btc_usdc` para
+trazar dónde se usó el proxy."""
 ))
 
 cells.append(nbf.v4.new_code_cell(
-"""btc_usdc = df[df["simbolo"] == "BTCUSDC"][["open_time_ts", "close"]].rename(columns={"close": "close_btcusdc"})
+"""serie_btc_usdc = df[df["simbolo"].isin(["BTCUSDC", "BTCBUSD"])].copy()
+serie_btc_usdc = serie_btc_usdc.sort_values("open_time_ts").reset_index(drop=True)
+serie_btc_usdc = serie_btc_usdc.rename(columns={
+    "close": "close_btcusdc", "fuente_paridad": "fuente_btc_usdc"
+})[["open_time_ts", "fuente_btc_usdc", "close_btcusdc"]]
+
+duplicados_btc = serie_btc_usdc["open_time_ts"].duplicated().sum()
+print(f"Timestamps duplicados en la serie BTC-USDC combinada: {duplicados_btc}")
+assert duplicados_btc == 0, "Hay traslape entre BTCUSDC y el proxy BTCBUSD — revisar"
+
 btc_usdt = df[df["simbolo"] == "BTCUSDT"][["open_time_ts", "close"]].rename(columns={"close": "close_btcusdt"})
 
-spread_df = pd.merge(btc_usdc, btc_usdt, on="open_time_ts", how="inner")
+spread_df = pd.merge(serie_btc_usdc, btc_usdt, on="open_time_ts", how="inner")
 spread_df["spread_btc_usdc_usdt"] = (
     (spread_df["close_btcusdc"] - spread_df["close_btcusdt"]) / spread_df["close_btcusdt"]
 )
 
-print(f"Filas con spread calculado: {len(spread_df):,} de {len(btc_usdc):,} timestamps de BTCUSDC")
-spread_df[["open_time_ts", "close_btcusdc", "close_btcusdt", "spread_btc_usdc_usdt"]].describe()
+print(f"\\nFilas con spread calculado: {len(spread_df):,}")
+print(f"Filas por fuente_btc_usdc:\\n{spread_df['fuente_btc_usdc'].value_counts()}")
+spread_df[["open_time_ts", "fuente_btc_usdc", "close_btcusdc", "close_btcusdt", "spread_btc_usdc_usdt"]].describe()
 """
 ))
 
@@ -232,8 +245,9 @@ cells.append(nbf.v4.new_markdown_cell(
 """## 9. Ensamblado del dataset de features
 
 Se combinan las 5 features en un solo DataFrame, indexado por `open_time_ts`,
-conservando `fuente_paridad` para poder distinguir después, en la Fase 5.3,
-entre desempeño sobre dato real y desempeño sobre el proxy (sección 2.2)."""
+conservando `fuente_paridad` y `fuente_btc_usdc` para poder distinguir después,
+en la Fase 5.3, entre desempeño sobre dato real y desempeño sobre el proxy
+(sección 2.2)."""
 ))
 
 cells.append(nbf.v4.new_code_cell(
@@ -243,7 +257,7 @@ cells.append(nbf.v4.new_code_cell(
 ]].copy()
 
 features = features.merge(
-    spread_df[["open_time_ts", "spread_btc_usdc_usdt"]], on="open_time_ts", how="left"
+    spread_df[["open_time_ts", "fuente_btc_usdc", "spread_btc_usdc_usdt"]], on="open_time_ts", how="left"
 )
 features = features.merge(
     btc_mercado[["open_time_ts", "volatilidad_ventana"]], on="open_time_ts", how="left"
@@ -266,12 +280,13 @@ print(f"Guardado en: {RUTA_SALIDA.resolve()}")
 cells.append(nbf.v4.new_markdown_cell(
 """## 10. Resumen para el informe
 
-- Umbrales de severidad: **normal→alerta = p90 de la distribución histórica**
-  (ver celda de la sección 4); **alerta→estrés = mínimo entre el p99 histórico
-  y el pico más bajo de los tres eventos ancla** (para no excluir el evento más leve).
+- Umbrales de severidad: normal→alerta = p90 de la distribución histórica
+  (ver celda de la sección 4); alerta→estrés = mínimo entre el p99 histórico
+  y el pico más bajo de los tres eventos ancla (para no excluir el evento más leve).
 - Figura `informe/fig_umbrales_severidad.png` con el histograma y los umbrales marcados.
-- Dataset de features guardado en `data/features.parquet`, con la columna `fuente_paridad`
-  conservada para el análisis de la Fase 5.3 (real vs. proxy).
+- Feature `spread_btc_usdc_usdt` ahora completa en las 3 ventanas de evento gracias
+  al proxy BTCBUSD (columna `fuente_btc_usdc` trazando su origen).
+- Dataset de features guardado en `data/features.parquet`.
 - Siguiente paso: `05_modelo_baseline.ipynb` — clasificador de 3 niveles con las
   3 combinaciones de validación cruzada (Terra+SVB→FTX, Terra+FTX→SVB, FTX+SVB→Terra)."""
 ))

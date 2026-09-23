@@ -39,6 +39,7 @@ SIMBOLOS = {
     "BTCUSDC": "BTCUSDC",
     "BTCUSDT": "BTCUSDT",
     "BUSDUSDT": "BUSDUSDT_proxy",
+    "BTCBUSD": "BTCBUSD_proxy",
 }
 
 INTERVALO_ESPERADO_MS = 60 * 60 * 1000
@@ -46,7 +47,7 @@ INTERVALO_ESPERADO_MS = 60 * 60 * 1000
 
 def leer_simbolo(spark, base_path: str, simbolo: str, fuente_paridad: str):
     rutas = [f"{base_path}/{simbolo}/*.csv"]
-    if simbolo == "BUSDUSDT":
+    if simbolo in ("BUSDUSDT", "BTCBUSD"):
         rutas.append(f"{base_path}/{simbolo}/diario/*.csv")
 
     df = spark.read.schema(ESQUEMA_KLINES).csv(rutas)
