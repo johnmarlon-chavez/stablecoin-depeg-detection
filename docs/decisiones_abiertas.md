@@ -36,3 +36,25 @@ Con esta solución, las tres combinaciones de validación cruzada (Terra+SVB→F
 ### Pendiente de verificar (paso 3 de la Fase 2, sección 6.4)
 
 Confirmar si el archivo mensual USDCUSDT-1h-2023-03.zip trae filas desde el 1 de marzo o solo desde el 11 (fecha en que arranca el diario). Si el mensual también arranca el 11, el día exacto del colapso de SVB (10 de marzo) quedaría sin dato y habría que evaluar usar BUSDUSDT también ahí. Estado: sin verificar todavía.
+
+## B.2 — Hueco de BTCUSDC coincidente con el de USDCUSDT (RESUELTO)
+
+**Fecha de descubrimiento:** 20 de setiembre de 2026, por Marlon Chávez (durante la depuración de 05_modelo_baseline.ipynb — ValueError "0 samples" en StandardScaler para la combinación Terra+FTX→SVB)
+
+### Hallazgo confirmado
+
+BTCUSDC comparte exactamente el mismo hueco de octubre 2022 a febrero 2023 (más el 10 de marzo de 2023) que ya tenía USDCUSDT (documentado en B.1), por la misma causa: la conversión automática de saldos USDC a BUSD anunciada por Binance en septiembre de 2022 también vació el par BTCUSDC.
+
+Esto se detectó porque spread_btc_usdc_usdt (que depende de BTCUSDC) quedaba completamente NaN durante ese tramo, vaciando el conjunto de validación de la combinación Terra+FTX→SVB y causando un error de scikit-learn ("Found array with 0 sample(s)").
+
+### Decisión adoptada por el equipo
+
+**Usar BTCBUSD como proxy de BTCUSDC, durante la misma ventana que BUSDUSDT (oct-2022 a feb-2023, más el 10 de marzo de 2023)** — mismo criterio que B.1.
+
+- El proxy no reemplaza a BTCUSDC en los meses donde sí hay datos — solo completa el hueco.
+- Cada fila del dataset lleva una columna `fuente_btc_usdc` (`'BTCUSDC'` o `'BTCBUSD_proxy'`) para dejar explícito en el informe dónde se usó el proxy, igual que `fuente_paridad` para USDCUSDT/BUSDUSDT.
+- Nota metodológica para el informe: "Se usó BTCBUSD como proxy de BTCUSDC por la misma razón y durante la misma ventana que BUSDUSDT proxy de USDCUSDT: la suspensión de pares USDC anunciada por Binance en septiembre de 2022."
+
+Con este proxy, src/quality.py pasó de procesar 48,271 filas a 51,919 filas (+3,648, equivalentes a BTCBUSD horario en los ~152 días del hueco), y el error de StandardScaler en la combinación Terra+FTX→SVB quedó resuelto (el conjunto de validación ya no queda vacío).
+
+**Responsable:** Marlon Chávez (hallazgo y corrección técnica), confirmado por el equipo.
