@@ -1,0 +1,814 @@
+26/10/05 09:48:57 INFO SparkContext: Running Spark version 3.5.1
+26/10/05 09:48:57 INFO SparkContext: OS info Linux, 6.1.0-53-amd64, amd64
+26/10/05 09:48:57 INFO SparkContext: Java version 17.0.20.1
+26/10/05 09:48:57 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/10/05 09:48:58 INFO ResourceUtils: ==============================================================
+26/10/05 09:48:58 INFO ResourceUtils: No custom resources configured for spark.driver.
+26/10/05 09:48:58 INFO ResourceUtils: ==============================================================
+26/10/05 09:48:58 INFO SparkContext: Submitted application: Pedido5-Join-Broadcast
+26/10/05 09:48:58 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+26/10/05 09:48:58 INFO ResourceProfile: Limiting resource is cpus at 1 tasks per executor
+26/10/05 09:48:58 INFO ResourceProfileManager: Added ResourceProfile id: 0
+26/10/05 09:48:58 INFO SecurityManager: Changing view acls to: marlon
+26/10/05 09:48:58 INFO SecurityManager: Changing modify acls to: marlon
+26/10/05 09:48:58 INFO SecurityManager: Changing view acls groups to: 
+26/10/05 09:48:58 INFO SecurityManager: Changing modify acls groups to: 
+26/10/05 09:48:58 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: marlon; groups with view permissions: EMPTY; users with modify permissions: marlon; groups with modify permissions: EMPTY
+26/10/05 09:48:59 INFO Utils: Successfully started service 'sparkDriver' on port 44277.
+26/10/05 09:48:59 INFO SparkEnv: Registering MapOutputTracker
+26/10/05 09:48:59 INFO SparkEnv: Registering BlockManagerMaster
+26/10/05 09:48:59 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+26/10/05 09:48:59 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+26/10/05 09:48:59 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+26/10/05 09:48:59 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-b9bc51d4-1309-428e-af8f-1d9ad8febb88
+26/10/05 09:48:59 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+26/10/05 09:48:59 INFO SparkEnv: Registering OutputCommitCoordinator
+26/10/05 09:49:00 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+26/10/05 09:49:00 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+26/10/05 09:49:01 INFO DefaultNoHARMFailoverProxyProvider: Connecting to ResourceManager at /100.76.42.126:8032
+26/10/05 09:49:02 INFO Configuration: resource-types.xml not found
+26/10/05 09:49:02 INFO ResourceUtils: Unable to find 'resource-types.xml'.
+26/10/05 09:49:02 INFO Client: Verifying our application has not requested more than the maximum memory capability of the cluster (8192 MB per container)
+26/10/05 09:49:02 INFO Client: Will allocate AM container, with 896 MB memory including 384 MB overhead
+26/10/05 09:49:02 INFO Client: Setting up container launch context for our AM
+26/10/05 09:49:02 INFO Client: Setting up the launch environment for our AM container
+26/10/05 09:49:02 INFO Client: Preparing resources for our AM container
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/HikariCP-2.5.1.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/JLargeArrays-1.5.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/JTransforms-3.1.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/RoaringBitmap-0.9.45.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/ST4-4.0.4.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/activation-1.1.1.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/aircompressor-0.26.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/algebra_2.12-2.0.1.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/annotations-17.0.0.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/antlr-runtime-3.5.2.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/antlr4-runtime-4.9.3.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/aopalliance-repackaged-2.6.1.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/arpack-3.0.3.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/arpack_combined_all-0.1.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/arrow-format-12.0.1.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/arrow-memory-core-12.0.1.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/arrow-memory-netty-12.0.1.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/arrow-vector-12.0.1.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/audience-annotations-0.5.0.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/avro-1.11.2.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/avro-ipc-1.11.2.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/avro-mapred-1.11.2.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/blas-3.0.3.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/bonecp-0.8.0.RELEASE.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/breeze-macros_2.12-2.1.0.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/breeze_2.12-2.1.0.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/cats-kernel_2.12-2.1.1.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/chill-java-0.10.0.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/chill_2.12-0.10.0.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/commons-cli-1.5.0.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/commons-codec-1.16.0.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/commons-collections-3.2.2.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/commons-collections4-4.4.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/commons-compiler-3.1.9.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/commons-compress-1.23.0.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/commons-crypto-1.1.0.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/commons-dbcp-1.4.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/commons-io-2.13.0.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/commons-lang-2.6.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/commons-lang3-3.12.0.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/commons-logging-1.1.3.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/commons-math3-3.6.1.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/commons-pool-1.5.4.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/commons-text-1.10.0.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/compress-lzf-1.1.2.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/curator-client-2.13.0.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/curator-framework-2.13.0.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/curator-recipes-2.13.0.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/datanucleus-api-jdo-4.2.4.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/datanucleus-core-4.1.17.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/datanucleus-rdbms-4.1.19.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/datasketches-java-3.3.0.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/datasketches-memory-2.1.0.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/derby-10.14.2.0.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/dropwizard-metrics-hadoop-metrics2-reporter-0.1.2.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/flatbuffers-java-1.12.0.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/gson-2.2.4.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/guava-14.0.1.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/hadoop-client-api-3.3.4.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/hadoop-client-runtime-3.3.4.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/hadoop-shaded-guava-1.1.1.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/hadoop-yarn-server-web-proxy-3.3.4.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/hive-beeline-2.3.9.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/hive-cli-2.3.9.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/hive-common-2.3.9.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/hive-exec-2.3.9-core.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/hive-jdbc-2.3.9.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/hive-llap-common-2.3.9.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/hive-metastore-2.3.9.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/hive-serde-2.3.9.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/hive-service-rpc-3.1.3.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/hive-shims-0.23-2.3.9.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/hive-shims-2.3.9.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/hive-shims-common-2.3.9.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/hive-shims-scheduler-2.3.9.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/hive-storage-api-2.8.1.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/hk2-api-2.6.1.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/hk2-locator-2.6.1.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/hk2-utils-2.6.1.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/httpclient-4.5.14.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/httpcore-4.4.16.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/istack-commons-runtime-3.0.8.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/ivy-2.5.1.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/jackson-annotations-2.15.2.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/jackson-core-2.15.2.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/jackson-core-asl-1.9.13.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/jackson-databind-2.15.2.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/jackson-dataformat-yaml-2.15.2.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/jackson-datatype-jsr310-2.15.2.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/jackson-mapper-asl-1.9.13.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/jackson-module-scala_2.12-2.15.2.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/jakarta.annotation-api-1.3.5.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/jakarta.inject-2.6.1.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/jakarta.servlet-api-4.0.3.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/jakarta.validation-api-2.0.2.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/jakarta.ws.rs-api-2.1.6.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/jakarta.xml.bind-api-2.3.2.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/janino-3.1.9.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/javassist-3.29.2-GA.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/javax.jdo-3.2.0-m3.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/javolution-5.5.1.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/jaxb-runtime-2.3.2.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/jcl-over-slf4j-2.0.7.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/jdo-api-3.0.1.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/jersey-client-2.40.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/jersey-common-2.40.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/jersey-container-servlet-2.40.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/jersey-container-servlet-core-2.40.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/jersey-hk2-2.40.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/jersey-server-2.40.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/jline-2.14.6.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/joda-time-2.12.5.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/jodd-core-3.5.2.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/jpam-1.1.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/json-1.8.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/json4s-ast_2.12-3.7.0-M11.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/json4s-core_2.12-3.7.0-M11.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/json4s-jackson_2.12-3.7.0-M11.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/json4s-scalap_2.12-3.7.0-M11.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/jsr305-3.0.0.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/jta-1.1.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/jul-to-slf4j-2.0.7.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/kryo-shaded-4.0.2.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/kubernetes-client-6.7.2.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/kubernetes-client-api-6.7.2.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/kubernetes-httpclient-okhttp-6.7.2.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/kubernetes-model-admissionregistration-6.7.2.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/kubernetes-model-apiextensions-6.7.2.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/kubernetes-model-apps-6.7.2.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/kubernetes-model-autoscaling-6.7.2.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/kubernetes-model-batch-6.7.2.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/kubernetes-model-certificates-6.7.2.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/kubernetes-model-common-6.7.2.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/kubernetes-model-coordination-6.7.2.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/kubernetes-model-core-6.7.2.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/kubernetes-model-discovery-6.7.2.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/kubernetes-model-events-6.7.2.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/kubernetes-model-extensions-6.7.2.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/kubernetes-model-flowcontrol-6.7.2.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/kubernetes-model-gatewayapi-6.7.2.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/kubernetes-model-metrics-6.7.2.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/kubernetes-model-networking-6.7.2.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/kubernetes-model-node-6.7.2.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/kubernetes-model-policy-6.7.2.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/kubernetes-model-rbac-6.7.2.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/kubernetes-model-resource-6.7.2.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/kubernetes-model-scheduling-6.7.2.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/kubernetes-model-storageclass-6.7.2.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/lapack-3.0.3.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/leveldbjni-all-1.8.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/libfb303-0.9.3.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/libthrift-0.12.0.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/log4j-1.2-api-2.20.0.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/log4j-api-2.20.0.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/log4j-core-2.20.0.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/log4j-slf4j2-impl-2.20.0.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/logging-interceptor-3.12.12.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/lz4-java-1.8.0.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/mesos-1.4.3-shaded-protobuf.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/metrics-core-4.2.19.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/metrics-graphite-4.2.19.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/metrics-jmx-4.2.19.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/metrics-json-4.2.19.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/metrics-jvm-4.2.19.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/minlog-1.3.0.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/netty-all-4.1.96.Final.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/netty-buffer-4.1.96.Final.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/netty-codec-4.1.96.Final.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/netty-codec-http-4.1.96.Final.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/netty-codec-http2-4.1.96.Final.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/netty-codec-socks-4.1.96.Final.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/netty-common-4.1.96.Final.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/netty-handler-4.1.96.Final.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/netty-handler-proxy-4.1.96.Final.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/netty-resolver-4.1.96.Final.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/netty-transport-4.1.96.Final.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/netty-transport-classes-epoll-4.1.96.Final.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/netty-transport-classes-kqueue-4.1.96.Final.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/netty-transport-native-epoll-4.1.96.Final-linux-aarch_64.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/netty-transport-native-epoll-4.1.96.Final-linux-x86_64.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/netty-transport-native-kqueue-4.1.96.Final-osx-aarch_64.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/netty-transport-native-kqueue-4.1.96.Final-osx-x86_64.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/netty-transport-native-unix-common-4.1.96.Final.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/objenesis-3.3.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/okhttp-3.12.12.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/okio-1.15.0.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/opencsv-2.3.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/orc-core-1.9.2-shaded-protobuf.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/orc-mapreduce-1.9.2-shaded-protobuf.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/orc-shims-1.9.2.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/oro-2.0.8.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/osgi-resource-locator-1.0.3.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/paranamer-2.8.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/parquet-column-1.13.1.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/parquet-common-1.13.1.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/parquet-encoding-1.13.1.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/parquet-format-structures-1.13.1.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/parquet-hadoop-1.13.1.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/parquet-jackson-1.13.1.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/pickle-1.3.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/py4j-0.10.9.7.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/rocksdbjni-8.3.2.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/scala-collection-compat_2.12-2.7.0.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/scala-compiler-2.12.18.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/scala-library-2.12.18.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/scala-parser-combinators_2.12-2.3.0.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/scala-reflect-2.12.18.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/scala-xml_2.12-2.1.0.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/shims-0.9.45.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/slf4j-api-2.0.7.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/snakeyaml-2.0.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/snakeyaml-engine-2.6.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/snappy-java-1.1.10.3.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/spark-catalyst_2.12-3.5.1.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/spark-common-utils_2.12-3.5.1.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/spark-core_2.12-3.5.1.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/spark-graphx_2.12-3.5.1.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/spark-hive-thriftserver_2.12-3.5.1.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/spark-hive_2.12-3.5.1.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/spark-kubernetes_2.12-3.5.1.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/spark-kvstore_2.12-3.5.1.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/spark-launcher_2.12-3.5.1.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/spark-mesos_2.12-3.5.1.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/spark-mllib-local_2.12-3.5.1.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/spark-mllib_2.12-3.5.1.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/spark-network-common_2.12-3.5.1.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/spark-network-shuffle_2.12-3.5.1.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/spark-repl_2.12-3.5.1.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/spark-sketch_2.12-3.5.1.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/spark-sql-api_2.12-3.5.1.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/spark-sql_2.12-3.5.1.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/spark-streaming_2.12-3.5.1.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/spark-tags_2.12-3.5.1.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/spark-unsafe_2.12-3.5.1.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/spark-yarn_2.12-3.5.1.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/spire-macros_2.12-0.17.0.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/spire-platform_2.12-0.17.0.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/spire-util_2.12-0.17.0.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/spire_2.12-0.17.0.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/stax-api-1.0.1.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/stream-2.9.6.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/super-csv-2.2.0.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/threeten-extra-1.7.1.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/tink-1.9.0.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/transaction-api-1.1.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/univocity-parsers-2.9.1.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/xbean-asm9-shaded-4.23.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/xz-1.9.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/zjsonpatch-0.3.0.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/zookeeper-3.6.3.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/zookeeper-jute-3.6.3.jar
+26/10/05 09:49:03 INFO Client: Source and destination file systems are the same. Not copying hdfs://100.76.42.126:9000/user/marlon/spark-libs/zstd-jni-1.5.5-4.jar
+26/10/05 09:49:03 INFO Client: Uploading resource file:/opt/spark-3.5.1-bin-hadoop3/python/lib/pyspark.zip -> hdfs://100.76.42.126:9000/user/marlon/.sparkStaging/application_1791210428634_0005/pyspark.zip
+26/10/05 09:49:05 INFO Client: Uploading resource file:/opt/spark-3.5.1-bin-hadoop3/python/lib/py4j-0.10.9.7-src.zip -> hdfs://100.76.42.126:9000/user/marlon/.sparkStaging/application_1791210428634_0005/py4j-0.10.9.7-src.zip
+26/10/05 09:49:05 INFO Client: Uploading resource file:/tmp/spark-9a0190ea-d07e-49b6-a94b-ab60e357b772/__spark_conf__1491390918085125325.zip -> hdfs://100.76.42.126:9000/user/marlon/.sparkStaging/application_1791210428634_0005/__spark_conf__.zip
+26/10/05 09:49:06 INFO SecurityManager: Changing view acls to: marlon
+26/10/05 09:49:06 INFO SecurityManager: Changing modify acls to: marlon
+26/10/05 09:49:06 INFO SecurityManager: Changing view acls groups to: 
+26/10/05 09:49:06 INFO SecurityManager: Changing modify acls groups to: 
+26/10/05 09:49:06 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: marlon; groups with view permissions: EMPTY; users with modify permissions: marlon; groups with modify permissions: EMPTY
+26/10/05 09:49:06 INFO Client: Submitting application application_1791210428634_0005 to ResourceManager
+26/10/05 09:49:06 INFO YarnClientImpl: Submitted application application_1791210428634_0005
+26/10/05 09:49:07 INFO Client: Application report for application_1791210428634_0005 (state: ACCEPTED)
+26/10/05 09:49:07 INFO Client: 
+	 client token: N/A
+	 diagnostics: AM container is launched, waiting for AM container to Register with RM
+	 ApplicationMaster host: N/A
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1791211746507
+	 final status: UNDEFINED
+	 tracking URL: http://master:8088/proxy/application_1791210428634_0005/
+	 user: marlon
+26/10/05 09:49:09 INFO YarnClientSchedulerBackend: Add WebUI Filter. org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter, Map(PROXY_HOSTS -> master, PROXY_URI_BASES -> http://master:8088/proxy/application_1791210428634_0005), /proxy/application_1791210428634_0005
+26/10/05 09:49:09 INFO Client: Application report for application_1791210428634_0005 (state: RUNNING)
+26/10/05 09:49:09 INFO Client: 
+	 client token: N/A
+	 diagnostics: N/A
+	 ApplicationMaster host: 100.115.186.42
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1791211746507
+	 final status: UNDEFINED
+	 tracking URL: http://master:8088/proxy/application_1791210428634_0005/
+	 user: marlon
+26/10/05 09:49:09 INFO YarnClientSchedulerBackend: Application application_1791210428634_0005 has started running.
+26/10/05 09:49:09 INFO YarnSchedulerBackend$YarnSchedulerEndpoint: ApplicationMaster registered as NettyRpcEndpointRef(spark-client://YarnAM)
+26/10/05 09:49:09 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 37421.
+26/10/05 09:49:09 INFO NettyBlockTransferService: Server created on 100.76.42.126 0.0.0.0:37421
+26/10/05 09:49:09 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+26/10/05 09:49:09 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 100.76.42.126, 37421, None)
+26/10/05 09:49:09 INFO BlockManagerMasterEndpoint: Registering block manager 100.76.42.126:37421 with 434.4 MiB RAM, BlockManagerId(driver, 100.76.42.126, 37421, None)
+26/10/05 09:49:09 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 100.76.42.126, 37421, None)
+26/10/05 09:49:09 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 100.76.42.126, 37421, None)
+26/10/05 09:49:10 INFO ServerInfo: Adding filter to /jobs: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/05 09:49:10 INFO ServerInfo: Adding filter to /jobs/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/05 09:49:10 INFO ServerInfo: Adding filter to /jobs/job: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/05 09:49:10 INFO ServerInfo: Adding filter to /jobs/job/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/05 09:49:10 INFO ServerInfo: Adding filter to /stages: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/05 09:49:10 INFO ServerInfo: Adding filter to /stages/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/05 09:49:10 INFO ServerInfo: Adding filter to /stages/stage: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/05 09:49:10 INFO ServerInfo: Adding filter to /stages/stage/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/05 09:49:10 INFO ServerInfo: Adding filter to /stages/pool: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/05 09:49:10 INFO ServerInfo: Adding filter to /stages/pool/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/05 09:49:10 INFO ServerInfo: Adding filter to /storage: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/05 09:49:10 INFO ServerInfo: Adding filter to /storage/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/05 09:49:10 INFO ServerInfo: Adding filter to /storage/rdd: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/05 09:49:10 INFO ServerInfo: Adding filter to /storage/rdd/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/05 09:49:10 INFO ServerInfo: Adding filter to /environment: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/05 09:49:10 INFO ServerInfo: Adding filter to /environment/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/05 09:49:10 INFO ServerInfo: Adding filter to /executors: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/05 09:49:10 INFO ServerInfo: Adding filter to /executors/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/05 09:49:10 INFO ServerInfo: Adding filter to /executors/threadDump: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/05 09:49:10 INFO ServerInfo: Adding filter to /executors/threadDump/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/05 09:49:10 INFO ServerInfo: Adding filter to /executors/heapHistogram: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/05 09:49:10 INFO ServerInfo: Adding filter to /executors/heapHistogram/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/05 09:49:10 INFO ServerInfo: Adding filter to /static: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/05 09:49:10 INFO ServerInfo: Adding filter to /: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/05 09:49:10 INFO ServerInfo: Adding filter to /api: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/05 09:49:10 INFO ServerInfo: Adding filter to /jobs/job/kill: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/05 09:49:10 INFO ServerInfo: Adding filter to /stages/stage/kill: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/05 09:49:10 INFO ServerInfo: Adding filter to /metrics/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/05 09:49:11 INFO YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (100.115.186.42:47436) with ID 1,  ResourceProfileId 0
+26/10/05 09:49:12 INFO BlockManagerMasterEndpoint: Registering block manager AndresPagan.localdomain:46495 with 434.4 MiB RAM, BlockManagerId(1, AndresPagan.localdomain, 46495, None)
+26/10/05 09:49:22 INFO YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (100.76.42.126:37622) with ID 2,  ResourceProfileId 0
+26/10/05 09:49:22 INFO YarnClientSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.8
+26/10/05 09:49:22 INFO BlockManagerMasterEndpoint: Registering block manager master:34831 with 434.4 MiB RAM, BlockManagerId(2, master, 34831, None)
+26/10/05 09:49:23 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+26/10/05 09:49:23 INFO SharedState: Warehouse path is 'file:/home/marlon/stablecoin-depeg-detection/spark-warehouse'.
+26/10/05 09:49:23 INFO ServerInfo: Adding filter to /SQL: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/05 09:49:23 INFO ServerInfo: Adding filter to /SQL/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/05 09:49:23 INFO ServerInfo: Adding filter to /SQL/execution: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/05 09:49:23 INFO ServerInfo: Adding filter to /SQL/execution/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/05 09:49:23 INFO ServerInfo: Adding filter to /static/sql: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/05 09:49:32 INFO InMemoryFileIndex: It took 2214 ms to list leaf files for 1 paths.
+26/10/05 09:49:37 INFO SparkContext: Starting job: parquet at NativeMethodAccessorImpl.java:0
+26/10/05 09:49:37 INFO DAGScheduler: Got job 0 (parquet at NativeMethodAccessorImpl.java:0) with 1 output partitions
+26/10/05 09:49:37 INFO DAGScheduler: Final stage: ResultStage 0 (parquet at NativeMethodAccessorImpl.java:0)
+26/10/05 09:49:37 INFO DAGScheduler: Parents of final stage: List()
+26/10/05 09:49:37 INFO DAGScheduler: Missing parents: List()
+26/10/05 09:49:37 INFO DAGScheduler: Submitting ResultStage 0 (MapPartitionsRDD[1] at parquet at NativeMethodAccessorImpl.java:0), which has no missing parents
+26/10/05 09:49:37 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 105.0 KiB, free 434.3 MiB)
+26/10/05 09:49:37 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 38.0 KiB, free 434.3 MiB)
+26/10/05 09:49:37 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 100.76.42.126:37421 (size: 38.0 KiB, free: 434.4 MiB)
+26/10/05 09:49:37 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:1585
+26/10/05 09:49:38 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 0 (MapPartitionsRDD[1] at parquet at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+26/10/05 09:49:38 INFO YarnScheduler: Adding task set 0.0 with 1 tasks resource profile 0
+26/10/05 09:49:38 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0) (AndresPagan.localdomain, executor 1, partition 0, PROCESS_LOCAL, 7879 bytes) 
+26/10/05 09:49:38 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on AndresPagan.localdomain:46495 (size: 38.0 KiB, free: 434.4 MiB)
+26/10/05 09:49:39 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 1300 ms on AndresPagan.localdomain (executor 1) (1/1)
+26/10/05 09:49:39 INFO YarnScheduler: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+26/10/05 09:49:39 INFO DAGScheduler: ResultStage 0 (parquet at NativeMethodAccessorImpl.java:0) finished in 1.584 s
+26/10/05 09:49:39 INFO DAGScheduler: Job 0 is finished. Cancelling potential speculative or zombie tasks for this job
+26/10/05 09:49:39 INFO YarnScheduler: Killing all running tasks in stage 0: Stage finished
+26/10/05 09:49:39 INFO DAGScheduler: Job 0 finished: parquet at NativeMethodAccessorImpl.java:0, took 1.690560 s
+26/10/05 09:49:39 INFO BlockManagerInfo: Removed broadcast_0_piece0 on 100.76.42.126:37421 in memory (size: 38.0 KiB, free: 434.4 MiB)
+26/10/05 09:49:39 INFO BlockManagerInfo: Removed broadcast_0_piece0 on AndresPagan.localdomain:46495 in memory (size: 38.0 KiB, free: 434.4 MiB)
+
+=== PLAN FISICO (broadcast) ===
+26/10/05 09:49:42 INFO DataSourceStrategy: Pruning directories with: simbolo#15 IN (USDCUSDT,BTCUSDC,BTCUSDT)
+26/10/05 09:49:42 INFO FileSourceStrategy: Pushed Filters: 
+26/10/05 09:49:42 INFO FileSourceStrategy: Post-Scan Filters: 
+26/10/05 09:49:42 INFO DataSourceStrategy: Pruning directories with: simbolo#87 IN (BUSDUSDT,BTCBUSD)
+26/10/05 09:49:42 INFO FileSourceStrategy: Pushed Filters: IsNotNull(open_time_ts)
+26/10/05 09:49:42 INFO FileSourceStrategy: Post-Scan Filters: isnotnull(open_time_ts#85)
+26/10/05 09:49:42 WARN SparkStringUtils: Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.sql.debug.maxToStringFields'.
+== Physical Plan ==
+AdaptiveSparkPlan isFinalPlan=false
++- Project [open_time_ts#13, open_time#0L, open#1, high#2, low#3, close#4, volume#5, close_time#6L, quote_volume#7, trades#8L, taker_buy_base#9, taker_buy_quote#10, ignore#11, fuente_paridad#12, close_time_ts#14, simbolo#15, anio#16, mes#17, proxy_open_time#37L, proxy_open#38, proxy_high#39, proxy_low#40, proxy_close#41, proxy_volume#42, ... 11 more fields]
+   +- BroadcastHashJoin [open_time_ts#13], [open_time_ts#85], LeftOuter, BuildRight, false
+      :- FileScan parquet [open_time#0L,open#1,high#2,low#3,close#4,volume#5,close_time#6L,quote_volume#7,trades#8L,taker_buy_base#9,taker_buy_quote#10,ignore#11,fuente_paridad#12,open_time_ts#13,close_time_ts#14,simbolo#15,anio#16,mes#17] Batched: true, DataFilters: [], Format: Parquet, Location: InMemoryFileIndex(1 paths)[hdfs://100.76.42.126:9000/datalake/benchmark/clean_10x_r2], PartitionFilters: [simbolo#15 IN (USDCUSDT,BTCUSDC,BTCUSDT)], PushedFilters: [], ReadSchema: struct<open_time:bigint,open:double,high:double,low:double,close:double,volume:double,close_time:...
+      +- BroadcastExchange HashedRelationBroadcastMode(List(input[13, timestamp, true]),false), [plan_id=20]
+         +- Project [open_time#72L AS proxy_open_time#37L, open#73 AS proxy_open#38, high#74 AS proxy_high#39, low#75 AS proxy_low#40, close#76 AS proxy_close#41, volume#77 AS proxy_volume#42, close_time#78L AS proxy_close_time#43L, quote_volume#79 AS proxy_quote_volume#44, trades#80L AS proxy_trades#45L, taker_buy_base#81 AS proxy_taker_buy_base#46, taker_buy_quote#82 AS proxy_taker_buy_quote#47, ignore#83 AS proxy_ignore#48, fuente_paridad#84 AS proxy_fuente_paridad#49, open_time_ts#85, close_time_ts#86 AS proxy_close_time_ts#50, simbolo#87 AS proxy_simbolo#51, anio#88 AS proxy_anio#52, mes#89 AS proxy_mes#53]
+            +- Filter isnotnull(open_time_ts#85)
+               +- FileScan parquet [open_time#72L,open#73,high#74,low#75,close#76,volume#77,close_time#78L,quote_volume#79,trades#80L,taker_buy_base#81,taker_buy_quote#82,ignore#83,fuente_paridad#84,open_time_ts#85,close_time_ts#86,simbolo#87,anio#88,mes#89] Batched: true, DataFilters: [isnotnull(open_time_ts#85)], Format: Parquet, Location: InMemoryFileIndex(1 paths)[hdfs://100.76.42.126:9000/datalake/benchmark/clean_10x_r2], PartitionFilters: [simbolo#87 IN (BUSDUSDT,BTCBUSD)], PushedFilters: [IsNotNull(open_time_ts)], ReadSchema: struct<open_time:bigint,open:double,high:double,low:double,close:double,volume:double,close_time:...
+
+
+26/10/05 09:49:42 INFO DataSourceStrategy: Pruning directories with: simbolo#15 IN (USDCUSDT,BTCUSDC,BTCUSDT)
+26/10/05 09:49:42 INFO FileSourceStrategy: Pushed Filters: 
+26/10/05 09:49:42 INFO FileSourceStrategy: Post-Scan Filters: 
+26/10/05 09:49:42 INFO DataSourceStrategy: Pruning directories with: simbolo#87 IN (BUSDUSDT,BTCBUSD)
+26/10/05 09:49:42 INFO FileSourceStrategy: Pushed Filters: IsNotNull(open_time_ts)
+26/10/05 09:49:42 INFO FileSourceStrategy: Post-Scan Filters: isnotnull(open_time_ts#85)
+26/10/05 09:49:43 INFO CodeGenerator: Code generated in 344.095306 ms
+26/10/05 09:49:43 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 204.9 KiB, free 434.2 MiB)
+26/10/05 09:49:43 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 36.5 KiB, free 434.2 MiB)
+26/10/05 09:49:43 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on 100.76.42.126:37421 (size: 36.5 KiB, free: 434.4 MiB)
+26/10/05 09:49:43 INFO SparkContext: Created broadcast 1 from $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264
+26/10/05 09:49:43 INFO InMemoryFileIndex: Selected 108 partitions out of 731, pruned 85.22571819425444% partitions.
+26/10/05 09:49:43 INFO FileSourceScanExec: Planning scan with bin packing, max size: 134217728 bytes, open cost is considered as scanning 4194304 bytes.
+26/10/05 09:49:43 INFO SparkContext: Starting job: $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264
+26/10/05 09:49:43 INFO DAGScheduler: Got job 1 ($anonfun$withThreadLocalCaptured$1 at FutureTask.java:264) with 7 output partitions
+26/10/05 09:49:43 INFO DAGScheduler: Final stage: ResultStage 1 ($anonfun$withThreadLocalCaptured$1 at FutureTask.java:264)
+26/10/05 09:49:43 INFO DAGScheduler: Parents of final stage: List()
+26/10/05 09:49:43 INFO DAGScheduler: Missing parents: List()
+26/10/05 09:49:43 INFO DAGScheduler: Submitting ResultStage 1 (MapPartitionsRDD[5] at $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264), which has no missing parents
+26/10/05 09:49:43 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 24.9 KiB, free 434.1 MiB)
+26/10/05 09:49:43 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 8.0 KiB, free 434.1 MiB)
+26/10/05 09:49:43 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on 100.76.42.126:37421 (size: 8.0 KiB, free: 434.4 MiB)
+26/10/05 09:49:43 INFO SparkContext: Created broadcast 2 from broadcast at DAGScheduler.scala:1585
+26/10/05 09:49:43 INFO DAGScheduler: Submitting 7 missing tasks from ResultStage 1 (MapPartitionsRDD[5] at $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6))
+26/10/05 09:49:43 INFO YarnScheduler: Adding task set 1.0 with 7 tasks resource profile 0
+26/10/05 09:49:44 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 1) (master, executor 2, partition 0, NODE_LOCAL, 16457 bytes) 
+26/10/05 09:49:44 INFO TaskSetManager: Starting task 1.0 in stage 1.0 (TID 2) (AndresPagan.localdomain, executor 1, partition 1, NODE_LOCAL, 16325 bytes) 
+26/10/05 09:49:44 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on AndresPagan.localdomain:46495 (size: 8.0 KiB, free: 434.4 MiB)
+26/10/05 09:49:44 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on AndresPagan.localdomain:46495 (size: 36.5 KiB, free: 434.4 MiB)
+26/10/05 09:49:44 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on master:34831 (size: 8.0 KiB, free: 434.4 MiB)
+26/10/05 09:49:46 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on master:34831 (size: 36.5 KiB, free: 434.4 MiB)
+26/10/05 09:49:50 INFO TaskSetManager: Starting task 2.0 in stage 1.0 (TID 3) (master, executor 2, partition 2, NODE_LOCAL, 16337 bytes) 
+26/10/05 09:49:50 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 1) in 6168 ms on master (executor 2) (1/7)
+26/10/05 09:49:51 INFO TaskSetManager: Starting task 3.0 in stage 1.0 (TID 4) (master, executor 2, partition 3, NODE_LOCAL, 16508 bytes) 
+26/10/05 09:49:51 INFO TaskSetManager: Finished task 2.0 in stage 1.0 (TID 3) in 1253 ms on master (executor 2) (2/7)
+26/10/05 09:49:51 INFO TaskSetManager: Starting task 4.0 in stage 1.0 (TID 5) (AndresPagan.localdomain, executor 1, partition 4, NODE_LOCAL, 16418 bytes) 
+26/10/05 09:49:51 INFO TaskSetManager: Finished task 1.0 in stage 1.0 (TID 2) in 7632 ms on AndresPagan.localdomain (executor 1) (3/7)
+26/10/05 09:49:52 INFO TaskSetManager: Starting task 5.0 in stage 1.0 (TID 6) (master, executor 2, partition 5, NODE_LOCAL, 16318 bytes) 
+26/10/05 09:49:52 INFO TaskSetManager: Finished task 3.0 in stage 1.0 (TID 4) in 1099 ms on master (executor 2) (4/7)
+26/10/05 09:49:53 INFO TaskSetManager: Starting task 6.0 in stage 1.0 (TID 7) (master, executor 2, partition 6, NODE_LOCAL, 13934 bytes) 
+26/10/05 09:49:53 INFO TaskSetManager: Finished task 5.0 in stage 1.0 (TID 6) in 802 ms on master (executor 2) (5/7)
+26/10/05 09:49:53 INFO TaskSetManager: Finished task 6.0 in stage 1.0 (TID 7) in 496 ms on master (executor 2) (6/7)
+26/10/05 09:49:58 INFO TaskSetManager: Finished task 4.0 in stage 1.0 (TID 5) in 6526 ms on AndresPagan.localdomain (executor 1) (7/7)
+26/10/05 09:49:58 INFO YarnScheduler: Removed TaskSet 1.0, whose tasks have all completed, from pool 
+26/10/05 09:49:58 INFO DAGScheduler: ResultStage 1 ($anonfun$withThreadLocalCaptured$1 at FutureTask.java:264) finished in 14.225 s
+26/10/05 09:49:58 INFO DAGScheduler: Job 1 is finished. Cancelling potential speculative or zombie tasks for this job
+26/10/05 09:49:58 INFO YarnScheduler: Killing all running tasks in stage 1: Stage finished
+26/10/05 09:49:58 INFO DAGScheduler: Job 1 finished: $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264, took 14.252672 s
+26/10/05 09:49:58 INFO CodeGenerator: Code generated in 15.533437 ms
+26/10/05 09:49:58 INFO BlockManagerInfo: Removed broadcast_2_piece0 on 100.76.42.126:37421 in memory (size: 8.0 KiB, free: 434.4 MiB)
+26/10/05 09:49:58 INFO BlockManagerInfo: Removed broadcast_2_piece0 on master:34831 in memory (size: 8.0 KiB, free: 434.4 MiB)
+26/10/05 09:49:58 INFO BlockManagerInfo: Removed broadcast_2_piece0 on AndresPagan.localdomain:46495 in memory (size: 8.0 KiB, free: 434.4 MiB)
+26/10/05 09:49:58 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 4.0 MiB, free 430.2 MiB)
+26/10/05 09:49:58 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on 100.76.42.126:37421 (size: 4.0 MiB, free: 430.4 MiB)
+26/10/05 09:49:58 INFO MemoryStore: Block broadcast_3_piece1 stored as bytes in memory (estimated size 2.1 MiB, free 428.1 MiB)
+26/10/05 09:49:58 INFO BlockManagerInfo: Added broadcast_3_piece1 in memory on 100.76.42.126:37421 (size: 2.1 MiB, free: 428.3 MiB)
+26/10/05 09:49:58 INFO SparkContext: Created broadcast 3 from $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264
+26/10/05 09:49:58 INFO DataSourceStrategy: Pruning directories with: simbolo#15 IN (USDCUSDT,BTCUSDC,BTCUSDT)
+26/10/05 09:49:58 INFO FileSourceStrategy: Pushed Filters: 
+26/10/05 09:49:58 INFO FileSourceStrategy: Post-Scan Filters: 
+26/10/05 09:49:58 INFO ParquetUtils: Using default output committer for Parquet: org.apache.parquet.hadoop.ParquetOutputCommitter
+26/10/05 09:49:58 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+26/10/05 09:49:58 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+26/10/05 09:49:58 INFO SQLHadoopMapReduceCommitProtocol: Using user defined output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+26/10/05 09:49:58 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+26/10/05 09:49:58 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+26/10/05 09:49:58 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+26/10/05 09:49:59 INFO CodeGenerator: Code generated in 102.511434 ms
+26/10/05 09:49:59 INFO MemoryStore: Block broadcast_4 stored as values in memory (estimated size 204.9 KiB, free 427.9 MiB)
+26/10/05 09:49:59 INFO MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 36.5 KiB, free 427.8 MiB)
+26/10/05 09:49:59 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on 100.76.42.126:37421 (size: 36.5 KiB, free: 428.2 MiB)
+26/10/05 09:49:59 INFO SparkContext: Created broadcast 4 from parquet at NativeMethodAccessorImpl.java:0
+26/10/05 09:49:59 INFO InMemoryFileIndex: Selected 623 partitions out of 731, pruned 14.77428180574556% partitions.
+26/10/05 09:49:59 INFO FileSourceScanExec: Planning scan with bin packing, max size: 134217728 bytes, open cost is considered as scanning 4194304 bytes.
+26/10/05 09:49:59 INFO SparkContext: Starting job: parquet at NativeMethodAccessorImpl.java:0
+26/10/05 09:49:59 INFO DAGScheduler: Got job 2 (parquet at NativeMethodAccessorImpl.java:0) with 39 output partitions
+26/10/05 09:49:59 INFO DAGScheduler: Final stage: ResultStage 2 (parquet at NativeMethodAccessorImpl.java:0)
+26/10/05 09:49:59 INFO DAGScheduler: Parents of final stage: List()
+26/10/05 09:49:59 INFO DAGScheduler: Missing parents: List()
+26/10/05 09:49:59 INFO DAGScheduler: Submitting ResultStage 2 (MapPartitionsRDD[9] at parquet at NativeMethodAccessorImpl.java:0), which has no missing parents
+26/10/05 09:49:59 INFO MemoryStore: Block broadcast_5 stored as values in memory (estimated size 243.0 KiB, free 427.6 MiB)
+26/10/05 09:49:59 INFO MemoryStore: Block broadcast_5_piece0 stored as bytes in memory (estimated size 84.6 KiB, free 427.5 MiB)
+26/10/05 09:49:59 INFO BlockManagerInfo: Added broadcast_5_piece0 in memory on 100.76.42.126:37421 (size: 84.6 KiB, free: 428.2 MiB)
+26/10/05 09:49:59 INFO SparkContext: Created broadcast 5 from broadcast at DAGScheduler.scala:1585
+26/10/05 09:49:59 INFO DAGScheduler: Submitting 39 missing tasks from ResultStage 2 (MapPartitionsRDD[9] at parquet at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14))
+26/10/05 09:49:59 INFO YarnScheduler: Adding task set 2.0 with 39 tasks resource profile 0
+26/10/05 09:49:59 INFO TaskSetManager: Starting task 0.0 in stage 2.0 (TID 8) (master, executor 2, partition 0, NODE_LOCAL, 16540 bytes) 
+26/10/05 09:49:59 INFO TaskSetManager: Starting task 1.0 in stage 2.0 (TID 9) (AndresPagan.localdomain, executor 1, partition 1, NODE_LOCAL, 16541 bytes) 
+26/10/05 09:49:59 INFO BlockManagerInfo: Added broadcast_5_piece0 in memory on master:34831 (size: 84.6 KiB, free: 434.3 MiB)
+26/10/05 09:49:59 INFO BlockManagerInfo: Added broadcast_5_piece0 in memory on AndresPagan.localdomain:46495 (size: 84.6 KiB, free: 434.3 MiB)
+26/10/05 09:49:59 INFO BlockManagerInfo: Added broadcast_3_piece1 in memory on master:34831 (size: 2.1 MiB, free: 432.2 MiB)
+26/10/05 09:49:59 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on master:34831 (size: 4.0 MiB, free: 428.2 MiB)
+26/10/05 09:50:00 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on AndresPagan.localdomain:46495 (size: 4.0 MiB, free: 430.3 MiB)
+26/10/05 09:50:01 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on master:34831 (size: 36.5 KiB, free: 428.2 MiB)
+26/10/05 09:50:01 INFO BlockManagerInfo: Added broadcast_3_piece1 in memory on AndresPagan.localdomain:46495 (size: 2.1 MiB, free: 428.2 MiB)
+26/10/05 09:50:01 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on AndresPagan.localdomain:46495 (size: 36.5 KiB, free: 428.2 MiB)
+26/10/05 09:50:04 INFO TaskSetManager: Starting task 2.0 in stage 2.0 (TID 10) (master, executor 2, partition 2, NODE_LOCAL, 16552 bytes) 
+26/10/05 09:50:04 INFO TaskSetManager: Finished task 0.0 in stage 2.0 (TID 8) in 5179 ms on master (executor 2) (1/39)
+26/10/05 09:50:06 INFO TaskSetManager: Starting task 3.0 in stage 2.0 (TID 11) (master, executor 2, partition 3, NODE_LOCAL, 16542 bytes) 
+26/10/05 09:50:06 INFO TaskSetManager: Finished task 2.0 in stage 2.0 (TID 10) in 2090 ms on master (executor 2) (2/39)
+26/10/05 09:50:09 INFO TaskSetManager: Starting task 4.0 in stage 2.0 (TID 12) (master, executor 2, partition 4, NODE_LOCAL, 16556 bytes) 
+26/10/05 09:50:09 INFO TaskSetManager: Finished task 3.0 in stage 2.0 (TID 11) in 2741 ms on master (executor 2) (3/39)
+26/10/05 09:50:10 INFO TaskSetManager: Starting task 5.0 in stage 2.0 (TID 13) (AndresPagan.localdomain, executor 1, partition 5, NODE_LOCAL, 16555 bytes) 
+26/10/05 09:50:10 INFO TaskSetManager: Finished task 1.0 in stage 2.0 (TID 9) in 11519 ms on AndresPagan.localdomain (executor 1) (4/39)
+26/10/05 09:50:11 INFO TaskSetManager: Starting task 6.0 in stage 2.0 (TID 14) (master, executor 2, partition 6, NODE_LOCAL, 16551 bytes) 
+26/10/05 09:50:11 INFO TaskSetManager: Finished task 4.0 in stage 2.0 (TID 12) in 1872 ms on master (executor 2) (5/39)
+26/10/05 09:50:12 INFO TaskSetManager: Starting task 7.0 in stage 2.0 (TID 15) (master, executor 2, partition 7, NODE_LOCAL, 16502 bytes) 
+26/10/05 09:50:12 INFO TaskSetManager: Finished task 6.0 in stage 2.0 (TID 14) in 1392 ms on master (executor 2) (6/39)
+26/10/05 09:50:13 INFO TaskSetManager: Starting task 8.0 in stage 2.0 (TID 16) (master, executor 2, partition 8, NODE_LOCAL, 16462 bytes) 
+26/10/05 09:50:13 INFO TaskSetManager: Finished task 7.0 in stage 2.0 (TID 15) in 1286 ms on master (executor 2) (7/39)
+26/10/05 09:50:15 INFO TaskSetManager: Starting task 9.0 in stage 2.0 (TID 17) (master, executor 2, partition 9, NODE_LOCAL, 16365 bytes) 
+26/10/05 09:50:15 INFO TaskSetManager: Finished task 8.0 in stage 2.0 (TID 16) in 1315 ms on master (executor 2) (8/39)
+26/10/05 09:50:16 INFO TaskSetManager: Starting task 10.0 in stage 2.0 (TID 18) (master, executor 2, partition 10, NODE_LOCAL, 16455 bytes) 
+26/10/05 09:50:16 INFO TaskSetManager: Finished task 9.0 in stage 2.0 (TID 17) in 1205 ms on master (executor 2) (9/39)
+26/10/05 09:50:17 INFO TaskSetManager: Starting task 11.0 in stage 2.0 (TID 19) (master, executor 2, partition 11, NODE_LOCAL, 16508 bytes) 
+26/10/05 09:50:17 INFO TaskSetManager: Finished task 10.0 in stage 2.0 (TID 18) in 1649 ms on master (executor 2) (10/39)
+26/10/05 09:50:19 INFO TaskSetManager: Starting task 12.0 in stage 2.0 (TID 20) (master, executor 2, partition 12, NODE_LOCAL, 16554 bytes) 
+26/10/05 09:50:19 INFO TaskSetManager: Finished task 11.0 in stage 2.0 (TID 19) in 1472 ms on master (executor 2) (11/39)
+26/10/05 09:50:19 INFO TaskSetManager: Starting task 13.0 in stage 2.0 (TID 21) (AndresPagan.localdomain, executor 1, partition 13, NODE_LOCAL, 16546 bytes) 
+26/10/05 09:50:19 INFO TaskSetManager: Finished task 5.0 in stage 2.0 (TID 13) in 8649 ms on AndresPagan.localdomain (executor 1) (12/39)
+26/10/05 09:50:20 INFO TaskSetManager: Starting task 14.0 in stage 2.0 (TID 22) (master, executor 2, partition 14, NODE_LOCAL, 16548 bytes) 
+26/10/05 09:50:20 INFO TaskSetManager: Finished task 12.0 in stage 2.0 (TID 20) in 1335 ms on master (executor 2) (13/39)
+26/10/05 09:50:21 INFO TaskSetManager: Starting task 15.0 in stage 2.0 (TID 23) (master, executor 2, partition 15, NODE_LOCAL, 16498 bytes) 
+26/10/05 09:50:21 INFO TaskSetManager: Finished task 14.0 in stage 2.0 (TID 22) in 1250 ms on master (executor 2) (14/39)
+26/10/05 09:50:23 INFO TaskSetManager: Starting task 16.0 in stage 2.0 (TID 24) (master, executor 2, partition 16, NODE_LOCAL, 16550 bytes) 
+26/10/05 09:50:23 INFO TaskSetManager: Finished task 15.0 in stage 2.0 (TID 23) in 1473 ms on master (executor 2) (15/39)
+26/10/05 09:50:24 INFO TaskSetManager: Starting task 17.0 in stage 2.0 (TID 25) (master, executor 2, partition 17, NODE_LOCAL, 16543 bytes) 
+26/10/05 09:50:24 INFO TaskSetManager: Finished task 16.0 in stage 2.0 (TID 24) in 1109 ms on master (executor 2) (16/39)
+26/10/05 09:50:26 INFO TaskSetManager: Starting task 18.0 in stage 2.0 (TID 26) (master, executor 2, partition 18, NODE_LOCAL, 16504 bytes) 
+26/10/05 09:50:26 INFO TaskSetManager: Finished task 17.0 in stage 2.0 (TID 25) in 1848 ms on master (executor 2) (17/39)
+26/10/05 09:50:27 INFO TaskSetManager: Starting task 19.0 in stage 2.0 (TID 27) (AndresPagan.localdomain, executor 1, partition 19, NODE_LOCAL, 16544 bytes) 
+26/10/05 09:50:27 INFO TaskSetManager: Finished task 13.0 in stage 2.0 (TID 21) in 7588 ms on AndresPagan.localdomain (executor 1) (18/39)
+26/10/05 09:50:27 INFO TaskSetManager: Starting task 20.0 in stage 2.0 (TID 28) (master, executor 2, partition 20, NODE_LOCAL, 16494 bytes) 
+26/10/05 09:50:27 INFO TaskSetManager: Finished task 18.0 in stage 2.0 (TID 26) in 1370 ms on master (executor 2) (19/39)
+26/10/05 09:50:28 INFO TaskSetManager: Starting task 21.0 in stage 2.0 (TID 29) (master, executor 2, partition 21, NODE_LOCAL, 16543 bytes) 
+26/10/05 09:50:28 INFO TaskSetManager: Finished task 20.0 in stage 2.0 (TID 28) in 984 ms on master (executor 2) (20/39)
+26/10/05 09:50:29 INFO TaskSetManager: Starting task 22.0 in stage 2.0 (TID 30) (master, executor 2, partition 22, NODE_LOCAL, 16538 bytes) 
+26/10/05 09:50:29 INFO TaskSetManager: Finished task 21.0 in stage 2.0 (TID 29) in 1163 ms on master (executor 2) (21/39)
+26/10/05 09:50:31 INFO TaskSetManager: Starting task 23.0 in stage 2.0 (TID 31) (master, executor 2, partition 23, NODE_LOCAL, 16548 bytes) 
+26/10/05 09:50:31 INFO TaskSetManager: Finished task 22.0 in stage 2.0 (TID 30) in 1575 ms on master (executor 2) (22/39)
+26/10/05 09:50:34 INFO TaskSetManager: Starting task 24.0 in stage 2.0 (TID 32) (master, executor 2, partition 24, NODE_LOCAL, 16486 bytes) 
+26/10/05 09:50:34 INFO TaskSetManager: Finished task 23.0 in stage 2.0 (TID 31) in 2785 ms on master (executor 2) (23/39)
+26/10/05 09:50:34 INFO TaskSetManager: Starting task 25.0 in stage 2.0 (TID 33) (AndresPagan.localdomain, executor 1, partition 25, NODE_LOCAL, 16432 bytes) 
+26/10/05 09:50:34 INFO TaskSetManager: Finished task 19.0 in stage 2.0 (TID 27) in 7499 ms on AndresPagan.localdomain (executor 1) (24/39)
+26/10/05 09:50:35 INFO TaskSetManager: Starting task 26.0 in stage 2.0 (TID 34) (master, executor 2, partition 26, NODE_LOCAL, 16527 bytes) 
+26/10/05 09:50:35 INFO TaskSetManager: Finished task 24.0 in stage 2.0 (TID 32) in 1172 ms on master (executor 2) (25/39)
+26/10/05 09:50:36 INFO TaskSetManager: Starting task 27.0 in stage 2.0 (TID 35) (master, executor 2, partition 27, NODE_LOCAL, 16609 bytes) 
+26/10/05 09:50:36 INFO TaskSetManager: Finished task 26.0 in stage 2.0 (TID 34) in 1067 ms on master (executor 2) (26/39)
+26/10/05 09:50:37 INFO TaskSetManager: Starting task 28.0 in stage 2.0 (TID 36) (master, executor 2, partition 28, NODE_LOCAL, 16523 bytes) 
+26/10/05 09:50:37 INFO TaskSetManager: Finished task 27.0 in stage 2.0 (TID 35) in 1214 ms on master (executor 2) (27/39)
+26/10/05 09:50:38 INFO TaskSetManager: Starting task 29.0 in stage 2.0 (TID 37) (master, executor 2, partition 29, NODE_LOCAL, 16564 bytes) 
+26/10/05 09:50:38 INFO TaskSetManager: Finished task 28.0 in stage 2.0 (TID 36) in 1092 ms on master (executor 2) (28/39)
+26/10/05 09:50:39 INFO TaskSetManager: Starting task 30.0 in stage 2.0 (TID 38) (master, executor 2, partition 30, NODE_LOCAL, 16566 bytes) 
+26/10/05 09:50:39 INFO TaskSetManager: Finished task 29.0 in stage 2.0 (TID 37) in 962 ms on master (executor 2) (29/39)
+26/10/05 09:50:41 INFO TaskSetManager: Starting task 31.0 in stage 2.0 (TID 39) (master, executor 2, partition 31, NODE_LOCAL, 16570 bytes) 
+26/10/05 09:50:41 INFO TaskSetManager: Finished task 30.0 in stage 2.0 (TID 38) in 1442 ms on master (executor 2) (30/39)
+26/10/05 09:50:41 INFO TaskSetManager: Starting task 32.0 in stage 2.0 (TID 40) (AndresPagan.localdomain, executor 1, partition 32, NODE_LOCAL, 16507 bytes) 
+26/10/05 09:50:41 INFO TaskSetManager: Finished task 25.0 in stage 2.0 (TID 33) in 6902 ms on AndresPagan.localdomain (executor 1) (31/39)
+26/10/05 09:50:42 INFO TaskSetManager: Starting task 33.0 in stage 2.0 (TID 41) (master, executor 2, partition 33, NODE_LOCAL, 16514 bytes) 
+26/10/05 09:50:42 INFO TaskSetManager: Finished task 31.0 in stage 2.0 (TID 39) in 1338 ms on master (executor 2) (32/39)
+26/10/05 09:50:44 INFO TaskSetManager: Starting task 34.0 in stage 2.0 (TID 42) (master, executor 2, partition 34, NODE_LOCAL, 16599 bytes) 
+26/10/05 09:50:44 INFO TaskSetManager: Finished task 33.0 in stage 2.0 (TID 41) in 1559 ms on master (executor 2) (33/39)
+26/10/05 09:50:45 INFO TaskSetManager: Starting task 35.0 in stage 2.0 (TID 43) (master, executor 2, partition 35, NODE_LOCAL, 16471 bytes) 
+26/10/05 09:50:45 INFO TaskSetManager: Finished task 34.0 in stage 2.0 (TID 42) in 1378 ms on master (executor 2) (34/39)
+26/10/05 09:50:46 INFO TaskSetManager: Starting task 36.0 in stage 2.0 (TID 44) (master, executor 2, partition 36, NODE_LOCAL, 16447 bytes) 
+26/10/05 09:50:46 INFO TaskSetManager: Finished task 35.0 in stage 2.0 (TID 43) in 1015 ms on master (executor 2) (35/39)
+26/10/05 09:50:47 INFO TaskSetManager: Starting task 37.0 in stage 2.0 (TID 45) (master, executor 2, partition 37, NODE_LOCAL, 16216 bytes) 
+26/10/05 09:50:47 INFO TaskSetManager: Finished task 36.0 in stage 2.0 (TID 44) in 1354 ms on master (executor 2) (36/39)
+26/10/05 09:50:49 INFO TaskSetManager: Starting task 38.0 in stage 2.0 (TID 46) (master, executor 2, partition 38, NODE_LOCAL, 15436 bytes) 
+26/10/05 09:50:49 INFO TaskSetManager: Finished task 37.0 in stage 2.0 (TID 45) in 1482 ms on master (executor 2) (37/39)
+26/10/05 09:50:49 INFO TaskSetManager: Finished task 32.0 in stage 2.0 (TID 40) in 8197 ms on AndresPagan.localdomain (executor 1) (38/39)
+26/10/05 09:50:50 INFO TaskSetManager: Finished task 38.0 in stage 2.0 (TID 46) in 1064 ms on master (executor 2) (39/39)
+26/10/05 09:50:50 INFO YarnScheduler: Removed TaskSet 2.0, whose tasks have all completed, from pool 
+26/10/05 09:50:50 INFO DAGScheduler: ResultStage 2 (parquet at NativeMethodAccessorImpl.java:0) finished in 51.180 s
+26/10/05 09:50:50 INFO DAGScheduler: Job 2 is finished. Cancelling potential speculative or zombie tasks for this job
+26/10/05 09:50:50 INFO YarnScheduler: Killing all running tasks in stage 2: Stage finished
+26/10/05 09:50:50 INFO DAGScheduler: Job 2 finished: parquet at NativeMethodAccessorImpl.java:0, took 51.195614 s
+26/10/05 09:50:50 INFO FileFormatWriter: Start to commit write Job 9243153e-380c-4011-bd95-969a820adbc5.
+26/10/05 09:50:51 INFO FileFormatWriter: Write Job 9243153e-380c-4011-bd95-969a820adbc5 committed. Elapsed time: 815 ms.
+26/10/05 09:50:51 INFO FileFormatWriter: Finished processing stats for write job 9243153e-380c-4011-bd95-969a820adbc5.
+26/10/05 09:50:51 INFO DataSourceStrategy: Pruning directories with: simbolo#15 IN (USDCUSDT,BTCUSDC,BTCUSDT)
+26/10/05 09:50:51 INFO FileSourceStrategy: Pushed Filters: 
+26/10/05 09:50:51 INFO FileSourceStrategy: Post-Scan Filters: 
+26/10/05 09:50:51 INFO DataSourceStrategy: Pruning directories with: simbolo#87 IN (BUSDUSDT,BTCBUSD)
+26/10/05 09:50:51 INFO FileSourceStrategy: Pushed Filters: IsNotNull(open_time_ts)
+26/10/05 09:50:51 INFO FileSourceStrategy: Post-Scan Filters: isnotnull(open_time_ts#85)
+26/10/05 09:50:51 INFO CodeGenerator: Code generated in 14.766837 ms
+26/10/05 09:50:51 INFO MemoryStore: Block broadcast_6 stored as values in memory (estimated size 203.0 KiB, free 427.3 MiB)
+26/10/05 09:50:51 INFO MemoryStore: Block broadcast_6_piece0 stored as bytes in memory (estimated size 35.9 KiB, free 427.3 MiB)
+26/10/05 09:50:51 INFO BlockManagerInfo: Added broadcast_6_piece0 in memory on 100.76.42.126:37421 (size: 35.9 KiB, free: 428.1 MiB)
+26/10/05 09:50:51 INFO SparkContext: Created broadcast 6 from $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264
+26/10/05 09:50:51 INFO InMemoryFileIndex: Selected 108 partitions out of 731, pruned 85.22571819425444% partitions.
+26/10/05 09:50:51 INFO FileSourceScanExec: Planning scan with bin packing, max size: 134217728 bytes, open cost is considered as scanning 4194304 bytes.
+26/10/05 09:50:51 INFO BlockManagerInfo: Removed broadcast_5_piece0 on master:34831 in memory (size: 84.6 KiB, free: 428.2 MiB)
+26/10/05 09:50:51 INFO BlockManagerInfo: Removed broadcast_5_piece0 on AndresPagan.localdomain:46495 in memory (size: 84.6 KiB, free: 428.2 MiB)
+26/10/05 09:50:51 INFO BlockManagerInfo: Removed broadcast_5_piece0 on 100.76.42.126:37421 in memory (size: 84.6 KiB, free: 428.2 MiB)
+26/10/05 09:50:51 INFO SparkContext: Starting job: $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264
+26/10/05 09:50:51 INFO DAGScheduler: Got job 3 ($anonfun$withThreadLocalCaptured$1 at FutureTask.java:264) with 7 output partitions
+26/10/05 09:50:51 INFO DAGScheduler: Final stage: ResultStage 3 ($anonfun$withThreadLocalCaptured$1 at FutureTask.java:264)
+26/10/05 09:50:51 INFO DAGScheduler: Parents of final stage: List()
+26/10/05 09:50:51 INFO DAGScheduler: Missing parents: List()
+26/10/05 09:50:51 INFO DAGScheduler: Submitting ResultStage 3 (MapPartitionsRDD[13] at $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264), which has no missing parents
+26/10/05 09:50:51 INFO MemoryStore: Block broadcast_7 stored as values in memory (estimated size 15.4 KiB, free 427.6 MiB)
+26/10/05 09:50:51 INFO MemoryStore: Block broadcast_7_piece0 stored as bytes in memory (estimated size 6.6 KiB, free 427.6 MiB)
+26/10/05 09:50:51 INFO BlockManagerInfo: Added broadcast_7_piece0 in memory on 100.76.42.126:37421 (size: 6.6 KiB, free: 428.2 MiB)
+26/10/05 09:50:51 INFO SparkContext: Created broadcast 7 from broadcast at DAGScheduler.scala:1585
+26/10/05 09:50:51 INFO DAGScheduler: Submitting 7 missing tasks from ResultStage 3 (MapPartitionsRDD[13] at $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6))
+26/10/05 09:50:51 INFO YarnScheduler: Adding task set 3.0 with 7 tasks resource profile 0
+26/10/05 09:50:51 INFO TaskSetManager: Starting task 0.0 in stage 3.0 (TID 47) (master, executor 2, partition 0, NODE_LOCAL, 16457 bytes) 
+26/10/05 09:50:51 INFO TaskSetManager: Starting task 1.0 in stage 3.0 (TID 48) (AndresPagan.localdomain, executor 1, partition 1, NODE_LOCAL, 16325 bytes) 
+26/10/05 09:50:51 INFO BlockManagerInfo: Added broadcast_7_piece0 in memory on master:34831 (size: 6.6 KiB, free: 428.2 MiB)
+26/10/05 09:50:51 INFO BlockManagerInfo: Added broadcast_6_piece0 in memory on master:34831 (size: 35.9 KiB, free: 428.2 MiB)
+26/10/05 09:50:51 INFO BlockManagerInfo: Added broadcast_7_piece0 in memory on AndresPagan.localdomain:46495 (size: 6.6 KiB, free: 428.2 MiB)
+26/10/05 09:50:52 INFO BlockManagerInfo: Added broadcast_6_piece0 in memory on AndresPagan.localdomain:46495 (size: 35.9 KiB, free: 428.2 MiB)
+26/10/05 09:50:52 INFO TaskSetManager: Starting task 2.0 in stage 3.0 (TID 49) (master, executor 2, partition 2, NODE_LOCAL, 16337 bytes) 
+26/10/05 09:50:52 INFO TaskSetManager: Finished task 0.0 in stage 3.0 (TID 47) in 776 ms on master (executor 2) (1/7)
+26/10/05 09:50:52 INFO TaskSetManager: Starting task 3.0 in stage 3.0 (TID 50) (master, executor 2, partition 3, NODE_LOCAL, 16508 bytes) 
+26/10/05 09:50:52 INFO TaskSetManager: Finished task 2.0 in stage 3.0 (TID 49) in 327 ms on master (executor 2) (2/7)
+26/10/05 09:50:53 INFO TaskSetManager: Starting task 4.0 in stage 3.0 (TID 51) (master, executor 2, partition 4, NODE_LOCAL, 16418 bytes) 
+26/10/05 09:50:53 INFO TaskSetManager: Finished task 3.0 in stage 3.0 (TID 50) in 492 ms on master (executor 2) (3/7)
+26/10/05 09:50:53 INFO TaskSetManager: Starting task 5.0 in stage 3.0 (TID 52) (master, executor 2, partition 5, NODE_LOCAL, 16323 bytes) 
+26/10/05 09:50:53 INFO TaskSetManager: Finished task 4.0 in stage 3.0 (TID 51) in 365 ms on master (executor 2) (4/7)
+26/10/05 09:50:53 INFO TaskSetManager: Starting task 6.0 in stage 3.0 (TID 53) (master, executor 2, partition 6, NODE_LOCAL, 13934 bytes) 
+26/10/05 09:50:53 INFO TaskSetManager: Finished task 5.0 in stage 3.0 (TID 52) in 337 ms on master (executor 2) (5/7)
+26/10/05 09:50:54 INFO TaskSetManager: Finished task 6.0 in stage 3.0 (TID 53) in 461 ms on master (executor 2) (6/7)
+26/10/05 09:50:58 INFO TaskSetManager: Finished task 1.0 in stage 3.0 (TID 48) in 6627 ms on AndresPagan.localdomain (executor 1) (7/7)
+26/10/05 09:50:58 INFO DAGScheduler: ResultStage 3 ($anonfun$withThreadLocalCaptured$1 at FutureTask.java:264) finished in 6.663 s
+26/10/05 09:50:58 INFO DAGScheduler: Job 3 is finished. Cancelling potential speculative or zombie tasks for this job
+26/10/05 09:50:58 INFO YarnScheduler: Removed TaskSet 3.0, whose tasks have all completed, from pool 
+26/10/05 09:50:58 INFO YarnScheduler: Killing all running tasks in stage 3: Stage finished
+26/10/05 09:50:58 INFO DAGScheduler: Job 3 finished: $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264, took 6.687304 s
+26/10/05 09:50:58 INFO CodeGenerator: Code generated in 20.247235 ms
+26/10/05 09:50:58 INFO BlockManagerInfo: Removed broadcast_7_piece0 on 100.76.42.126:37421 in memory (size: 6.6 KiB, free: 428.2 MiB)
+26/10/05 09:50:58 INFO BlockManagerInfo: Removed broadcast_7_piece0 on master:34831 in memory (size: 6.6 KiB, free: 428.2 MiB)
+26/10/05 09:50:58 INFO BlockManagerInfo: Removed broadcast_7_piece0 on AndresPagan.localdomain:46495 in memory (size: 6.6 KiB, free: 428.2 MiB)
+26/10/05 09:50:58 INFO MemoryStore: Block broadcast_8_piece0 stored as bytes in memory (estimated size 966.3 KiB, free 426.7 MiB)
+26/10/05 09:50:58 INFO BlockManagerInfo: Added broadcast_8_piece0 in memory on 100.76.42.126:37421 (size: 966.3 KiB, free: 427.3 MiB)
+26/10/05 09:50:58 INFO SparkContext: Created broadcast 8 from $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264
+26/10/05 09:50:58 INFO DataSourceStrategy: Pruning directories with: simbolo#15 IN (USDCUSDT,BTCUSDC,BTCUSDT)
+26/10/05 09:50:58 INFO FileSourceStrategy: Pushed Filters: 
+26/10/05 09:50:58 INFO FileSourceStrategy: Post-Scan Filters: 
+26/10/05 09:50:58 INFO CodeGenerator: Code generated in 56.875064 ms
+26/10/05 09:50:58 INFO MemoryStore: Block broadcast_9 stored as values in memory (estimated size 203.0 KiB, free 426.5 MiB)
+26/10/05 09:50:58 INFO MemoryStore: Block broadcast_9_piece0 stored as bytes in memory (estimated size 35.9 KiB, free 426.4 MiB)
+26/10/05 09:50:58 INFO BlockManagerInfo: Added broadcast_9_piece0 in memory on 100.76.42.126:37421 (size: 35.9 KiB, free: 427.2 MiB)
+26/10/05 09:50:58 INFO SparkContext: Created broadcast 9 from count at NativeMethodAccessorImpl.java:0
+26/10/05 09:50:58 INFO InMemoryFileIndex: Selected 623 partitions out of 731, pruned 14.77428180574556% partitions.
+26/10/05 09:50:59 INFO FileSourceScanExec: Planning scan with bin packing, max size: 134217728 bytes, open cost is considered as scanning 4194304 bytes.
+26/10/05 09:50:59 INFO DAGScheduler: Registering RDD 17 (count at NativeMethodAccessorImpl.java:0) as input to shuffle 0
+26/10/05 09:50:59 INFO DAGScheduler: Got map stage job 4 (count at NativeMethodAccessorImpl.java:0) with 39 output partitions
+26/10/05 09:50:59 INFO DAGScheduler: Final stage: ShuffleMapStage 4 (count at NativeMethodAccessorImpl.java:0)
+26/10/05 09:50:59 INFO DAGScheduler: Parents of final stage: List()
+26/10/05 09:50:59 INFO DAGScheduler: Missing parents: List()
+26/10/05 09:50:59 INFO DAGScheduler: Submitting ShuffleMapStage 4 (MapPartitionsRDD[17] at count at NativeMethodAccessorImpl.java:0), which has no missing parents
+26/10/05 09:50:59 INFO MemoryStore: Block broadcast_10 stored as values in memory (estimated size 21.0 KiB, free 426.4 MiB)
+26/10/05 09:50:59 INFO MemoryStore: Block broadcast_10_piece0 stored as bytes in memory (estimated size 9.1 KiB, free 426.4 MiB)
+26/10/05 09:50:59 INFO BlockManagerInfo: Added broadcast_10_piece0 in memory on 100.76.42.126:37421 (size: 9.1 KiB, free: 427.2 MiB)
+26/10/05 09:50:59 INFO SparkContext: Created broadcast 10 from broadcast at DAGScheduler.scala:1585
+26/10/05 09:50:59 INFO DAGScheduler: Submitting 39 missing tasks from ShuffleMapStage 4 (MapPartitionsRDD[17] at count at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14))
+26/10/05 09:50:59 INFO YarnScheduler: Adding task set 4.0 with 39 tasks resource profile 0
+26/10/05 09:50:59 INFO TaskSetManager: Starting task 0.0 in stage 4.0 (TID 54) (master, executor 2, partition 0, NODE_LOCAL, 16529 bytes) 
+26/10/05 09:50:59 INFO TaskSetManager: Starting task 1.0 in stage 4.0 (TID 55) (AndresPagan.localdomain, executor 1, partition 1, NODE_LOCAL, 16530 bytes) 
+26/10/05 09:50:59 INFO BlockManagerInfo: Added broadcast_10_piece0 in memory on master:34831 (size: 9.1 KiB, free: 428.2 MiB)
+26/10/05 09:50:59 INFO BlockManagerInfo: Added broadcast_8_piece0 in memory on master:34831 (size: 966.3 KiB, free: 427.3 MiB)
+26/10/05 09:50:59 INFO BlockManagerInfo: Added broadcast_10_piece0 in memory on AndresPagan.localdomain:46495 (size: 9.1 KiB, free: 428.2 MiB)
+26/10/05 09:50:59 INFO BlockManagerInfo: Added broadcast_9_piece0 in memory on master:34831 (size: 35.9 KiB, free: 427.2 MiB)
+26/10/05 09:50:59 INFO BlockManagerInfo: Added broadcast_8_piece0 in memory on AndresPagan.localdomain:46495 (size: 966.3 KiB, free: 427.3 MiB)
+26/10/05 09:51:00 INFO TaskSetManager: Starting task 2.0 in stage 4.0 (TID 56) (master, executor 2, partition 2, NODE_LOCAL, 16536 bytes) 
+26/10/05 09:51:00 INFO TaskSetManager: Finished task 0.0 in stage 4.0 (TID 54) in 929 ms on master (executor 2) (1/39)
+26/10/05 09:51:00 INFO BlockManagerInfo: Added broadcast_9_piece0 in memory on AndresPagan.localdomain:46495 (size: 35.9 KiB, free: 427.2 MiB)
+26/10/05 09:51:00 INFO TaskSetManager: Starting task 3.0 in stage 4.0 (TID 57) (master, executor 2, partition 3, NODE_LOCAL, 16531 bytes) 
+26/10/05 09:51:00 INFO TaskSetManager: Finished task 2.0 in stage 4.0 (TID 56) in 387 ms on master (executor 2) (2/39)
+26/10/05 09:51:00 INFO TaskSetManager: Starting task 4.0 in stage 4.0 (TID 58) (master, executor 2, partition 4, NODE_LOCAL, 16540 bytes) 
+26/10/05 09:51:00 INFO TaskSetManager: Finished task 3.0 in stage 4.0 (TID 57) in 419 ms on master (executor 2) (3/39)
+26/10/05 09:51:01 INFO TaskSetManager: Starting task 5.0 in stage 4.0 (TID 59) (master, executor 2, partition 5, NODE_LOCAL, 16539 bytes) 
+26/10/05 09:51:01 INFO TaskSetManager: Finished task 4.0 in stage 4.0 (TID 58) in 338 ms on master (executor 2) (4/39)
+26/10/05 09:51:01 INFO TaskSetManager: Starting task 6.0 in stage 4.0 (TID 60) (master, executor 2, partition 6, NODE_LOCAL, 16540 bytes) 
+26/10/05 09:51:01 INFO TaskSetManager: Finished task 5.0 in stage 4.0 (TID 59) in 400 ms on master (executor 2) (5/39)
+26/10/05 09:51:01 INFO TaskSetManager: Starting task 7.0 in stage 4.0 (TID 61) (master, executor 2, partition 7, NODE_LOCAL, 16486 bytes) 
+26/10/05 09:51:01 INFO TaskSetManager: Finished task 6.0 in stage 4.0 (TID 60) in 279 ms on master (executor 2) (6/39)
+26/10/05 09:51:02 INFO TaskSetManager: Starting task 8.0 in stage 4.0 (TID 62) (master, executor 2, partition 8, NODE_LOCAL, 16446 bytes) 
+26/10/05 09:51:02 INFO TaskSetManager: Finished task 7.0 in stage 4.0 (TID 61) in 274 ms on master (executor 2) (7/39)
+26/10/05 09:51:02 INFO TaskSetManager: Starting task 9.0 in stage 4.0 (TID 63) (master, executor 2, partition 9, NODE_LOCAL, 16349 bytes) 
+26/10/05 09:51:02 INFO TaskSetManager: Finished task 8.0 in stage 4.0 (TID 62) in 273 ms on master (executor 2) (8/39)
+26/10/05 09:51:02 INFO TaskSetManager: Starting task 10.0 in stage 4.0 (TID 64) (master, executor 2, partition 10, NODE_LOCAL, 16439 bytes) 
+26/10/05 09:51:02 INFO TaskSetManager: Finished task 9.0 in stage 4.0 (TID 63) in 327 ms on master (executor 2) (9/39)
+26/10/05 09:51:03 INFO TaskSetManager: Starting task 11.0 in stage 4.0 (TID 65) (master, executor 2, partition 11, NODE_LOCAL, 16492 bytes) 
+26/10/05 09:51:03 INFO TaskSetManager: Finished task 10.0 in stage 4.0 (TID 64) in 373 ms on master (executor 2) (10/39)
+26/10/05 09:51:03 INFO TaskSetManager: Starting task 12.0 in stage 4.0 (TID 66) (master, executor 2, partition 12, NODE_LOCAL, 16538 bytes) 
+26/10/05 09:51:03 INFO TaskSetManager: Finished task 11.0 in stage 4.0 (TID 65) in 276 ms on master (executor 2) (11/39)
+26/10/05 09:51:03 INFO TaskSetManager: Starting task 13.0 in stage 4.0 (TID 67) (master, executor 2, partition 13, NODE_LOCAL, 16530 bytes) 
+26/10/05 09:51:03 INFO TaskSetManager: Finished task 12.0 in stage 4.0 (TID 66) in 257 ms on master (executor 2) (12/39)
+26/10/05 09:51:04 INFO TaskSetManager: Starting task 14.0 in stage 4.0 (TID 68) (master, executor 2, partition 14, NODE_LOCAL, 16537 bytes) 
+26/10/05 09:51:04 INFO TaskSetManager: Finished task 13.0 in stage 4.0 (TID 67) in 333 ms on master (executor 2) (13/39)
+26/10/05 09:51:04 INFO TaskSetManager: Starting task 15.0 in stage 4.0 (TID 69) (master, executor 2, partition 15, NODE_LOCAL, 16487 bytes) 
+26/10/05 09:51:04 INFO TaskSetManager: Finished task 14.0 in stage 4.0 (TID 68) in 295 ms on master (executor 2) (14/39)
+26/10/05 09:51:04 INFO TaskSetManager: Starting task 16.0 in stage 4.0 (TID 70) (master, executor 2, partition 16, NODE_LOCAL, 16539 bytes) 
+26/10/05 09:51:04 INFO TaskSetManager: Finished task 15.0 in stage 4.0 (TID 69) in 271 ms on master (executor 2) (15/39)
+26/10/05 09:51:04 INFO TaskSetManager: Starting task 17.0 in stage 4.0 (TID 71) (master, executor 2, partition 17, NODE_LOCAL, 16532 bytes) 
+26/10/05 09:51:04 INFO TaskSetManager: Finished task 16.0 in stage 4.0 (TID 70) in 318 ms on master (executor 2) (16/39)
+26/10/05 09:51:05 INFO TaskSetManager: Starting task 18.0 in stage 4.0 (TID 72) (master, executor 2, partition 18, NODE_LOCAL, 16493 bytes) 
+26/10/05 09:51:05 INFO TaskSetManager: Finished task 17.0 in stage 4.0 (TID 71) in 301 ms on master (executor 2) (17/39)
+26/10/05 09:51:05 INFO TaskSetManager: Starting task 19.0 in stage 4.0 (TID 73) (master, executor 2, partition 19, NODE_LOCAL, 16533 bytes) 
+26/10/05 09:51:05 INFO TaskSetManager: Finished task 18.0 in stage 4.0 (TID 72) in 326 ms on master (executor 2) (18/39)
+26/10/05 09:51:05 INFO TaskSetManager: Starting task 20.0 in stage 4.0 (TID 74) (master, executor 2, partition 20, NODE_LOCAL, 16483 bytes) 
+26/10/05 09:51:05 INFO TaskSetManager: Finished task 19.0 in stage 4.0 (TID 73) in 307 ms on master (executor 2) (19/39)
+26/10/05 09:51:05 INFO TaskSetManager: Starting task 21.0 in stage 4.0 (TID 75) (AndresPagan.localdomain, executor 1, partition 21, NODE_LOCAL, 16532 bytes) 
+26/10/05 09:51:05 INFO TaskSetManager: Finished task 1.0 in stage 4.0 (TID 55) in 6799 ms on AndresPagan.localdomain (executor 1) (20/39)
+26/10/05 09:51:06 INFO TaskSetManager: Starting task 22.0 in stage 4.0 (TID 76) (master, executor 2, partition 22, NODE_LOCAL, 16527 bytes) 
+26/10/05 09:51:06 INFO TaskSetManager: Finished task 20.0 in stage 4.0 (TID 74) in 317 ms on master (executor 2) (21/39)
+26/10/05 09:51:06 INFO TaskSetManager: Starting task 23.0 in stage 4.0 (TID 77) (master, executor 2, partition 23, NODE_LOCAL, 16537 bytes) 
+26/10/05 09:51:06 INFO TaskSetManager: Finished task 22.0 in stage 4.0 (TID 76) in 422 ms on master (executor 2) (22/39)
+26/10/05 09:51:06 INFO TaskSetManager: Starting task 24.0 in stage 4.0 (TID 78) (master, executor 2, partition 24, NODE_LOCAL, 16475 bytes) 
+26/10/05 09:51:06 INFO TaskSetManager: Finished task 23.0 in stage 4.0 (TID 77) in 354 ms on master (executor 2) (23/39)
+26/10/05 09:51:07 INFO TaskSetManager: Starting task 25.0 in stage 4.0 (TID 79) (master, executor 2, partition 25, NODE_LOCAL, 16426 bytes) 
+26/10/05 09:51:07 INFO TaskSetManager: Finished task 24.0 in stage 4.0 (TID 78) in 339 ms on master (executor 2) (24/39)
+26/10/05 09:51:07 INFO TaskSetManager: Starting task 26.0 in stage 4.0 (TID 80) (master, executor 2, partition 26, NODE_LOCAL, 16516 bytes) 
+26/10/05 09:51:07 INFO TaskSetManager: Finished task 25.0 in stage 4.0 (TID 79) in 386 ms on master (executor 2) (25/39)
+26/10/05 09:51:07 INFO TaskSetManager: Starting task 27.0 in stage 4.0 (TID 81) (master, executor 2, partition 27, NODE_LOCAL, 16598 bytes) 
+26/10/05 09:51:07 INFO TaskSetManager: Finished task 26.0 in stage 4.0 (TID 80) in 291 ms on master (executor 2) (26/39)
+26/10/05 09:51:08 INFO TaskSetManager: Starting task 28.0 in stage 4.0 (TID 82) (master, executor 2, partition 28, NODE_LOCAL, 16507 bytes) 
+26/10/05 09:51:08 INFO TaskSetManager: Finished task 27.0 in stage 4.0 (TID 81) in 368 ms on master (executor 2) (27/39)
+26/10/05 09:51:08 INFO TaskSetManager: Starting task 29.0 in stage 4.0 (TID 83) (master, executor 2, partition 29, NODE_LOCAL, 16548 bytes) 
+26/10/05 09:51:08 INFO TaskSetManager: Finished task 28.0 in stage 4.0 (TID 82) in 267 ms on master (executor 2) (28/39)
+26/10/05 09:51:08 INFO TaskSetManager: Starting task 30.0 in stage 4.0 (TID 84) (master, executor 2, partition 30, NODE_LOCAL, 16550 bytes) 
+26/10/05 09:51:08 INFO TaskSetManager: Finished task 29.0 in stage 4.0 (TID 83) in 252 ms on master (executor 2) (29/39)
+26/10/05 09:51:09 INFO TaskSetManager: Starting task 31.0 in stage 4.0 (TID 85) (master, executor 2, partition 31, NODE_LOCAL, 16554 bytes) 
+26/10/05 09:51:09 INFO TaskSetManager: Finished task 30.0 in stage 4.0 (TID 84) in 272 ms on master (executor 2) (30/39)
+26/10/05 09:51:09 INFO TaskSetManager: Starting task 32.0 in stage 4.0 (TID 86) (master, executor 2, partition 32, NODE_LOCAL, 16491 bytes) 
+26/10/05 09:51:09 INFO TaskSetManager: Finished task 31.0 in stage 4.0 (TID 85) in 312 ms on master (executor 2) (31/39)
+26/10/05 09:51:09 INFO TaskSetManager: Starting task 33.0 in stage 4.0 (TID 87) (master, executor 2, partition 33, NODE_LOCAL, 16498 bytes) 
+26/10/05 09:51:09 INFO TaskSetManager: Finished task 32.0 in stage 4.0 (TID 86) in 271 ms on master (executor 2) (32/39)
+26/10/05 09:51:09 INFO TaskSetManager: Starting task 34.0 in stage 4.0 (TID 88) (master, executor 2, partition 34, NODE_LOCAL, 16588 bytes) 
+26/10/05 09:51:09 INFO TaskSetManager: Finished task 33.0 in stage 4.0 (TID 87) in 311 ms on master (executor 2) (33/39)
+26/10/05 09:51:10 INFO TaskSetManager: Starting task 35.0 in stage 4.0 (TID 89) (master, executor 2, partition 35, NODE_LOCAL, 16460 bytes) 
+26/10/05 09:51:10 INFO TaskSetManager: Finished task 34.0 in stage 4.0 (TID 88) in 294 ms on master (executor 2) (34/39)
+26/10/05 09:51:10 INFO TaskSetManager: Starting task 36.0 in stage 4.0 (TID 90) (master, executor 2, partition 36, NODE_LOCAL, 16436 bytes) 
+26/10/05 09:51:10 INFO TaskSetManager: Finished task 35.0 in stage 4.0 (TID 89) in 299 ms on master (executor 2) (35/39)
+26/10/05 09:51:10 INFO TaskSetManager: Starting task 37.0 in stage 4.0 (TID 91) (master, executor 2, partition 37, NODE_LOCAL, 16205 bytes) 
+26/10/05 09:51:10 INFO TaskSetManager: Finished task 36.0 in stage 4.0 (TID 90) in 307 ms on master (executor 2) (36/39)
+26/10/05 09:51:11 INFO TaskSetManager: Starting task 38.0 in stage 4.0 (TID 92) (master, executor 2, partition 38, NODE_LOCAL, 15430 bytes) 
+26/10/05 09:51:11 INFO TaskSetManager: Finished task 37.0 in stage 4.0 (TID 91) in 251 ms on master (executor 2) (37/39)
+26/10/05 09:51:11 INFO TaskSetManager: Finished task 21.0 in stage 4.0 (TID 75) in 5359 ms on AndresPagan.localdomain (executor 1) (38/39)
+26/10/05 09:51:11 INFO TaskSetManager: Finished task 38.0 in stage 4.0 (TID 92) in 322 ms on master (executor 2) (39/39)
+26/10/05 09:51:11 INFO DAGScheduler: ShuffleMapStage 4 (count at NativeMethodAccessorImpl.java:0) finished in 12.272 s
+26/10/05 09:51:11 INFO DAGScheduler: looking for newly runnable stages
+26/10/05 09:51:11 INFO DAGScheduler: running: Set()
+26/10/05 09:51:11 INFO DAGScheduler: waiting: Set()
+26/10/05 09:51:11 INFO DAGScheduler: failed: Set()
+26/10/05 09:51:11 INFO YarnScheduler: Removed TaskSet 4.0, whose tasks have all completed, from pool 
+26/10/05 09:51:11 INFO CodeGenerator: Code generated in 9.230937 ms
+26/10/05 09:51:11 INFO SparkContext: Starting job: count at NativeMethodAccessorImpl.java:0
+26/10/05 09:51:11 INFO DAGScheduler: Got job 5 (count at NativeMethodAccessorImpl.java:0) with 1 output partitions
+26/10/05 09:51:11 INFO DAGScheduler: Final stage: ResultStage 6 (count at NativeMethodAccessorImpl.java:0)
+26/10/05 09:51:11 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 5)
+26/10/05 09:51:11 INFO DAGScheduler: Missing parents: List()
+26/10/05 09:51:11 INFO DAGScheduler: Submitting ResultStage 6 (MapPartitionsRDD[20] at count at NativeMethodAccessorImpl.java:0), which has no missing parents
+26/10/05 09:51:11 INFO MemoryStore: Block broadcast_11 stored as values in memory (estimated size 12.5 KiB, free 426.4 MiB)
+26/10/05 09:51:11 INFO MemoryStore: Block broadcast_11_piece0 stored as bytes in memory (estimated size 5.9 KiB, free 426.4 MiB)
+26/10/05 09:51:11 INFO BlockManagerInfo: Removed broadcast_10_piece0 on 100.76.42.126:37421 in memory (size: 9.1 KiB, free: 427.2 MiB)
+26/10/05 09:51:11 INFO BlockManagerInfo: Removed broadcast_10_piece0 on master:34831 in memory (size: 9.1 KiB, free: 427.2 MiB)
+26/10/05 09:51:11 INFO BlockManagerInfo: Added broadcast_11_piece0 in memory on 100.76.42.126:37421 (size: 5.9 KiB, free: 427.2 MiB)
+26/10/05 09:51:11 INFO SparkContext: Created broadcast 11 from broadcast at DAGScheduler.scala:1585
+26/10/05 09:51:11 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 6 (MapPartitionsRDD[20] at count at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+26/10/05 09:51:11 INFO YarnScheduler: Adding task set 6.0 with 1 tasks resource profile 0
+26/10/05 09:51:11 INFO TaskSetManager: Starting task 0.0 in stage 6.0 (TID 93) (master, executor 2, partition 0, NODE_LOCAL, 7626 bytes) 
+26/10/05 09:51:11 INFO BlockManagerInfo: Removed broadcast_10_piece0 on AndresPagan.localdomain:46495 in memory (size: 9.1 KiB, free: 427.2 MiB)
+26/10/05 09:51:11 INFO BlockManagerInfo: Added broadcast_11_piece0 in memory on master:34831 (size: 5.9 KiB, free: 427.2 MiB)
+26/10/05 09:51:12 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 0 to 100.76.42.126:37622
+26/10/05 09:51:12 INFO TaskSetManager: Finished task 0.0 in stage 6.0 (TID 93) in 356 ms on master (executor 2) (1/1)
+26/10/05 09:51:12 INFO YarnScheduler: Removed TaskSet 6.0, whose tasks have all completed, from pool 
+26/10/05 09:51:12 INFO DAGScheduler: ResultStage 6 (count at NativeMethodAccessorImpl.java:0) finished in 0.420 s
+26/10/05 09:51:12 INFO DAGScheduler: Job 5 is finished. Cancelling potential speculative or zombie tasks for this job
+26/10/05 09:51:12 INFO YarnScheduler: Killing all running tasks in stage 6: Stage finished
+26/10/05 09:51:12 INFO DAGScheduler: Job 5 finished: count at NativeMethodAccessorImpl.java:0, took 0.460359 s
+
+=== RESULTADO PEDIDO 5 - JOIN BROADCAST ===
+Entrada: hdfs:///datalake/benchmark/clean_10x_r2
+Salida: hdfs:///datalake/benchmark/join_10x_r2
+Filas procesadas: 533892
+Tiempo de escritura (accion forzadora): 68.339s
+Application ID: application_1791210428634_0005
+26/10/05 09:51:12 INFO SparkContext: SparkContext is stopping with exitCode 0.
+26/10/05 09:51:12 INFO SparkUI: Stopped Spark web UI at http://100.76.42.126:4040
+26/10/05 09:51:12 INFO YarnClientSchedulerBackend: Interrupting monitor thread
+26/10/05 09:51:12 INFO YarnClientSchedulerBackend: Shutting down all executors
+26/10/05 09:51:12 INFO YarnSchedulerBackend$YarnDriverEndpoint: Asking each executor to shut down
+26/10/05 09:51:12 INFO YarnClientSchedulerBackend: YARN client scheduler backend Stopped
+26/10/05 09:51:12 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+26/10/05 09:51:12 INFO MemoryStore: MemoryStore cleared
+26/10/05 09:51:12 INFO BlockManager: BlockManager stopped
+26/10/05 09:51:12 INFO BlockManagerMaster: BlockManagerMaster stopped
+26/10/05 09:51:12 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+26/10/05 09:51:12 INFO SparkContext: Successfully stopped SparkContext
+26/10/05 09:51:12 INFO ShutdownHookManager: Shutdown hook called
+26/10/05 09:51:12 INFO ShutdownHookManager: Deleting directory /tmp/spark-bb54df41-1641-4421-a596-440570e81502
+26/10/05 09:51:12 INFO ShutdownHookManager: Deleting directory /tmp/spark-9a0190ea-d07e-49b6-a94b-ab60e357b772
+26/10/05 09:51:12 INFO ShutdownHookManager: Deleting directory /tmp/spark-9a0190ea-d07e-49b6-a94b-ab60e357b772/pyspark-59b8cf63-c8f2-4fab-8355-3e4c9e30ddaa
+
+real	2m24,270s
+user	0m23,018s
+sys	0m19,238s
