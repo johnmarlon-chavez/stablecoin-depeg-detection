@@ -1,0 +1,34 @@
+Pedido 2 - Salida de .explain() - antes vs. despues
+
+=== PLAN FISICO - ANTES (sort-merge join esperado) ===
+== Physical Plan ==
+*(5) Project [open_time_ts#13, open_time#0L, open#1, high#2, low#3, close#4, volume#5, close_time#6L, quote_volume#7, trades#8L, taker_buy_base#9, taker_buy_quote#10, ignore#11, fuente_paridad#12, close_time_ts#14, simbolo#15, anio#16, mes#17, proxy_open_time#37L, proxy_open#56, proxy_high#75, proxy_low#94, proxy_close#113, proxy_volume#132, ... 11 more fields]
++- *(5) SortMergeJoin [open_time_ts#13], [open_time_ts#419], LeftOuter
+   :- *(2) Sort [open_time_ts#13 ASC NULLS FIRST], false, 0
+   :  +- Exchange hashpartitioning(open_time_ts#13, 200), ENSURE_REQUIREMENTS, [plan_id=111]
+   :     +- *(1) ColumnarToRow
+   :        +- FileScan parquet [open_time#0L,open#1,high#2,low#3,close#4,volume#5,close_time#6L,quote_volume#7,trades#8L,taker_buy_base#9,taker_buy_quote#10,ignore#11,fuente_paridad#12,open_time_ts#13,close_time_ts#14,simbolo#15,anio#16,mes#17] Batched: true, DataFilters: [], Format: Parquet, Location: InMemoryFileIndex(1 paths)[hdfs://100.76.42.126:9000/datalake/processed/binance/klines_clean], PartitionFilters: [simbolo#15 IN (USDCUSDT,BTCUSDC,BTCUSDT)], PushedFilters: [], ReadSchema: struct<open_time:bigint,open:double,high:double,low:double,close:double,volume:double,close_time:...
+   +- *(4) Sort [open_time_ts#419 ASC NULLS FIRST], false, 0
+      +- Exchange hashpartitioning(open_time_ts#419, 200), ENSURE_REQUIREMENTS, [plan_id=121]
+         +- *(3) Project [open_time#406L AS proxy_open_time#37L, open#407 AS proxy_open#56, high#408 AS proxy_high#75, low#409 AS proxy_low#94, close#410 AS proxy_close#113, volume#411 AS proxy_volume#132, close_time#412L AS proxy_close_time#151L, quote_volume#413 AS proxy_quote_volume#170, trades#414L AS proxy_trades#189L, taker_buy_base#415 AS proxy_taker_buy_base#208, taker_buy_quote#416 AS proxy_taker_buy_quote#227, ignore#417 AS proxy_ignore#246, fuente_paridad#418 AS proxy_fuente_paridad#265, open_time_ts#419, close_time_ts#420 AS proxy_close_time_ts#284, simbolo#421 AS proxy_simbolo#303, anio#422 AS proxy_anio#322, mes#423 AS proxy_mes#341]
+            +- *(3) Filter isnotnull(open_time_ts#419)
+               +- *(3) ColumnarToRow
+                  +- FileScan parquet [open_time#406L,open#407,high#408,low#409,close#410,volume#411,close_time#412L,quote_volume#413,trades#414L,taker_buy_base#415,taker_buy_quote#416,ignore#417,fuente_paridad#418,open_time_ts#419,close_time_ts#420,simbolo#421,anio#422,mes#423] Batched: true, DataFilters: [isnotnull(open_time_ts#419)], Format: Parquet, Location: InMemoryFileIndex(1 paths)[hdfs://100.76.42.126:9000/datalake/processed/binance/klines_clean], PartitionFilters: [simbolo#421 IN (BUSDUSDT,BTCBUSD)], PushedFilters: [IsNotNull(open_time_ts)], ReadSchema: struct<open_time:bigint,open:double,high:double,low:double,close:double,volume:double,close_time:...
+
+
+
+
+=== PLAN FISICO - DESPUES (broadcast hash join esperado) ===
+== Physical Plan ==
+*(2) Project [open_time_ts#13, open_time#0L, open#1, high#2, low#3, close#4, volume#5, close_time#6L, quote_volume#7, trades#8L, taker_buy_base#9, taker_buy_quote#10, ignore#11, fuente_paridad#12, close_time_ts#14, simbolo#15, anio#16, mes#17, proxy_open_time#37L, proxy_open#56, proxy_high#75, proxy_low#94, proxy_close#113, proxy_volume#132, ... 11 more fields]
++- *(2) BroadcastHashJoin [open_time_ts#13], [open_time_ts#683], LeftOuter, BuildRight, false
+   :- *(2) ColumnarToRow
+   :  +- FileScan parquet [open_time#0L,open#1,high#2,low#3,close#4,volume#5,close_time#6L,quote_volume#7,trades#8L,taker_buy_base#9,taker_buy_quote#10,ignore#11,fuente_paridad#12,open_time_ts#13,close_time_ts#14,simbolo#15,anio#16,mes#17] Batched: true, DataFilters: [], Format: Parquet, Location: InMemoryFileIndex(1 paths)[hdfs://100.76.42.126:9000/datalake/processed/binance/klines_clean], PartitionFilters: [simbolo#15 IN (USDCUSDT,BTCUSDC,BTCUSDT)], PushedFilters: [], ReadSchema: struct<open_time:bigint,open:double,high:double,low:double,close:double,volume:double,close_time:...
+   +- BroadcastExchange HashedRelationBroadcastMode(List(input[13, timestamp, true]),false), [plan_id=709]
+      +- *(1) Project [open_time#670L AS proxy_open_time#37L, open#671 AS proxy_open#56, high#672 AS proxy_high#75, low#673 AS proxy_low#94, close#674 AS proxy_close#113, volume#675 AS proxy_volume#132, close_time#676L AS proxy_close_time#151L, quote_volume#677 AS proxy_quote_volume#170, trades#678L AS proxy_trades#189L, taker_buy_base#679 AS proxy_taker_buy_base#208, taker_buy_quote#680 AS proxy_taker_buy_quote#227, ignore#681 AS proxy_ignore#246, fuente_paridad#682 AS proxy_fuente_paridad#265, open_time_ts#683, close_time_ts#684 AS proxy_close_time_ts#284, simbolo#685 AS proxy_simbolo#303, anio#686 AS proxy_anio#322, mes#687 AS proxy_mes#341]
+         +- *(1) Filter isnotnull(open_time_ts#683)
+            +- *(1) ColumnarToRow
+               +- FileScan parquet [open_time#670L,open#671,high#672,low#673,close#674,volume#675,close_time#676L,quote_volume#677,trades#678L,taker_buy_base#679,taker_buy_quote#680,ignore#681,fuente_paridad#682,open_time_ts#683,close_time_ts#684,simbolo#685,anio#686,mes#687] Batched: true, DataFilters: [isnotnull(open_time_ts#683)], Format: Parquet, Location: InMemoryFileIndex(1 paths)[hdfs://100.76.42.126:9000/datalake/processed/binance/klines_clean], PartitionFilters: [simbolo#685 IN (BUSDUSDT,BTCBUSD)], PushedFilters: [IsNotNull(open_time_ts)], ReadSchema: struct<open_time:bigint,open:double,high:double,low:double,close:double,volume:double,close_time:...
+
+
+
