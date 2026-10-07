@@ -1,0 +1,13 @@
+nproc: 2 | RAM total MB: 3915
+=== RESUMEN quality (opt 10x local[*], driver-memory 3g, SP=64) ===
+exit: 0 (124 = detenido por limite LIM=3600s) | segundos reales: 284 | _SUCCESS: SI
+real 281,739 | user 114,347 | sys 83,557
+max RSS JVM (MB): 1742 | max RAM usada (MB): 3053 | max swap (MB): 910
+HDFS salida: 39.1 M  78.2 M  hdfs:///datalake/benchmark/cleanopt_10x_local
+FetchFailed/OutOfMemory/heartbeats en log: 0 OOM | 0 heartbeat
+=== RESUMEN join (opt 10x local[*], driver-memory 3g, SP=64) ===
+exit: 0 (124 = detenido por limite LIM=3600s) | segundos reales: 51 | _SUCCESS: SI
+real 49,418 | user 33,089 | sys 34,116
+max RSS JVM (MB): 1252 | max RAM usada (MB): 2516 | max swap (MB): 782
+HDFS salida: 28.8 M  57.6 M  hdfs:///datalake/benchmark/join_10x_local
+FetchFailed/OutOfMemory/heartbeats en log: 0 OOM | 0 heartbeat
