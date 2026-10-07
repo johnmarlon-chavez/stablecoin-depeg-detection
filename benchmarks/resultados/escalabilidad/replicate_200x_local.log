@@ -1,0 +1,1538 @@
+26/10/07 10:59:30 INFO SparkContext: Running Spark version 3.5.1
+26/10/07 10:59:30 INFO SparkContext: OS info Linux, 6.1.0-53-amd64, amd64
+26/10/07 10:59:30 INFO SparkContext: Java version 17.0.20.1
+26/10/07 10:59:30 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/10/07 10:59:30 INFO ResourceUtils: ==============================================================
+26/10/07 10:59:30 INFO ResourceUtils: No custom resources configured for spark.driver.
+26/10/07 10:59:30 INFO ResourceUtils: ==============================================================
+26/10/07 10:59:30 INFO SparkContext: Submitted application: Pedido5-Replicar-200x
+26/10/07 10:59:30 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+26/10/07 10:59:30 INFO ResourceProfile: Limiting resource is cpu
+26/10/07 10:59:30 INFO ResourceProfileManager: Added ResourceProfile id: 0
+26/10/07 10:59:30 INFO SecurityManager: Changing view acls to: marlon
+26/10/07 10:59:30 INFO SecurityManager: Changing modify acls to: marlon
+26/10/07 10:59:30 INFO SecurityManager: Changing view acls groups to: 
+26/10/07 10:59:30 INFO SecurityManager: Changing modify acls groups to: 
+26/10/07 10:59:30 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: marlon; groups with view permissions: EMPTY; users with modify permissions: marlon; groups with modify permissions: EMPTY
+26/10/07 10:59:30 INFO Utils: Successfully started service 'sparkDriver' on port 45975.
+26/10/07 10:59:30 INFO SparkEnv: Registering MapOutputTracker
+26/10/07 10:59:30 INFO SparkEnv: Registering BlockManagerMaster
+26/10/07 10:59:30 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+26/10/07 10:59:30 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+26/10/07 10:59:30 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+26/10/07 10:59:30 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-91090983-346e-4709-a318-9cfdd2fc5df5
+26/10/07 10:59:30 INFO MemoryStore: MemoryStore started with capacity 1663.2 MiB
+26/10/07 10:59:31 INFO SparkEnv: Registering OutputCommitCoordinator
+26/10/07 10:59:31 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+26/10/07 10:59:31 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+26/10/07 10:59:31 INFO Executor: Starting executor ID driver on host master
+26/10/07 10:59:31 INFO Executor: OS info Linux, 6.1.0-53-amd64, amd64
+26/10/07 10:59:31 INFO Executor: Java version 17.0.20.1
+26/10/07 10:59:31 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+26/10/07 10:59:31 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@5a15c400 for default.
+26/10/07 10:59:31 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 44485.
+26/10/07 10:59:31 INFO NettyBlockTransferService: Server created on master:44485
+26/10/07 10:59:31 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+26/10/07 10:59:31 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, master, 44485, None)
+26/10/07 10:59:31 INFO BlockManagerMasterEndpoint: Registering block manager master:44485 with 1663.2 MiB RAM, BlockManagerId(driver, master, 44485, None)
+26/10/07 10:59:31 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, master, 44485, None)
+26/10/07 10:59:31 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, master, 44485, None)
+Replicando USDCUSDT x200 ...
+26/10/07 10:59:32 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+26/10/07 10:59:32 INFO SharedState: Warehouse path is 'file:/home/marlon/stablecoin-depeg-detection/spark-warehouse'.
+26/10/07 10:59:34 INFO InMemoryFileIndex: It took 231 ms to list leaf files for 19 paths.
+26/10/07 10:59:35 INFO FileSourceStrategy: Pushed Filters: 
+26/10/07 10:59:35 INFO FileSourceStrategy: Post-Scan Filters: 
+26/10/07 10:59:36 INFO CodeGenerator: Code generated in 316.67116 ms
+26/10/07 10:59:36 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 199.7 KiB, free 1663.0 MiB)
+26/10/07 10:59:36 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 34.8 KiB, free 1663.0 MiB)
+26/10/07 10:59:36 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on master:44485 (size: 34.8 KiB, free: 1663.2 MiB)
+26/10/07 10:59:37 INFO SparkContext: Created broadcast 0 from collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64
+26/10/07 10:59:37 INFO FileSourceScanExec: Planning scan with bin packing, max size: 40845079 bytes, open cost is considered as scanning 4194304 bytes.
+26/10/07 10:59:37 INFO DAGScheduler: Registering RDD 3 (collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64) as input to shuffle 0
+26/10/07 10:59:37 INFO DAGScheduler: Got map stage job 0 (collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64) with 2 output partitions
+26/10/07 10:59:37 INFO DAGScheduler: Final stage: ShuffleMapStage 0 (collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64)
+26/10/07 10:59:37 INFO DAGScheduler: Parents of final stage: List()
+26/10/07 10:59:37 INFO DAGScheduler: Missing parents: List()
+26/10/07 10:59:37 INFO DAGScheduler: Submitting ShuffleMapStage 0 (MapPartitionsRDD[3] at collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64), which has no missing parents
+26/10/07 10:59:37 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 20.4 KiB, free 1663.0 MiB)
+26/10/07 10:59:37 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 9.6 KiB, free 1662.9 MiB)
+26/10/07 10:59:37 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on master:44485 (size: 9.6 KiB, free: 1663.2 MiB)
+26/10/07 10:59:37 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:1585
+26/10/07 10:59:37 INFO DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 0 (MapPartitionsRDD[3] at collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64) (first 15 tasks are for partitions Vector(0, 1))
+26/10/07 10:59:37 INFO TaskSchedulerImpl: Adding task set 0.0 with 2 tasks resource profile 0
+26/10/07 10:59:37 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0) (master, executor driver, partition 0, NODE_LOCAL, 9540 bytes) 
+26/10/07 10:59:37 INFO TaskSetManager: Starting task 1.0 in stage 0.0 (TID 1) (master, executor driver, partition 1, NODE_LOCAL, 9397 bytes) 
+26/10/07 10:59:37 INFO Executor: Running task 1.0 in stage 0.0 (TID 1)
+26/10/07 10:59:37 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+26/10/07 10:59:38 INFO CodeGenerator: Code generated in 54.835981 ms
+26/10/07 10:59:38 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/USDCUSDT/USDCUSDT-1h-2023-11.csv, range: 0-107322, partition values: [empty row]
+26/10/07 10:59:38 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/USDCUSDT/USDCUSDT-1h-2023-12.csv, range: 0-111069, partition values: [empty row]
+26/10/07 10:59:38 INFO CodeGenerator: Code generated in 19.020817 ms
+26/10/07 10:59:38 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/USDCUSDT/USDCUSDT-1h-2022-05.csv, range: 0-110602, partition values: [empty row]
+26/10/07 10:59:38 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/USDCUSDT/USDCUSDT-1h-2022-06.csv, range: 0-106827, partition values: [empty row]
+26/10/07 10:59:38 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/USDCUSDT/USDCUSDT-1h-2023-06.csv, range: 0-106733, partition values: [empty row]
+26/10/07 10:59:38 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/USDCUSDT/USDCUSDT-1h-2023-10.csv, range: 0-110155, partition values: [empty row]
+26/10/07 10:59:38 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/USDCUSDT/USDCUSDT-1h-2023-08.csv, range: 0-110131, partition values: [empty row]
+26/10/07 10:59:38 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/USDCUSDT/USDCUSDT-1h-2023-04.csv, range: 0-106384, partition values: [empty row]
+26/10/07 10:59:38 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/USDCUSDT/USDCUSDT-1h-2023-07.csv, range: 0-109912, partition values: [empty row]
+26/10/07 10:59:38 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/USDCUSDT/USDCUSDT-1h-2023-09.csv, range: 0-106058, partition values: [empty row]
+26/10/07 10:59:39 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/USDCUSDT/USDCUSDT-1h-2022-04.csv, range: 0-105914, partition values: [empty row]
+26/10/07 10:59:39 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/USDCUSDT/USDCUSDT-1h-2022-07.csv, range: 0-109718, partition values: [empty row]
+26/10/07 10:59:39 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/USDCUSDT/USDCUSDT-1h-2022-02.csv, range: 0-98362, partition values: [empty row]
+26/10/07 10:59:39 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/USDCUSDT/USDCUSDT-1h-2023-05.csv, range: 0-109706, partition values: [empty row]
+26/10/07 10:59:39 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/USDCUSDT/USDCUSDT-1h-2022-09.csv, range: 0-88358, partition values: [empty row]
+26/10/07 10:59:39 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/USDCUSDT/USDCUSDT-1h-2022-03.csv, range: 0-109543, partition values: [empty row]
+26/10/07 10:59:39 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/USDCUSDT/USDCUSDT-1h-2023-03.csv, range: 0-73071, partition values: [empty row]
+26/10/07 10:59:39 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/USDCUSDT/USDCUSDT-1h-2022-08.csv, range: 0-109537, partition values: [empty row]
+26/10/07 10:59:39 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/USDCUSDT/USDCUSDT-1h-2022-01.csv, range: 0-108981, partition values: [empty row]
+26/10/07 10:59:39 INFO Executor: Finished task 1.0 in stage 0.0 (TID 1). 2008 bytes result sent to driver
+26/10/07 10:59:39 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 1965 bytes result sent to driver
+26/10/07 10:59:39 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 2035 ms on master (executor driver) (1/2)
+26/10/07 10:59:39 INFO TaskSetManager: Finished task 1.0 in stage 0.0 (TID 1) in 1972 ms on master (executor driver) (2/2)
+26/10/07 10:59:39 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+26/10/07 10:59:39 INFO DAGScheduler: ShuffleMapStage 0 (collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64) finished in 2.392 s
+26/10/07 10:59:39 INFO DAGScheduler: looking for newly runnable stages
+26/10/07 10:59:39 INFO DAGScheduler: running: Set()
+26/10/07 10:59:39 INFO DAGScheduler: waiting: Set()
+26/10/07 10:59:39 INFO DAGScheduler: failed: Set()
+26/10/07 10:59:39 INFO CodeGenerator: Code generated in 25.661456 ms
+26/10/07 10:59:40 INFO SparkContext: Starting job: collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64
+26/10/07 10:59:40 INFO DAGScheduler: Got job 1 (collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64) with 1 output partitions
+26/10/07 10:59:40 INFO DAGScheduler: Final stage: ResultStage 2 (collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64)
+26/10/07 10:59:40 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 1)
+26/10/07 10:59:40 INFO DAGScheduler: Missing parents: List()
+26/10/07 10:59:40 INFO DAGScheduler: Submitting ResultStage 2 (MapPartitionsRDD[6] at collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64), which has no missing parents
+26/10/07 10:59:40 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 14.5 KiB, free 1662.9 MiB)
+26/10/07 10:59:40 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 6.5 KiB, free 1662.9 MiB)
+26/10/07 10:59:40 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on master:44485 (size: 6.5 KiB, free: 1663.2 MiB)
+26/10/07 10:59:40 INFO SparkContext: Created broadcast 2 from broadcast at DAGScheduler.scala:1585
+26/10/07 10:59:40 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 2 (MapPartitionsRDD[6] at collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64) (first 15 tasks are for partitions Vector(0))
+26/10/07 10:59:40 INFO TaskSchedulerImpl: Adding task set 2.0 with 1 tasks resource profile 0
+26/10/07 10:59:40 INFO TaskSetManager: Starting task 0.0 in stage 2.0 (TID 2) (master, executor driver, partition 0, NODE_LOCAL, 7615 bytes) 
+26/10/07 10:59:40 INFO Executor: Running task 0.0 in stage 2.0 (TID 2)
+26/10/07 10:59:40 INFO ShuffleBlockFetcherIterator: Getting 2 (144.0 B) non-empty blocks including 2 (144.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 10:59:40 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 25 ms
+26/10/07 10:59:40 INFO CodeGenerator: Code generated in 34.571248 ms
+26/10/07 10:59:40 INFO Executor: Finished task 0.0 in stage 2.0 (TID 2). 4046 bytes result sent to driver
+26/10/07 10:59:40 INFO TaskSetManager: Finished task 0.0 in stage 2.0 (TID 2) in 217 ms on master (executor driver) (1/1)
+26/10/07 10:59:40 INFO TaskSchedulerImpl: Removed TaskSet 2.0, whose tasks have all completed, from pool 
+26/10/07 10:59:40 INFO DAGScheduler: ResultStage 2 (collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64) finished in 0.240 s
+26/10/07 10:59:40 INFO DAGScheduler: Job 1 is finished. Cancelling potential speculative or zombie tasks for this job
+26/10/07 10:59:40 INFO TaskSchedulerImpl: Killing all running tasks in stage 2: Stage finished
+26/10/07 10:59:40 INFO DAGScheduler: Job 1 finished: collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64, took 0.273180 s
+26/10/07 10:59:42 INFO FileSourceStrategy: Pushed Filters: 
+26/10/07 10:59:42 INFO FileSourceStrategy: Post-Scan Filters: 
+26/10/07 10:59:43 INFO CodeGenerator: Code generated in 80.468501 ms
+26/10/07 10:59:43 INFO SparkContext: Starting job: $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264
+26/10/07 10:59:43 INFO DAGScheduler: Got job 2 ($anonfun$withThreadLocalCaptured$1 at FutureTask.java:264) with 2 output partitions
+26/10/07 10:59:43 INFO DAGScheduler: Final stage: ResultStage 3 ($anonfun$withThreadLocalCaptured$1 at FutureTask.java:264)
+26/10/07 10:59:43 INFO DAGScheduler: Parents of final stage: List()
+26/10/07 10:59:43 INFO DAGScheduler: Missing parents: List()
+26/10/07 10:59:43 INFO DAGScheduler: Submitting ResultStage 3 (MapPartitionsRDD[10] at $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264), which has no missing parents
+26/10/07 10:59:43 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 10.9 KiB, free 1662.9 MiB)
+26/10/07 10:59:43 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 5.1 KiB, free 1662.9 MiB)
+26/10/07 10:59:43 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on master:44485 (size: 5.1 KiB, free: 1663.1 MiB)
+26/10/07 10:59:43 INFO SparkContext: Created broadcast 3 from broadcast at DAGScheduler.scala:1585
+26/10/07 10:59:43 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 3 (MapPartitionsRDD[10] at $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264) (first 15 tasks are for partitions Vector(0, 1))
+26/10/07 10:59:43 INFO TaskSchedulerImpl: Adding task set 3.0 with 2 tasks resource profile 0
+26/10/07 10:59:43 INFO TaskSetManager: Starting task 0.0 in stage 3.0 (TID 3) (master, executor driver, partition 0, PROCESS_LOCAL, 7740 bytes) 
+26/10/07 10:59:43 INFO TaskSetManager: Starting task 1.0 in stage 3.0 (TID 4) (master, executor driver, partition 1, PROCESS_LOCAL, 7740 bytes) 
+26/10/07 10:59:43 INFO Executor: Running task 0.0 in stage 3.0 (TID 3)
+26/10/07 10:59:43 INFO Executor: Running task 1.0 in stage 3.0 (TID 4)
+26/10/07 10:59:43 INFO CodeGenerator: Code generated in 59.946176 ms
+26/10/07 10:59:43 INFO Executor: Finished task 0.0 in stage 3.0 (TID 3). 2502 bytes result sent to driver
+26/10/07 10:59:43 INFO Executor: Finished task 1.0 in stage 3.0 (TID 4). 2545 bytes result sent to driver
+26/10/07 10:59:43 INFO TaskSetManager: Finished task 0.0 in stage 3.0 (TID 3) in 203 ms on master (executor driver) (1/2)
+26/10/07 10:59:43 INFO TaskSetManager: Finished task 1.0 in stage 3.0 (TID 4) in 201 ms on master (executor driver) (2/2)
+26/10/07 10:59:43 INFO DAGScheduler: ResultStage 3 ($anonfun$withThreadLocalCaptured$1 at FutureTask.java:264) finished in 0.231 s
+26/10/07 10:59:43 INFO DAGScheduler: Job 2 is finished. Cancelling potential speculative or zombie tasks for this job
+26/10/07 10:59:43 INFO TaskSchedulerImpl: Removed TaskSet 3.0, whose tasks have all completed, from pool 
+26/10/07 10:59:43 INFO TaskSchedulerImpl: Killing all running tasks in stage 3: Stage finished
+26/10/07 10:59:43 INFO DAGScheduler: Job 2 finished: $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264, took 0.241038 s
+26/10/07 10:59:43 INFO MemoryStore: Block broadcast_4 stored as values in memory (estimated size 14.9 KiB, free 1662.9 MiB)
+26/10/07 10:59:43 INFO MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 1755.0 B, free 1662.9 MiB)
+26/10/07 10:59:43 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on master:44485 (size: 1755.0 B, free: 1663.1 MiB)
+26/10/07 10:59:44 INFO SparkContext: Created broadcast 4 from $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264
+26/10/07 10:59:44 INFO BlockManagerInfo: Removed broadcast_2_piece0 on master:44485 in memory (size: 6.5 KiB, free: 1663.1 MiB)
+26/10/07 10:59:44 INFO BlockManagerInfo: Removed broadcast_1_piece0 on master:44485 in memory (size: 9.6 KiB, free: 1663.2 MiB)
+26/10/07 10:59:44 INFO FileSourceStrategy: Pushed Filters: 
+26/10/07 10:59:44 INFO FileSourceStrategy: Post-Scan Filters: 
+26/10/07 10:59:44 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+26/10/07 10:59:44 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+26/10/07 10:59:44 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+26/10/07 10:59:44 INFO CodeGenerator: Code generated in 35.473758 ms
+26/10/07 10:59:44 INFO MemoryStore: Block broadcast_5 stored as values in memory (estimated size 199.7 KiB, free 1662.7 MiB)
+26/10/07 10:59:44 INFO MemoryStore: Block broadcast_5_piece0 stored as bytes in memory (estimated size 34.8 KiB, free 1662.7 MiB)
+26/10/07 10:59:44 INFO BlockManagerInfo: Added broadcast_5_piece0 in memory on master:44485 (size: 34.8 KiB, free: 1663.1 MiB)
+26/10/07 10:59:44 INFO SparkContext: Created broadcast 5 from csv at NativeMethodAccessorImpl.java:0
+26/10/07 10:59:44 INFO FileSourceScanExec: Planning scan with bin packing, max size: 40845079 bytes, open cost is considered as scanning 4194304 bytes.
+26/10/07 10:59:44 INFO SparkContext: Starting job: csv at NativeMethodAccessorImpl.java:0
+26/10/07 10:59:44 INFO DAGScheduler: Got job 3 (csv at NativeMethodAccessorImpl.java:0) with 2 output partitions
+26/10/07 10:59:44 INFO DAGScheduler: Final stage: ResultStage 4 (csv at NativeMethodAccessorImpl.java:0)
+26/10/07 10:59:44 INFO DAGScheduler: Parents of final stage: List()
+26/10/07 10:59:44 INFO DAGScheduler: Missing parents: List()
+26/10/07 10:59:44 INFO DAGScheduler: Submitting ResultStage 4 (MapPartitionsRDD[14] at csv at NativeMethodAccessorImpl.java:0), which has no missing parents
+26/10/07 10:59:44 INFO MemoryStore: Block broadcast_6 stored as values in memory (estimated size 223.3 KiB, free 1662.5 MiB)
+26/10/07 10:59:44 INFO MemoryStore: Block broadcast_6_piece0 stored as bytes in memory (estimated size 80.5 KiB, free 1662.4 MiB)
+26/10/07 10:59:44 INFO BlockManagerInfo: Added broadcast_6_piece0 in memory on master:44485 (size: 80.5 KiB, free: 1663.0 MiB)
+26/10/07 10:59:44 INFO SparkContext: Created broadcast 6 from broadcast at DAGScheduler.scala:1585
+26/10/07 10:59:44 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 4 (MapPartitionsRDD[14] at csv at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0, 1))
+26/10/07 10:59:44 INFO TaskSchedulerImpl: Adding task set 4.0 with 2 tasks resource profile 0
+26/10/07 10:59:44 INFO TaskSetManager: Starting task 0.0 in stage 4.0 (TID 5) (master, executor driver, partition 0, NODE_LOCAL, 9551 bytes) 
+26/10/07 10:59:44 INFO TaskSetManager: Starting task 1.0 in stage 4.0 (TID 6) (master, executor driver, partition 1, NODE_LOCAL, 9408 bytes) 
+26/10/07 10:59:44 INFO Executor: Running task 0.0 in stage 4.0 (TID 5)
+26/10/07 10:59:44 INFO Executor: Running task 1.0 in stage 4.0 (TID 6)
+26/10/07 10:59:44 INFO CodeGenerator: Code generated in 26.937574 ms
+26/10/07 10:59:44 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+26/10/07 10:59:44 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+26/10/07 10:59:44 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+26/10/07 10:59:44 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/USDCUSDT/USDCUSDT-1h-2023-11.csv, range: 0-107322, partition values: [empty row]
+26/10/07 10:59:44 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+26/10/07 10:59:44 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+26/10/07 10:59:44 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+26/10/07 10:59:44 INFO CodeGenerator: Code generated in 30.386907 ms
+26/10/07 10:59:45 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/USDCUSDT/USDCUSDT-1h-2023-12.csv, range: 0-111069, partition values: [empty row]
+26/10/07 10:59:45 INFO BlockManagerInfo: Removed broadcast_3_piece0 on master:44485 in memory (size: 5.1 KiB, free: 1663.1 MiB)
+26/10/07 10:59:46 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/USDCUSDT/USDCUSDT-1h-2022-06.csv, range: 0-106827, partition values: [empty row]
+26/10/07 10:59:47 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/USDCUSDT/USDCUSDT-1h-2022-05.csv, range: 0-110602, partition values: [empty row]
+26/10/07 10:59:48 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/USDCUSDT/USDCUSDT-1h-2023-06.csv, range: 0-106733, partition values: [empty row]
+26/10/07 10:59:48 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/USDCUSDT/USDCUSDT-1h-2023-10.csv, range: 0-110155, partition values: [empty row]
+26/10/07 10:59:49 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/USDCUSDT/USDCUSDT-1h-2023-04.csv, range: 0-106384, partition values: [empty row]
+26/10/07 10:59:49 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/USDCUSDT/USDCUSDT-1h-2023-08.csv, range: 0-110131, partition values: [empty row]
+26/10/07 10:59:50 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/USDCUSDT/USDCUSDT-1h-2023-09.csv, range: 0-106058, partition values: [empty row]
+26/10/07 10:59:50 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/USDCUSDT/USDCUSDT-1h-2023-07.csv, range: 0-109912, partition values: [empty row]
+26/10/07 10:59:51 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/USDCUSDT/USDCUSDT-1h-2022-04.csv, range: 0-105914, partition values: [empty row]
+26/10/07 10:59:51 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/USDCUSDT/USDCUSDT-1h-2022-07.csv, range: 0-109718, partition values: [empty row]
+26/10/07 10:59:52 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/USDCUSDT/USDCUSDT-1h-2022-02.csv, range: 0-98362, partition values: [empty row]
+26/10/07 10:59:52 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/USDCUSDT/USDCUSDT-1h-2023-05.csv, range: 0-109706, partition values: [empty row]
+26/10/07 10:59:53 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/USDCUSDT/USDCUSDT-1h-2022-09.csv, range: 0-88358, partition values: [empty row]
+26/10/07 10:59:53 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/USDCUSDT/USDCUSDT-1h-2022-03.csv, range: 0-109543, partition values: [empty row]
+26/10/07 10:59:53 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/USDCUSDT/USDCUSDT-1h-2023-03.csv, range: 0-73071, partition values: [empty row]
+26/10/07 10:59:54 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/USDCUSDT/USDCUSDT-1h-2022-08.csv, range: 0-109537, partition values: [empty row]
+26/10/07 10:59:54 INFO FileOutputCommitter: Saved output of task 'attempt_202610071059446370242974073745273_0004_m_000001_6' to hdfs://100.76.42.126:9000/datalake/benchmark/raw_200x/USDCUSDT/_temporary/0/task_202610071059446370242974073745273_0004_m_000001
+26/10/07 10:59:54 INFO SparkHadoopMapRedUtil: attempt_202610071059446370242974073745273_0004_m_000001_6: Committed. Elapsed time: 133 ms.
+26/10/07 10:59:54 INFO Executor: Finished task 1.0 in stage 4.0 (TID 6). 2669 bytes result sent to driver
+26/10/07 10:59:54 INFO TaskSetManager: Finished task 1.0 in stage 4.0 (TID 6) in 10287 ms on master (executor driver) (1/2)
+26/10/07 10:59:55 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/USDCUSDT/USDCUSDT-1h-2022-01.csv, range: 0-108981, partition values: [empty row]
+26/10/07 10:59:56 INFO FileOutputCommitter: Saved output of task 'attempt_202610071059446370242974073745273_0004_m_000000_5' to hdfs://100.76.42.126:9000/datalake/benchmark/raw_200x/USDCUSDT/_temporary/0/task_202610071059446370242974073745273_0004_m_000000
+26/10/07 10:59:56 INFO SparkHadoopMapRedUtil: attempt_202610071059446370242974073745273_0004_m_000000_5: Committed. Elapsed time: 44 ms.
+26/10/07 10:59:56 INFO Executor: Finished task 0.0 in stage 4.0 (TID 5). 2626 bytes result sent to driver
+26/10/07 10:59:56 INFO TaskSetManager: Finished task 0.0 in stage 4.0 (TID 5) in 11726 ms on master (executor driver) (2/2)
+26/10/07 10:59:56 INFO TaskSchedulerImpl: Removed TaskSet 4.0, whose tasks have all completed, from pool 
+26/10/07 10:59:56 INFO DAGScheduler: ResultStage 4 (csv at NativeMethodAccessorImpl.java:0) finished in 11.769 s
+26/10/07 10:59:56 INFO DAGScheduler: Job 3 is finished. Cancelling potential speculative or zombie tasks for this job
+26/10/07 10:59:56 INFO TaskSchedulerImpl: Killing all running tasks in stage 4: Stage finished
+26/10/07 10:59:56 INFO DAGScheduler: Job 3 finished: csv at NativeMethodAccessorImpl.java:0, took 11.777232 s
+26/10/07 10:59:56 INFO FileFormatWriter: Start to commit write Job a0dde2e3-aa71-49a4-89ba-c337b1d67d2c.
+26/10/07 10:59:56 INFO FileFormatWriter: Write Job a0dde2e3-aa71-49a4-89ba-c337b1d67d2c committed. Elapsed time: 234 ms.
+26/10/07 10:59:56 INFO FileFormatWriter: Finished processing stats for write job a0dde2e3-aa71-49a4-89ba-c337b1d67d2c.
+26/10/07 10:59:56 INFO FileSourceStrategy: Pushed Filters: 
+26/10/07 10:59:56 INFO FileSourceStrategy: Post-Scan Filters: 
+26/10/07 10:59:56 INFO CodeGenerator: Code generated in 49.872742 ms
+26/10/07 10:59:56 INFO SparkContext: Starting job: $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264
+26/10/07 10:59:56 INFO DAGScheduler: Got job 4 ($anonfun$withThreadLocalCaptured$1 at FutureTask.java:264) with 2 output partitions
+26/10/07 10:59:56 INFO DAGScheduler: Final stage: ResultStage 5 ($anonfun$withThreadLocalCaptured$1 at FutureTask.java:264)
+26/10/07 10:59:56 INFO DAGScheduler: Parents of final stage: List()
+26/10/07 10:59:56 INFO DAGScheduler: Missing parents: List()
+26/10/07 10:59:56 INFO DAGScheduler: Submitting ResultStage 5 (MapPartitionsRDD[18] at $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264), which has no missing parents
+26/10/07 10:59:56 INFO MemoryStore: Block broadcast_7 stored as values in memory (estimated size 10.8 KiB, free 1662.4 MiB)
+26/10/07 10:59:56 INFO MemoryStore: Block broadcast_7_piece0 stored as bytes in memory (estimated size 5.0 KiB, free 1662.4 MiB)
+26/10/07 10:59:56 INFO BlockManagerInfo: Added broadcast_7_piece0 in memory on master:44485 (size: 5.0 KiB, free: 1663.0 MiB)
+26/10/07 10:59:56 INFO SparkContext: Created broadcast 7 from broadcast at DAGScheduler.scala:1585
+26/10/07 10:59:56 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 5 (MapPartitionsRDD[18] at $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264) (first 15 tasks are for partitions Vector(0, 1))
+26/10/07 10:59:56 INFO TaskSchedulerImpl: Adding task set 5.0 with 2 tasks resource profile 0
+26/10/07 10:59:56 INFO TaskSetManager: Starting task 0.0 in stage 5.0 (TID 7) (master, executor driver, partition 0, PROCESS_LOCAL, 7740 bytes) 
+26/10/07 10:59:56 INFO TaskSetManager: Starting task 1.0 in stage 5.0 (TID 8) (master, executor driver, partition 1, PROCESS_LOCAL, 7740 bytes) 
+26/10/07 10:59:56 INFO Executor: Running task 0.0 in stage 5.0 (TID 7)
+26/10/07 10:59:56 INFO Executor: Running task 1.0 in stage 5.0 (TID 8)
+26/10/07 10:59:56 INFO CodeGenerator: Code generated in 31.735518 ms
+26/10/07 10:59:56 INFO Executor: Finished task 1.0 in stage 5.0 (TID 8). 1496 bytes result sent to driver
+26/10/07 10:59:56 INFO TaskSetManager: Finished task 1.0 in stage 5.0 (TID 8) in 49 ms on master (executor driver) (1/2)
+26/10/07 10:59:56 INFO Executor: Finished task 0.0 in stage 5.0 (TID 7). 1496 bytes result sent to driver
+26/10/07 10:59:56 INFO TaskSetManager: Finished task 0.0 in stage 5.0 (TID 7) in 59 ms on master (executor driver) (2/2)
+26/10/07 10:59:56 INFO TaskSchedulerImpl: Removed TaskSet 5.0, whose tasks have all completed, from pool 
+26/10/07 10:59:56 INFO DAGScheduler: ResultStage 5 ($anonfun$withThreadLocalCaptured$1 at FutureTask.java:264) finished in 0.073 s
+26/10/07 10:59:56 INFO DAGScheduler: Job 4 is finished. Cancelling potential speculative or zombie tasks for this job
+26/10/07 10:59:56 INFO TaskSchedulerImpl: Killing all running tasks in stage 5: Stage finished
+26/10/07 10:59:56 INFO DAGScheduler: Job 4 finished: $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264, took 0.090707 s
+26/10/07 10:59:56 INFO MemoryStore: Block broadcast_8 stored as values in memory (estimated size 11.8 KiB, free 1662.4 MiB)
+26/10/07 10:59:56 INFO MemoryStore: Block broadcast_8_piece0 stored as bytes in memory (estimated size 207.0 B, free 1662.4 MiB)
+26/10/07 10:59:56 INFO BlockManagerInfo: Added broadcast_8_piece0 in memory on master:44485 (size: 207.0 B, free: 1663.0 MiB)
+26/10/07 10:59:56 INFO SparkContext: Created broadcast 8 from $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264
+26/10/07 10:59:56 INFO FileSourceStrategy: Pushed Filters: 
+26/10/07 10:59:56 INFO FileSourceStrategy: Post-Scan Filters: 
+26/10/07 10:59:56 INFO CodeGenerator: Code generated in 11.930927 ms
+26/10/07 10:59:56 INFO MemoryStore: Block broadcast_9 stored as values in memory (estimated size 199.7 KiB, free 1662.2 MiB)
+26/10/07 10:59:56 INFO MemoryStore: Block broadcast_9_piece0 stored as bytes in memory (estimated size 34.8 KiB, free 1662.2 MiB)
+26/10/07 10:59:56 INFO BlockManagerInfo: Added broadcast_9_piece0 in memory on master:44485 (size: 34.8 KiB, free: 1663.0 MiB)
+26/10/07 10:59:56 INFO SparkContext: Created broadcast 9 from count at NativeMethodAccessorImpl.java:0
+26/10/07 10:59:56 INFO FileSourceScanExec: Planning scan with bin packing, max size: 40845079 bytes, open cost is considered as scanning 4194304 bytes.
+26/10/07 10:59:56 INFO DAGScheduler: Registering RDD 22 (count at NativeMethodAccessorImpl.java:0) as input to shuffle 1
+26/10/07 10:59:56 INFO DAGScheduler: Got map stage job 5 (count at NativeMethodAccessorImpl.java:0) with 2 output partitions
+26/10/07 10:59:56 INFO DAGScheduler: Final stage: ShuffleMapStage 6 (count at NativeMethodAccessorImpl.java:0)
+26/10/07 10:59:56 INFO DAGScheduler: Parents of final stage: List()
+26/10/07 10:59:56 INFO DAGScheduler: Missing parents: List()
+26/10/07 10:59:56 INFO DAGScheduler: Submitting ShuffleMapStage 6 (MapPartitionsRDD[22] at count at NativeMethodAccessorImpl.java:0), which has no missing parents
+26/10/07 10:59:56 INFO MemoryStore: Block broadcast_10 stored as values in memory (estimated size 19.2 KiB, free 1662.2 MiB)
+26/10/07 10:59:56 INFO MemoryStore: Block broadcast_10_piece0 stored as bytes in memory (estimated size 9.3 KiB, free 1662.1 MiB)
+26/10/07 10:59:56 INFO BlockManagerInfo: Added broadcast_10_piece0 in memory on master:44485 (size: 9.3 KiB, free: 1663.0 MiB)
+26/10/07 10:59:56 INFO SparkContext: Created broadcast 10 from broadcast at DAGScheduler.scala:1585
+26/10/07 10:59:56 INFO DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 6 (MapPartitionsRDD[22] at count at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0, 1))
+26/10/07 10:59:56 INFO TaskSchedulerImpl: Adding task set 6.0 with 2 tasks resource profile 0
+26/10/07 10:59:56 INFO TaskSetManager: Starting task 0.0 in stage 6.0 (TID 9) (master, executor driver, partition 0, NODE_LOCAL, 9540 bytes) 
+26/10/07 10:59:56 INFO TaskSetManager: Starting task 1.0 in stage 6.0 (TID 10) (master, executor driver, partition 1, NODE_LOCAL, 9397 bytes) 
+26/10/07 10:59:56 INFO Executor: Running task 0.0 in stage 6.0 (TID 9)
+26/10/07 10:59:56 INFO Executor: Running task 1.0 in stage 6.0 (TID 10)
+26/10/07 10:59:57 INFO CodeGenerator: Code generated in 10.908661 ms
+26/10/07 10:59:57 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/USDCUSDT/USDCUSDT-1h-2023-11.csv, range: 0-107322, partition values: [empty row]
+26/10/07 10:59:57 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/USDCUSDT/USDCUSDT-1h-2023-12.csv, range: 0-111069, partition values: [empty row]
+26/10/07 10:59:57 INFO CodeGenerator: Code generated in 20.059959 ms
+26/10/07 10:59:57 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/USDCUSDT/USDCUSDT-1h-2022-05.csv, range: 0-110602, partition values: [empty row]
+26/10/07 10:59:57 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/USDCUSDT/USDCUSDT-1h-2022-06.csv, range: 0-106827, partition values: [empty row]
+26/10/07 10:59:57 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/USDCUSDT/USDCUSDT-1h-2023-10.csv, range: 0-110155, partition values: [empty row]
+26/10/07 10:59:57 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/USDCUSDT/USDCUSDT-1h-2023-06.csv, range: 0-106733, partition values: [empty row]
+26/10/07 10:59:57 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/USDCUSDT/USDCUSDT-1h-2023-08.csv, range: 0-110131, partition values: [empty row]
+26/10/07 10:59:57 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/USDCUSDT/USDCUSDT-1h-2023-04.csv, range: 0-106384, partition values: [empty row]
+26/10/07 10:59:57 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/USDCUSDT/USDCUSDT-1h-2023-07.csv, range: 0-109912, partition values: [empty row]
+26/10/07 10:59:57 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/USDCUSDT/USDCUSDT-1h-2023-09.csv, range: 0-106058, partition values: [empty row]
+26/10/07 10:59:57 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/USDCUSDT/USDCUSDT-1h-2022-04.csv, range: 0-105914, partition values: [empty row]
+26/10/07 10:59:57 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/USDCUSDT/USDCUSDT-1h-2022-07.csv, range: 0-109718, partition values: [empty row]
+26/10/07 10:59:57 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/USDCUSDT/USDCUSDT-1h-2022-02.csv, range: 0-98362, partition values: [empty row]
+26/10/07 10:59:57 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/USDCUSDT/USDCUSDT-1h-2023-05.csv, range: 0-109706, partition values: [empty row]
+26/10/07 10:59:57 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/USDCUSDT/USDCUSDT-1h-2022-09.csv, range: 0-88358, partition values: [empty row]
+26/10/07 10:59:57 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/USDCUSDT/USDCUSDT-1h-2023-03.csv, range: 0-73071, partition values: [empty row]
+26/10/07 10:59:57 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/USDCUSDT/USDCUSDT-1h-2022-03.csv, range: 0-109543, partition values: [empty row]
+26/10/07 10:59:57 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/USDCUSDT/USDCUSDT-1h-2022-08.csv, range: 0-109537, partition values: [empty row]
+26/10/07 10:59:57 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/USDCUSDT/USDCUSDT-1h-2022-01.csv, range: 0-108981, partition values: [empty row]
+26/10/07 10:59:57 INFO Executor: Finished task 1.0 in stage 6.0 (TID 10). 1978 bytes result sent to driver
+26/10/07 10:59:57 INFO TaskSetManager: Finished task 1.0 in stage 6.0 (TID 10) in 241 ms on master (executor driver) (1/2)
+26/10/07 10:59:57 INFO Executor: Finished task 0.0 in stage 6.0 (TID 9). 1978 bytes result sent to driver
+26/10/07 10:59:57 INFO TaskSetManager: Finished task 0.0 in stage 6.0 (TID 9) in 252 ms on master (executor driver) (2/2)
+26/10/07 10:59:57 INFO TaskSchedulerImpl: Removed TaskSet 6.0, whose tasks have all completed, from pool 
+26/10/07 10:59:57 INFO DAGScheduler: ShuffleMapStage 6 (count at NativeMethodAccessorImpl.java:0) finished in 0.280 s
+26/10/07 10:59:57 INFO DAGScheduler: looking for newly runnable stages
+26/10/07 10:59:57 INFO DAGScheduler: running: Set()
+26/10/07 10:59:57 INFO DAGScheduler: waiting: Set()
+26/10/07 10:59:57 INFO DAGScheduler: failed: Set()
+26/10/07 10:59:57 INFO CodeGenerator: Code generated in 148.729682 ms
+26/10/07 10:59:57 INFO SparkContext: Starting job: count at NativeMethodAccessorImpl.java:0
+26/10/07 10:59:57 INFO DAGScheduler: Got job 6 (count at NativeMethodAccessorImpl.java:0) with 1 output partitions
+26/10/07 10:59:57 INFO DAGScheduler: Final stage: ResultStage 8 (count at NativeMethodAccessorImpl.java:0)
+26/10/07 10:59:57 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 7)
+26/10/07 10:59:57 INFO DAGScheduler: Missing parents: List()
+26/10/07 10:59:57 INFO DAGScheduler: Submitting ResultStage 8 (MapPartitionsRDD[25] at count at NativeMethodAccessorImpl.java:0), which has no missing parents
+26/10/07 10:59:57 INFO MemoryStore: Block broadcast_11 stored as values in memory (estimated size 12.5 KiB, free 1662.1 MiB)
+26/10/07 10:59:57 INFO MemoryStore: Block broadcast_11_piece0 stored as bytes in memory (estimated size 5.9 KiB, free 1662.1 MiB)
+26/10/07 10:59:57 INFO BlockManagerInfo: Added broadcast_11_piece0 in memory on master:44485 (size: 5.9 KiB, free: 1663.0 MiB)
+26/10/07 10:59:57 INFO SparkContext: Created broadcast 11 from broadcast at DAGScheduler.scala:1585
+26/10/07 10:59:57 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 8 (MapPartitionsRDD[25] at count at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+26/10/07 10:59:57 INFO TaskSchedulerImpl: Adding task set 8.0 with 1 tasks resource profile 0
+26/10/07 10:59:57 INFO TaskSetManager: Starting task 0.0 in stage 8.0 (TID 11) (master, executor driver, partition 0, NODE_LOCAL, 7615 bytes) 
+26/10/07 10:59:57 INFO Executor: Running task 0.0 in stage 8.0 (TID 11)
+26/10/07 10:59:57 INFO ShuffleBlockFetcherIterator: Getting 2 (120.0 B) non-empty blocks including 2 (120.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 10:59:57 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 2 ms
+26/10/07 10:59:57 INFO CodeGenerator: Code generated in 15.416179 ms
+26/10/07 10:59:57 INFO Executor: Finished task 0.0 in stage 8.0 (TID 11). 3995 bytes result sent to driver
+26/10/07 10:59:57 INFO TaskSetManager: Finished task 0.0 in stage 8.0 (TID 11) in 40 ms on master (executor driver) (1/1)
+26/10/07 10:59:57 INFO TaskSchedulerImpl: Removed TaskSet 8.0, whose tasks have all completed, from pool 
+26/10/07 10:59:57 INFO DAGScheduler: ResultStage 8 (count at NativeMethodAccessorImpl.java:0) finished in 0.064 s
+26/10/07 10:59:57 INFO DAGScheduler: Job 6 is finished. Cancelling potential speculative or zombie tasks for this job
+26/10/07 10:59:57 INFO TaskSchedulerImpl: Killing all running tasks in stage 8: Stage finished
+26/10/07 10:59:57 INFO DAGScheduler: Job 6 finished: count at NativeMethodAccessorImpl.java:0, took 0.078783 s
+  USDCUSDT: 2704800 filas escritas en hdfs:///datalake/benchmark/raw_200x/USDCUSDT
+Replicando BTCUSDC x200 ...
+26/10/07 10:59:57 INFO InMemoryFileIndex: It took 95 ms to list leaf files for 19 paths.
+26/10/07 10:59:58 INFO FileSourceStrategy: Pushed Filters: 
+26/10/07 10:59:58 INFO FileSourceStrategy: Post-Scan Filters: 
+26/10/07 10:59:58 INFO MemoryStore: Block broadcast_12 stored as values in memory (estimated size 199.7 KiB, free 1661.9 MiB)
+26/10/07 10:59:58 INFO MemoryStore: Block broadcast_12_piece0 stored as bytes in memory (estimated size 34.8 KiB, free 1661.9 MiB)
+26/10/07 10:59:58 INFO BlockManagerInfo: Added broadcast_12_piece0 in memory on master:44485 (size: 34.8 KiB, free: 1663.0 MiB)
+26/10/07 10:59:58 INFO SparkContext: Created broadcast 12 from collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64
+26/10/07 10:59:58 INFO FileSourceScanExec: Planning scan with bin packing, max size: 40873624 bytes, open cost is considered as scanning 4194304 bytes.
+26/10/07 10:59:58 INFO DAGScheduler: Registering RDD 29 (collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64) as input to shuffle 2
+26/10/07 10:59:58 INFO DAGScheduler: Got map stage job 7 (collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64) with 2 output partitions
+26/10/07 10:59:58 INFO DAGScheduler: Final stage: ShuffleMapStage 9 (collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64)
+26/10/07 10:59:58 INFO DAGScheduler: Parents of final stage: List()
+26/10/07 10:59:58 INFO DAGScheduler: Missing parents: List()
+26/10/07 10:59:58 INFO DAGScheduler: Submitting ShuffleMapStage 9 (MapPartitionsRDD[29] at collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64), which has no missing parents
+26/10/07 10:59:58 INFO MemoryStore: Block broadcast_13 stored as values in memory (estimated size 20.4 KiB, free 1661.9 MiB)
+26/10/07 10:59:58 INFO MemoryStore: Block broadcast_13_piece0 stored as bytes in memory (estimated size 9.6 KiB, free 1661.9 MiB)
+26/10/07 10:59:58 INFO BlockManagerInfo: Added broadcast_13_piece0 in memory on master:44485 (size: 9.6 KiB, free: 1663.0 MiB)
+26/10/07 10:59:58 INFO SparkContext: Created broadcast 13 from broadcast at DAGScheduler.scala:1585
+26/10/07 10:59:58 INFO DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 9 (MapPartitionsRDD[29] at collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64) (first 15 tasks are for partitions Vector(0, 1))
+26/10/07 10:59:58 INFO TaskSchedulerImpl: Adding task set 9.0 with 2 tasks resource profile 0
+26/10/07 10:59:58 INFO TaskSetManager: Starting task 0.0 in stage 9.0 (TID 12) (master, executor driver, partition 0, NODE_LOCAL, 9520 bytes) 
+26/10/07 10:59:58 INFO TaskSetManager: Starting task 1.0 in stage 9.0 (TID 13) (master, executor driver, partition 1, NODE_LOCAL, 9379 bytes) 
+26/10/07 10:59:58 INFO Executor: Running task 0.0 in stage 9.0 (TID 12)
+26/10/07 10:59:58 INFO Executor: Running task 1.0 in stage 9.0 (TID 13)
+26/10/07 10:59:58 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDC/BTCUSDC-1h-2022-08.csv, range: 0-115329, partition values: [empty row]
+26/10/07 10:59:58 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDC/BTCUSDC-1h-2023-08.csv, range: 0-110455, partition values: [empty row]
+26/10/07 10:59:58 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDC/BTCUSDC-1h-2022-07.csv, range: 0-115230, partition values: [empty row]
+26/10/07 10:59:58 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDC/BTCUSDC-1h-2022-04.csv, range: 0-109794, partition values: [empty row]
+26/10/07 10:59:58 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDC/BTCUSDC-1h-2023-11.csv, range: 0-108265, partition values: [empty row]
+26/10/07 10:59:58 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDC/BTCUSDC-1h-2022-05.csv, range: 0-114196, partition values: [empty row]
+26/10/07 10:59:58 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDC/BTCUSDC-1h-2022-03.csv, range: 0-113326, partition values: [empty row]
+26/10/07 10:59:58 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDC/BTCUSDC-1h-2023-04.csv, range: 0-107486, partition values: [empty row]
+26/10/07 10:59:58 INFO BlockManagerInfo: Removed broadcast_9_piece0 on master:44485 in memory (size: 34.8 KiB, free: 1663.0 MiB)
+26/10/07 10:59:58 INFO BlockManagerInfo: Removed broadcast_10_piece0 on master:44485 in memory (size: 9.3 KiB, free: 1663.0 MiB)
+26/10/07 10:59:58 INFO BlockManagerInfo: Removed broadcast_8_piece0 on master:44485 in memory (size: 207.0 B, free: 1663.0 MiB)
+26/10/07 10:59:58 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDC/BTCUSDC-1h-2023-06.csv, range: 0-107096, partition values: [empty row]
+26/10/07 10:59:58 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDC/BTCUSDC-1h-2022-01.csv, range: 0-113064, partition values: [empty row]
+26/10/07 10:59:58 INFO BlockManagerInfo: Removed broadcast_11_piece0 on master:44485 in memory (size: 5.9 KiB, free: 1663.0 MiB)
+26/10/07 10:59:58 INFO BlockManagerInfo: Removed broadcast_7_piece0 on master:44485 in memory (size: 5.0 KiB, free: 1663.0 MiB)
+26/10/07 10:59:58 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDC/BTCUSDC-1h-2023-09.csv, range: 0-106704, partition values: [empty row]
+26/10/07 10:59:58 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDC/BTCUSDC-1h-2023-12.csv, range: 0-112727, partition values: [empty row]
+26/10/07 10:59:58 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDC/BTCUSDC-1h-2022-06.csv, range: 0-110969, partition values: [empty row]
+26/10/07 10:59:58 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDC/BTCUSDC-1h-2022-09.csv, range: 0-104932, partition values: [empty row]
+26/10/07 10:59:58 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDC/BTCUSDC-1h-2023-05.csv, range: 0-110907, partition values: [empty row]
+26/10/07 10:59:58 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDC/BTCUSDC-1h-2022-02.csv, range: 0-102261, partition values: [empty row]
+26/10/07 10:59:58 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDC/BTCUSDC-1h-2023-10.csv, range: 0-110907, partition values: [empty row]
+26/10/07 10:59:58 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDC/BTCUSDC-1h-2023-03.csv, range: 0-71157, partition values: [empty row]
+26/10/07 10:59:59 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDC/BTCUSDC-1h-2023-07.csv, range: 0-110667, partition values: [empty row]
+26/10/07 10:59:59 INFO Executor: Finished task 1.0 in stage 9.0 (TID 13). 1965 bytes result sent to driver
+26/10/07 10:59:59 INFO TaskSetManager: Finished task 1.0 in stage 9.0 (TID 13) in 924 ms on master (executor driver) (1/2)
+26/10/07 10:59:59 INFO Executor: Finished task 0.0 in stage 9.0 (TID 12). 1965 bytes result sent to driver
+26/10/07 10:59:59 INFO TaskSetManager: Finished task 0.0 in stage 9.0 (TID 12) in 967 ms on master (executor driver) (2/2)
+26/10/07 10:59:59 INFO TaskSchedulerImpl: Removed TaskSet 9.0, whose tasks have all completed, from pool 
+26/10/07 10:59:59 INFO DAGScheduler: ShuffleMapStage 9 (collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64) finished in 0.985 s
+26/10/07 10:59:59 INFO DAGScheduler: looking for newly runnable stages
+26/10/07 10:59:59 INFO DAGScheduler: running: Set()
+26/10/07 10:59:59 INFO DAGScheduler: waiting: Set()
+26/10/07 10:59:59 INFO DAGScheduler: failed: Set()
+26/10/07 10:59:59 INFO SparkContext: Starting job: collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64
+26/10/07 10:59:59 INFO DAGScheduler: Got job 8 (collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64) with 1 output partitions
+26/10/07 10:59:59 INFO DAGScheduler: Final stage: ResultStage 11 (collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64)
+26/10/07 10:59:59 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 10)
+26/10/07 10:59:59 INFO DAGScheduler: Missing parents: List()
+26/10/07 10:59:59 INFO DAGScheduler: Submitting ResultStage 11 (MapPartitionsRDD[32] at collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64), which has no missing parents
+26/10/07 10:59:59 INFO MemoryStore: Block broadcast_14 stored as values in memory (estimated size 14.5 KiB, free 1662.2 MiB)
+26/10/07 10:59:59 INFO MemoryStore: Block broadcast_14_piece0 stored as bytes in memory (estimated size 6.5 KiB, free 1662.2 MiB)
+26/10/07 10:59:59 INFO BlockManagerInfo: Added broadcast_14_piece0 in memory on master:44485 (size: 6.5 KiB, free: 1663.0 MiB)
+26/10/07 10:59:59 INFO SparkContext: Created broadcast 14 from broadcast at DAGScheduler.scala:1585
+26/10/07 10:59:59 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 11 (MapPartitionsRDD[32] at collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64) (first 15 tasks are for partitions Vector(0))
+26/10/07 10:59:59 INFO TaskSchedulerImpl: Adding task set 11.0 with 1 tasks resource profile 0
+26/10/07 10:59:59 INFO TaskSetManager: Starting task 0.0 in stage 11.0 (TID 14) (master, executor driver, partition 0, NODE_LOCAL, 7615 bytes) 
+26/10/07 10:59:59 INFO Executor: Running task 0.0 in stage 11.0 (TID 14)
+26/10/07 10:59:59 INFO ShuffleBlockFetcherIterator: Getting 2 (144.0 B) non-empty blocks including 2 (144.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 10:59:59 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+26/10/07 10:59:59 INFO Executor: Finished task 0.0 in stage 11.0 (TID 14). 4003 bytes result sent to driver
+26/10/07 10:59:59 INFO TaskSetManager: Finished task 0.0 in stage 11.0 (TID 14) in 17 ms on master (executor driver) (1/1)
+26/10/07 10:59:59 INFO TaskSchedulerImpl: Removed TaskSet 11.0, whose tasks have all completed, from pool 
+26/10/07 10:59:59 INFO DAGScheduler: ResultStage 11 (collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64) finished in 0.032 s
+26/10/07 10:59:59 INFO DAGScheduler: Job 8 is finished. Cancelling potential speculative or zombie tasks for this job
+26/10/07 10:59:59 INFO TaskSchedulerImpl: Killing all running tasks in stage 11: Stage finished
+26/10/07 10:59:59 INFO DAGScheduler: Job 8 finished: collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64, took 0.042927 s
+26/10/07 10:59:59 INFO FileSourceStrategy: Pushed Filters: 
+26/10/07 10:59:59 INFO FileSourceStrategy: Post-Scan Filters: 
+26/10/07 10:59:59 INFO SparkContext: Starting job: $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264
+26/10/07 10:59:59 INFO DAGScheduler: Got job 9 ($anonfun$withThreadLocalCaptured$1 at FutureTask.java:264) with 2 output partitions
+26/10/07 10:59:59 INFO DAGScheduler: Final stage: ResultStage 12 ($anonfun$withThreadLocalCaptured$1 at FutureTask.java:264)
+26/10/07 10:59:59 INFO DAGScheduler: Parents of final stage: List()
+26/10/07 10:59:59 INFO DAGScheduler: Missing parents: List()
+26/10/07 10:59:59 INFO DAGScheduler: Submitting ResultStage 12 (MapPartitionsRDD[36] at $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264), which has no missing parents
+26/10/07 10:59:59 INFO MemoryStore: Block broadcast_15 stored as values in memory (estimated size 10.9 KiB, free 1662.1 MiB)
+26/10/07 10:59:59 INFO MemoryStore: Block broadcast_15_piece0 stored as bytes in memory (estimated size 5.1 KiB, free 1662.1 MiB)
+26/10/07 10:59:59 INFO BlockManagerInfo: Added broadcast_15_piece0 in memory on master:44485 (size: 5.1 KiB, free: 1663.0 MiB)
+26/10/07 10:59:59 INFO SparkContext: Created broadcast 15 from broadcast at DAGScheduler.scala:1585
+26/10/07 10:59:59 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 12 (MapPartitionsRDD[36] at $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264) (first 15 tasks are for partitions Vector(0, 1))
+26/10/07 10:59:59 INFO TaskSchedulerImpl: Adding task set 12.0 with 2 tasks resource profile 0
+26/10/07 10:59:59 INFO TaskSetManager: Starting task 0.0 in stage 12.0 (TID 15) (master, executor driver, partition 0, PROCESS_LOCAL, 7740 bytes) 
+26/10/07 10:59:59 INFO TaskSetManager: Starting task 1.0 in stage 12.0 (TID 16) (master, executor driver, partition 1, PROCESS_LOCAL, 7740 bytes) 
+26/10/07 10:59:59 INFO Executor: Running task 0.0 in stage 12.0 (TID 15)
+26/10/07 10:59:59 INFO Executor: Running task 1.0 in stage 12.0 (TID 16)
+26/10/07 10:59:59 INFO Executor: Finished task 0.0 in stage 12.0 (TID 15). 2459 bytes result sent to driver
+26/10/07 10:59:59 INFO TaskSetManager: Finished task 0.0 in stage 12.0 (TID 15) in 68 ms on master (executor driver) (1/2)
+26/10/07 10:59:59 INFO Executor: Finished task 1.0 in stage 12.0 (TID 16). 2588 bytes result sent to driver
+26/10/07 10:59:59 INFO BlockManagerInfo: Removed broadcast_14_piece0 on master:44485 in memory (size: 6.5 KiB, free: 1663.0 MiB)
+26/10/07 10:59:59 INFO TaskSetManager: Finished task 1.0 in stage 12.0 (TID 16) in 78 ms on master (executor driver) (2/2)
+26/10/07 10:59:59 INFO TaskSchedulerImpl: Removed TaskSet 12.0, whose tasks have all completed, from pool 
+26/10/07 10:59:59 INFO DAGScheduler: ResultStage 12 ($anonfun$withThreadLocalCaptured$1 at FutureTask.java:264) finished in 0.092 s
+26/10/07 10:59:59 INFO DAGScheduler: Job 9 is finished. Cancelling potential speculative or zombie tasks for this job
+26/10/07 10:59:59 INFO TaskSchedulerImpl: Killing all running tasks in stage 12: Stage finished
+26/10/07 10:59:59 INFO DAGScheduler: Job 9 finished: $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264, took 0.103637 s
+26/10/07 10:59:59 INFO MemoryStore: Block broadcast_16 stored as values in memory (estimated size 14.9 KiB, free 1662.1 MiB)
+26/10/07 10:59:59 INFO MemoryStore: Block broadcast_16_piece0 stored as bytes in memory (estimated size 1755.0 B, free 1662.1 MiB)
+26/10/07 10:59:59 INFO BlockManagerInfo: Added broadcast_16_piece0 in memory on master:44485 (size: 1755.0 B, free: 1663.0 MiB)
+26/10/07 10:59:59 INFO SparkContext: Created broadcast 16 from $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264
+26/10/07 10:59:59 INFO FileSourceStrategy: Pushed Filters: 
+26/10/07 10:59:59 INFO FileSourceStrategy: Post-Scan Filters: 
+26/10/07 10:59:59 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+26/10/07 10:59:59 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+26/10/07 10:59:59 INFO BlockManagerInfo: Removed broadcast_13_piece0 on master:44485 in memory (size: 9.6 KiB, free: 1663.0 MiB)
+26/10/07 10:59:59 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+26/10/07 10:59:59 INFO MemoryStore: Block broadcast_17 stored as values in memory (estimated size 199.7 KiB, free 1662.0 MiB)
+26/10/07 10:59:59 INFO MemoryStore: Block broadcast_17_piece0 stored as bytes in memory (estimated size 34.8 KiB, free 1661.9 MiB)
+26/10/07 10:59:59 INFO BlockManagerInfo: Added broadcast_17_piece0 in memory on master:44485 (size: 34.8 KiB, free: 1663.0 MiB)
+26/10/07 10:59:59 INFO SparkContext: Created broadcast 17 from csv at NativeMethodAccessorImpl.java:0
+26/10/07 10:59:59 INFO FileSourceScanExec: Planning scan with bin packing, max size: 40873624 bytes, open cost is considered as scanning 4194304 bytes.
+26/10/07 10:59:59 INFO SparkContext: Starting job: csv at NativeMethodAccessorImpl.java:0
+26/10/07 10:59:59 INFO DAGScheduler: Got job 10 (csv at NativeMethodAccessorImpl.java:0) with 2 output partitions
+26/10/07 10:59:59 INFO DAGScheduler: Final stage: ResultStage 13 (csv at NativeMethodAccessorImpl.java:0)
+26/10/07 10:59:59 INFO DAGScheduler: Parents of final stage: List()
+26/10/07 10:59:59 INFO DAGScheduler: Missing parents: List()
+26/10/07 10:59:59 INFO DAGScheduler: Submitting ResultStage 13 (MapPartitionsRDD[40] at csv at NativeMethodAccessorImpl.java:0), which has no missing parents
+26/10/07 11:00:00 INFO MemoryStore: Block broadcast_18 stored as values in memory (estimated size 223.3 KiB, free 1661.7 MiB)
+26/10/07 11:00:00 INFO MemoryStore: Block broadcast_18_piece0 stored as bytes in memory (estimated size 80.5 KiB, free 1661.6 MiB)
+26/10/07 11:00:00 INFO BlockManagerInfo: Added broadcast_18_piece0 in memory on master:44485 (size: 80.5 KiB, free: 1662.9 MiB)
+26/10/07 11:00:00 INFO SparkContext: Created broadcast 18 from broadcast at DAGScheduler.scala:1585
+26/10/07 11:00:00 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 13 (MapPartitionsRDD[40] at csv at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0, 1))
+26/10/07 11:00:00 INFO TaskSchedulerImpl: Adding task set 13.0 with 2 tasks resource profile 0
+26/10/07 11:00:00 INFO TaskSetManager: Starting task 0.0 in stage 13.0 (TID 17) (master, executor driver, partition 0, NODE_LOCAL, 9531 bytes) 
+26/10/07 11:00:00 INFO TaskSetManager: Starting task 1.0 in stage 13.0 (TID 18) (master, executor driver, partition 1, NODE_LOCAL, 9390 bytes) 
+26/10/07 11:00:00 INFO Executor: Running task 0.0 in stage 13.0 (TID 17)
+26/10/07 11:00:00 INFO Executor: Running task 1.0 in stage 13.0 (TID 18)
+26/10/07 11:00:00 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+26/10/07 11:00:00 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+26/10/07 11:00:00 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+26/10/07 11:00:00 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDC/BTCUSDC-1h-2023-08.csv, range: 0-110455, partition values: [empty row]
+26/10/07 11:00:00 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+26/10/07 11:00:00 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+26/10/07 11:00:00 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+26/10/07 11:00:00 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDC/BTCUSDC-1h-2022-08.csv, range: 0-115329, partition values: [empty row]
+26/10/07 11:00:00 INFO BlockManagerInfo: Removed broadcast_15_piece0 on master:44485 in memory (size: 5.1 KiB, free: 1662.9 MiB)
+26/10/07 11:00:01 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDC/BTCUSDC-1h-2022-04.csv, range: 0-109794, partition values: [empty row]
+26/10/07 11:00:01 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDC/BTCUSDC-1h-2022-07.csv, range: 0-115230, partition values: [empty row]
+26/10/07 11:00:02 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDC/BTCUSDC-1h-2023-11.csv, range: 0-108265, partition values: [empty row]
+26/10/07 11:00:02 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDC/BTCUSDC-1h-2022-05.csv, range: 0-114196, partition values: [empty row]
+26/10/07 11:00:03 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDC/BTCUSDC-1h-2023-04.csv, range: 0-107486, partition values: [empty row]
+26/10/07 11:00:03 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDC/BTCUSDC-1h-2022-03.csv, range: 0-113326, partition values: [empty row]
+26/10/07 11:00:04 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDC/BTCUSDC-1h-2023-06.csv, range: 0-107096, partition values: [empty row]
+26/10/07 11:00:04 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDC/BTCUSDC-1h-2022-01.csv, range: 0-113064, partition values: [empty row]
+26/10/07 11:00:05 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDC/BTCUSDC-1h-2023-09.csv, range: 0-106704, partition values: [empty row]
+26/10/07 11:00:05 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDC/BTCUSDC-1h-2023-12.csv, range: 0-112727, partition values: [empty row]
+26/10/07 11:00:06 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDC/BTCUSDC-1h-2022-09.csv, range: 0-104932, partition values: [empty row]
+26/10/07 11:00:06 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDC/BTCUSDC-1h-2022-06.csv, range: 0-110969, partition values: [empty row]
+26/10/07 11:00:07 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDC/BTCUSDC-1h-2022-02.csv, range: 0-102261, partition values: [empty row]
+26/10/07 11:00:08 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDC/BTCUSDC-1h-2023-05.csv, range: 0-110907, partition values: [empty row]
+26/10/07 11:00:08 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDC/BTCUSDC-1h-2023-03.csv, range: 0-71157, partition values: [empty row]
+26/10/07 11:00:09 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDC/BTCUSDC-1h-2023-10.csv, range: 0-110907, partition values: [empty row]
+26/10/07 11:00:09 INFO FileOutputCommitter: Saved output of task 'attempt_202610071059596031077741931723963_0013_m_000001_18' to hdfs://100.76.42.126:9000/datalake/benchmark/raw_200x/BTCUSDC/_temporary/0/task_202610071059596031077741931723963_0013_m_000001
+26/10/07 11:00:09 INFO SparkHadoopMapRedUtil: attempt_202610071059596031077741931723963_0013_m_000001_18: Committed. Elapsed time: 47 ms.
+26/10/07 11:00:09 INFO Executor: Finished task 1.0 in stage 13.0 (TID 18). 2669 bytes result sent to driver
+26/10/07 11:00:09 INFO TaskSetManager: Finished task 1.0 in stage 13.0 (TID 18) in 9883 ms on master (executor driver) (1/2)
+26/10/07 11:00:10 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDC/BTCUSDC-1h-2023-07.csv, range: 0-110667, partition values: [empty row]
+26/10/07 11:00:11 INFO FileOutputCommitter: Saved output of task 'attempt_202610071059596031077741931723963_0013_m_000000_17' to hdfs://100.76.42.126:9000/datalake/benchmark/raw_200x/BTCUSDC/_temporary/0/task_202610071059596031077741931723963_0013_m_000000
+26/10/07 11:00:11 INFO SparkHadoopMapRedUtil: attempt_202610071059596031077741931723963_0013_m_000000_17: Committed. Elapsed time: 48 ms.
+26/10/07 11:00:11 INFO Executor: Finished task 0.0 in stage 13.0 (TID 17). 2626 bytes result sent to driver
+26/10/07 11:00:11 INFO TaskSetManager: Finished task 0.0 in stage 13.0 (TID 17) in 11411 ms on master (executor driver) (2/2)
+26/10/07 11:00:11 INFO TaskSchedulerImpl: Removed TaskSet 13.0, whose tasks have all completed, from pool 
+26/10/07 11:00:11 INFO DAGScheduler: ResultStage 13 (csv at NativeMethodAccessorImpl.java:0) finished in 11.449 s
+26/10/07 11:00:11 INFO DAGScheduler: Job 10 is finished. Cancelling potential speculative or zombie tasks for this job
+26/10/07 11:00:11 INFO TaskSchedulerImpl: Killing all running tasks in stage 13: Stage finished
+26/10/07 11:00:11 INFO DAGScheduler: Job 10 finished: csv at NativeMethodAccessorImpl.java:0, took 11.458952 s
+26/10/07 11:00:11 INFO FileFormatWriter: Start to commit write Job 7e12badd-1d89-47cb-b3f7-6140e1e90b80.
+26/10/07 11:00:11 INFO FileFormatWriter: Write Job 7e12badd-1d89-47cb-b3f7-6140e1e90b80 committed. Elapsed time: 234 ms.
+26/10/07 11:00:11 INFO FileFormatWriter: Finished processing stats for write job 7e12badd-1d89-47cb-b3f7-6140e1e90b80.
+26/10/07 11:00:11 INFO FileSourceStrategy: Pushed Filters: 
+26/10/07 11:00:11 INFO FileSourceStrategy: Post-Scan Filters: 
+26/10/07 11:00:11 INFO SparkContext: Starting job: $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264
+26/10/07 11:00:11 INFO DAGScheduler: Got job 11 ($anonfun$withThreadLocalCaptured$1 at FutureTask.java:264) with 2 output partitions
+26/10/07 11:00:11 INFO DAGScheduler: Final stage: ResultStage 14 ($anonfun$withThreadLocalCaptured$1 at FutureTask.java:264)
+26/10/07 11:00:11 INFO DAGScheduler: Parents of final stage: List()
+26/10/07 11:00:11 INFO DAGScheduler: Missing parents: List()
+26/10/07 11:00:11 INFO DAGScheduler: Submitting ResultStage 14 (MapPartitionsRDD[44] at $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264), which has no missing parents
+26/10/07 11:00:11 INFO MemoryStore: Block broadcast_19 stored as values in memory (estimated size 10.8 KiB, free 1661.6 MiB)
+26/10/07 11:00:11 INFO MemoryStore: Block broadcast_19_piece0 stored as bytes in memory (estimated size 5.1 KiB, free 1661.6 MiB)
+26/10/07 11:00:11 INFO BlockManagerInfo: Added broadcast_19_piece0 in memory on master:44485 (size: 5.1 KiB, free: 1662.9 MiB)
+26/10/07 11:00:11 INFO SparkContext: Created broadcast 19 from broadcast at DAGScheduler.scala:1585
+26/10/07 11:00:11 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 14 (MapPartitionsRDD[44] at $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264) (first 15 tasks are for partitions Vector(0, 1))
+26/10/07 11:00:11 INFO TaskSchedulerImpl: Adding task set 14.0 with 2 tasks resource profile 0
+26/10/07 11:00:11 INFO TaskSetManager: Starting task 0.0 in stage 14.0 (TID 19) (master, executor driver, partition 0, PROCESS_LOCAL, 7740 bytes) 
+26/10/07 11:00:11 INFO TaskSetManager: Starting task 1.0 in stage 14.0 (TID 20) (master, executor driver, partition 1, PROCESS_LOCAL, 7740 bytes) 
+26/10/07 11:00:11 INFO Executor: Running task 1.0 in stage 14.0 (TID 20)
+26/10/07 11:00:11 INFO Executor: Running task 0.0 in stage 14.0 (TID 19)
+26/10/07 11:00:11 INFO Executor: Finished task 1.0 in stage 14.0 (TID 20). 1496 bytes result sent to driver
+26/10/07 11:00:11 INFO Executor: Finished task 0.0 in stage 14.0 (TID 19). 1496 bytes result sent to driver
+26/10/07 11:00:11 INFO TaskSetManager: Finished task 1.0 in stage 14.0 (TID 20) in 17 ms on master (executor driver) (1/2)
+26/10/07 11:00:11 INFO TaskSetManager: Finished task 0.0 in stage 14.0 (TID 19) in 19 ms on master (executor driver) (2/2)
+26/10/07 11:00:11 INFO TaskSchedulerImpl: Removed TaskSet 14.0, whose tasks have all completed, from pool 
+26/10/07 11:00:11 INFO DAGScheduler: ResultStage 14 ($anonfun$withThreadLocalCaptured$1 at FutureTask.java:264) finished in 0.033 s
+26/10/07 11:00:11 INFO DAGScheduler: Job 11 is finished. Cancelling potential speculative or zombie tasks for this job
+26/10/07 11:00:11 INFO TaskSchedulerImpl: Killing all running tasks in stage 14: Stage finished
+26/10/07 11:00:11 INFO DAGScheduler: Job 11 finished: $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264, took 0.041540 s
+26/10/07 11:00:11 INFO MemoryStore: Block broadcast_20 stored as values in memory (estimated size 11.8 KiB, free 1661.6 MiB)
+26/10/07 11:00:11 INFO MemoryStore: Block broadcast_20_piece0 stored as bytes in memory (estimated size 207.0 B, free 1661.6 MiB)
+26/10/07 11:00:11 INFO BlockManagerInfo: Added broadcast_20_piece0 in memory on master:44485 (size: 207.0 B, free: 1662.9 MiB)
+26/10/07 11:00:11 INFO SparkContext: Created broadcast 20 from $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264
+26/10/07 11:00:11 INFO FileSourceStrategy: Pushed Filters: 
+26/10/07 11:00:11 INFO FileSourceStrategy: Post-Scan Filters: 
+26/10/07 11:00:11 INFO MemoryStore: Block broadcast_21 stored as values in memory (estimated size 199.7 KiB, free 1661.4 MiB)
+26/10/07 11:00:11 INFO MemoryStore: Block broadcast_21_piece0 stored as bytes in memory (estimated size 34.8 KiB, free 1661.4 MiB)
+26/10/07 11:00:11 INFO BlockManagerInfo: Added broadcast_21_piece0 in memory on master:44485 (size: 34.8 KiB, free: 1662.9 MiB)
+26/10/07 11:00:11 INFO SparkContext: Created broadcast 21 from count at NativeMethodAccessorImpl.java:0
+26/10/07 11:00:11 INFO FileSourceScanExec: Planning scan with bin packing, max size: 40873624 bytes, open cost is considered as scanning 4194304 bytes.
+26/10/07 11:00:11 INFO DAGScheduler: Registering RDD 48 (count at NativeMethodAccessorImpl.java:0) as input to shuffle 3
+26/10/07 11:00:11 INFO DAGScheduler: Got map stage job 12 (count at NativeMethodAccessorImpl.java:0) with 2 output partitions
+26/10/07 11:00:11 INFO DAGScheduler: Final stage: ShuffleMapStage 15 (count at NativeMethodAccessorImpl.java:0)
+26/10/07 11:00:11 INFO DAGScheduler: Parents of final stage: List()
+26/10/07 11:00:11 INFO DAGScheduler: Missing parents: List()
+26/10/07 11:00:11 INFO DAGScheduler: Submitting ShuffleMapStage 15 (MapPartitionsRDD[48] at count at NativeMethodAccessorImpl.java:0), which has no missing parents
+26/10/07 11:00:11 INFO MemoryStore: Block broadcast_22 stored as values in memory (estimated size 19.2 KiB, free 1661.4 MiB)
+26/10/07 11:00:11 INFO MemoryStore: Block broadcast_22_piece0 stored as bytes in memory (estimated size 9.3 KiB, free 1661.4 MiB)
+26/10/07 11:00:11 INFO BlockManagerInfo: Added broadcast_22_piece0 in memory on master:44485 (size: 9.3 KiB, free: 1662.9 MiB)
+26/10/07 11:00:11 INFO SparkContext: Created broadcast 22 from broadcast at DAGScheduler.scala:1585
+26/10/07 11:00:11 INFO DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 15 (MapPartitionsRDD[48] at count at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0, 1))
+26/10/07 11:00:11 INFO TaskSchedulerImpl: Adding task set 15.0 with 2 tasks resource profile 0
+26/10/07 11:00:11 INFO TaskSetManager: Starting task 0.0 in stage 15.0 (TID 21) (master, executor driver, partition 0, NODE_LOCAL, 9520 bytes) 
+26/10/07 11:00:11 INFO TaskSetManager: Starting task 1.0 in stage 15.0 (TID 22) (master, executor driver, partition 1, NODE_LOCAL, 9379 bytes) 
+26/10/07 11:00:11 INFO Executor: Running task 1.0 in stage 15.0 (TID 22)
+26/10/07 11:00:11 INFO Executor: Running task 0.0 in stage 15.0 (TID 21)
+26/10/07 11:00:11 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDC/BTCUSDC-1h-2023-08.csv, range: 0-110455, partition values: [empty row]
+26/10/07 11:00:12 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDC/BTCUSDC-1h-2022-08.csv, range: 0-115329, partition values: [empty row]
+26/10/07 11:00:12 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDC/BTCUSDC-1h-2022-04.csv, range: 0-109794, partition values: [empty row]
+26/10/07 11:00:12 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDC/BTCUSDC-1h-2022-07.csv, range: 0-115230, partition values: [empty row]
+26/10/07 11:00:12 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDC/BTCUSDC-1h-2023-11.csv, range: 0-108265, partition values: [empty row]
+26/10/07 11:00:12 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDC/BTCUSDC-1h-2022-05.csv, range: 0-114196, partition values: [empty row]
+26/10/07 11:00:12 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDC/BTCUSDC-1h-2023-04.csv, range: 0-107486, partition values: [empty row]
+26/10/07 11:00:12 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDC/BTCUSDC-1h-2022-03.csv, range: 0-113326, partition values: [empty row]
+26/10/07 11:00:12 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDC/BTCUSDC-1h-2022-01.csv, range: 0-113064, partition values: [empty row]
+26/10/07 11:00:12 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDC/BTCUSDC-1h-2023-06.csv, range: 0-107096, partition values: [empty row]
+26/10/07 11:00:12 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDC/BTCUSDC-1h-2023-12.csv, range: 0-112727, partition values: [empty row]
+26/10/07 11:00:12 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDC/BTCUSDC-1h-2022-06.csv, range: 0-110969, partition values: [empty row]
+26/10/07 11:00:12 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDC/BTCUSDC-1h-2023-09.csv, range: 0-106704, partition values: [empty row]
+26/10/07 11:00:12 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDC/BTCUSDC-1h-2023-05.csv, range: 0-110907, partition values: [empty row]
+26/10/07 11:00:12 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDC/BTCUSDC-1h-2022-09.csv, range: 0-104932, partition values: [empty row]
+26/10/07 11:00:12 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDC/BTCUSDC-1h-2023-10.csv, range: 0-110907, partition values: [empty row]
+26/10/07 11:00:12 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDC/BTCUSDC-1h-2022-02.csv, range: 0-102261, partition values: [empty row]
+26/10/07 11:00:12 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDC/BTCUSDC-1h-2023-07.csv, range: 0-110667, partition values: [empty row]
+26/10/07 11:00:12 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDC/BTCUSDC-1h-2023-03.csv, range: 0-71157, partition values: [empty row]
+26/10/07 11:00:12 INFO Executor: Finished task 0.0 in stage 15.0 (TID 21). 1978 bytes result sent to driver
+26/10/07 11:00:12 INFO TaskSetManager: Finished task 0.0 in stage 15.0 (TID 21) in 109 ms on master (executor driver) (1/2)
+26/10/07 11:00:12 INFO Executor: Finished task 1.0 in stage 15.0 (TID 22). 1978 bytes result sent to driver
+26/10/07 11:00:12 INFO TaskSetManager: Finished task 1.0 in stage 15.0 (TID 22) in 125 ms on master (executor driver) (2/2)
+26/10/07 11:00:12 INFO TaskSchedulerImpl: Removed TaskSet 15.0, whose tasks have all completed, from pool 
+26/10/07 11:00:12 INFO DAGScheduler: ShuffleMapStage 15 (count at NativeMethodAccessorImpl.java:0) finished in 0.144 s
+26/10/07 11:00:12 INFO DAGScheduler: looking for newly runnable stages
+26/10/07 11:00:12 INFO DAGScheduler: running: Set()
+26/10/07 11:00:12 INFO DAGScheduler: waiting: Set()
+26/10/07 11:00:12 INFO DAGScheduler: failed: Set()
+26/10/07 11:00:12 INFO SparkContext: Starting job: count at NativeMethodAccessorImpl.java:0
+26/10/07 11:00:12 INFO DAGScheduler: Got job 13 (count at NativeMethodAccessorImpl.java:0) with 1 output partitions
+26/10/07 11:00:12 INFO DAGScheduler: Final stage: ResultStage 17 (count at NativeMethodAccessorImpl.java:0)
+26/10/07 11:00:12 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 16)
+26/10/07 11:00:12 INFO DAGScheduler: Missing parents: List()
+26/10/07 11:00:12 INFO DAGScheduler: Submitting ResultStage 17 (MapPartitionsRDD[51] at count at NativeMethodAccessorImpl.java:0), which has no missing parents
+26/10/07 11:00:12 INFO MemoryStore: Block broadcast_23 stored as values in memory (estimated size 12.5 KiB, free 1661.4 MiB)
+26/10/07 11:00:12 INFO MemoryStore: Block broadcast_23_piece0 stored as bytes in memory (estimated size 5.9 KiB, free 1661.4 MiB)
+26/10/07 11:00:12 INFO BlockManagerInfo: Added broadcast_23_piece0 in memory on master:44485 (size: 5.9 KiB, free: 1662.8 MiB)
+26/10/07 11:00:12 INFO SparkContext: Created broadcast 23 from broadcast at DAGScheduler.scala:1585
+26/10/07 11:00:12 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 17 (MapPartitionsRDD[51] at count at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+26/10/07 11:00:12 INFO TaskSchedulerImpl: Adding task set 17.0 with 1 tasks resource profile 0
+26/10/07 11:00:12 INFO TaskSetManager: Starting task 0.0 in stage 17.0 (TID 23) (master, executor driver, partition 0, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:00:12 INFO Executor: Running task 0.0 in stage 17.0 (TID 23)
+26/10/07 11:00:12 INFO ShuffleBlockFetcherIterator: Getting 2 (120.0 B) non-empty blocks including 2 (120.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:00:12 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+26/10/07 11:00:12 INFO Executor: Finished task 0.0 in stage 17.0 (TID 23). 3995 bytes result sent to driver
+26/10/07 11:00:12 INFO TaskSetManager: Finished task 0.0 in stage 17.0 (TID 23) in 10 ms on master (executor driver) (1/1)
+26/10/07 11:00:12 INFO TaskSchedulerImpl: Removed TaskSet 17.0, whose tasks have all completed, from pool 
+26/10/07 11:00:12 INFO DAGScheduler: ResultStage 17 (count at NativeMethodAccessorImpl.java:0) finished in 0.059 s
+26/10/07 11:00:12 INFO DAGScheduler: Job 13 is finished. Cancelling potential speculative or zombie tasks for this job
+26/10/07 11:00:12 INFO TaskSchedulerImpl: Killing all running tasks in stage 17: Stage finished
+26/10/07 11:00:12 INFO DAGScheduler: Job 13 finished: count at NativeMethodAccessorImpl.java:0, took 0.135578 s
+  BTCUSDC: 2716000 filas escritas en hdfs:///datalake/benchmark/raw_200x/BTCUSDC
+Replicando BTCUSDT x200 ...
+26/10/07 11:00:12 INFO InMemoryFileIndex: It took 65 ms to list leaf files for 24 paths.
+26/10/07 11:00:12 INFO FileSourceStrategy: Pushed Filters: 
+26/10/07 11:00:12 INFO FileSourceStrategy: Post-Scan Filters: 
+26/10/07 11:00:12 INFO MemoryStore: Block broadcast_24 stored as values in memory (estimated size 199.7 KiB, free 1661.2 MiB)
+26/10/07 11:00:12 INFO MemoryStore: Block broadcast_24_piece0 stored as bytes in memory (estimated size 34.8 KiB, free 1661.1 MiB)
+26/10/07 11:00:12 INFO BlockManagerInfo: Added broadcast_24_piece0 in memory on master:44485 (size: 34.8 KiB, free: 1662.8 MiB)
+26/10/07 11:00:12 INFO SparkContext: Created broadcast 24 from collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64
+26/10/07 11:00:12 INFO FileSourceScanExec: Planning scan with bin packing, max size: 51736236 bytes, open cost is considered as scanning 4194304 bytes.
+26/10/07 11:00:12 INFO DAGScheduler: Registering RDD 55 (collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64) as input to shuffle 4
+26/10/07 11:00:12 INFO DAGScheduler: Got map stage job 14 (collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64) with 2 output partitions
+26/10/07 11:00:12 INFO DAGScheduler: Final stage: ShuffleMapStage 18 (collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64)
+26/10/07 11:00:12 INFO DAGScheduler: Parents of final stage: List()
+26/10/07 11:00:12 INFO DAGScheduler: Missing parents: List()
+26/10/07 11:00:12 INFO DAGScheduler: Submitting ShuffleMapStage 18 (MapPartitionsRDD[55] at collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64), which has no missing parents
+26/10/07 11:00:12 INFO MemoryStore: Block broadcast_25 stored as values in memory (estimated size 20.4 KiB, free 1661.1 MiB)
+26/10/07 11:00:12 INFO MemoryStore: Block broadcast_25_piece0 stored as bytes in memory (estimated size 9.6 KiB, free 1661.1 MiB)
+26/10/07 11:00:12 INFO BlockManagerInfo: Added broadcast_25_piece0 in memory on master:44485 (size: 9.6 KiB, free: 1662.8 MiB)
+26/10/07 11:00:12 INFO SparkContext: Created broadcast 25 from broadcast at DAGScheduler.scala:1585
+26/10/07 11:00:12 INFO DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 18 (MapPartitionsRDD[55] at collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64) (first 15 tasks are for partitions Vector(0, 1))
+26/10/07 11:00:12 INFO TaskSchedulerImpl: Adding task set 18.0 with 2 tasks resource profile 0
+26/10/07 11:00:12 INFO TaskSetManager: Starting task 0.0 in stage 18.0 (TID 24) (master, executor driver, partition 0, NODE_LOCAL, 9802 bytes) 
+26/10/07 11:00:12 INFO TaskSetManager: Starting task 1.0 in stage 18.0 (TID 25) (master, executor driver, partition 1, NODE_LOCAL, 9802 bytes) 
+26/10/07 11:00:12 INFO Executor: Running task 0.0 in stage 18.0 (TID 24)
+26/10/07 11:00:12 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2023-01.csv, range: 0-121077, partition values: [empty row]
+26/10/07 11:00:12 INFO Executor: Running task 1.0 in stage 18.0 (TID 25)
+26/10/07 11:00:12 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2023-07.csv, range: 0-117679, partition values: [empty row]
+26/10/07 11:00:12 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2022-10.csv, range: 0-120930, partition values: [empty row]
+26/10/07 11:00:12 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2023-08.csv, range: 0-117679, partition values: [empty row]
+26/10/07 11:00:12 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2022-09.csv, range: 0-117665, partition values: [empty row]
+26/10/07 11:00:12 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2023-03.csv, range: 0-120871, partition values: [empty row]
+26/10/07 11:00:13 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2022-11.csv, range: 0-117285, partition values: [empty row]
+26/10/07 11:00:13 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2022-08.csv, range: 0-120774, partition values: [empty row]
+26/10/07 11:00:13 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2022-12.csv, range: 0-120476, partition values: [empty row]
+26/10/07 11:00:13 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2022-06.csv, range: 0-115309, partition values: [empty row]
+26/10/07 11:00:13 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2022-07.csv, range: 0-120276, partition values: [empty row]
+26/10/07 11:00:13 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2023-04.csv, range: 0-114747, partition values: [empty row]
+26/10/07 11:00:13 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2022-05.csv, range: 0-119004, partition values: [empty row]
+26/10/07 11:00:13 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2022-04.csv, range: 0-114598, partition values: [empty row]
+26/10/07 11:00:13 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2022-03.csv, range: 0-118684, partition values: [empty row]
+26/10/07 11:00:13 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2023-06.csv, range: 0-114429, partition values: [empty row]
+26/10/07 11:00:13 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2023-12.csv, range: 0-118402, partition values: [empty row]
+26/10/07 11:00:13 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2023-11.csv, range: 0-114306, partition values: [empty row]
+26/10/07 11:00:13 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2022-01.csv, range: 0-118386, partition values: [empty row]
+26/10/07 11:00:13 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2023-05.csv, range: 0-118170, partition values: [empty row]
+26/10/07 11:00:13 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2023-09.csv, range: 0-113692, partition values: [empty row]
+26/10/07 11:00:13 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2023-10.csv, range: 0-117968, partition values: [empty row]
+26/10/07 11:00:13 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2023-02.csv, range: 0-109748, partition values: [empty row]
+26/10/07 11:00:13 INFO Executor: Finished task 0.0 in stage 18.0 (TID 24). 1922 bytes result sent to driver
+26/10/07 11:00:13 INFO TaskSetManager: Finished task 0.0 in stage 18.0 (TID 24) in 1141 ms on master (executor driver) (1/2)
+26/10/07 11:00:13 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2022-02.csv, range: 0-107021, partition values: [empty row]
+26/10/07 11:00:13 INFO Executor: Finished task 1.0 in stage 18.0 (TID 25). 1922 bytes result sent to driver
+26/10/07 11:00:13 INFO TaskSetManager: Finished task 1.0 in stage 18.0 (TID 25) in 1197 ms on master (executor driver) (2/2)
+26/10/07 11:00:13 INFO TaskSchedulerImpl: Removed TaskSet 18.0, whose tasks have all completed, from pool 
+26/10/07 11:00:13 INFO DAGScheduler: ShuffleMapStage 18 (collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64) finished in 1.210 s
+26/10/07 11:00:13 INFO DAGScheduler: looking for newly runnable stages
+26/10/07 11:00:13 INFO DAGScheduler: running: Set()
+26/10/07 11:00:13 INFO DAGScheduler: waiting: Set()
+26/10/07 11:00:13 INFO DAGScheduler: failed: Set()
+26/10/07 11:00:13 INFO SparkContext: Starting job: collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64
+26/10/07 11:00:13 INFO DAGScheduler: Got job 15 (collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64) with 1 output partitions
+26/10/07 11:00:13 INFO DAGScheduler: Final stage: ResultStage 20 (collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64)
+26/10/07 11:00:13 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 19)
+26/10/07 11:00:13 INFO DAGScheduler: Missing parents: List()
+26/10/07 11:00:13 INFO DAGScheduler: Submitting ResultStage 20 (MapPartitionsRDD[58] at collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64), which has no missing parents
+26/10/07 11:00:13 INFO MemoryStore: Block broadcast_26 stored as values in memory (estimated size 14.5 KiB, free 1661.1 MiB)
+26/10/07 11:00:13 INFO MemoryStore: Block broadcast_26_piece0 stored as bytes in memory (estimated size 6.5 KiB, free 1661.1 MiB)
+26/10/07 11:00:13 INFO BlockManagerInfo: Added broadcast_26_piece0 in memory on master:44485 (size: 6.5 KiB, free: 1662.8 MiB)
+26/10/07 11:00:13 INFO SparkContext: Created broadcast 26 from broadcast at DAGScheduler.scala:1585
+26/10/07 11:00:13 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 20 (MapPartitionsRDD[58] at collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64) (first 15 tasks are for partitions Vector(0))
+26/10/07 11:00:13 INFO TaskSchedulerImpl: Adding task set 20.0 with 1 tasks resource profile 0
+26/10/07 11:00:13 INFO TaskSetManager: Starting task 0.0 in stage 20.0 (TID 26) (master, executor driver, partition 0, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:00:13 INFO Executor: Running task 0.0 in stage 20.0 (TID 26)
+26/10/07 11:00:13 INFO ShuffleBlockFetcherIterator: Getting 2 (144.0 B) non-empty blocks including 2 (144.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:00:13 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+26/10/07 11:00:13 INFO Executor: Finished task 0.0 in stage 20.0 (TID 26). 4003 bytes result sent to driver
+26/10/07 11:00:13 INFO TaskSetManager: Finished task 0.0 in stage 20.0 (TID 26) in 9 ms on master (executor driver) (1/1)
+26/10/07 11:00:13 INFO TaskSchedulerImpl: Removed TaskSet 20.0, whose tasks have all completed, from pool 
+26/10/07 11:00:13 INFO DAGScheduler: ResultStage 20 (collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64) finished in 0.020 s
+26/10/07 11:00:13 INFO DAGScheduler: Job 15 is finished. Cancelling potential speculative or zombie tasks for this job
+26/10/07 11:00:13 INFO TaskSchedulerImpl: Killing all running tasks in stage 20: Stage finished
+26/10/07 11:00:13 INFO DAGScheduler: Job 15 finished: collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64, took 0.027086 s
+26/10/07 11:00:14 INFO FileSourceStrategy: Pushed Filters: 
+26/10/07 11:00:14 INFO FileSourceStrategy: Post-Scan Filters: 
+26/10/07 11:00:14 INFO SparkContext: Starting job: $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264
+26/10/07 11:00:14 INFO DAGScheduler: Got job 16 ($anonfun$withThreadLocalCaptured$1 at FutureTask.java:264) with 2 output partitions
+26/10/07 11:00:14 INFO DAGScheduler: Final stage: ResultStage 21 ($anonfun$withThreadLocalCaptured$1 at FutureTask.java:264)
+26/10/07 11:00:14 INFO DAGScheduler: Parents of final stage: List()
+26/10/07 11:00:14 INFO DAGScheduler: Missing parents: List()
+26/10/07 11:00:14 INFO DAGScheduler: Submitting ResultStage 21 (MapPartitionsRDD[62] at $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264), which has no missing parents
+26/10/07 11:00:14 INFO MemoryStore: Block broadcast_27 stored as values in memory (estimated size 10.9 KiB, free 1661.1 MiB)
+26/10/07 11:00:14 INFO MemoryStore: Block broadcast_27_piece0 stored as bytes in memory (estimated size 5.1 KiB, free 1661.1 MiB)
+26/10/07 11:00:14 INFO BlockManagerInfo: Added broadcast_27_piece0 in memory on master:44485 (size: 5.1 KiB, free: 1662.8 MiB)
+26/10/07 11:00:14 INFO SparkContext: Created broadcast 27 from broadcast at DAGScheduler.scala:1585
+26/10/07 11:00:14 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 21 (MapPartitionsRDD[62] at $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264) (first 15 tasks are for partitions Vector(0, 1))
+26/10/07 11:00:14 INFO TaskSchedulerImpl: Adding task set 21.0 with 2 tasks resource profile 0
+26/10/07 11:00:14 INFO TaskSetManager: Starting task 0.0 in stage 21.0 (TID 27) (master, executor driver, partition 0, PROCESS_LOCAL, 7740 bytes) 
+26/10/07 11:00:14 INFO TaskSetManager: Starting task 1.0 in stage 21.0 (TID 28) (master, executor driver, partition 1, PROCESS_LOCAL, 7740 bytes) 
+26/10/07 11:00:14 INFO Executor: Running task 0.0 in stage 21.0 (TID 27)
+26/10/07 11:00:14 INFO Executor: Finished task 0.0 in stage 21.0 (TID 27). 2416 bytes result sent to driver
+26/10/07 11:00:14 INFO Executor: Running task 1.0 in stage 21.0 (TID 28)
+26/10/07 11:00:14 INFO Executor: Finished task 1.0 in stage 21.0 (TID 28). 2502 bytes result sent to driver
+26/10/07 11:00:14 INFO TaskSetManager: Finished task 0.0 in stage 21.0 (TID 27) in 20 ms on master (executor driver) (1/2)
+26/10/07 11:00:14 INFO TaskSetManager: Finished task 1.0 in stage 21.0 (TID 28) in 24 ms on master (executor driver) (2/2)
+26/10/07 11:00:14 INFO TaskSchedulerImpl: Removed TaskSet 21.0, whose tasks have all completed, from pool 
+26/10/07 11:00:14 INFO DAGScheduler: ResultStage 21 ($anonfun$withThreadLocalCaptured$1 at FutureTask.java:264) finished in 0.036 s
+26/10/07 11:00:14 INFO DAGScheduler: Job 16 is finished. Cancelling potential speculative or zombie tasks for this job
+26/10/07 11:00:14 INFO TaskSchedulerImpl: Killing all running tasks in stage 21: Stage finished
+26/10/07 11:00:14 INFO DAGScheduler: Job 16 finished: $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264, took 0.041249 s
+26/10/07 11:00:14 INFO MemoryStore: Block broadcast_28 stored as values in memory (estimated size 14.9 KiB, free 1661.0 MiB)
+26/10/07 11:00:14 INFO MemoryStore: Block broadcast_28_piece0 stored as bytes in memory (estimated size 1755.0 B, free 1661.0 MiB)
+26/10/07 11:00:14 INFO BlockManagerInfo: Added broadcast_28_piece0 in memory on master:44485 (size: 1755.0 B, free: 1662.8 MiB)
+26/10/07 11:00:14 INFO SparkContext: Created broadcast 28 from $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264
+26/10/07 11:00:14 INFO FileSourceStrategy: Pushed Filters: 
+26/10/07 11:00:14 INFO FileSourceStrategy: Post-Scan Filters: 
+26/10/07 11:00:14 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+26/10/07 11:00:14 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+26/10/07 11:00:14 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+26/10/07 11:00:14 INFO MemoryStore: Block broadcast_29 stored as values in memory (estimated size 199.7 KiB, free 1660.9 MiB)
+26/10/07 11:00:14 INFO MemoryStore: Block broadcast_29_piece0 stored as bytes in memory (estimated size 34.8 KiB, free 1660.8 MiB)
+26/10/07 11:00:14 INFO BlockManagerInfo: Added broadcast_29_piece0 in memory on master:44485 (size: 34.8 KiB, free: 1662.8 MiB)
+26/10/07 11:00:14 INFO SparkContext: Created broadcast 29 from csv at NativeMethodAccessorImpl.java:0
+26/10/07 11:00:14 INFO FileSourceScanExec: Planning scan with bin packing, max size: 51736236 bytes, open cost is considered as scanning 4194304 bytes.
+26/10/07 11:00:14 INFO SparkContext: Starting job: csv at NativeMethodAccessorImpl.java:0
+26/10/07 11:00:14 INFO DAGScheduler: Got job 17 (csv at NativeMethodAccessorImpl.java:0) with 2 output partitions
+26/10/07 11:00:14 INFO DAGScheduler: Final stage: ResultStage 22 (csv at NativeMethodAccessorImpl.java:0)
+26/10/07 11:00:14 INFO DAGScheduler: Parents of final stage: List()
+26/10/07 11:00:14 INFO DAGScheduler: Missing parents: List()
+26/10/07 11:00:14 INFO DAGScheduler: Submitting ResultStage 22 (MapPartitionsRDD[66] at csv at NativeMethodAccessorImpl.java:0), which has no missing parents
+26/10/07 11:00:14 INFO MemoryStore: Block broadcast_30 stored as values in memory (estimated size 223.3 KiB, free 1660.6 MiB)
+26/10/07 11:00:14 INFO MemoryStore: Block broadcast_30_piece0 stored as bytes in memory (estimated size 80.5 KiB, free 1660.5 MiB)
+26/10/07 11:00:14 INFO BlockManagerInfo: Added broadcast_30_piece0 in memory on master:44485 (size: 80.5 KiB, free: 1662.7 MiB)
+26/10/07 11:00:14 INFO SparkContext: Created broadcast 30 from broadcast at DAGScheduler.scala:1585
+26/10/07 11:00:14 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 22 (MapPartitionsRDD[66] at csv at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0, 1))
+26/10/07 11:00:14 INFO TaskSchedulerImpl: Adding task set 22.0 with 2 tasks resource profile 0
+26/10/07 11:00:14 INFO TaskSetManager: Starting task 0.0 in stage 22.0 (TID 29) (master, executor driver, partition 0, NODE_LOCAL, 9813 bytes) 
+26/10/07 11:00:14 INFO TaskSetManager: Starting task 1.0 in stage 22.0 (TID 30) (master, executor driver, partition 1, NODE_LOCAL, 9813 bytes) 
+26/10/07 11:00:14 INFO Executor: Running task 0.0 in stage 22.0 (TID 29)
+26/10/07 11:00:14 INFO Executor: Running task 1.0 in stage 22.0 (TID 30)
+26/10/07 11:00:14 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+26/10/07 11:00:14 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+26/10/07 11:00:14 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+26/10/07 11:00:14 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2023-07.csv, range: 0-117679, partition values: [empty row]
+26/10/07 11:00:14 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+26/10/07 11:00:14 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+26/10/07 11:00:14 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+26/10/07 11:00:14 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2023-01.csv, range: 0-121077, partition values: [empty row]
+26/10/07 11:00:15 INFO BlockManagerInfo: Removed broadcast_25_piece0 on master:44485 in memory (size: 9.6 KiB, free: 1662.7 MiB)
+26/10/07 11:00:15 INFO BlockManagerInfo: Removed broadcast_23_piece0 on master:44485 in memory (size: 5.9 KiB, free: 1662.7 MiB)
+26/10/07 11:00:15 INFO BlockManagerInfo: Removed broadcast_19_piece0 on master:44485 in memory (size: 5.1 KiB, free: 1662.7 MiB)
+26/10/07 11:00:15 INFO BlockManagerInfo: Removed broadcast_17_piece0 on master:44485 in memory (size: 34.8 KiB, free: 1662.7 MiB)
+26/10/07 11:00:15 INFO BlockManagerInfo: Removed broadcast_20_piece0 on master:44485 in memory (size: 207.0 B, free: 1662.7 MiB)
+26/10/07 11:00:15 INFO BlockManagerInfo: Removed broadcast_21_piece0 on master:44485 in memory (size: 34.8 KiB, free: 1662.8 MiB)
+26/10/07 11:00:15 INFO BlockManagerInfo: Removed broadcast_24_piece0 on master:44485 in memory (size: 34.8 KiB, free: 1662.8 MiB)
+26/10/07 11:00:15 INFO BlockManagerInfo: Removed broadcast_26_piece0 on master:44485 in memory (size: 6.5 KiB, free: 1662.8 MiB)
+26/10/07 11:00:15 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2022-10.csv, range: 0-120930, partition values: [empty row]
+26/10/07 11:00:15 INFO BlockManagerInfo: Removed broadcast_22_piece0 on master:44485 in memory (size: 9.3 KiB, free: 1662.8 MiB)
+26/10/07 11:00:15 INFO BlockManagerInfo: Removed broadcast_27_piece0 on master:44485 in memory (size: 5.1 KiB, free: 1662.8 MiB)
+26/10/07 11:00:15 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2023-08.csv, range: 0-117679, partition values: [empty row]
+26/10/07 11:00:15 INFO BlockManagerInfo: Removed broadcast_16_piece0 on master:44485 in memory (size: 1755.0 B, free: 1662.8 MiB)
+26/10/07 11:00:15 INFO BlockManagerInfo: Removed broadcast_18_piece0 on master:44485 in memory (size: 80.5 KiB, free: 1662.9 MiB)
+26/10/07 11:00:16 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2023-03.csv, range: 0-120871, partition values: [empty row]
+26/10/07 11:00:16 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2022-09.csv, range: 0-117665, partition values: [empty row]
+26/10/07 11:00:17 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2022-08.csv, range: 0-120774, partition values: [empty row]
+26/10/07 11:00:17 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2022-11.csv, range: 0-117285, partition values: [empty row]
+26/10/07 11:00:18 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2022-12.csv, range: 0-120476, partition values: [empty row]
+26/10/07 11:00:18 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2022-06.csv, range: 0-115309, partition values: [empty row]
+26/10/07 11:00:19 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2022-07.csv, range: 0-120276, partition values: [empty row]
+26/10/07 11:00:19 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2023-04.csv, range: 0-114747, partition values: [empty row]
+26/10/07 11:00:20 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2022-05.csv, range: 0-119004, partition values: [empty row]
+26/10/07 11:00:21 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2022-04.csv, range: 0-114598, partition values: [empty row]
+26/10/07 11:00:21 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2022-03.csv, range: 0-118684, partition values: [empty row]
+26/10/07 11:00:22 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2023-06.csv, range: 0-114429, partition values: [empty row]
+26/10/07 11:00:23 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2023-11.csv, range: 0-114306, partition values: [empty row]
+26/10/07 11:00:23 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2023-12.csv, range: 0-118402, partition values: [empty row]
+26/10/07 11:00:24 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2023-09.csv, range: 0-113692, partition values: [empty row]
+26/10/07 11:00:24 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2022-01.csv, range: 0-118386, partition values: [empty row]
+26/10/07 11:00:25 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2023-02.csv, range: 0-109748, partition values: [empty row]
+26/10/07 11:00:25 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2023-05.csv, range: 0-118170, partition values: [empty row]
+26/10/07 11:00:26 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2022-02.csv, range: 0-107021, partition values: [empty row]
+26/10/07 11:00:26 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2023-10.csv, range: 0-117968, partition values: [empty row]
+26/10/07 11:00:27 INFO FileOutputCommitter: Saved output of task 'attempt_202610071100146598939786528330272_0022_m_000001_30' to hdfs://100.76.42.126:9000/datalake/benchmark/raw_200x/BTCUSDT/_temporary/0/task_202610071100146598939786528330272_0022_m_000001
+26/10/07 11:00:27 INFO SparkHadoopMapRedUtil: attempt_202610071100146598939786528330272_0022_m_000001_30: Committed. Elapsed time: 65 ms.
+26/10/07 11:00:27 INFO Executor: Finished task 1.0 in stage 22.0 (TID 30). 2626 bytes result sent to driver
+26/10/07 11:00:27 INFO TaskSetManager: Finished task 1.0 in stage 22.0 (TID 30) in 12861 ms on master (executor driver) (1/2)
+26/10/07 11:00:27 INFO FileOutputCommitter: Saved output of task 'attempt_202610071100146598939786528330272_0022_m_000000_29' to hdfs://100.76.42.126:9000/datalake/benchmark/raw_200x/BTCUSDT/_temporary/0/task_202610071100146598939786528330272_0022_m_000000
+26/10/07 11:00:27 INFO SparkHadoopMapRedUtil: attempt_202610071100146598939786528330272_0022_m_000000_29: Committed. Elapsed time: 67 ms.
+26/10/07 11:00:27 INFO Executor: Finished task 0.0 in stage 22.0 (TID 29). 2626 bytes result sent to driver
+26/10/07 11:00:27 INFO TaskSetManager: Finished task 0.0 in stage 22.0 (TID 29) in 12895 ms on master (executor driver) (2/2)
+26/10/07 11:00:27 INFO TaskSchedulerImpl: Removed TaskSet 22.0, whose tasks have all completed, from pool 
+26/10/07 11:00:27 INFO DAGScheduler: ResultStage 22 (csv at NativeMethodAccessorImpl.java:0) finished in 12.923 s
+26/10/07 11:00:27 INFO DAGScheduler: Job 17 is finished. Cancelling potential speculative or zombie tasks for this job
+26/10/07 11:00:27 INFO TaskSchedulerImpl: Killing all running tasks in stage 22: Stage finished
+26/10/07 11:00:27 INFO DAGScheduler: Job 17 finished: csv at NativeMethodAccessorImpl.java:0, took 12.926553 s
+26/10/07 11:00:27 INFO FileFormatWriter: Start to commit write Job 312a8e24-ce54-4edf-9e5f-98b23efb05d3.
+26/10/07 11:00:27 INFO FileFormatWriter: Write Job 312a8e24-ce54-4edf-9e5f-98b23efb05d3 committed. Elapsed time: 227 ms.
+26/10/07 11:00:27 INFO FileFormatWriter: Finished processing stats for write job 312a8e24-ce54-4edf-9e5f-98b23efb05d3.
+26/10/07 11:00:27 INFO FileSourceStrategy: Pushed Filters: 
+26/10/07 11:00:27 INFO FileSourceStrategy: Post-Scan Filters: 
+26/10/07 11:00:27 INFO SparkContext: Starting job: $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264
+26/10/07 11:00:27 INFO DAGScheduler: Got job 18 ($anonfun$withThreadLocalCaptured$1 at FutureTask.java:264) with 2 output partitions
+26/10/07 11:00:27 INFO DAGScheduler: Final stage: ResultStage 23 ($anonfun$withThreadLocalCaptured$1 at FutureTask.java:264)
+26/10/07 11:00:27 INFO DAGScheduler: Parents of final stage: List()
+26/10/07 11:00:27 INFO DAGScheduler: Missing parents: List()
+26/10/07 11:00:27 INFO DAGScheduler: Submitting ResultStage 23 (MapPartitionsRDD[70] at $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264), which has no missing parents
+26/10/07 11:00:27 INFO MemoryStore: Block broadcast_31 stored as values in memory (estimated size 10.8 KiB, free 1661.6 MiB)
+26/10/07 11:00:27 INFO MemoryStore: Block broadcast_31_piece0 stored as bytes in memory (estimated size 5.1 KiB, free 1661.6 MiB)
+26/10/07 11:00:27 INFO BlockManagerInfo: Added broadcast_31_piece0 in memory on master:44485 (size: 5.1 KiB, free: 1662.9 MiB)
+26/10/07 11:00:27 INFO SparkContext: Created broadcast 31 from broadcast at DAGScheduler.scala:1585
+26/10/07 11:00:27 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 23 (MapPartitionsRDD[70] at $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264) (first 15 tasks are for partitions Vector(0, 1))
+26/10/07 11:00:27 INFO TaskSchedulerImpl: Adding task set 23.0 with 2 tasks resource profile 0
+26/10/07 11:00:27 INFO TaskSetManager: Starting task 0.0 in stage 23.0 (TID 31) (master, executor driver, partition 0, PROCESS_LOCAL, 7740 bytes) 
+26/10/07 11:00:27 INFO TaskSetManager: Starting task 1.0 in stage 23.0 (TID 32) (master, executor driver, partition 1, PROCESS_LOCAL, 7740 bytes) 
+26/10/07 11:00:27 INFO Executor: Running task 0.0 in stage 23.0 (TID 31)
+26/10/07 11:00:27 INFO Executor: Finished task 0.0 in stage 23.0 (TID 31). 1496 bytes result sent to driver
+26/10/07 11:00:27 INFO Executor: Running task 1.0 in stage 23.0 (TID 32)
+26/10/07 11:00:27 INFO TaskSetManager: Finished task 0.0 in stage 23.0 (TID 31) in 10 ms on master (executor driver) (1/2)
+26/10/07 11:00:27 INFO Executor: Finished task 1.0 in stage 23.0 (TID 32). 1453 bytes result sent to driver
+26/10/07 11:00:27 INFO TaskSetManager: Finished task 1.0 in stage 23.0 (TID 32) in 14 ms on master (executor driver) (2/2)
+26/10/07 11:00:27 INFO TaskSchedulerImpl: Removed TaskSet 23.0, whose tasks have all completed, from pool 
+26/10/07 11:00:27 INFO DAGScheduler: ResultStage 23 ($anonfun$withThreadLocalCaptured$1 at FutureTask.java:264) finished in 0.030 s
+26/10/07 11:00:27 INFO DAGScheduler: Job 18 is finished. Cancelling potential speculative or zombie tasks for this job
+26/10/07 11:00:27 INFO TaskSchedulerImpl: Killing all running tasks in stage 23: Stage finished
+26/10/07 11:00:27 INFO DAGScheduler: Job 18 finished: $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264, took 0.036846 s
+26/10/07 11:00:27 INFO MemoryStore: Block broadcast_32 stored as values in memory (estimated size 11.8 KiB, free 1661.6 MiB)
+26/10/07 11:00:27 INFO MemoryStore: Block broadcast_32_piece0 stored as bytes in memory (estimated size 207.0 B, free 1661.6 MiB)
+26/10/07 11:00:27 INFO BlockManagerInfo: Added broadcast_32_piece0 in memory on master:44485 (size: 207.0 B, free: 1662.9 MiB)
+26/10/07 11:00:27 INFO SparkContext: Created broadcast 32 from $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264
+26/10/07 11:00:27 INFO FileSourceStrategy: Pushed Filters: 
+26/10/07 11:00:27 INFO FileSourceStrategy: Post-Scan Filters: 
+26/10/07 11:00:27 INFO MemoryStore: Block broadcast_33 stored as values in memory (estimated size 199.7 KiB, free 1661.4 MiB)
+26/10/07 11:00:27 INFO MemoryStore: Block broadcast_33_piece0 stored as bytes in memory (estimated size 34.8 KiB, free 1661.4 MiB)
+26/10/07 11:00:27 INFO BlockManagerInfo: Added broadcast_33_piece0 in memory on master:44485 (size: 34.8 KiB, free: 1662.9 MiB)
+26/10/07 11:00:27 INFO SparkContext: Created broadcast 33 from count at NativeMethodAccessorImpl.java:0
+26/10/07 11:00:27 INFO FileSourceScanExec: Planning scan with bin packing, max size: 51736236 bytes, open cost is considered as scanning 4194304 bytes.
+26/10/07 11:00:27 INFO DAGScheduler: Registering RDD 74 (count at NativeMethodAccessorImpl.java:0) as input to shuffle 5
+26/10/07 11:00:27 INFO DAGScheduler: Got map stage job 19 (count at NativeMethodAccessorImpl.java:0) with 2 output partitions
+26/10/07 11:00:27 INFO DAGScheduler: Final stage: ShuffleMapStage 24 (count at NativeMethodAccessorImpl.java:0)
+26/10/07 11:00:27 INFO DAGScheduler: Parents of final stage: List()
+26/10/07 11:00:27 INFO DAGScheduler: Missing parents: List()
+26/10/07 11:00:27 INFO DAGScheduler: Submitting ShuffleMapStage 24 (MapPartitionsRDD[74] at count at NativeMethodAccessorImpl.java:0), which has no missing parents
+26/10/07 11:00:27 INFO MemoryStore: Block broadcast_34 stored as values in memory (estimated size 19.2 KiB, free 1661.4 MiB)
+26/10/07 11:00:27 INFO MemoryStore: Block broadcast_34_piece0 stored as bytes in memory (estimated size 9.3 KiB, free 1661.4 MiB)
+26/10/07 11:00:27 INFO BlockManagerInfo: Added broadcast_34_piece0 in memory on master:44485 (size: 9.3 KiB, free: 1662.9 MiB)
+26/10/07 11:00:27 INFO SparkContext: Created broadcast 34 from broadcast at DAGScheduler.scala:1585
+26/10/07 11:00:27 INFO DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 24 (MapPartitionsRDD[74] at count at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0, 1))
+26/10/07 11:00:27 INFO TaskSchedulerImpl: Adding task set 24.0 with 2 tasks resource profile 0
+26/10/07 11:00:27 INFO TaskSetManager: Starting task 0.0 in stage 24.0 (TID 33) (master, executor driver, partition 0, NODE_LOCAL, 9802 bytes) 
+26/10/07 11:00:27 INFO TaskSetManager: Starting task 1.0 in stage 24.0 (TID 34) (master, executor driver, partition 1, NODE_LOCAL, 9802 bytes) 
+26/10/07 11:00:27 INFO Executor: Running task 0.0 in stage 24.0 (TID 33)
+26/10/07 11:00:27 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2023-01.csv, range: 0-121077, partition values: [empty row]
+26/10/07 11:00:27 INFO Executor: Running task 1.0 in stage 24.0 (TID 34)
+26/10/07 11:00:27 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2023-07.csv, range: 0-117679, partition values: [empty row]
+26/10/07 11:00:27 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2022-10.csv, range: 0-120930, partition values: [empty row]
+26/10/07 11:00:27 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2023-08.csv, range: 0-117679, partition values: [empty row]
+26/10/07 11:00:27 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2023-03.csv, range: 0-120871, partition values: [empty row]
+26/10/07 11:00:27 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2022-09.csv, range: 0-117665, partition values: [empty row]
+26/10/07 11:00:27 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2022-08.csv, range: 0-120774, partition values: [empty row]
+26/10/07 11:00:27 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2022-11.csv, range: 0-117285, partition values: [empty row]
+26/10/07 11:00:27 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2022-06.csv, range: 0-115309, partition values: [empty row]
+26/10/07 11:00:27 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2022-12.csv, range: 0-120476, partition values: [empty row]
+26/10/07 11:00:27 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2023-04.csv, range: 0-114747, partition values: [empty row]
+26/10/07 11:00:27 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2022-07.csv, range: 0-120276, partition values: [empty row]
+26/10/07 11:00:28 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2022-04.csv, range: 0-114598, partition values: [empty row]
+26/10/07 11:00:28 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2022-05.csv, range: 0-119004, partition values: [empty row]
+26/10/07 11:00:28 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2022-03.csv, range: 0-118684, partition values: [empty row]
+26/10/07 11:00:28 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2023-06.csv, range: 0-114429, partition values: [empty row]
+26/10/07 11:00:28 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2023-12.csv, range: 0-118402, partition values: [empty row]
+26/10/07 11:00:28 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2023-11.csv, range: 0-114306, partition values: [empty row]
+26/10/07 11:00:28 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2022-01.csv, range: 0-118386, partition values: [empty row]
+26/10/07 11:00:28 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2023-09.csv, range: 0-113692, partition values: [empty row]
+26/10/07 11:00:28 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2023-05.csv, range: 0-118170, partition values: [empty row]
+26/10/07 11:00:28 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2023-02.csv, range: 0-109748, partition values: [empty row]
+26/10/07 11:00:28 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2023-10.csv, range: 0-117968, partition values: [empty row]
+26/10/07 11:00:28 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCUSDT/BTCUSDT-1h-2022-02.csv, range: 0-107021, partition values: [empty row]
+26/10/07 11:00:28 INFO Executor: Finished task 1.0 in stage 24.0 (TID 34). 1978 bytes result sent to driver
+26/10/07 11:00:28 INFO TaskSetManager: Finished task 1.0 in stage 24.0 (TID 34) in 167 ms on master (executor driver) (1/2)
+26/10/07 11:00:28 INFO Executor: Finished task 0.0 in stage 24.0 (TID 33). 1978 bytes result sent to driver
+26/10/07 11:00:28 INFO TaskSetManager: Finished task 0.0 in stage 24.0 (TID 33) in 175 ms on master (executor driver) (2/2)
+26/10/07 11:00:28 INFO TaskSchedulerImpl: Removed TaskSet 24.0, whose tasks have all completed, from pool 
+26/10/07 11:00:28 INFO DAGScheduler: ShuffleMapStage 24 (count at NativeMethodAccessorImpl.java:0) finished in 0.183 s
+26/10/07 11:00:28 INFO DAGScheduler: looking for newly runnable stages
+26/10/07 11:00:28 INFO DAGScheduler: running: Set()
+26/10/07 11:00:28 INFO DAGScheduler: waiting: Set()
+26/10/07 11:00:28 INFO DAGScheduler: failed: Set()
+26/10/07 11:00:28 INFO SparkContext: Starting job: count at NativeMethodAccessorImpl.java:0
+26/10/07 11:00:28 INFO DAGScheduler: Got job 20 (count at NativeMethodAccessorImpl.java:0) with 1 output partitions
+26/10/07 11:00:28 INFO DAGScheduler: Final stage: ResultStage 26 (count at NativeMethodAccessorImpl.java:0)
+26/10/07 11:00:28 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 25)
+26/10/07 11:00:28 INFO DAGScheduler: Missing parents: List()
+26/10/07 11:00:28 INFO DAGScheduler: Submitting ResultStage 26 (MapPartitionsRDD[77] at count at NativeMethodAccessorImpl.java:0), which has no missing parents
+26/10/07 11:00:28 INFO MemoryStore: Block broadcast_35 stored as values in memory (estimated size 12.5 KiB, free 1661.4 MiB)
+26/10/07 11:00:28 INFO MemoryStore: Block broadcast_35_piece0 stored as bytes in memory (estimated size 5.9 KiB, free 1661.4 MiB)
+26/10/07 11:00:28 INFO BlockManagerInfo: Added broadcast_35_piece0 in memory on master:44485 (size: 5.9 KiB, free: 1662.8 MiB)
+26/10/07 11:00:28 INFO SparkContext: Created broadcast 35 from broadcast at DAGScheduler.scala:1585
+26/10/07 11:00:28 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 26 (MapPartitionsRDD[77] at count at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+26/10/07 11:00:28 INFO TaskSchedulerImpl: Adding task set 26.0 with 1 tasks resource profile 0
+26/10/07 11:00:28 INFO TaskSetManager: Starting task 0.0 in stage 26.0 (TID 35) (master, executor driver, partition 0, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:00:28 INFO Executor: Running task 0.0 in stage 26.0 (TID 35)
+26/10/07 11:00:28 INFO ShuffleBlockFetcherIterator: Getting 2 (120.0 B) non-empty blocks including 2 (120.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:00:28 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+26/10/07 11:00:28 INFO Executor: Finished task 0.0 in stage 26.0 (TID 35). 3995 bytes result sent to driver
+26/10/07 11:00:28 INFO TaskSetManager: Finished task 0.0 in stage 26.0 (TID 35) in 11 ms on master (executor driver) (1/1)
+26/10/07 11:00:28 INFO TaskSchedulerImpl: Removed TaskSet 26.0, whose tasks have all completed, from pool 
+26/10/07 11:00:28 INFO DAGScheduler: ResultStage 26 (count at NativeMethodAccessorImpl.java:0) finished in 0.023 s
+26/10/07 11:00:28 INFO DAGScheduler: Job 20 is finished. Cancelling potential speculative or zombie tasks for this job
+26/10/07 11:00:28 INFO TaskSchedulerImpl: Killing all running tasks in stage 26: Stage finished
+26/10/07 11:00:28 INFO DAGScheduler: Job 20 finished: count at NativeMethodAccessorImpl.java:0, took 0.030028 s
+  BTCUSDT: 3503800 filas escritas en hdfs:///datalake/benchmark/raw_200x/BTCUSDT
+Replicando BUSDUSDT x200 ...
+26/10/07 11:00:28 INFO BlockManagerInfo: Removed broadcast_29_piece0 on master:44485 in memory (size: 34.8 KiB, free: 1662.9 MiB)
+26/10/07 11:00:28 INFO InMemoryFileIndex: It took 17 ms to list leaf files for 6 paths.
+26/10/07 11:00:28 INFO BlockManagerInfo: Removed broadcast_34_piece0 on master:44485 in memory (size: 9.3 KiB, free: 1662.9 MiB)
+26/10/07 11:00:28 INFO FileSourceStrategy: Pushed Filters: 
+26/10/07 11:00:28 INFO FileSourceStrategy: Post-Scan Filters: 
+26/10/07 11:00:28 INFO MemoryStore: Block broadcast_36 stored as values in memory (estimated size 199.7 KiB, free 1661.4 MiB)
+26/10/07 11:00:28 INFO BlockManagerInfo: Removed broadcast_35_piece0 on master:44485 in memory (size: 5.9 KiB, free: 1662.9 MiB)
+26/10/07 11:00:28 INFO MemoryStore: Block broadcast_36_piece0 stored as bytes in memory (estimated size 34.8 KiB, free 1661.4 MiB)
+26/10/07 11:00:28 INFO BlockManagerInfo: Added broadcast_36_piece0 in memory on master:44485 (size: 34.8 KiB, free: 1662.9 MiB)
+26/10/07 11:00:28 INFO SparkContext: Created broadcast 36 from collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64
+26/10/07 11:00:28 INFO FileSourceScanExec: Planning scan with bin packing, max size: 12857891 bytes, open cost is considered as scanning 4194304 bytes.
+26/10/07 11:00:28 INFO DAGScheduler: Registering RDD 81 (collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64) as input to shuffle 6
+26/10/07 11:00:28 INFO DAGScheduler: Got map stage job 21 (collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64) with 2 output partitions
+26/10/07 11:00:28 INFO DAGScheduler: Final stage: ShuffleMapStage 27 (collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64)
+26/10/07 11:00:28 INFO DAGScheduler: Parents of final stage: List()
+26/10/07 11:00:28 INFO DAGScheduler: Missing parents: List()
+26/10/07 11:00:28 INFO DAGScheduler: Submitting ShuffleMapStage 27 (MapPartitionsRDD[81] at collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64), which has no missing parents
+26/10/07 11:00:28 INFO MemoryStore: Block broadcast_37 stored as values in memory (estimated size 20.4 KiB, free 1661.4 MiB)
+26/10/07 11:00:28 INFO MemoryStore: Block broadcast_37_piece0 stored as bytes in memory (estimated size 9.6 KiB, free 1661.4 MiB)
+26/10/07 11:00:28 INFO BlockManagerInfo: Added broadcast_37_piece0 in memory on master:44485 (size: 9.6 KiB, free: 1662.9 MiB)
+26/10/07 11:00:28 INFO SparkContext: Created broadcast 37 from broadcast at DAGScheduler.scala:1585
+26/10/07 11:00:28 INFO DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 27 (MapPartitionsRDD[81] at collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64) (first 15 tasks are for partitions Vector(0, 1))
+26/10/07 11:00:28 INFO TaskSchedulerImpl: Adding task set 27.0 with 2 tasks resource profile 0
+26/10/07 11:00:28 INFO TaskSetManager: Starting task 0.0 in stage 27.0 (TID 36) (master, executor driver, partition 0, NODE_LOCAL, 8539 bytes) 
+26/10/07 11:00:28 INFO TaskSetManager: Starting task 1.0 in stage 27.0 (TID 37) (master, executor driver, partition 1, NODE_LOCAL, 8549 bytes) 
+26/10/07 11:00:28 INFO Executor: Running task 1.0 in stage 27.0 (TID 37)
+26/10/07 11:00:28 INFO Executor: Running task 0.0 in stage 27.0 (TID 36)
+26/10/07 11:00:28 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BUSDUSDT/BUSDUSDT-1h-2022-11.csv, range: 0-109171, partition values: [empty row]
+26/10/07 11:00:28 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BUSDUSDT/BUSDUSDT-1h-2023-01.csv, range: 0-112300, partition values: [empty row]
+26/10/07 11:00:28 INFO BlockManagerInfo: Removed broadcast_28_piece0 on master:44485 in memory (size: 1755.0 B, free: 1662.9 MiB)
+26/10/07 11:00:28 INFO BlockManagerInfo: Removed broadcast_30_piece0 on master:44485 in memory (size: 80.5 KiB, free: 1662.9 MiB)
+26/10/07 11:00:28 INFO BlockManagerInfo: Removed broadcast_31_piece0 on master:44485 in memory (size: 5.1 KiB, free: 1662.9 MiB)
+26/10/07 11:00:28 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BUSDUSDT/BUSDUSDT-1h-2023-02.csv, range: 0-101710, partition values: [empty row]
+26/10/07 11:00:28 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BUSDUSDT/BUSDUSDT-1h-2022-12.csv, range: 0-111620, partition values: [empty row]
+26/10/07 11:00:28 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BUSDUSDT/diario/BUSDUSDT-1h-2023-03-10.csv, range: 0-3642, partition values: [empty row]
+26/10/07 11:00:28 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BUSDUSDT/BUSDUSDT-1h-2022-10.csv, range: 0-111516, partition values: [empty row]
+26/10/07 11:00:28 INFO Executor: Finished task 1.0 in stage 27.0 (TID 37). 1922 bytes result sent to driver
+26/10/07 11:00:28 INFO Executor: Finished task 0.0 in stage 27.0 (TID 36). 1922 bytes result sent to driver
+26/10/07 11:00:28 INFO TaskSetManager: Finished task 0.0 in stage 27.0 (TID 36) in 306 ms on master (executor driver) (1/2)
+26/10/07 11:00:28 INFO TaskSetManager: Finished task 1.0 in stage 27.0 (TID 37) in 306 ms on master (executor driver) (2/2)
+26/10/07 11:00:28 INFO TaskSchedulerImpl: Removed TaskSet 27.0, whose tasks have all completed, from pool 
+26/10/07 11:00:28 INFO DAGScheduler: ShuffleMapStage 27 (collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64) finished in 0.318 s
+26/10/07 11:00:28 INFO DAGScheduler: looking for newly runnable stages
+26/10/07 11:00:28 INFO DAGScheduler: running: Set()
+26/10/07 11:00:28 INFO DAGScheduler: waiting: Set()
+26/10/07 11:00:28 INFO DAGScheduler: failed: Set()
+26/10/07 11:00:28 INFO SparkContext: Starting job: collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64
+26/10/07 11:00:28 INFO DAGScheduler: Got job 22 (collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64) with 1 output partitions
+26/10/07 11:00:28 INFO DAGScheduler: Final stage: ResultStage 29 (collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64)
+26/10/07 11:00:28 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 28)
+26/10/07 11:00:28 INFO DAGScheduler: Missing parents: List()
+26/10/07 11:00:28 INFO DAGScheduler: Submitting ResultStage 29 (MapPartitionsRDD[84] at collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64), which has no missing parents
+26/10/07 11:00:28 INFO MemoryStore: Block broadcast_38 stored as values in memory (estimated size 14.5 KiB, free 1661.7 MiB)
+26/10/07 11:00:28 INFO MemoryStore: Block broadcast_38_piece0 stored as bytes in memory (estimated size 6.5 KiB, free 1661.7 MiB)
+26/10/07 11:00:28 INFO BlockManagerInfo: Added broadcast_38_piece0 in memory on master:44485 (size: 6.5 KiB, free: 1662.9 MiB)
+26/10/07 11:00:28 INFO SparkContext: Created broadcast 38 from broadcast at DAGScheduler.scala:1585
+26/10/07 11:00:28 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 29 (MapPartitionsRDD[84] at collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64) (first 15 tasks are for partitions Vector(0))
+26/10/07 11:00:28 INFO TaskSchedulerImpl: Adding task set 29.0 with 1 tasks resource profile 0
+26/10/07 11:00:28 INFO TaskSetManager: Starting task 0.0 in stage 29.0 (TID 38) (master, executor driver, partition 0, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:00:28 INFO Executor: Running task 0.0 in stage 29.0 (TID 38)
+26/10/07 11:00:28 INFO ShuffleBlockFetcherIterator: Getting 2 (144.0 B) non-empty blocks including 2 (144.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:00:28 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+26/10/07 11:00:28 INFO Executor: Finished task 0.0 in stage 29.0 (TID 38). 4003 bytes result sent to driver
+26/10/07 11:00:28 INFO TaskSetManager: Finished task 0.0 in stage 29.0 (TID 38) in 18 ms on master (executor driver) (1/1)
+26/10/07 11:00:28 INFO TaskSchedulerImpl: Removed TaskSet 29.0, whose tasks have all completed, from pool 
+26/10/07 11:00:28 INFO DAGScheduler: ResultStage 29 (collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64) finished in 0.027 s
+26/10/07 11:00:28 INFO DAGScheduler: Job 22 is finished. Cancelling potential speculative or zombie tasks for this job
+26/10/07 11:00:28 INFO TaskSchedulerImpl: Killing all running tasks in stage 29: Stage finished
+26/10/07 11:00:28 INFO DAGScheduler: Job 22 finished: collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64, took 0.034529 s
+26/10/07 11:00:28 INFO FileSourceStrategy: Pushed Filters: 
+26/10/07 11:00:28 INFO FileSourceStrategy: Post-Scan Filters: 
+26/10/07 11:00:28 INFO SparkContext: Starting job: $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264
+26/10/07 11:00:28 INFO DAGScheduler: Got job 23 ($anonfun$withThreadLocalCaptured$1 at FutureTask.java:264) with 2 output partitions
+26/10/07 11:00:28 INFO DAGScheduler: Final stage: ResultStage 30 ($anonfun$withThreadLocalCaptured$1 at FutureTask.java:264)
+26/10/07 11:00:28 INFO DAGScheduler: Parents of final stage: List()
+26/10/07 11:00:28 INFO DAGScheduler: Missing parents: List()
+26/10/07 11:00:28 INFO DAGScheduler: Submitting ResultStage 30 (MapPartitionsRDD[88] at $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264), which has no missing parents
+26/10/07 11:00:28 INFO MemoryStore: Block broadcast_39 stored as values in memory (estimated size 10.9 KiB, free 1661.7 MiB)
+26/10/07 11:00:28 INFO MemoryStore: Block broadcast_39_piece0 stored as bytes in memory (estimated size 5.1 KiB, free 1661.7 MiB)
+26/10/07 11:00:28 INFO BlockManagerInfo: Added broadcast_39_piece0 in memory on master:44485 (size: 5.1 KiB, free: 1662.9 MiB)
+26/10/07 11:00:28 INFO SparkContext: Created broadcast 39 from broadcast at DAGScheduler.scala:1585
+26/10/07 11:00:28 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 30 (MapPartitionsRDD[88] at $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264) (first 15 tasks are for partitions Vector(0, 1))
+26/10/07 11:00:28 INFO TaskSchedulerImpl: Adding task set 30.0 with 2 tasks resource profile 0
+26/10/07 11:00:28 INFO TaskSetManager: Starting task 0.0 in stage 30.0 (TID 39) (master, executor driver, partition 0, PROCESS_LOCAL, 7740 bytes) 
+26/10/07 11:00:28 INFO TaskSetManager: Starting task 1.0 in stage 30.0 (TID 40) (master, executor driver, partition 1, PROCESS_LOCAL, 7740 bytes) 
+26/10/07 11:00:28 INFO Executor: Running task 0.0 in stage 30.0 (TID 39)
+26/10/07 11:00:28 INFO Executor: Running task 1.0 in stage 30.0 (TID 40)
+26/10/07 11:00:28 INFO Executor: Finished task 0.0 in stage 30.0 (TID 39). 2459 bytes result sent to driver
+26/10/07 11:00:28 INFO Executor: Finished task 1.0 in stage 30.0 (TID 40). 2502 bytes result sent to driver
+26/10/07 11:00:28 INFO TaskSetManager: Finished task 0.0 in stage 30.0 (TID 39) in 16 ms on master (executor driver) (1/2)
+26/10/07 11:00:28 INFO TaskSetManager: Finished task 1.0 in stage 30.0 (TID 40) in 19 ms on master (executor driver) (2/2)
+26/10/07 11:00:28 INFO TaskSchedulerImpl: Removed TaskSet 30.0, whose tasks have all completed, from pool 
+26/10/07 11:00:28 INFO DAGScheduler: ResultStage 30 ($anonfun$withThreadLocalCaptured$1 at FutureTask.java:264) finished in 0.028 s
+26/10/07 11:00:28 INFO DAGScheduler: Job 23 is finished. Cancelling potential speculative or zombie tasks for this job
+26/10/07 11:00:28 INFO TaskSchedulerImpl: Killing all running tasks in stage 30: Stage finished
+26/10/07 11:00:28 INFO DAGScheduler: Job 23 finished: $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264, took 0.031516 s
+26/10/07 11:00:28 INFO MemoryStore: Block broadcast_40 stored as values in memory (estimated size 14.9 KiB, free 1661.7 MiB)
+26/10/07 11:00:28 INFO MemoryStore: Block broadcast_40_piece0 stored as bytes in memory (estimated size 1755.0 B, free 1661.6 MiB)
+26/10/07 11:00:28 INFO BlockManagerInfo: Added broadcast_40_piece0 in memory on master:44485 (size: 1755.0 B, free: 1662.9 MiB)
+26/10/07 11:00:28 INFO SparkContext: Created broadcast 40 from $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264
+26/10/07 11:00:28 INFO FileSourceStrategy: Pushed Filters: 
+26/10/07 11:00:28 INFO FileSourceStrategy: Post-Scan Filters: 
+26/10/07 11:00:28 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+26/10/07 11:00:28 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+26/10/07 11:00:28 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+26/10/07 11:00:29 INFO CodeGenerator: Code generated in 15.801827 ms
+26/10/07 11:00:29 INFO MemoryStore: Block broadcast_41 stored as values in memory (estimated size 199.7 KiB, free 1661.5 MiB)
+26/10/07 11:00:29 INFO MemoryStore: Block broadcast_41_piece0 stored as bytes in memory (estimated size 34.8 KiB, free 1661.4 MiB)
+26/10/07 11:00:29 INFO BlockManagerInfo: Added broadcast_41_piece0 in memory on master:44485 (size: 34.8 KiB, free: 1662.9 MiB)
+26/10/07 11:00:29 INFO SparkContext: Created broadcast 41 from csv at NativeMethodAccessorImpl.java:0
+26/10/07 11:00:29 INFO FileSourceScanExec: Planning scan with bin packing, max size: 12857891 bytes, open cost is considered as scanning 4194304 bytes.
+26/10/07 11:00:29 INFO SparkContext: Starting job: csv at NativeMethodAccessorImpl.java:0
+26/10/07 11:00:29 INFO DAGScheduler: Got job 24 (csv at NativeMethodAccessorImpl.java:0) with 2 output partitions
+26/10/07 11:00:29 INFO DAGScheduler: Final stage: ResultStage 31 (csv at NativeMethodAccessorImpl.java:0)
+26/10/07 11:00:29 INFO DAGScheduler: Parents of final stage: List()
+26/10/07 11:00:29 INFO DAGScheduler: Missing parents: List()
+26/10/07 11:00:29 INFO DAGScheduler: Submitting ResultStage 31 (MapPartitionsRDD[92] at csv at NativeMethodAccessorImpl.java:0), which has no missing parents
+26/10/07 11:00:29 INFO MemoryStore: Block broadcast_42 stored as values in memory (estimated size 223.3 KiB, free 1661.2 MiB)
+26/10/07 11:00:29 INFO MemoryStore: Block broadcast_42_piece0 stored as bytes in memory (estimated size 80.6 KiB, free 1661.1 MiB)
+26/10/07 11:00:29 INFO BlockManagerInfo: Added broadcast_42_piece0 in memory on master:44485 (size: 80.6 KiB, free: 1662.8 MiB)
+26/10/07 11:00:29 INFO SparkContext: Created broadcast 42 from broadcast at DAGScheduler.scala:1585
+26/10/07 11:00:29 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 31 (MapPartitionsRDD[92] at csv at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0, 1))
+26/10/07 11:00:29 INFO TaskSchedulerImpl: Adding task set 31.0 with 2 tasks resource profile 0
+26/10/07 11:00:29 INFO TaskSetManager: Starting task 0.0 in stage 31.0 (TID 41) (master, executor driver, partition 0, NODE_LOCAL, 8550 bytes) 
+26/10/07 11:00:29 INFO TaskSetManager: Starting task 1.0 in stage 31.0 (TID 42) (master, executor driver, partition 1, NODE_LOCAL, 8560 bytes) 
+26/10/07 11:00:29 INFO Executor: Running task 0.0 in stage 31.0 (TID 41)
+26/10/07 11:00:29 INFO Executor: Running task 1.0 in stage 31.0 (TID 42)
+26/10/07 11:00:29 INFO CodeGenerator: Code generated in 89.839103 ms
+26/10/07 11:00:29 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+26/10/07 11:00:29 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+26/10/07 11:00:29 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+26/10/07 11:00:29 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+26/10/07 11:00:29 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+26/10/07 11:00:29 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+26/10/07 11:00:29 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BUSDUSDT/BUSDUSDT-1h-2022-11.csv, range: 0-109171, partition values: [empty row]
+26/10/07 11:00:29 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BUSDUSDT/BUSDUSDT-1h-2023-01.csv, range: 0-112300, partition values: [empty row]
+26/10/07 11:00:30 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BUSDUSDT/BUSDUSDT-1h-2023-02.csv, range: 0-101710, partition values: [empty row]
+26/10/07 11:00:30 INFO BlockManagerInfo: Removed broadcast_39_piece0 on master:44485 in memory (size: 5.1 KiB, free: 1662.8 MiB)
+26/10/07 11:00:30 INFO BlockManagerInfo: Removed broadcast_37_piece0 on master:44485 in memory (size: 9.6 KiB, free: 1662.8 MiB)
+26/10/07 11:00:30 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BUSDUSDT/BUSDUSDT-1h-2022-12.csv, range: 0-111620, partition values: [empty row]
+26/10/07 11:00:30 INFO BlockManagerInfo: Removed broadcast_33_piece0 on master:44485 in memory (size: 34.8 KiB, free: 1662.9 MiB)
+26/10/07 11:00:30 INFO BlockManagerInfo: Removed broadcast_38_piece0 on master:44485 in memory (size: 6.5 KiB, free: 1662.9 MiB)
+26/10/07 11:00:30 INFO BlockManagerInfo: Removed broadcast_32_piece0 on master:44485 in memory (size: 207.0 B, free: 1662.9 MiB)
+26/10/07 11:00:30 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BUSDUSDT/diario/BUSDUSDT-1h-2023-03-10.csv, range: 0-3642, partition values: [empty row]
+26/10/07 11:00:31 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BUSDUSDT/BUSDUSDT-1h-2022-10.csv, range: 0-111516, partition values: [empty row]
+26/10/07 11:00:31 INFO FileOutputCommitter: Saved output of task 'attempt_202610071100293088990289364999816_0031_m_000001_42' to hdfs://100.76.42.126:9000/datalake/benchmark/raw_200x/BUSDUSDT/_temporary/0/task_202610071100293088990289364999816_0031_m_000001
+26/10/07 11:00:31 INFO SparkHadoopMapRedUtil: attempt_202610071100293088990289364999816_0031_m_000001_42: Committed. Elapsed time: 71 ms.
+26/10/07 11:00:31 INFO Executor: Finished task 1.0 in stage 31.0 (TID 42). 2626 bytes result sent to driver
+26/10/07 11:00:31 INFO TaskSetManager: Finished task 1.0 in stage 31.0 (TID 42) in 2788 ms on master (executor driver) (1/2)
+26/10/07 11:00:31 INFO FileOutputCommitter: Saved output of task 'attempt_202610071100293088990289364999816_0031_m_000000_41' to hdfs://100.76.42.126:9000/datalake/benchmark/raw_200x/BUSDUSDT/_temporary/0/task_202610071100293088990289364999816_0031_m_000000
+26/10/07 11:00:31 INFO SparkHadoopMapRedUtil: attempt_202610071100293088990289364999816_0031_m_000000_41: Committed. Elapsed time: 61 ms.
+26/10/07 11:00:31 INFO Executor: Finished task 0.0 in stage 31.0 (TID 41). 2626 bytes result sent to driver
+26/10/07 11:00:31 INFO TaskSetManager: Finished task 0.0 in stage 31.0 (TID 41) in 2816 ms on master (executor driver) (2/2)
+26/10/07 11:00:31 INFO TaskSchedulerImpl: Removed TaskSet 31.0, whose tasks have all completed, from pool 
+26/10/07 11:00:31 INFO DAGScheduler: ResultStage 31 (csv at NativeMethodAccessorImpl.java:0) finished in 2.840 s
+26/10/07 11:00:31 INFO DAGScheduler: Job 24 is finished. Cancelling potential speculative or zombie tasks for this job
+26/10/07 11:00:31 INFO TaskSchedulerImpl: Killing all running tasks in stage 31: Stage finished
+26/10/07 11:00:31 INFO DAGScheduler: Job 24 finished: csv at NativeMethodAccessorImpl.java:0, took 2.851079 s
+26/10/07 11:00:31 INFO FileFormatWriter: Start to commit write Job e8168077-f1d5-48c5-adb6-e1a25264fc61.
+26/10/07 11:00:32 INFO FileFormatWriter: Write Job e8168077-f1d5-48c5-adb6-e1a25264fc61 committed. Elapsed time: 186 ms.
+26/10/07 11:00:32 INFO FileFormatWriter: Finished processing stats for write job e8168077-f1d5-48c5-adb6-e1a25264fc61.
+26/10/07 11:00:32 INFO FileSourceStrategy: Pushed Filters: 
+26/10/07 11:00:32 INFO FileSourceStrategy: Post-Scan Filters: 
+26/10/07 11:00:32 INFO SparkContext: Starting job: $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264
+26/10/07 11:00:32 INFO DAGScheduler: Got job 25 ($anonfun$withThreadLocalCaptured$1 at FutureTask.java:264) with 2 output partitions
+26/10/07 11:00:32 INFO DAGScheduler: Final stage: ResultStage 32 ($anonfun$withThreadLocalCaptured$1 at FutureTask.java:264)
+26/10/07 11:00:32 INFO DAGScheduler: Parents of final stage: List()
+26/10/07 11:00:32 INFO DAGScheduler: Missing parents: List()
+26/10/07 11:00:32 INFO DAGScheduler: Submitting ResultStage 32 (MapPartitionsRDD[96] at $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264), which has no missing parents
+26/10/07 11:00:32 INFO MemoryStore: Block broadcast_43 stored as values in memory (estimated size 10.8 KiB, free 1661.4 MiB)
+26/10/07 11:00:32 INFO MemoryStore: Block broadcast_43_piece0 stored as bytes in memory (estimated size 5.0 KiB, free 1661.4 MiB)
+26/10/07 11:00:32 INFO BlockManagerInfo: Added broadcast_43_piece0 in memory on master:44485 (size: 5.0 KiB, free: 1662.9 MiB)
+26/10/07 11:00:32 INFO SparkContext: Created broadcast 43 from broadcast at DAGScheduler.scala:1585
+26/10/07 11:00:32 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 32 (MapPartitionsRDD[96] at $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264) (first 15 tasks are for partitions Vector(0, 1))
+26/10/07 11:00:32 INFO TaskSchedulerImpl: Adding task set 32.0 with 2 tasks resource profile 0
+26/10/07 11:00:32 INFO TaskSetManager: Starting task 0.0 in stage 32.0 (TID 43) (master, executor driver, partition 0, PROCESS_LOCAL, 7740 bytes) 
+26/10/07 11:00:32 INFO TaskSetManager: Starting task 1.0 in stage 32.0 (TID 44) (master, executor driver, partition 1, PROCESS_LOCAL, 7740 bytes) 
+26/10/07 11:00:32 INFO Executor: Running task 0.0 in stage 32.0 (TID 43)
+26/10/07 11:00:32 INFO Executor: Running task 1.0 in stage 32.0 (TID 44)
+26/10/07 11:00:32 INFO Executor: Finished task 0.0 in stage 32.0 (TID 43). 1496 bytes result sent to driver
+26/10/07 11:00:32 INFO TaskSetManager: Finished task 0.0 in stage 32.0 (TID 43) in 15 ms on master (executor driver) (1/2)
+26/10/07 11:00:32 INFO Executor: Finished task 1.0 in stage 32.0 (TID 44). 1453 bytes result sent to driver
+26/10/07 11:00:32 INFO TaskSetManager: Finished task 1.0 in stage 32.0 (TID 44) in 17 ms on master (executor driver) (2/2)
+26/10/07 11:00:32 INFO TaskSchedulerImpl: Removed TaskSet 32.0, whose tasks have all completed, from pool 
+26/10/07 11:00:32 INFO DAGScheduler: ResultStage 32 ($anonfun$withThreadLocalCaptured$1 at FutureTask.java:264) finished in 0.029 s
+26/10/07 11:00:32 INFO DAGScheduler: Job 25 is finished. Cancelling potential speculative or zombie tasks for this job
+26/10/07 11:00:32 INFO TaskSchedulerImpl: Killing all running tasks in stage 32: Stage finished
+26/10/07 11:00:32 INFO DAGScheduler: Job 25 finished: $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264, took 0.038663 s
+26/10/07 11:00:32 INFO MemoryStore: Block broadcast_44 stored as values in memory (estimated size 11.8 KiB, free 1661.4 MiB)
+26/10/07 11:00:32 INFO MemoryStore: Block broadcast_44_piece0 stored as bytes in memory (estimated size 207.0 B, free 1661.4 MiB)
+26/10/07 11:00:32 INFO BlockManagerInfo: Added broadcast_44_piece0 in memory on master:44485 (size: 207.0 B, free: 1662.9 MiB)
+26/10/07 11:00:32 INFO SparkContext: Created broadcast 44 from $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264
+26/10/07 11:00:32 INFO FileSourceStrategy: Pushed Filters: 
+26/10/07 11:00:32 INFO FileSourceStrategy: Post-Scan Filters: 
+26/10/07 11:00:32 INFO MemoryStore: Block broadcast_45 stored as values in memory (estimated size 199.7 KiB, free 1661.2 MiB)
+26/10/07 11:00:32 INFO MemoryStore: Block broadcast_45_piece0 stored as bytes in memory (estimated size 34.8 KiB, free 1661.2 MiB)
+26/10/07 11:00:32 INFO BlockManagerInfo: Added broadcast_45_piece0 in memory on master:44485 (size: 34.8 KiB, free: 1662.8 MiB)
+26/10/07 11:00:32 INFO SparkContext: Created broadcast 45 from count at NativeMethodAccessorImpl.java:0
+26/10/07 11:00:32 INFO FileSourceScanExec: Planning scan with bin packing, max size: 12857891 bytes, open cost is considered as scanning 4194304 bytes.
+26/10/07 11:00:32 INFO DAGScheduler: Registering RDD 100 (count at NativeMethodAccessorImpl.java:0) as input to shuffle 7
+26/10/07 11:00:32 INFO DAGScheduler: Got map stage job 26 (count at NativeMethodAccessorImpl.java:0) with 2 output partitions
+26/10/07 11:00:32 INFO DAGScheduler: Final stage: ShuffleMapStage 33 (count at NativeMethodAccessorImpl.java:0)
+26/10/07 11:00:32 INFO DAGScheduler: Parents of final stage: List()
+26/10/07 11:00:32 INFO DAGScheduler: Missing parents: List()
+26/10/07 11:00:32 INFO DAGScheduler: Submitting ShuffleMapStage 33 (MapPartitionsRDD[100] at count at NativeMethodAccessorImpl.java:0), which has no missing parents
+26/10/07 11:00:32 INFO MemoryStore: Block broadcast_46 stored as values in memory (estimated size 19.2 KiB, free 1661.2 MiB)
+26/10/07 11:00:32 INFO MemoryStore: Block broadcast_46_piece0 stored as bytes in memory (estimated size 9.3 KiB, free 1661.1 MiB)
+26/10/07 11:00:32 INFO BlockManagerInfo: Added broadcast_46_piece0 in memory on master:44485 (size: 9.3 KiB, free: 1662.8 MiB)
+26/10/07 11:00:32 INFO SparkContext: Created broadcast 46 from broadcast at DAGScheduler.scala:1585
+26/10/07 11:00:32 INFO DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 33 (MapPartitionsRDD[100] at count at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0, 1))
+26/10/07 11:00:32 INFO TaskSchedulerImpl: Adding task set 33.0 with 2 tasks resource profile 0
+26/10/07 11:00:32 INFO TaskSetManager: Starting task 0.0 in stage 33.0 (TID 45) (master, executor driver, partition 0, NODE_LOCAL, 8539 bytes) 
+26/10/07 11:00:32 INFO TaskSetManager: Starting task 1.0 in stage 33.0 (TID 46) (master, executor driver, partition 1, NODE_LOCAL, 8549 bytes) 
+26/10/07 11:00:32 INFO Executor: Running task 0.0 in stage 33.0 (TID 45)
+26/10/07 11:00:32 INFO Executor: Running task 1.0 in stage 33.0 (TID 46)
+26/10/07 11:00:32 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BUSDUSDT/BUSDUSDT-1h-2023-01.csv, range: 0-112300, partition values: [empty row]
+26/10/07 11:00:32 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BUSDUSDT/BUSDUSDT-1h-2022-11.csv, range: 0-109171, partition values: [empty row]
+26/10/07 11:00:32 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BUSDUSDT/BUSDUSDT-1h-2022-12.csv, range: 0-111620, partition values: [empty row]
+26/10/07 11:00:32 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BUSDUSDT/BUSDUSDT-1h-2023-02.csv, range: 0-101710, partition values: [empty row]
+26/10/07 11:00:32 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BUSDUSDT/BUSDUSDT-1h-2022-10.csv, range: 0-111516, partition values: [empty row]
+26/10/07 11:00:32 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BUSDUSDT/diario/BUSDUSDT-1h-2023-03-10.csv, range: 0-3642, partition values: [empty row]
+26/10/07 11:00:32 INFO Executor: Finished task 0.0 in stage 33.0 (TID 45). 1978 bytes result sent to driver
+26/10/07 11:00:32 INFO TaskSetManager: Finished task 0.0 in stage 33.0 (TID 45) in 58 ms on master (executor driver) (1/2)
+26/10/07 11:00:32 INFO Executor: Finished task 1.0 in stage 33.0 (TID 46). 1978 bytes result sent to driver
+26/10/07 11:00:32 INFO TaskSetManager: Finished task 1.0 in stage 33.0 (TID 46) in 62 ms on master (executor driver) (2/2)
+26/10/07 11:00:32 INFO TaskSchedulerImpl: Removed TaskSet 33.0, whose tasks have all completed, from pool 
+26/10/07 11:00:32 INFO DAGScheduler: ShuffleMapStage 33 (count at NativeMethodAccessorImpl.java:0) finished in 0.074 s
+26/10/07 11:00:32 INFO DAGScheduler: looking for newly runnable stages
+26/10/07 11:00:32 INFO DAGScheduler: running: Set()
+26/10/07 11:00:32 INFO DAGScheduler: waiting: Set()
+26/10/07 11:00:32 INFO DAGScheduler: failed: Set()
+26/10/07 11:00:32 INFO SparkContext: Starting job: count at NativeMethodAccessorImpl.java:0
+26/10/07 11:00:32 INFO DAGScheduler: Got job 27 (count at NativeMethodAccessorImpl.java:0) with 1 output partitions
+26/10/07 11:00:32 INFO DAGScheduler: Final stage: ResultStage 35 (count at NativeMethodAccessorImpl.java:0)
+26/10/07 11:00:32 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 34)
+26/10/07 11:00:32 INFO DAGScheduler: Missing parents: List()
+26/10/07 11:00:32 INFO DAGScheduler: Submitting ResultStage 35 (MapPartitionsRDD[103] at count at NativeMethodAccessorImpl.java:0), which has no missing parents
+26/10/07 11:00:32 INFO MemoryStore: Block broadcast_47 stored as values in memory (estimated size 12.5 KiB, free 1661.1 MiB)
+26/10/07 11:00:32 INFO MemoryStore: Block broadcast_47_piece0 stored as bytes in memory (estimated size 5.9 KiB, free 1661.1 MiB)
+26/10/07 11:00:32 INFO BlockManagerInfo: Added broadcast_47_piece0 in memory on master:44485 (size: 5.9 KiB, free: 1662.8 MiB)
+26/10/07 11:00:32 INFO SparkContext: Created broadcast 47 from broadcast at DAGScheduler.scala:1585
+26/10/07 11:00:32 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 35 (MapPartitionsRDD[103] at count at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+26/10/07 11:00:32 INFO TaskSchedulerImpl: Adding task set 35.0 with 1 tasks resource profile 0
+26/10/07 11:00:32 INFO TaskSetManager: Starting task 0.0 in stage 35.0 (TID 47) (master, executor driver, partition 0, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:00:32 INFO Executor: Running task 0.0 in stage 35.0 (TID 47)
+26/10/07 11:00:32 INFO ShuffleBlockFetcherIterator: Getting 2 (120.0 B) non-empty blocks including 2 (120.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:00:32 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+26/10/07 11:00:32 INFO Executor: Finished task 0.0 in stage 35.0 (TID 47). 3994 bytes result sent to driver
+26/10/07 11:00:32 INFO TaskSetManager: Finished task 0.0 in stage 35.0 (TID 47) in 13 ms on master (executor driver) (1/1)
+26/10/07 11:00:32 INFO TaskSchedulerImpl: Removed TaskSet 35.0, whose tasks have all completed, from pool 
+26/10/07 11:00:32 INFO DAGScheduler: ResultStage 35 (count at NativeMethodAccessorImpl.java:0) finished in 0.023 s
+26/10/07 11:00:32 INFO DAGScheduler: Job 27 is finished. Cancelling potential speculative or zombie tasks for this job
+26/10/07 11:00:32 INFO TaskSchedulerImpl: Killing all running tasks in stage 35: Stage finished
+26/10/07 11:00:32 INFO DAGScheduler: Job 27 finished: count at NativeMethodAccessorImpl.java:0, took 0.037150 s
+  BUSDUSDT: 729600 filas escritas en hdfs:///datalake/benchmark/raw_200x/BUSDUSDT
+26/10/07 11:00:37 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+26/10/07 11:00:37 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+26/10/07 11:00:37 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+26/10/07 11:00:37 INFO CodeGenerator: Code generated in 14.02413 ms
+26/10/07 11:00:37 INFO SparkContext: Starting job: csv at NativeMethodAccessorImpl.java:0
+26/10/07 11:00:37 INFO DAGScheduler: Got job 28 (csv at NativeMethodAccessorImpl.java:0) with 1 output partitions
+26/10/07 11:00:37 INFO DAGScheduler: Final stage: ResultStage 36 (csv at NativeMethodAccessorImpl.java:0)
+26/10/07 11:00:37 INFO DAGScheduler: Parents of final stage: List()
+26/10/07 11:00:37 INFO DAGScheduler: Missing parents: List()
+26/10/07 11:00:37 INFO DAGScheduler: Submitting ResultStage 36 (MapPartitionsRDD[111] at csv at NativeMethodAccessorImpl.java:0), which has no missing parents
+26/10/07 11:00:37 INFO MemoryStore: Block broadcast_48 stored as values in memory (estimated size 209.2 KiB, free 1660.9 MiB)
+26/10/07 11:00:37 INFO MemoryStore: Block broadcast_48_piece0 stored as bytes in memory (estimated size 75.4 KiB, free 1660.8 MiB)
+26/10/07 11:00:37 INFO BlockManagerInfo: Added broadcast_48_piece0 in memory on master:44485 (size: 75.4 KiB, free: 1662.7 MiB)
+26/10/07 11:00:37 INFO SparkContext: Created broadcast 48 from broadcast at DAGScheduler.scala:1585
+26/10/07 11:00:37 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 36 (MapPartitionsRDD[111] at csv at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+26/10/07 11:00:37 INFO TaskSchedulerImpl: Adding task set 36.0 with 1 tasks resource profile 0
+26/10/07 11:00:37 INFO TaskSetManager: Starting task 0.0 in stage 36.0 (TID 48) (master, executor driver, partition 0, PROCESS_LOCAL, 7440 bytes) 
+26/10/07 11:00:37 INFO Executor: Running task 0.0 in stage 36.0 (TID 48)
+26/10/07 11:00:37 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+26/10/07 11:00:37 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+26/10/07 11:00:37 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+26/10/07 11:00:37 INFO FileOutputCommitter: Saved output of task 'attempt_202610071100376580208239814646111_0036_m_000000_48' to hdfs://100.76.42.126:9000/datalake/benchmark/raw_200x/BUSDUSDT/diario/_temporary/0/task_202610071100376580208239814646111_0036_m_000000
+26/10/07 11:00:37 INFO SparkHadoopMapRedUtil: attempt_202610071100376580208239814646111_0036_m_000000_48: Committed. Elapsed time: 43 ms.
+26/10/07 11:00:37 INFO Executor: Finished task 0.0 in stage 36.0 (TID 48). 2205 bytes result sent to driver
+26/10/07 11:00:37 INFO TaskSetManager: Finished task 0.0 in stage 36.0 (TID 48) in 260 ms on master (executor driver) (1/1)
+26/10/07 11:00:37 INFO TaskSchedulerImpl: Removed TaskSet 36.0, whose tasks have all completed, from pool 
+26/10/07 11:00:37 INFO DAGScheduler: ResultStage 36 (csv at NativeMethodAccessorImpl.java:0) finished in 0.295 s
+26/10/07 11:00:37 INFO DAGScheduler: Job 28 is finished. Cancelling potential speculative or zombie tasks for this job
+26/10/07 11:00:37 INFO TaskSchedulerImpl: Killing all running tasks in stage 36: Stage finished
+26/10/07 11:00:37 INFO DAGScheduler: Job 28 finished: csv at NativeMethodAccessorImpl.java:0, took 0.301213 s
+26/10/07 11:00:37 INFO FileFormatWriter: Start to commit write Job 1101ec02-2cb8-4326-b4b0-c4aa679c65d9.
+26/10/07 11:00:37 INFO FileFormatWriter: Write Job 1101ec02-2cb8-4326-b4b0-c4aa679c65d9 committed. Elapsed time: 214 ms.
+26/10/07 11:00:37 INFO FileFormatWriter: Finished processing stats for write job 1101ec02-2cb8-4326-b4b0-c4aa679c65d9.
+Replicando BTCBUSD x200 ...
+26/10/07 11:00:37 INFO InMemoryFileIndex: It took 12 ms to list leaf files for 6 paths.
+26/10/07 11:00:37 INFO FileSourceStrategy: Pushed Filters: 
+26/10/07 11:00:37 INFO FileSourceStrategy: Post-Scan Filters: 
+26/10/07 11:00:37 INFO MemoryStore: Block broadcast_49 stored as values in memory (estimated size 199.7 KiB, free 1660.7 MiB)
+26/10/07 11:00:37 INFO MemoryStore: Block broadcast_49_piece0 stored as bytes in memory (estimated size 34.8 KiB, free 1660.6 MiB)
+26/10/07 11:00:37 INFO BlockManagerInfo: Added broadcast_49_piece0 in memory on master:44485 (size: 34.8 KiB, free: 1662.7 MiB)
+26/10/07 11:00:37 INFO SparkContext: Created broadcast 49 from collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64
+26/10/07 11:00:37 INFO FileSourceScanExec: Planning scan with bin packing, max size: 12876561 bytes, open cost is considered as scanning 4194304 bytes.
+26/10/07 11:00:37 INFO DAGScheduler: Registering RDD 115 (collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64) as input to shuffle 8
+26/10/07 11:00:37 INFO DAGScheduler: Got map stage job 29 (collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64) with 2 output partitions
+26/10/07 11:00:37 INFO DAGScheduler: Final stage: ShuffleMapStage 37 (collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64)
+26/10/07 11:00:37 INFO DAGScheduler: Parents of final stage: List()
+26/10/07 11:00:37 INFO DAGScheduler: Missing parents: List()
+26/10/07 11:00:37 INFO DAGScheduler: Submitting ShuffleMapStage 37 (MapPartitionsRDD[115] at collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64), which has no missing parents
+26/10/07 11:00:37 INFO MemoryStore: Block broadcast_50 stored as values in memory (estimated size 20.4 KiB, free 1660.6 MiB)
+26/10/07 11:00:37 INFO MemoryStore: Block broadcast_50_piece0 stored as bytes in memory (estimated size 9.6 KiB, free 1660.6 MiB)
+26/10/07 11:00:37 INFO BlockManagerInfo: Added broadcast_50_piece0 in memory on master:44485 (size: 9.6 KiB, free: 1662.7 MiB)
+26/10/07 11:00:37 INFO SparkContext: Created broadcast 50 from broadcast at DAGScheduler.scala:1585
+26/10/07 11:00:37 INFO DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 37 (MapPartitionsRDD[115] at collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64) (first 15 tasks are for partitions Vector(0, 1))
+26/10/07 11:00:37 INFO TaskSchedulerImpl: Adding task set 37.0 with 2 tasks resource profile 0
+26/10/07 11:00:37 INFO TaskSetManager: Starting task 0.0 in stage 37.0 (TID 49) (master, executor driver, partition 0, NODE_LOCAL, 8533 bytes) 
+26/10/07 11:00:37 INFO TaskSetManager: Starting task 1.0 in stage 37.0 (TID 50) (master, executor driver, partition 1, NODE_LOCAL, 8543 bytes) 
+26/10/07 11:00:37 INFO Executor: Running task 1.0 in stage 37.0 (TID 50)
+26/10/07 11:00:37 INFO Executor: Running task 0.0 in stage 37.0 (TID 49)
+26/10/07 11:00:37 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCBUSD/BTCBUSD-1h-2022-11.csv, range: 0-115965, partition values: [empty row]
+26/10/07 11:00:37 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCBUSD/BTCBUSD-1h-2023-01.csv, range: 0-120047, partition values: [empty row]
+26/10/07 11:00:38 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCBUSD/BTCBUSD-1h-2023-02.csv, range: 0-108422, partition values: [empty row]
+26/10/07 11:00:38 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCBUSD/BTCBUSD-1h-2022-12.csv, range: 0-119520, partition values: [empty row]
+26/10/07 11:00:38 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCBUSD/diario/BTCBUSD-1h-2023-03-10.csv, range: 0-3888, partition values: [empty row]
+26/10/07 11:00:38 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCBUSD/BTCBUSD-1h-2022-10.csv, range: 0-119456, partition values: [empty row]
+26/10/07 11:00:38 INFO Executor: Finished task 1.0 in stage 37.0 (TID 50). 1922 bytes result sent to driver
+26/10/07 11:00:38 INFO TaskSetManager: Finished task 1.0 in stage 37.0 (TID 50) in 331 ms on master (executor driver) (1/2)
+26/10/07 11:00:38 INFO Executor: Finished task 0.0 in stage 37.0 (TID 49). 1922 bytes result sent to driver
+26/10/07 11:00:38 INFO TaskSetManager: Finished task 0.0 in stage 37.0 (TID 49) in 356 ms on master (executor driver) (2/2)
+26/10/07 11:00:38 INFO TaskSchedulerImpl: Removed TaskSet 37.0, whose tasks have all completed, from pool 
+26/10/07 11:00:38 INFO DAGScheduler: ShuffleMapStage 37 (collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64) finished in 0.371 s
+26/10/07 11:00:38 INFO DAGScheduler: looking for newly runnable stages
+26/10/07 11:00:38 INFO DAGScheduler: running: Set()
+26/10/07 11:00:38 INFO DAGScheduler: waiting: Set()
+26/10/07 11:00:38 INFO DAGScheduler: failed: Set()
+26/10/07 11:00:38 INFO SparkContext: Starting job: collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64
+26/10/07 11:00:38 INFO DAGScheduler: Got job 30 (collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64) with 1 output partitions
+26/10/07 11:00:38 INFO DAGScheduler: Final stage: ResultStage 39 (collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64)
+26/10/07 11:00:38 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 38)
+26/10/07 11:00:38 INFO DAGScheduler: Missing parents: List()
+26/10/07 11:00:38 INFO DAGScheduler: Submitting ResultStage 39 (MapPartitionsRDD[118] at collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64), which has no missing parents
+26/10/07 11:00:38 INFO MemoryStore: Block broadcast_51 stored as values in memory (estimated size 14.5 KiB, free 1660.6 MiB)
+26/10/07 11:00:38 INFO MemoryStore: Block broadcast_51_piece0 stored as bytes in memory (estimated size 6.5 KiB, free 1660.6 MiB)
+26/10/07 11:00:38 INFO BlockManagerInfo: Added broadcast_51_piece0 in memory on master:44485 (size: 6.5 KiB, free: 1662.7 MiB)
+26/10/07 11:00:38 INFO SparkContext: Created broadcast 51 from broadcast at DAGScheduler.scala:1585
+26/10/07 11:00:38 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 39 (MapPartitionsRDD[118] at collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64) (first 15 tasks are for partitions Vector(0))
+26/10/07 11:00:38 INFO TaskSchedulerImpl: Adding task set 39.0 with 1 tasks resource profile 0
+26/10/07 11:00:38 INFO TaskSetManager: Starting task 0.0 in stage 39.0 (TID 51) (master, executor driver, partition 0, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:00:38 INFO Executor: Running task 0.0 in stage 39.0 (TID 51)
+26/10/07 11:00:38 INFO ShuffleBlockFetcherIterator: Getting 2 (144.0 B) non-empty blocks including 2 (144.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:00:38 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 2 ms
+26/10/07 11:00:38 INFO Executor: Finished task 0.0 in stage 39.0 (TID 51). 4046 bytes result sent to driver
+26/10/07 11:00:38 INFO TaskSetManager: Finished task 0.0 in stage 39.0 (TID 51) in 17 ms on master (executor driver) (1/1)
+26/10/07 11:00:38 INFO TaskSchedulerImpl: Removed TaskSet 39.0, whose tasks have all completed, from pool 
+26/10/07 11:00:38 INFO DAGScheduler: ResultStage 39 (collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64) finished in 0.025 s
+26/10/07 11:00:38 INFO DAGScheduler: Job 30 is finished. Cancelling potential speculative or zombie tasks for this job
+26/10/07 11:00:38 INFO TaskSchedulerImpl: Killing all running tasks in stage 39: Stage finished
+26/10/07 11:00:38 INFO DAGScheduler: Job 30 finished: collect at /home/marlon/stablecoin-depeg-detection/src/replicate_raw.py:64, took 0.032247 s
+26/10/07 11:00:38 INFO FileSourceStrategy: Pushed Filters: 
+26/10/07 11:00:38 INFO FileSourceStrategy: Post-Scan Filters: 
+26/10/07 11:00:38 INFO SparkContext: Starting job: $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264
+26/10/07 11:00:38 INFO DAGScheduler: Got job 31 ($anonfun$withThreadLocalCaptured$1 at FutureTask.java:264) with 2 output partitions
+26/10/07 11:00:38 INFO DAGScheduler: Final stage: ResultStage 40 ($anonfun$withThreadLocalCaptured$1 at FutureTask.java:264)
+26/10/07 11:00:38 INFO DAGScheduler: Parents of final stage: List()
+26/10/07 11:00:38 INFO DAGScheduler: Missing parents: List()
+26/10/07 11:00:38 INFO DAGScheduler: Submitting ResultStage 40 (MapPartitionsRDD[122] at $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264), which has no missing parents
+26/10/07 11:00:38 INFO MemoryStore: Block broadcast_52 stored as values in memory (estimated size 10.9 KiB, free 1660.6 MiB)
+26/10/07 11:00:38 INFO MemoryStore: Block broadcast_52_piece0 stored as bytes in memory (estimated size 5.1 KiB, free 1660.6 MiB)
+26/10/07 11:00:38 INFO BlockManagerInfo: Added broadcast_52_piece0 in memory on master:44485 (size: 5.1 KiB, free: 1662.7 MiB)
+26/10/07 11:00:38 INFO SparkContext: Created broadcast 52 from broadcast at DAGScheduler.scala:1585
+26/10/07 11:00:38 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 40 (MapPartitionsRDD[122] at $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264) (first 15 tasks are for partitions Vector(0, 1))
+26/10/07 11:00:38 INFO TaskSchedulerImpl: Adding task set 40.0 with 2 tasks resource profile 0
+26/10/07 11:00:38 INFO TaskSetManager: Starting task 0.0 in stage 40.0 (TID 52) (master, executor driver, partition 0, PROCESS_LOCAL, 7740 bytes) 
+26/10/07 11:00:38 INFO TaskSetManager: Starting task 1.0 in stage 40.0 (TID 53) (master, executor driver, partition 1, PROCESS_LOCAL, 7740 bytes) 
+26/10/07 11:00:38 INFO Executor: Running task 0.0 in stage 40.0 (TID 52)
+26/10/07 11:00:38 INFO Executor: Running task 1.0 in stage 40.0 (TID 53)
+26/10/07 11:00:38 INFO Executor: Finished task 1.0 in stage 40.0 (TID 53). 2502 bytes result sent to driver
+26/10/07 11:00:38 INFO TaskSetManager: Finished task 1.0 in stage 40.0 (TID 53) in 10 ms on master (executor driver) (1/2)
+26/10/07 11:00:38 INFO Executor: Finished task 0.0 in stage 40.0 (TID 52). 2416 bytes result sent to driver
+26/10/07 11:00:38 INFO TaskSetManager: Finished task 0.0 in stage 40.0 (TID 52) in 12 ms on master (executor driver) (2/2)
+26/10/07 11:00:38 INFO TaskSchedulerImpl: Removed TaskSet 40.0, whose tasks have all completed, from pool 
+26/10/07 11:00:38 INFO DAGScheduler: ResultStage 40 ($anonfun$withThreadLocalCaptured$1 at FutureTask.java:264) finished in 0.026 s
+26/10/07 11:00:38 INFO DAGScheduler: Job 31 is finished. Cancelling potential speculative or zombie tasks for this job
+26/10/07 11:00:38 INFO TaskSchedulerImpl: Killing all running tasks in stage 40: Stage finished
+26/10/07 11:00:38 INFO DAGScheduler: Job 31 finished: $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264, took 0.029249 s
+26/10/07 11:00:38 INFO MemoryStore: Block broadcast_53 stored as values in memory (estimated size 14.9 KiB, free 1660.5 MiB)
+26/10/07 11:00:38 INFO MemoryStore: Block broadcast_53_piece0 stored as bytes in memory (estimated size 1755.0 B, free 1660.5 MiB)
+26/10/07 11:00:38 INFO BlockManagerInfo: Added broadcast_53_piece0 in memory on master:44485 (size: 1755.0 B, free: 1662.7 MiB)
+26/10/07 11:00:38 INFO SparkContext: Created broadcast 53 from $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264
+26/10/07 11:00:38 INFO FileSourceStrategy: Pushed Filters: 
+26/10/07 11:00:38 INFO FileSourceStrategy: Post-Scan Filters: 
+26/10/07 11:00:38 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+26/10/07 11:00:38 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+26/10/07 11:00:38 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+26/10/07 11:00:38 INFO MemoryStore: Block broadcast_54 stored as values in memory (estimated size 199.7 KiB, free 1660.3 MiB)
+26/10/07 11:00:39 INFO MemoryStore: Block broadcast_54_piece0 stored as bytes in memory (estimated size 34.8 KiB, free 1660.3 MiB)
+26/10/07 11:00:39 INFO BlockManagerInfo: Added broadcast_54_piece0 in memory on master:44485 (size: 34.8 KiB, free: 1662.7 MiB)
+26/10/07 11:00:39 INFO SparkContext: Created broadcast 54 from csv at NativeMethodAccessorImpl.java:0
+26/10/07 11:00:39 INFO FileSourceScanExec: Planning scan with bin packing, max size: 12876561 bytes, open cost is considered as scanning 4194304 bytes.
+26/10/07 11:00:39 INFO SparkContext: Starting job: csv at NativeMethodAccessorImpl.java:0
+26/10/07 11:00:39 INFO DAGScheduler: Got job 32 (csv at NativeMethodAccessorImpl.java:0) with 2 output partitions
+26/10/07 11:00:39 INFO DAGScheduler: Final stage: ResultStage 41 (csv at NativeMethodAccessorImpl.java:0)
+26/10/07 11:00:39 INFO DAGScheduler: Parents of final stage: List()
+26/10/07 11:00:39 INFO DAGScheduler: Missing parents: List()
+26/10/07 11:00:39 INFO DAGScheduler: Submitting ResultStage 41 (MapPartitionsRDD[126] at csv at NativeMethodAccessorImpl.java:0), which has no missing parents
+26/10/07 11:00:39 INFO MemoryStore: Block broadcast_55 stored as values in memory (estimated size 223.3 KiB, free 1660.1 MiB)
+26/10/07 11:00:39 INFO MemoryStore: Block broadcast_55_piece0 stored as bytes in memory (estimated size 80.6 KiB, free 1660.0 MiB)
+26/10/07 11:00:39 INFO BlockManagerInfo: Added broadcast_55_piece0 in memory on master:44485 (size: 80.6 KiB, free: 1662.6 MiB)
+26/10/07 11:00:39 INFO SparkContext: Created broadcast 55 from broadcast at DAGScheduler.scala:1585
+26/10/07 11:00:39 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 41 (MapPartitionsRDD[126] at csv at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0, 1))
+26/10/07 11:00:39 INFO TaskSchedulerImpl: Adding task set 41.0 with 2 tasks resource profile 0
+26/10/07 11:00:39 INFO TaskSetManager: Starting task 0.0 in stage 41.0 (TID 54) (master, executor driver, partition 0, NODE_LOCAL, 8544 bytes) 
+26/10/07 11:00:39 INFO TaskSetManager: Starting task 1.0 in stage 41.0 (TID 55) (master, executor driver, partition 1, NODE_LOCAL, 8554 bytes) 
+26/10/07 11:00:39 INFO Executor: Running task 0.0 in stage 41.0 (TID 54)
+26/10/07 11:00:39 INFO Executor: Running task 1.0 in stage 41.0 (TID 55)
+26/10/07 11:00:39 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+26/10/07 11:00:39 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+26/10/07 11:00:39 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+26/10/07 11:00:39 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+26/10/07 11:00:39 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+26/10/07 11:00:39 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+26/10/07 11:00:39 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCBUSD/BTCBUSD-1h-2022-11.csv, range: 0-115965, partition values: [empty row]
+26/10/07 11:00:39 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCBUSD/BTCBUSD-1h-2023-01.csv, range: 0-120047, partition values: [empty row]
+26/10/07 11:00:39 INFO BlockManagerInfo: Removed broadcast_36_piece0 on master:44485 in memory (size: 34.8 KiB, free: 1662.6 MiB)
+26/10/07 11:00:39 INFO BlockManagerInfo: Removed broadcast_48_piece0 on master:44485 in memory (size: 75.4 KiB, free: 1662.7 MiB)
+26/10/07 11:00:39 INFO BlockManagerInfo: Removed broadcast_45_piece0 on master:44485 in memory (size: 34.8 KiB, free: 1662.7 MiB)
+26/10/07 11:00:39 INFO BlockManagerInfo: Removed broadcast_44_piece0 on master:44485 in memory (size: 207.0 B, free: 1662.7 MiB)
+26/10/07 11:00:39 INFO BlockManagerInfo: Removed broadcast_52_piece0 on master:44485 in memory (size: 5.1 KiB, free: 1662.7 MiB)
+26/10/07 11:00:39 INFO BlockManagerInfo: Removed broadcast_46_piece0 on master:44485 in memory (size: 9.3 KiB, free: 1662.7 MiB)
+26/10/07 11:00:39 INFO BlockManagerInfo: Removed broadcast_43_piece0 on master:44485 in memory (size: 5.0 KiB, free: 1662.7 MiB)
+26/10/07 11:00:39 INFO BlockManagerInfo: Removed broadcast_51_piece0 on master:44485 in memory (size: 6.5 KiB, free: 1662.7 MiB)
+26/10/07 11:00:39 INFO BlockManagerInfo: Removed broadcast_41_piece0 on master:44485 in memory (size: 34.8 KiB, free: 1662.8 MiB)
+26/10/07 11:00:39 INFO BlockManagerInfo: Removed broadcast_42_piece0 on master:44485 in memory (size: 80.6 KiB, free: 1662.9 MiB)
+26/10/07 11:00:39 INFO BlockManagerInfo: Removed broadcast_50_piece0 on master:44485 in memory (size: 9.6 KiB, free: 1662.9 MiB)
+26/10/07 11:00:39 INFO BlockManagerInfo: Removed broadcast_47_piece0 on master:44485 in memory (size: 5.9 KiB, free: 1662.9 MiB)
+26/10/07 11:00:39 INFO BlockManagerInfo: Removed broadcast_40_piece0 on master:44485 in memory (size: 1755.0 B, free: 1662.9 MiB)
+26/10/07 11:00:40 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCBUSD/BTCBUSD-1h-2023-02.csv, range: 0-108422, partition values: [empty row]
+26/10/07 11:00:40 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCBUSD/BTCBUSD-1h-2022-12.csv, range: 0-119520, partition values: [empty row]
+26/10/07 11:00:40 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCBUSD/diario/BTCBUSD-1h-2023-03-10.csv, range: 0-3888, partition values: [empty row]
+26/10/07 11:00:40 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCBUSD/BTCBUSD-1h-2022-10.csv, range: 0-119456, partition values: [empty row]
+26/10/07 11:00:41 INFO FileOutputCommitter: Saved output of task 'attempt_202610071100392209916385928401325_0041_m_000001_55' to hdfs://100.76.42.126:9000/datalake/benchmark/raw_200x/BTCBUSD/_temporary/0/task_202610071100392209916385928401325_0041_m_000001
+26/10/07 11:00:41 INFO SparkHadoopMapRedUtil: attempt_202610071100392209916385928401325_0041_m_000001_55: Committed. Elapsed time: 211 ms.
+26/10/07 11:00:41 INFO Executor: Finished task 1.0 in stage 41.0 (TID 55). 2626 bytes result sent to driver
+26/10/07 11:00:41 INFO TaskSetManager: Finished task 1.0 in stage 41.0 (TID 55) in 2482 ms on master (executor driver) (1/2)
+26/10/07 11:00:41 INFO FileOutputCommitter: Saved output of task 'attempt_202610071100392209916385928401325_0041_m_000000_54' to hdfs://100.76.42.126:9000/datalake/benchmark/raw_200x/BTCBUSD/_temporary/0/task_202610071100392209916385928401325_0041_m_000000
+26/10/07 11:00:41 INFO SparkHadoopMapRedUtil: attempt_202610071100392209916385928401325_0041_m_000000_54: Committed. Elapsed time: 39 ms.
+26/10/07 11:00:41 INFO Executor: Finished task 0.0 in stage 41.0 (TID 54). 2626 bytes result sent to driver
+26/10/07 11:00:41 INFO TaskSetManager: Finished task 0.0 in stage 41.0 (TID 54) in 2560 ms on master (executor driver) (2/2)
+26/10/07 11:00:41 INFO TaskSchedulerImpl: Removed TaskSet 41.0, whose tasks have all completed, from pool 
+26/10/07 11:00:41 INFO DAGScheduler: ResultStage 41 (csv at NativeMethodAccessorImpl.java:0) finished in 2.586 s
+26/10/07 11:00:41 INFO DAGScheduler: Job 32 is finished. Cancelling potential speculative or zombie tasks for this job
+26/10/07 11:00:41 INFO TaskSchedulerImpl: Killing all running tasks in stage 41: Stage finished
+26/10/07 11:00:41 INFO DAGScheduler: Job 32 finished: csv at NativeMethodAccessorImpl.java:0, took 2.590688 s
+26/10/07 11:00:41 INFO FileFormatWriter: Start to commit write Job f9aabadd-de0e-477c-9bcb-c8abf9058080.
+26/10/07 11:00:41 INFO FileFormatWriter: Write Job f9aabadd-de0e-477c-9bcb-c8abf9058080 committed. Elapsed time: 203 ms.
+26/10/07 11:00:41 INFO FileFormatWriter: Finished processing stats for write job f9aabadd-de0e-477c-9bcb-c8abf9058080.
+26/10/07 11:00:41 INFO FileSourceStrategy: Pushed Filters: 
+26/10/07 11:00:41 INFO FileSourceStrategy: Post-Scan Filters: 
+26/10/07 11:00:41 INFO SparkContext: Starting job: $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264
+26/10/07 11:00:41 INFO DAGScheduler: Got job 33 ($anonfun$withThreadLocalCaptured$1 at FutureTask.java:264) with 2 output partitions
+26/10/07 11:00:41 INFO DAGScheduler: Final stage: ResultStage 42 ($anonfun$withThreadLocalCaptured$1 at FutureTask.java:264)
+26/10/07 11:00:41 INFO DAGScheduler: Parents of final stage: List()
+26/10/07 11:00:41 INFO DAGScheduler: Missing parents: List()
+26/10/07 11:00:41 INFO DAGScheduler: Submitting ResultStage 42 (MapPartitionsRDD[130] at $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264), which has no missing parents
+26/10/07 11:00:41 INFO MemoryStore: Block broadcast_56 stored as values in memory (estimated size 10.8 KiB, free 1661.4 MiB)
+26/10/07 11:00:41 INFO MemoryStore: Block broadcast_56_piece0 stored as bytes in memory (estimated size 5.1 KiB, free 1661.4 MiB)
+26/10/07 11:00:41 INFO BlockManagerInfo: Added broadcast_56_piece0 in memory on master:44485 (size: 5.1 KiB, free: 1662.9 MiB)
+26/10/07 11:00:41 INFO SparkContext: Created broadcast 56 from broadcast at DAGScheduler.scala:1585
+26/10/07 11:00:41 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 42 (MapPartitionsRDD[130] at $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264) (first 15 tasks are for partitions Vector(0, 1))
+26/10/07 11:00:41 INFO TaskSchedulerImpl: Adding task set 42.0 with 2 tasks resource profile 0
+26/10/07 11:00:41 INFO TaskSetManager: Starting task 0.0 in stage 42.0 (TID 56) (master, executor driver, partition 0, PROCESS_LOCAL, 7740 bytes) 
+26/10/07 11:00:41 INFO TaskSetManager: Starting task 1.0 in stage 42.0 (TID 57) (master, executor driver, partition 1, PROCESS_LOCAL, 7740 bytes) 
+26/10/07 11:00:41 INFO Executor: Running task 0.0 in stage 42.0 (TID 56)
+26/10/07 11:00:41 INFO Executor: Running task 1.0 in stage 42.0 (TID 57)
+26/10/07 11:00:41 INFO Executor: Finished task 0.0 in stage 42.0 (TID 56). 1496 bytes result sent to driver
+26/10/07 11:00:41 INFO TaskSetManager: Finished task 0.0 in stage 42.0 (TID 56) in 11 ms on master (executor driver) (1/2)
+26/10/07 11:00:41 INFO Executor: Finished task 1.0 in stage 42.0 (TID 57). 1496 bytes result sent to driver
+26/10/07 11:00:41 INFO TaskSetManager: Finished task 1.0 in stage 42.0 (TID 57) in 14 ms on master (executor driver) (2/2)
+26/10/07 11:00:41 INFO TaskSchedulerImpl: Removed TaskSet 42.0, whose tasks have all completed, from pool 
+26/10/07 11:00:41 INFO DAGScheduler: ResultStage 42 ($anonfun$withThreadLocalCaptured$1 at FutureTask.java:264) finished in 0.021 s
+26/10/07 11:00:41 INFO DAGScheduler: Job 33 is finished. Cancelling potential speculative or zombie tasks for this job
+26/10/07 11:00:41 INFO TaskSchedulerImpl: Killing all running tasks in stage 42: Stage finished
+26/10/07 11:00:41 INFO DAGScheduler: Job 33 finished: $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264, took 0.025892 s
+26/10/07 11:00:41 INFO MemoryStore: Block broadcast_57 stored as values in memory (estimated size 11.8 KiB, free 1661.4 MiB)
+26/10/07 11:00:41 INFO MemoryStore: Block broadcast_57_piece0 stored as bytes in memory (estimated size 207.0 B, free 1661.4 MiB)
+26/10/07 11:00:41 INFO BlockManagerInfo: Added broadcast_57_piece0 in memory on master:44485 (size: 207.0 B, free: 1662.9 MiB)
+26/10/07 11:00:41 INFO SparkContext: Created broadcast 57 from $anonfun$withThreadLocalCaptured$1 at FutureTask.java:264
+26/10/07 11:00:41 INFO FileSourceStrategy: Pushed Filters: 
+26/10/07 11:00:41 INFO FileSourceStrategy: Post-Scan Filters: 
+26/10/07 11:00:41 INFO MemoryStore: Block broadcast_58 stored as values in memory (estimated size 199.7 KiB, free 1661.2 MiB)
+26/10/07 11:00:41 INFO MemoryStore: Block broadcast_58_piece0 stored as bytes in memory (estimated size 34.8 KiB, free 1661.2 MiB)
+26/10/07 11:00:41 INFO BlockManagerInfo: Added broadcast_58_piece0 in memory on master:44485 (size: 34.8 KiB, free: 1662.8 MiB)
+26/10/07 11:00:41 INFO SparkContext: Created broadcast 58 from count at NativeMethodAccessorImpl.java:0
+26/10/07 11:00:41 INFO FileSourceScanExec: Planning scan with bin packing, max size: 12876561 bytes, open cost is considered as scanning 4194304 bytes.
+26/10/07 11:00:41 INFO DAGScheduler: Registering RDD 134 (count at NativeMethodAccessorImpl.java:0) as input to shuffle 9
+26/10/07 11:00:41 INFO DAGScheduler: Got map stage job 34 (count at NativeMethodAccessorImpl.java:0) with 2 output partitions
+26/10/07 11:00:41 INFO DAGScheduler: Final stage: ShuffleMapStage 43 (count at NativeMethodAccessorImpl.java:0)
+26/10/07 11:00:41 INFO DAGScheduler: Parents of final stage: List()
+26/10/07 11:00:41 INFO DAGScheduler: Missing parents: List()
+26/10/07 11:00:41 INFO DAGScheduler: Submitting ShuffleMapStage 43 (MapPartitionsRDD[134] at count at NativeMethodAccessorImpl.java:0), which has no missing parents
+26/10/07 11:00:41 INFO MemoryStore: Block broadcast_59 stored as values in memory (estimated size 19.2 KiB, free 1661.2 MiB)
+26/10/07 11:00:41 INFO MemoryStore: Block broadcast_59_piece0 stored as bytes in memory (estimated size 9.3 KiB, free 1661.1 MiB)
+26/10/07 11:00:41 INFO BlockManagerInfo: Added broadcast_59_piece0 in memory on master:44485 (size: 9.3 KiB, free: 1662.8 MiB)
+26/10/07 11:00:41 INFO SparkContext: Created broadcast 59 from broadcast at DAGScheduler.scala:1585
+26/10/07 11:00:41 INFO DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 43 (MapPartitionsRDD[134] at count at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0, 1))
+26/10/07 11:00:41 INFO TaskSchedulerImpl: Adding task set 43.0 with 2 tasks resource profile 0
+26/10/07 11:00:41 INFO TaskSetManager: Starting task 0.0 in stage 43.0 (TID 58) (master, executor driver, partition 0, NODE_LOCAL, 8533 bytes) 
+26/10/07 11:00:41 INFO TaskSetManager: Starting task 1.0 in stage 43.0 (TID 59) (master, executor driver, partition 1, NODE_LOCAL, 8543 bytes) 
+26/10/07 11:00:41 INFO Executor: Running task 0.0 in stage 43.0 (TID 58)
+26/10/07 11:00:41 INFO Executor: Running task 1.0 in stage 43.0 (TID 59)
+26/10/07 11:00:41 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCBUSD/BTCBUSD-1h-2023-01.csv, range: 0-120047, partition values: [empty row]
+26/10/07 11:00:41 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCBUSD/BTCBUSD-1h-2022-11.csv, range: 0-115965, partition values: [empty row]
+26/10/07 11:00:41 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCBUSD/BTCBUSD-1h-2023-02.csv, range: 0-108422, partition values: [empty row]
+26/10/07 11:00:41 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCBUSD/BTCBUSD-1h-2022-12.csv, range: 0-119520, partition values: [empty row]
+26/10/07 11:00:42 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCBUSD/diario/BTCBUSD-1h-2023-03-10.csv, range: 0-3888, partition values: [empty row]
+26/10/07 11:00:42 INFO Executor: Finished task 1.0 in stage 43.0 (TID 59). 1978 bytes result sent to driver
+26/10/07 11:00:42 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/raw/binance/klines/BTCBUSD/BTCBUSD-1h-2022-10.csv, range: 0-119456, partition values: [empty row]
+26/10/07 11:00:42 INFO TaskSetManager: Finished task 1.0 in stage 43.0 (TID 59) in 34 ms on master (executor driver) (1/2)
+26/10/07 11:00:42 INFO Executor: Finished task 0.0 in stage 43.0 (TID 58). 1978 bytes result sent to driver
+26/10/07 11:00:42 INFO TaskSetManager: Finished task 0.0 in stage 43.0 (TID 58) in 44 ms on master (executor driver) (2/2)
+26/10/07 11:00:42 INFO TaskSchedulerImpl: Removed TaskSet 43.0, whose tasks have all completed, from pool 
+26/10/07 11:00:42 INFO DAGScheduler: ShuffleMapStage 43 (count at NativeMethodAccessorImpl.java:0) finished in 0.063 s
+26/10/07 11:00:42 INFO DAGScheduler: looking for newly runnable stages
+26/10/07 11:00:42 INFO DAGScheduler: running: Set()
+26/10/07 11:00:42 INFO DAGScheduler: waiting: Set()
+26/10/07 11:00:42 INFO DAGScheduler: failed: Set()
+26/10/07 11:00:42 INFO SparkContext: Starting job: count at NativeMethodAccessorImpl.java:0
+26/10/07 11:00:42 INFO DAGScheduler: Got job 35 (count at NativeMethodAccessorImpl.java:0) with 1 output partitions
+26/10/07 11:00:42 INFO DAGScheduler: Final stage: ResultStage 45 (count at NativeMethodAccessorImpl.java:0)
+26/10/07 11:00:42 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 44)
+26/10/07 11:00:42 INFO DAGScheduler: Missing parents: List()
+26/10/07 11:00:42 INFO DAGScheduler: Submitting ResultStage 45 (MapPartitionsRDD[137] at count at NativeMethodAccessorImpl.java:0), which has no missing parents
+26/10/07 11:00:42 INFO MemoryStore: Block broadcast_60 stored as values in memory (estimated size 12.5 KiB, free 1661.1 MiB)
+26/10/07 11:00:42 INFO MemoryStore: Block broadcast_60_piece0 stored as bytes in memory (estimated size 5.9 KiB, free 1661.1 MiB)
+26/10/07 11:00:42 INFO BlockManagerInfo: Added broadcast_60_piece0 in memory on master:44485 (size: 5.9 KiB, free: 1662.8 MiB)
+26/10/07 11:00:42 INFO SparkContext: Created broadcast 60 from broadcast at DAGScheduler.scala:1585
+26/10/07 11:00:42 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 45 (MapPartitionsRDD[137] at count at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+26/10/07 11:00:42 INFO TaskSchedulerImpl: Adding task set 45.0 with 1 tasks resource profile 0
+26/10/07 11:00:42 INFO TaskSetManager: Starting task 0.0 in stage 45.0 (TID 60) (master, executor driver, partition 0, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:00:42 INFO Executor: Running task 0.0 in stage 45.0 (TID 60)
+26/10/07 11:00:42 INFO ShuffleBlockFetcherIterator: Getting 2 (120.0 B) non-empty blocks including 2 (120.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:00:42 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+26/10/07 11:00:42 INFO Executor: Finished task 0.0 in stage 45.0 (TID 60). 3994 bytes result sent to driver
+26/10/07 11:00:42 INFO TaskSetManager: Finished task 0.0 in stage 45.0 (TID 60) in 10 ms on master (executor driver) (1/1)
+26/10/07 11:00:42 INFO TaskSchedulerImpl: Removed TaskSet 45.0, whose tasks have all completed, from pool 
+26/10/07 11:00:42 INFO DAGScheduler: ResultStage 45 (count at NativeMethodAccessorImpl.java:0) finished in 0.026 s
+26/10/07 11:00:42 INFO DAGScheduler: Job 35 is finished. Cancelling potential speculative or zombie tasks for this job
+26/10/07 11:00:42 INFO TaskSchedulerImpl: Killing all running tasks in stage 45: Stage finished
+26/10/07 11:00:42 INFO DAGScheduler: Job 35 finished: count at NativeMethodAccessorImpl.java:0, took 0.033216 s
+  BTCBUSD: 729600 filas escritas en hdfs:///datalake/benchmark/raw_200x/BTCBUSD
+26/10/07 11:00:42 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+26/10/07 11:00:42 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+26/10/07 11:00:42 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+26/10/07 11:00:42 INFO SparkContext: Starting job: csv at NativeMethodAccessorImpl.java:0
+26/10/07 11:00:42 INFO DAGScheduler: Got job 36 (csv at NativeMethodAccessorImpl.java:0) with 1 output partitions
+26/10/07 11:00:42 INFO DAGScheduler: Final stage: ResultStage 46 (csv at NativeMethodAccessorImpl.java:0)
+26/10/07 11:00:42 INFO DAGScheduler: Parents of final stage: List()
+26/10/07 11:00:42 INFO DAGScheduler: Missing parents: List()
+26/10/07 11:00:42 INFO DAGScheduler: Submitting ResultStage 46 (MapPartitionsRDD[145] at csv at NativeMethodAccessorImpl.java:0), which has no missing parents
+26/10/07 11:00:42 INFO MemoryStore: Block broadcast_61 stored as values in memory (estimated size 209.2 KiB, free 1660.9 MiB)
+26/10/07 11:00:42 INFO MemoryStore: Block broadcast_61_piece0 stored as bytes in memory (estimated size 75.4 KiB, free 1660.8 MiB)
+26/10/07 11:00:42 INFO BlockManagerInfo: Added broadcast_61_piece0 in memory on master:44485 (size: 75.4 KiB, free: 1662.7 MiB)
+26/10/07 11:00:42 INFO SparkContext: Created broadcast 61 from broadcast at DAGScheduler.scala:1585
+26/10/07 11:00:42 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 46 (MapPartitionsRDD[145] at csv at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+26/10/07 11:00:42 INFO TaskSchedulerImpl: Adding task set 46.0 with 1 tasks resource profile 0
+26/10/07 11:00:42 INFO TaskSetManager: Starting task 0.0 in stage 46.0 (TID 61) (master, executor driver, partition 0, PROCESS_LOCAL, 7440 bytes) 
+26/10/07 11:00:42 INFO Executor: Running task 0.0 in stage 46.0 (TID 61)
+26/10/07 11:00:42 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+26/10/07 11:00:42 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+26/10/07 11:00:42 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+26/10/07 11:00:42 INFO FileOutputCommitter: Saved output of task 'attempt_202610071100429006278353876993727_0046_m_000000_61' to hdfs://100.76.42.126:9000/datalake/benchmark/raw_200x/BTCBUSD/diario/_temporary/0/task_202610071100429006278353876993727_0046_m_000000
+26/10/07 11:00:42 INFO SparkHadoopMapRedUtil: attempt_202610071100429006278353876993727_0046_m_000000_61: Committed. Elapsed time: 41 ms.
+26/10/07 11:00:42 INFO Executor: Finished task 0.0 in stage 46.0 (TID 61). 2205 bytes result sent to driver
+26/10/07 11:00:42 INFO TaskSetManager: Finished task 0.0 in stage 46.0 (TID 61) in 155 ms on master (executor driver) (1/1)
+26/10/07 11:00:42 INFO TaskSchedulerImpl: Removed TaskSet 46.0, whose tasks have all completed, from pool 
+26/10/07 11:00:42 INFO DAGScheduler: ResultStage 46 (csv at NativeMethodAccessorImpl.java:0) finished in 0.179 s
+26/10/07 11:00:42 INFO DAGScheduler: Job 36 is finished. Cancelling potential speculative or zombie tasks for this job
+26/10/07 11:00:42 INFO TaskSchedulerImpl: Killing all running tasks in stage 46: Stage finished
+26/10/07 11:00:42 INFO DAGScheduler: Job 36 finished: csv at NativeMethodAccessorImpl.java:0, took 0.181066 s
+26/10/07 11:00:42 INFO FileFormatWriter: Start to commit write Job f006c825-27dd-448d-99d8-af5e01acd784.
+26/10/07 11:00:42 INFO FileFormatWriter: Write Job f006c825-27dd-448d-99d8-af5e01acd784 committed. Elapsed time: 162 ms.
+26/10/07 11:00:42 INFO FileFormatWriter: Finished processing stats for write job f006c825-27dd-448d-99d8-af5e01acd784.
+
+Listo. Total de filas replicadas (200x): 10383800
+Datos escritos en: hdfs:///datalake/benchmark/raw_200x
+26/10/07 11:00:42 INFO SparkContext: SparkContext is stopping with exitCode 0.
+26/10/07 11:00:42 INFO SparkUI: Stopped Spark web UI at http://master:4040
+26/10/07 11:00:42 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+26/10/07 11:00:42 INFO MemoryStore: MemoryStore cleared
+26/10/07 11:00:42 INFO BlockManager: BlockManager stopped
+26/10/07 11:00:42 INFO BlockManagerMaster: BlockManagerMaster stopped
+26/10/07 11:00:42 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+26/10/07 11:00:42 INFO SparkContext: Successfully stopped SparkContext
+26/10/07 11:00:43 INFO ShutdownHookManager: Shutdown hook called
+26/10/07 11:00:43 INFO ShutdownHookManager: Deleting directory /tmp/spark-aa41c580-757e-4366-9dcc-49aa9b619699/pyspark-2c3f1d0d-7758-40f7-a899-78faea0cb408
+26/10/07 11:00:43 INFO ShutdownHookManager: Deleting directory /tmp/spark-aa41c580-757e-4366-9dcc-49aa9b619699
+26/10/07 11:00:43 INFO ShutdownHookManager: Deleting directory /tmp/spark-9adfed46-2347-422e-a61a-b32ca163ace5
+
+real	1m16,438s
+user	0m47,738s
+sys	0m57,571s

@@ -1,0 +1,7 @@
+nproc: 2 | RAM total MB: 3915
+=== RESUMEN quality (opt 150x local[*], driver-memory 3g, SP=64) ===
+exit: 137 (124 = detenido por limite LIM=7200s) | segundos reales: 349 | _SUCCESS: NO
+real 342,504 | user 226,852 | sys 171,906
+max RSS JVM (MB): 3002 | max RAM usada (MB): 3910 | max swap (MB): 974
+HDFS salida: 
+FetchFailed/OutOfMemory/heartbeats en log: 0 OOM | 0 heartbeat

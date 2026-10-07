@@ -35,3 +35,18 @@ Los tiempos de la tabla son los que contiene cada log: en `q_*` y `j_*`, el `tim
 | `pedido5_log_completo_v2.txt` | intento fallido del 2-oct: la unión 100x falló por `BlockMissingException` (bloques de `clean_100x` no disponibles en HDFS) | — |
 
 Los tres últimos logs (intentos fallidos) no se usan para las cifras del informe; se conservan como evidencia de cómo se llegó a la configuración final.
+
+## Pedido de Escalabilidad (3.7): corridas en una sola maquina (`--master local[*]`)
+
+Master debian-bigdata: 2 vCPU, 3,915 MB de RAM, 974 MiB de swap. `spark-submit --master local[*] --driver-memory 3g`, `spark.network.timeout=600s`. Script: `bench_local.sh` (muestrea memoria cada 5 s en los `*_mem.csv`). Un solo DataNode vivo; salidas solo en `hdfs:///datalake/benchmark/`. Cada escala se midio una sola vez. Los logs grandes de 100x van comprimidos (`.gz`).
+
+| Corrida | Filas de la replica | Resultado | Tiempo real (s) | RSS max JVM (MB) | RAM max usada (MB) | Swap max (MB) | Log |
+|---|---|---|---|---|---|---|---|
+| quality.py 10x | 519,190 | OK | 235.639 | 1,574 | 3,283 | 107 | escalabilidad/local_orig_10x_quality.log |
+| join 10x | 519,190 | OK | 80.233 | 1,020 | 2,723 | 129 | escalabilidad/local_orig_10x_join.log |
+| quality_opt.py 100x | 5,191,900 | OK | 934.318 | 2,577 | 3,858 | 974 | escalabilidad/local_opt_100x_quality.log.gz |
+| join 100x | 5,191,900 | OK (5,390,242 filas) | 472.870 | 1,447 | 2,955 | 617 | escalabilidad/local_opt_100x_join.log.gz |
+| quality_opt.py 150x | 7,787,850 | SIGKILL, codigo 137 (OOM killer) | 342.504 | 3,002 | 3,910 | 974 | escalabilidad/local_opt_150x_quality.log |
+| quality_opt.py 200x | 10,383,800 | SIGKILL, codigo 137 (OOM killer) | 247.042 | 2,904 | 3,896 | 974 | escalabilidad/local_opt_200x_quality.log |
+
+Evidencia del kernel (`dmesg`): proceso 47328 (200x, anon-rss 3,042,552 kB) y proceso 48806 (150x, anon-rss 3,104,580 kB). Los conteos de 100x local coinciden con el cluster: 5,191,900 (limpieza) y 5,390,242 (join). Replicas: `replicate_150x_local.log`, `replicate_200x_local.log`.

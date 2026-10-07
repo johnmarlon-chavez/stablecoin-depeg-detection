@@ -1,0 +1,988 @@
+26/10/07 11:48:39 INFO SparkContext: Running Spark version 3.5.1
+26/10/07 11:48:39 INFO SparkContext: OS info Linux, 6.1.0-53-amd64, amd64
+26/10/07 11:48:39 INFO SparkContext: Java version 17.0.20.1
+26/10/07 11:48:39 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/10/07 11:48:39 INFO ResourceUtils: ==============================================================
+26/10/07 11:48:39 INFO ResourceUtils: No custom resources configured for spark.driver.
+26/10/07 11:48:39 INFO ResourceUtils: ==============================================================
+26/10/07 11:48:39 INFO SparkContext: Submitted application: FTX-SVB-Calidad-Klines-OPT
+26/10/07 11:48:39 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+26/10/07 11:48:39 INFO ResourceProfile: Limiting resource is cpu
+26/10/07 11:48:39 INFO ResourceProfileManager: Added ResourceProfile id: 0
+26/10/07 11:48:39 INFO SecurityManager: Changing view acls to: marlon
+26/10/07 11:48:39 INFO SecurityManager: Changing modify acls to: marlon
+26/10/07 11:48:39 INFO SecurityManager: Changing view acls groups to: 
+26/10/07 11:48:39 INFO SecurityManager: Changing modify acls groups to: 
+26/10/07 11:48:39 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: marlon; groups with view permissions: EMPTY; users with modify permissions: marlon; groups with modify permissions: EMPTY
+26/10/07 11:48:40 INFO Utils: Successfully started service 'sparkDriver' on port 33825.
+26/10/07 11:48:40 INFO SparkEnv: Registering MapOutputTracker
+26/10/07 11:48:40 INFO SparkEnv: Registering BlockManagerMaster
+26/10/07 11:48:40 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+26/10/07 11:48:40 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+26/10/07 11:48:40 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+26/10/07 11:48:40 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-5028a587-577f-4fb6-9c43-fdf0fe4a677d
+26/10/07 11:48:40 INFO MemoryStore: MemoryStore started with capacity 1663.2 MiB
+26/10/07 11:48:40 INFO SparkEnv: Registering OutputCommitCoordinator
+26/10/07 11:48:40 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+26/10/07 11:48:40 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+26/10/07 11:48:40 INFO Executor: Starting executor ID driver on host master
+26/10/07 11:48:40 INFO Executor: OS info Linux, 6.1.0-53-amd64, amd64
+26/10/07 11:48:40 INFO Executor: Java version 17.0.20.1
+26/10/07 11:48:40 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+26/10/07 11:48:40 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@2f50c4f0 for default.
+26/10/07 11:48:40 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 34031.
+26/10/07 11:48:40 INFO NettyBlockTransferService: Server created on master:34031
+26/10/07 11:48:40 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+26/10/07 11:48:40 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, master, 34031, None)
+26/10/07 11:48:40 INFO BlockManagerMasterEndpoint: Registering block manager master:34031 with 1663.2 MiB RAM, BlockManagerId(driver, master, 34031, None)
+26/10/07 11:48:40 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, master, 34031, None)
+26/10/07 11:48:40 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, master, 34031, None)
+Leyendo USDCUSDT ...
+26/10/07 11:48:41 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+26/10/07 11:48:41 INFO SharedState: Warehouse path is 'file:/home/marlon/stablecoin-depeg-detection/spark-warehouse'.
+26/10/07 11:48:43 INFO InMemoryFileIndex: It took 102 ms to list leaf files for 2 paths.
+Leyendo BTCUSDC ...
+26/10/07 11:48:44 INFO InMemoryFileIndex: It took 18 ms to list leaf files for 2 paths.
+Leyendo BTCUSDT ...
+26/10/07 11:48:44 INFO InMemoryFileIndex: It took 10 ms to list leaf files for 2 paths.
+Leyendo BUSDUSDT ...
+26/10/07 11:48:44 INFO InMemoryFileIndex: It took 12 ms to list leaf files for 3 paths.
+Leyendo BTCBUSD ...
+26/10/07 11:48:45 INFO InMemoryFileIndex: It took 15 ms to list leaf files for 3 paths.
+26/10/07 11:48:46 INFO FileSourceStrategy: Pushed Filters: 
+26/10/07 11:48:46 INFO FileSourceStrategy: Post-Scan Filters: 
+26/10/07 11:48:46 INFO FileSourceStrategy: Pushed Filters: 
+26/10/07 11:48:46 INFO FileSourceStrategy: Post-Scan Filters: 
+26/10/07 11:48:46 INFO FileSourceStrategy: Pushed Filters: 
+26/10/07 11:48:46 INFO FileSourceStrategy: Post-Scan Filters: 
+26/10/07 11:48:46 INFO FileSourceStrategy: Pushed Filters: 
+26/10/07 11:48:46 INFO FileSourceStrategy: Post-Scan Filters: 
+26/10/07 11:48:46 INFO FileSourceStrategy: Pushed Filters: 
+26/10/07 11:48:46 INFO FileSourceStrategy: Post-Scan Filters: 
+26/10/07 11:48:47 INFO CodeGenerator: Code generated in 581.765754 ms
+26/10/07 11:48:47 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 200.2 KiB, free 1663.0 MiB)
+26/10/07 11:48:47 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 34.8 KiB, free 1663.0 MiB)
+26/10/07 11:48:47 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on master:34031 (size: 34.8 KiB, free: 1663.2 MiB)
+26/10/07 11:48:47 INFO SparkContext: Created broadcast 0 from count at NativeMethodAccessorImpl.java:0
+26/10/07 11:48:47 INFO FileSourceScanExec: Planning scan with bin packing, max size: 134217728 bytes, open cost is considered as scanning 4194304 bytes.
+26/10/07 11:48:47 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 200.2 KiB, free 1662.8 MiB)
+26/10/07 11:48:47 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 34.8 KiB, free 1662.7 MiB)
+26/10/07 11:48:47 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on master:34031 (size: 34.8 KiB, free: 1663.1 MiB)
+26/10/07 11:48:47 INFO SparkContext: Created broadcast 1 from count at NativeMethodAccessorImpl.java:0
+26/10/07 11:48:47 INFO FileSourceScanExec: Planning scan with bin packing, max size: 134217728 bytes, open cost is considered as scanning 4194304 bytes.
+26/10/07 11:48:47 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 200.2 KiB, free 1662.5 MiB)
+26/10/07 11:48:47 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 34.8 KiB, free 1662.5 MiB)
+26/10/07 11:48:47 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on master:34031 (size: 34.8 KiB, free: 1663.1 MiB)
+26/10/07 11:48:48 INFO SparkContext: Created broadcast 2 from count at NativeMethodAccessorImpl.java:0
+26/10/07 11:48:48 INFO FileSourceScanExec: Planning scan with bin packing, max size: 134217728 bytes, open cost is considered as scanning 4194304 bytes.
+26/10/07 11:48:48 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 200.2 KiB, free 1662.3 MiB)
+26/10/07 11:48:48 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 34.8 KiB, free 1662.3 MiB)
+26/10/07 11:48:48 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on master:34031 (size: 34.8 KiB, free: 1663.1 MiB)
+26/10/07 11:48:48 INFO SparkContext: Created broadcast 3 from count at NativeMethodAccessorImpl.java:0
+26/10/07 11:48:48 INFO FileSourceScanExec: Planning scan with bin packing, max size: 45382204 bytes, open cost is considered as scanning 4194304 bytes.
+26/10/07 11:48:48 INFO MemoryStore: Block broadcast_4 stored as values in memory (estimated size 200.2 KiB, free 1662.1 MiB)
+26/10/07 11:48:48 INFO MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 34.8 KiB, free 1662.1 MiB)
+26/10/07 11:48:48 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on master:34031 (size: 34.8 KiB, free: 1663.0 MiB)
+26/10/07 11:48:48 INFO SparkContext: Created broadcast 4 from count at NativeMethodAccessorImpl.java:0
+26/10/07 11:48:48 INFO FileSourceScanExec: Planning scan with bin packing, max size: 52284004 bytes, open cost is considered as scanning 4194304 bytes.
+26/10/07 11:48:48 INFO DAGScheduler: Registering RDD 12 (count at NativeMethodAccessorImpl.java:0) as input to shuffle 0
+26/10/07 11:48:48 INFO DAGScheduler: Got map stage job 0 (count at NativeMethodAccessorImpl.java:0) with 14 output partitions
+26/10/07 11:48:48 INFO DAGScheduler: Final stage: ShuffleMapStage 0 (count at NativeMethodAccessorImpl.java:0)
+26/10/07 11:48:48 INFO DAGScheduler: Parents of final stage: List()
+26/10/07 11:48:48 INFO DAGScheduler: Missing parents: List()
+26/10/07 11:48:48 INFO DAGScheduler: Submitting ShuffleMapStage 0 (MapPartitionsRDD[12] at count at NativeMethodAccessorImpl.java:0), which has no missing parents
+26/10/07 11:48:48 INFO MemoryStore: Block broadcast_5 stored as values in memory (estimated size 24.2 KiB, free 1662.0 MiB)
+26/10/07 11:48:48 INFO MemoryStore: Block broadcast_5_piece0 stored as bytes in memory (estimated size 10.1 KiB, free 1662.0 MiB)
+26/10/07 11:48:48 INFO BlockManagerInfo: Added broadcast_5_piece0 in memory on master:34031 (size: 10.1 KiB, free: 1663.0 MiB)
+26/10/07 11:48:48 INFO SparkContext: Created broadcast 5 from broadcast at DAGScheduler.scala:1585
+26/10/07 11:48:48 INFO DAGScheduler: Submitting 14 missing tasks from ShuffleMapStage 0 (MapPartitionsRDD[12] at count at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13))
+26/10/07 11:48:48 INFO TaskSchedulerImpl: Adding task set 0.0 with 14 tasks resource profile 0
+26/10/07 11:48:48 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0) (master, executor driver, partition 0, NODE_LOCAL, 8395 bytes) 
+26/10/07 11:48:48 INFO TaskSetManager: Starting task 1.0 in stage 0.0 (TID 1) (master, executor driver, partition 1, NODE_LOCAL, 8395 bytes) 
+26/10/07 11:48:48 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+26/10/07 11:48:48 INFO Executor: Running task 1.0 in stage 0.0 (TID 1)
+26/10/07 11:48:49 INFO CodeGenerator: Code generated in 27.345359 ms
+26/10/07 11:48:49 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/benchmark/raw_200x/USDCUSDT/part-00001-24a1ed4d-bb76-4ead-8e9d-b00fd4623e81-c000.csv, range: 0-134151394, partition values: [empty row]
+26/10/07 11:48:49 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/benchmark/raw_200x/USDCUSDT/part-00000-24a1ed4d-bb76-4ead-8e9d-b00fd4623e81-c000.csv, range: 0-134217728, partition values: [empty row]
+26/10/07 11:48:49 INFO CodeGenerator: Code generated in 35.083754 ms
+26/10/07 11:48:51 INFO Executor: Finished task 1.0 in stage 0.0 (TID 1). 2232 bytes result sent to driver
+26/10/07 11:48:51 INFO TaskSetManager: Starting task 2.0 in stage 0.0 (TID 2) (master, executor driver, partition 2, NODE_LOCAL, 8395 bytes) 
+26/10/07 11:48:51 INFO Executor: Running task 2.0 in stage 0.0 (TID 2)
+26/10/07 11:48:51 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/benchmark/raw_200x/USDCUSDT/part-00000-24a1ed4d-bb76-4ead-8e9d-b00fd4623e81-c000.csv, range: 134217728-163506400, partition values: [empty row]
+26/10/07 11:48:51 INFO TaskSetManager: Finished task 1.0 in stage 0.0 (TID 1) in 2390 ms on master (executor driver) (1/14)
+26/10/07 11:48:51 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 2189 bytes result sent to driver
+26/10/07 11:48:51 INFO TaskSetManager: Starting task 3.0 in stage 0.0 (TID 3) (master, executor driver, partition 3, NODE_LOCAL, 8394 bytes) 
+26/10/07 11:48:51 INFO Executor: Running task 3.0 in stage 0.0 (TID 3)
+26/10/07 11:48:51 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 2678 ms on master (executor driver) (2/14)
+26/10/07 11:48:51 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/benchmark/raw_200x/BTCUSDC/part-00000-ac6e1ebc-6d2a-4e53-80a7-05b26aa5b073-c000.csv, range: 0-134217728, partition values: [empty row]
+26/10/07 11:48:51 INFO Executor: Finished task 2.0 in stage 0.0 (TID 2). 2189 bytes result sent to driver
+26/10/07 11:48:51 INFO TaskSetManager: Starting task 4.0 in stage 0.0 (TID 4) (master, executor driver, partition 4, NODE_LOCAL, 8394 bytes) 
+26/10/07 11:48:51 INFO Executor: Running task 4.0 in stage 0.0 (TID 4)
+26/10/07 11:48:51 INFO TaskSetManager: Finished task 2.0 in stage 0.0 (TID 2) in 399 ms on master (executor driver) (3/14)
+26/10/07 11:48:51 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/benchmark/raw_200x/BTCUSDC/part-00001-ac6e1ebc-6d2a-4e53-80a7-05b26aa5b073-c000.csv, range: 0-134217728, partition values: [empty row]
+26/10/07 11:48:53 INFO Executor: Finished task 4.0 in stage 0.0 (TID 4). 2189 bytes result sent to driver
+26/10/07 11:48:53 INFO TaskSetManager: Starting task 5.0 in stage 0.0 (TID 5) (master, executor driver, partition 5, NODE_LOCAL, 8569 bytes) 
+26/10/07 11:48:53 INFO Executor: Running task 5.0 in stage 0.0 (TID 5)
+26/10/07 11:48:53 INFO TaskSetManager: Finished task 4.0 in stage 0.0 (TID 4) in 2355 ms on master (executor driver) (4/14)
+26/10/07 11:48:53 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/benchmark/raw_200x/BTCUSDC/part-00000-ac6e1ebc-6d2a-4e53-80a7-05b26aa5b073-c000.csv, range: 134217728-177786096, partition values: [empty row]
+26/10/07 11:48:54 INFO Executor: Finished task 3.0 in stage 0.0 (TID 3). 2189 bytes result sent to driver
+26/10/07 11:48:54 INFO TaskSetManager: Starting task 6.0 in stage 0.0 (TID 6) (master, executor driver, partition 6, NODE_LOCAL, 8394 bytes) 
+26/10/07 11:48:54 INFO TaskSetManager: Finished task 3.0 in stage 0.0 (TID 3) in 2849 ms on master (executor driver) (5/14)
+26/10/07 11:48:54 INFO Executor: Running task 6.0 in stage 0.0 (TID 6)
+26/10/07 11:48:54 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/benchmark/raw_200x/BTCUSDT/part-00000-aec6ad26-c84d-4d3b-b363-b1979b979949-c000.csv, range: 0-134217728, partition values: [empty row]
+26/10/07 11:48:54 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/benchmark/raw_200x/BTCUSDC/part-00001-ac6e1ebc-6d2a-4e53-80a7-05b26aa5b073-c000.csv, range: 134217728-145957970, partition values: [empty row]
+26/10/07 11:48:54 INFO Executor: Finished task 5.0 in stage 0.0 (TID 5). 2189 bytes result sent to driver
+26/10/07 11:48:54 INFO TaskSetManager: Starting task 7.0 in stage 0.0 (TID 7) (master, executor driver, partition 7, NODE_LOCAL, 8394 bytes) 
+26/10/07 11:48:54 INFO Executor: Running task 7.0 in stage 0.0 (TID 7)
+26/10/07 11:48:54 INFO TaskSetManager: Finished task 5.0 in stage 0.0 (TID 5) in 880 ms on master (executor driver) (6/14)
+26/10/07 11:48:54 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/benchmark/raw_200x/BTCUSDT/part-00001-aec6ad26-c84d-4d3b-b363-b1979b979949-c000.csv, range: 0-134217728, partition values: [empty row]
+26/10/07 11:48:56 INFO Executor: Finished task 6.0 in stage 0.0 (TID 6). 2232 bytes result sent to driver
+26/10/07 11:48:56 INFO TaskSetManager: Starting task 8.0 in stage 0.0 (TID 8) (master, executor driver, partition 8, NODE_LOCAL, 8394 bytes) 
+26/10/07 11:48:56 INFO TaskSetManager: Finished task 6.0 in stage 0.0 (TID 6) in 1895 ms on master (executor driver) (7/14)
+26/10/07 11:48:56 INFO Executor: Running task 8.0 in stage 0.0 (TID 8)
+26/10/07 11:48:56 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/benchmark/raw_200x/BTCUSDT/part-00000-aec6ad26-c84d-4d3b-b363-b1979b979949-c000.csv, range: 134217728-235812365, partition values: [empty row]
+26/10/07 11:48:56 INFO Executor: Finished task 7.0 in stage 0.0 (TID 7). 2189 bytes result sent to driver
+26/10/07 11:48:56 INFO TaskSetManager: Starting task 9.0 in stage 0.0 (TID 9) (master, executor driver, partition 9, NODE_LOCAL, 8394 bytes) 
+26/10/07 11:48:56 INFO TaskSetManager: Finished task 7.0 in stage 0.0 (TID 7) in 1758 ms on master (executor driver) (8/14)
+26/10/07 11:48:56 INFO Executor: Running task 9.0 in stage 0.0 (TID 9)
+26/10/07 11:48:56 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/benchmark/raw_200x/BTCUSDT/part-00001-aec6ad26-c84d-4d3b-b363-b1979b979949-c000.csv, range: 134217728-225100208, partition values: [empty row]
+26/10/07 11:48:57 INFO Executor: Finished task 8.0 in stage 0.0 (TID 8). 2189 bytes result sent to driver
+26/10/07 11:48:57 INFO TaskSetManager: Starting task 10.0 in stage 0.0 (TID 10) (master, executor driver, partition 10, NODE_LOCAL, 8395 bytes) 
+26/10/07 11:48:57 INFO TaskSetManager: Finished task 8.0 in stage 0.0 (TID 8) in 947 ms on master (executor driver) (9/14)
+26/10/07 11:48:57 INFO Executor: Running task 10.0 in stage 0.0 (TID 10)
+26/10/07 11:48:57 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/benchmark/raw_200x/BUSDUSDT/part-00000-6f50d580-8d01-4ff5-b495-ca9f20eb8bff-c000.csv, range: 0-45382204, partition values: [empty row]
+26/10/07 11:48:57 INFO Executor: Finished task 9.0 in stage 0.0 (TID 9). 2189 bytes result sent to driver
+26/10/07 11:48:57 INFO TaskSetManager: Starting task 11.0 in stage 0.0 (TID 11) (master, executor driver, partition 11, NODE_LOCAL, 8571 bytes) 
+26/10/07 11:48:57 INFO TaskSetManager: Finished task 9.0 in stage 0.0 (TID 9) in 837 ms on master (executor driver) (10/14)
+26/10/07 11:48:57 INFO Executor: Running task 11.0 in stage 0.0 (TID 11)
+26/10/07 11:48:57 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/benchmark/raw_200x/BUSDUSDT/part-00001-6f50d580-8d01-4ff5-b495-ca9f20eb8bff-c000.csv, range: 0-32696400, partition values: [empty row]
+26/10/07 11:48:57 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/benchmark/raw_200x/BUSDUSDT/part-00000-6f50d580-8d01-4ff5-b495-ca9f20eb8bff-c000.csv, range: 45382204-49679400, partition values: [empty row]
+26/10/07 11:48:57 INFO Executor: Finished task 11.0 in stage 0.0 (TID 11). 2146 bytes result sent to driver
+26/10/07 11:48:57 INFO TaskSetManager: Starting task 12.0 in stage 0.0 (TID 12) (master, executor driver, partition 12, NODE_LOCAL, 8394 bytes) 
+26/10/07 11:48:57 INFO TaskSetManager: Finished task 11.0 in stage 0.0 (TID 11) in 341 ms on master (executor driver) (11/14)
+26/10/07 11:48:57 INFO Executor: Running task 12.0 in stage 0.0 (TID 12)
+26/10/07 11:48:57 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/benchmark/raw_200x/BTCBUSD/part-00000-772237c0-80a2-4fed-9109-4e195ddbdf5f-c000.csv, range: 0-52284004, partition values: [empty row]
+26/10/07 11:48:58 INFO Executor: Finished task 10.0 in stage 0.0 (TID 10). 2189 bytes result sent to driver
+26/10/07 11:48:58 INFO TaskSetManager: Starting task 13.0 in stage 0.0 (TID 13) (master, executor driver, partition 13, NODE_LOCAL, 8569 bytes) 
+26/10/07 11:48:58 INFO Executor: Running task 13.0 in stage 0.0 (TID 13)
+26/10/07 11:48:58 INFO TaskSetManager: Finished task 10.0 in stage 0.0 (TID 10) in 987 ms on master (executor driver) (12/14)
+26/10/07 11:48:58 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/benchmark/raw_200x/BTCBUSD/part-00001-772237c0-80a2-4fed-9109-4e195ddbdf5f-c000.csv, range: 0-37392800, partition values: [empty row]
+26/10/07 11:48:58 INFO Executor: Finished task 12.0 in stage 0.0 (TID 12). 2189 bytes result sent to driver
+26/10/07 11:48:58 INFO TaskSetManager: Finished task 12.0 in stage 0.0 (TID 12) in 425 ms on master (executor driver) (13/14)
+26/10/07 11:48:58 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/benchmark/raw_200x/BTCBUSD/part-00000-772237c0-80a2-4fed-9109-4e195ddbdf5f-c000.csv, range: 52284004-58786600, partition values: [empty row]
+26/10/07 11:48:58 INFO Executor: Finished task 13.0 in stage 0.0 (TID 13). 2189 bytes result sent to driver
+26/10/07 11:48:58 INFO TaskSetManager: Finished task 13.0 in stage 0.0 (TID 13) in 375 ms on master (executor driver) (14/14)
+26/10/07 11:48:58 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+26/10/07 11:48:58 INFO DAGScheduler: ShuffleMapStage 0 (count at NativeMethodAccessorImpl.java:0) finished in 10.052 s
+26/10/07 11:48:58 INFO DAGScheduler: looking for newly runnable stages
+26/10/07 11:48:58 INFO DAGScheduler: running: Set()
+26/10/07 11:48:58 INFO DAGScheduler: waiting: Set()
+26/10/07 11:48:58 INFO DAGScheduler: failed: Set()
+26/10/07 11:48:58 INFO CodeGenerator: Code generated in 21.225346 ms
+26/10/07 11:48:58 INFO SparkContext: Starting job: count at NativeMethodAccessorImpl.java:0
+26/10/07 11:48:58 INFO DAGScheduler: Got job 1 (count at NativeMethodAccessorImpl.java:0) with 1 output partitions
+26/10/07 11:48:58 INFO DAGScheduler: Final stage: ResultStage 2 (count at NativeMethodAccessorImpl.java:0)
+26/10/07 11:48:58 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 1)
+26/10/07 11:48:58 INFO DAGScheduler: Missing parents: List()
+26/10/07 11:48:58 INFO DAGScheduler: Submitting ResultStage 2 (MapPartitionsRDD[15] at count at NativeMethodAccessorImpl.java:0), which has no missing parents
+26/10/07 11:48:58 INFO MemoryStore: Block broadcast_6 stored as values in memory (estimated size 12.5 KiB, free 1662.0 MiB)
+26/10/07 11:48:58 INFO MemoryStore: Block broadcast_6_piece0 stored as bytes in memory (estimated size 5.9 KiB, free 1662.0 MiB)
+26/10/07 11:48:58 INFO BlockManagerInfo: Added broadcast_6_piece0 in memory on master:34031 (size: 5.9 KiB, free: 1663.0 MiB)
+26/10/07 11:48:58 INFO SparkContext: Created broadcast 6 from broadcast at DAGScheduler.scala:1585
+26/10/07 11:48:58 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 2 (MapPartitionsRDD[15] at count at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+26/10/07 11:48:58 INFO TaskSchedulerImpl: Adding task set 2.0 with 1 tasks resource profile 0
+26/10/07 11:48:58 INFO TaskSetManager: Starting task 0.0 in stage 2.0 (TID 14) (master, executor driver, partition 0, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:48:58 INFO Executor: Running task 0.0 in stage 2.0 (TID 14)
+26/10/07 11:48:58 INFO ShuffleBlockFetcherIterator: Getting 14 (840.0 B) non-empty blocks including 14 (840.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:48:58 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 15 ms
+26/10/07 11:48:58 INFO CodeGenerator: Code generated in 12.196811 ms
+26/10/07 11:48:58 INFO Executor: Finished task 0.0 in stage 2.0 (TID 14). 4038 bytes result sent to driver
+26/10/07 11:48:58 INFO TaskSetManager: Finished task 0.0 in stage 2.0 (TID 14) in 145 ms on master (executor driver) (1/1)
+26/10/07 11:48:58 INFO TaskSchedulerImpl: Removed TaskSet 2.0, whose tasks have all completed, from pool 
+26/10/07 11:48:58 INFO DAGScheduler: ResultStage 2 (count at NativeMethodAccessorImpl.java:0) finished in 0.199 s
+26/10/07 11:48:58 INFO DAGScheduler: Job 1 is finished. Cancelling potential speculative or zombie tasks for this job
+26/10/07 11:48:58 INFO TaskSchedulerImpl: Killing all running tasks in stage 2: Stage finished
+26/10/07 11:48:58 INFO DAGScheduler: Job 1 finished: count at NativeMethodAccessorImpl.java:0, took 0.248305 s
+[TIEMPO] total_inicial (scan): 13.6 s
+26/10/07 11:48:59 INFO FileSourceStrategy: Pushed Filters: 
+26/10/07 11:48:59 INFO FileSourceStrategy: Post-Scan Filters: 
+26/10/07 11:48:59 INFO FileSourceStrategy: Pushed Filters: 
+26/10/07 11:48:59 INFO FileSourceStrategy: Post-Scan Filters: 
+26/10/07 11:48:59 INFO FileSourceStrategy: Pushed Filters: 
+26/10/07 11:48:59 INFO FileSourceStrategy: Post-Scan Filters: 
+26/10/07 11:48:59 INFO FileSourceStrategy: Pushed Filters: 
+26/10/07 11:48:59 INFO FileSourceStrategy: Post-Scan Filters: 
+26/10/07 11:48:59 INFO FileSourceStrategy: Pushed Filters: 
+26/10/07 11:48:59 INFO FileSourceStrategy: Post-Scan Filters: 
+26/10/07 11:48:59 WARN SparkStringUtils: Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.sql.debug.maxToStringFields'.
+26/10/07 11:48:59 INFO CodeGenerator: Code generated in 31.14326 ms
+26/10/07 11:49:00 INFO CodeGenerator: Code generated in 180.660436 ms
+26/10/07 11:49:00 INFO MemoryStore: Block broadcast_7 stored as values in memory (estimated size 200.2 KiB, free 1661.8 MiB)
+26/10/07 11:49:00 INFO MemoryStore: Block broadcast_7_piece0 stored as bytes in memory (estimated size 34.8 KiB, free 1661.8 MiB)
+26/10/07 11:49:00 INFO BlockManagerInfo: Added broadcast_7_piece0 in memory on master:34031 (size: 34.8 KiB, free: 1663.0 MiB)
+26/10/07 11:49:00 INFO SparkContext: Created broadcast 7 from first at /home/marlon/stablecoin-depeg-detection/src/quality_opt.py:105
+26/10/07 11:49:00 INFO FileSourceScanExec: Planning scan with bin packing, max size: 134217728 bytes, open cost is considered as scanning 4194304 bytes.
+26/10/07 11:49:00 INFO CodeGenerator: Code generated in 22.528368 ms
+26/10/07 11:49:00 INFO MemoryStore: Block broadcast_8 stored as values in memory (estimated size 200.2 KiB, free 1661.6 MiB)
+26/10/07 11:49:00 INFO MemoryStore: Block broadcast_8_piece0 stored as bytes in memory (estimated size 34.8 KiB, free 1661.5 MiB)
+26/10/07 11:49:00 INFO BlockManagerInfo: Added broadcast_8_piece0 in memory on master:34031 (size: 34.8 KiB, free: 1662.9 MiB)
+26/10/07 11:49:00 INFO SparkContext: Created broadcast 8 from first at /home/marlon/stablecoin-depeg-detection/src/quality_opt.py:105
+26/10/07 11:49:00 INFO FileSourceScanExec: Planning scan with bin packing, max size: 134217728 bytes, open cost is considered as scanning 4194304 bytes.
+26/10/07 11:49:00 INFO CodeGenerator: Code generated in 51.323306 ms
+26/10/07 11:49:00 INFO MemoryStore: Block broadcast_9 stored as values in memory (estimated size 200.2 KiB, free 1661.3 MiB)
+26/10/07 11:49:00 INFO MemoryStore: Block broadcast_9_piece0 stored as bytes in memory (estimated size 34.8 KiB, free 1661.3 MiB)
+26/10/07 11:49:00 INFO BlockManagerInfo: Added broadcast_9_piece0 in memory on master:34031 (size: 34.8 KiB, free: 1662.9 MiB)
+26/10/07 11:49:00 INFO SparkContext: Created broadcast 9 from first at /home/marlon/stablecoin-depeg-detection/src/quality_opt.py:105
+26/10/07 11:49:00 INFO FileSourceScanExec: Planning scan with bin packing, max size: 134217728 bytes, open cost is considered as scanning 4194304 bytes.
+26/10/07 11:49:00 INFO CodeGenerator: Code generated in 30.790575 ms
+26/10/07 11:49:00 INFO MemoryStore: Block broadcast_10 stored as values in memory (estimated size 200.2 KiB, free 1661.1 MiB)
+26/10/07 11:49:00 INFO MemoryStore: Block broadcast_10_piece0 stored as bytes in memory (estimated size 34.8 KiB, free 1661.1 MiB)
+26/10/07 11:49:00 INFO BlockManagerInfo: Added broadcast_10_piece0 in memory on master:34031 (size: 34.8 KiB, free: 1662.9 MiB)
+26/10/07 11:49:00 INFO SparkContext: Created broadcast 10 from first at /home/marlon/stablecoin-depeg-detection/src/quality_opt.py:105
+26/10/07 11:49:00 INFO FileSourceScanExec: Planning scan with bin packing, max size: 45382204 bytes, open cost is considered as scanning 4194304 bytes.
+26/10/07 11:49:00 INFO CodeGenerator: Code generated in 45.605806 ms
+26/10/07 11:49:00 INFO MemoryStore: Block broadcast_11 stored as values in memory (estimated size 200.2 KiB, free 1660.9 MiB)
+26/10/07 11:49:00 INFO MemoryStore: Block broadcast_11_piece0 stored as bytes in memory (estimated size 34.8 KiB, free 1660.9 MiB)
+26/10/07 11:49:00 INFO BlockManagerInfo: Added broadcast_11_piece0 in memory on master:34031 (size: 34.8 KiB, free: 1662.8 MiB)
+26/10/07 11:49:00 INFO SparkContext: Created broadcast 11 from first at /home/marlon/stablecoin-depeg-detection/src/quality_opt.py:105
+26/10/07 11:49:00 INFO FileSourceScanExec: Planning scan with bin packing, max size: 52284004 bytes, open cost is considered as scanning 4194304 bytes.
+26/10/07 11:49:00 INFO DAGScheduler: Registering RDD 34 (first at /home/marlon/stablecoin-depeg-detection/src/quality_opt.py:105) as input to shuffle 1
+26/10/07 11:49:00 INFO DAGScheduler: Got map stage job 2 (first at /home/marlon/stablecoin-depeg-detection/src/quality_opt.py:105) with 14 output partitions
+26/10/07 11:49:00 INFO DAGScheduler: Final stage: ShuffleMapStage 3 (first at /home/marlon/stablecoin-depeg-detection/src/quality_opt.py:105)
+26/10/07 11:49:00 INFO DAGScheduler: Parents of final stage: List()
+26/10/07 11:49:00 INFO DAGScheduler: Missing parents: List()
+26/10/07 11:49:00 INFO DAGScheduler: Submitting ShuffleMapStage 3 (MapPartitionsRDD[34] at first at /home/marlon/stablecoin-depeg-detection/src/quality_opt.py:105), which has no missing parents
+26/10/07 11:49:00 INFO MemoryStore: Block broadcast_12 stored as values in memory (estimated size 100.9 KiB, free 1660.8 MiB)
+26/10/07 11:49:00 INFO MemoryStore: Block broadcast_12_piece0 stored as bytes in memory (estimated size 30.6 KiB, free 1660.7 MiB)
+26/10/07 11:49:00 INFO BlockManagerInfo: Added broadcast_12_piece0 in memory on master:34031 (size: 30.6 KiB, free: 1662.8 MiB)
+26/10/07 11:49:01 INFO SparkContext: Created broadcast 12 from broadcast at DAGScheduler.scala:1585
+26/10/07 11:49:01 INFO DAGScheduler: Submitting 14 missing tasks from ShuffleMapStage 3 (MapPartitionsRDD[34] at first at /home/marlon/stablecoin-depeg-detection/src/quality_opt.py:105) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13))
+26/10/07 11:49:01 INFO TaskSchedulerImpl: Adding task set 3.0 with 14 tasks resource profile 0
+26/10/07 11:49:01 INFO TaskSetManager: Starting task 0.0 in stage 3.0 (TID 15) (master, executor driver, partition 0, NODE_LOCAL, 8395 bytes) 
+26/10/07 11:49:01 INFO TaskSetManager: Starting task 1.0 in stage 3.0 (TID 16) (master, executor driver, partition 1, NODE_LOCAL, 8395 bytes) 
+26/10/07 11:49:01 INFO Executor: Running task 0.0 in stage 3.0 (TID 15)
+26/10/07 11:49:01 INFO Executor: Running task 1.0 in stage 3.0 (TID 16)
+26/10/07 11:49:01 INFO CodeGenerator: Code generated in 39.153095 ms
+26/10/07 11:49:01 INFO CodeGenerator: Code generated in 48.769896 ms
+26/10/07 11:49:01 INFO CodeGenerator: Code generated in 68.87052 ms
+26/10/07 11:49:01 INFO CodeGenerator: Code generated in 29.051056 ms
+26/10/07 11:49:01 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/benchmark/raw_200x/USDCUSDT/part-00000-24a1ed4d-bb76-4ead-8e9d-b00fd4623e81-c000.csv, range: 0-134217728, partition values: [empty row]
+26/10/07 11:49:01 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/benchmark/raw_200x/USDCUSDT/part-00001-24a1ed4d-bb76-4ead-8e9d-b00fd4623e81-c000.csv, range: 0-134151394, partition values: [empty row]
+26/10/07 11:49:01 INFO CodeGenerator: Code generated in 111.466345 ms
+26/10/07 11:49:02 INFO BlockManagerInfo: Removed broadcast_6_piece0 on master:34031 in memory (size: 5.9 KiB, free: 1662.8 MiB)
+26/10/07 11:49:05 INFO BlockManagerInfo: Removed broadcast_5_piece0 on master:34031 in memory (size: 10.1 KiB, free: 1662.8 MiB)
+26/10/07 11:49:09 INFO BlockManagerInfo: Removed broadcast_3_piece0 on master:34031 in memory (size: 34.8 KiB, free: 1662.9 MiB)
+26/10/07 11:49:09 INFO BlockManagerInfo: Removed broadcast_4_piece0 on master:34031 in memory (size: 34.8 KiB, free: 1662.9 MiB)
+26/10/07 11:49:09 INFO BlockManagerInfo: Removed broadcast_0_piece0 on master:34031 in memory (size: 34.8 KiB, free: 1662.9 MiB)
+26/10/07 11:49:09 INFO BlockManagerInfo: Removed broadcast_1_piece0 on master:34031 in memory (size: 34.8 KiB, free: 1663.0 MiB)
+26/10/07 11:49:09 INFO BlockManagerInfo: Removed broadcast_2_piece0 on master:34031 in memory (size: 34.8 KiB, free: 1663.0 MiB)
+26/10/07 11:49:11 INFO CodeGenerator: Code generated in 108.21944 ms
+26/10/07 11:49:11 INFO CodeGenerator: Code generated in 32.485116 ms
+26/10/07 11:49:12 INFO CodeGenerator: Code generated in 21.427465 ms
+26/10/07 11:49:12 INFO CodeGenerator: Code generated in 45.69996 ms
+26/10/07 11:49:12 INFO CodeGenerator: Code generated in 39.866219 ms
+26/10/07 11:49:18 INFO Executor: Finished task 0.0 in stage 3.0 (TID 15). 3646 bytes result sent to driver
+26/10/07 11:49:18 INFO TaskSetManager: Starting task 2.0 in stage 3.0 (TID 17) (master, executor driver, partition 2, NODE_LOCAL, 8395 bytes) 
+26/10/07 11:49:18 INFO TaskSetManager: Finished task 0.0 in stage 3.0 (TID 15) in 16977 ms on master (executor driver) (1/14)
+26/10/07 11:49:18 INFO Executor: Running task 2.0 in stage 3.0 (TID 17)
+26/10/07 11:49:18 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/benchmark/raw_200x/USDCUSDT/part-00000-24a1ed4d-bb76-4ead-8e9d-b00fd4623e81-c000.csv, range: 134217728-163506400, partition values: [empty row]
+26/10/07 11:49:20 INFO Executor: Finished task 1.0 in stage 3.0 (TID 16). 3646 bytes result sent to driver
+26/10/07 11:49:20 INFO TaskSetManager: Starting task 3.0 in stage 3.0 (TID 18) (master, executor driver, partition 3, NODE_LOCAL, 8394 bytes) 
+26/10/07 11:49:20 INFO Executor: Running task 3.0 in stage 3.0 (TID 18)
+26/10/07 11:49:20 INFO TaskSetManager: Finished task 1.0 in stage 3.0 (TID 16) in 18704 ms on master (executor driver) (2/14)
+26/10/07 11:49:20 INFO CodeGenerator: Code generated in 12.470977 ms
+26/10/07 11:49:20 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/benchmark/raw_200x/BTCUSDC/part-00000-ac6e1ebc-6d2a-4e53-80a7-05b26aa5b073-c000.csv, range: 0-134217728, partition values: [empty row]
+26/10/07 11:49:25 INFO Executor: Finished task 2.0 in stage 3.0 (TID 17). 3646 bytes result sent to driver
+26/10/07 11:49:25 INFO TaskSetManager: Starting task 4.0 in stage 3.0 (TID 19) (master, executor driver, partition 4, NODE_LOCAL, 8394 bytes) 
+26/10/07 11:49:25 INFO TaskSetManager: Finished task 2.0 in stage 3.0 (TID 17) in 6775 ms on master (executor driver) (3/14)
+26/10/07 11:49:25 INFO Executor: Running task 4.0 in stage 3.0 (TID 19)
+26/10/07 11:49:25 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/benchmark/raw_200x/BTCUSDC/part-00001-ac6e1ebc-6d2a-4e53-80a7-05b26aa5b073-c000.csv, range: 0-134217728, partition values: [empty row]
+26/10/07 11:49:34 INFO Executor: Finished task 3.0 in stage 3.0 (TID 18). 3646 bytes result sent to driver
+26/10/07 11:49:34 INFO TaskSetManager: Starting task 5.0 in stage 3.0 (TID 20) (master, executor driver, partition 5, NODE_LOCAL, 8569 bytes) 
+26/10/07 11:49:34 INFO TaskSetManager: Finished task 3.0 in stage 3.0 (TID 18) in 14065 ms on master (executor driver) (4/14)
+26/10/07 11:49:34 INFO Executor: Running task 5.0 in stage 3.0 (TID 20)
+26/10/07 11:49:34 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/benchmark/raw_200x/BTCUSDC/part-00000-ac6e1ebc-6d2a-4e53-80a7-05b26aa5b073-c000.csv, range: 134217728-177786096, partition values: [empty row]
+26/10/07 11:49:37 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/benchmark/raw_200x/BTCUSDC/part-00001-ac6e1ebc-6d2a-4e53-80a7-05b26aa5b073-c000.csv, range: 134217728-145957970, partition values: [empty row]
+26/10/07 11:49:39 INFO Executor: Finished task 4.0 in stage 3.0 (TID 19). 3646 bytes result sent to driver
+26/10/07 11:49:39 INFO TaskSetManager: Starting task 6.0 in stage 3.0 (TID 21) (master, executor driver, partition 6, NODE_LOCAL, 8394 bytes) 
+26/10/07 11:49:39 INFO TaskSetManager: Finished task 4.0 in stage 3.0 (TID 19) in 14307 ms on master (executor driver) (5/14)
+26/10/07 11:49:39 INFO Executor: Running task 6.0 in stage 3.0 (TID 21)
+26/10/07 11:49:39 INFO CodeGenerator: Code generated in 43.197474 ms
+26/10/07 11:49:39 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/benchmark/raw_200x/BTCUSDT/part-00000-aec6ad26-c84d-4d3b-b363-b1979b979949-c000.csv, range: 0-134217728, partition values: [empty row]
+26/10/07 11:49:42 INFO Executor: Finished task 5.0 in stage 3.0 (TID 20). 3646 bytes result sent to driver
+26/10/07 11:49:42 INFO TaskSetManager: Starting task 7.0 in stage 3.0 (TID 22) (master, executor driver, partition 7, NODE_LOCAL, 8394 bytes) 
+26/10/07 11:49:42 INFO TaskSetManager: Finished task 5.0 in stage 3.0 (TID 20) in 7915 ms on master (executor driver) (6/14)
+26/10/07 11:49:42 INFO Executor: Running task 7.0 in stage 3.0 (TID 22)
+26/10/07 11:49:42 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/benchmark/raw_200x/BTCUSDT/part-00001-aec6ad26-c84d-4d3b-b363-b1979b979949-c000.csv, range: 0-134217728, partition values: [empty row]
+26/10/07 11:49:49 INFO Executor: Finished task 6.0 in stage 3.0 (TID 21). 3646 bytes result sent to driver
+26/10/07 11:49:49 INFO TaskSetManager: Starting task 8.0 in stage 3.0 (TID 23) (master, executor driver, partition 8, NODE_LOCAL, 8394 bytes) 
+26/10/07 11:49:49 INFO TaskSetManager: Finished task 6.0 in stage 3.0 (TID 21) in 10488 ms on master (executor driver) (7/14)
+26/10/07 11:49:49 INFO Executor: Running task 8.0 in stage 3.0 (TID 23)
+26/10/07 11:49:49 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/benchmark/raw_200x/BTCUSDT/part-00000-aec6ad26-c84d-4d3b-b363-b1979b979949-c000.csv, range: 134217728-235812365, partition values: [empty row]
+26/10/07 11:49:55 INFO Executor: Finished task 7.0 in stage 3.0 (TID 22). 3646 bytes result sent to driver
+26/10/07 11:49:55 INFO TaskSetManager: Starting task 9.0 in stage 3.0 (TID 24) (master, executor driver, partition 9, NODE_LOCAL, 8394 bytes) 
+26/10/07 11:49:55 INFO Executor: Running task 9.0 in stage 3.0 (TID 24)
+26/10/07 11:49:55 INFO TaskSetManager: Finished task 7.0 in stage 3.0 (TID 22) in 13520 ms on master (executor driver) (8/14)
+26/10/07 11:49:55 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/benchmark/raw_200x/BTCUSDT/part-00001-aec6ad26-c84d-4d3b-b363-b1979b979949-c000.csv, range: 134217728-225100208, partition values: [empty row]
+26/10/07 11:50:02 INFO Executor: Finished task 8.0 in stage 3.0 (TID 23). 3646 bytes result sent to driver
+26/10/07 11:50:02 INFO TaskSetManager: Starting task 10.0 in stage 3.0 (TID 25) (master, executor driver, partition 10, NODE_LOCAL, 8395 bytes) 
+26/10/07 11:50:02 INFO Executor: Running task 10.0 in stage 3.0 (TID 25)
+26/10/07 11:50:02 INFO TaskSetManager: Finished task 8.0 in stage 3.0 (TID 23) in 12943 ms on master (executor driver) (9/14)
+26/10/07 11:50:03 INFO CodeGenerator: Code generated in 125.488714 ms
+26/10/07 11:50:03 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/benchmark/raw_200x/BUSDUSDT/part-00000-6f50d580-8d01-4ff5-b495-ca9f20eb8bff-c000.csv, range: 0-45382204, partition values: [empty row]
+26/10/07 11:50:04 INFO Executor: Finished task 9.0 in stage 3.0 (TID 24). 3603 bytes result sent to driver
+26/10/07 11:50:04 INFO TaskSetManager: Starting task 11.0 in stage 3.0 (TID 26) (master, executor driver, partition 11, NODE_LOCAL, 8571 bytes) 
+26/10/07 11:50:04 INFO Executor: Running task 11.0 in stage 3.0 (TID 26)
+26/10/07 11:50:04 INFO TaskSetManager: Finished task 9.0 in stage 3.0 (TID 24) in 9306 ms on master (executor driver) (10/14)
+26/10/07 11:50:07 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/benchmark/raw_200x/BUSDUSDT/part-00001-6f50d580-8d01-4ff5-b495-ca9f20eb8bff-c000.csv, range: 0-32696400, partition values: [empty row]
+26/10/07 11:50:10 INFO Executor: Finished task 10.0 in stage 3.0 (TID 25). 3603 bytes result sent to driver
+26/10/07 11:50:10 INFO TaskSetManager: Starting task 12.0 in stage 3.0 (TID 27) (master, executor driver, partition 12, NODE_LOCAL, 8394 bytes) 
+26/10/07 11:50:10 INFO TaskSetManager: Finished task 10.0 in stage 3.0 (TID 25) in 7232 ms on master (executor driver) (11/14)
+26/10/07 11:50:10 INFO Executor: Running task 12.0 in stage 3.0 (TID 27)
+26/10/07 11:50:10 INFO CodeGenerator: Code generated in 114.25465 ms
+26/10/07 11:50:10 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/benchmark/raw_200x/BTCBUSD/part-00000-772237c0-80a2-4fed-9109-4e195ddbdf5f-c000.csv, range: 0-52284004, partition values: [empty row]
+26/10/07 11:50:10 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/benchmark/raw_200x/BUSDUSDT/part-00000-6f50d580-8d01-4ff5-b495-ca9f20eb8bff-c000.csv, range: 45382204-49679400, partition values: [empty row]
+26/10/07 11:50:12 INFO Executor: Finished task 11.0 in stage 3.0 (TID 26). 3603 bytes result sent to driver
+26/10/07 11:50:12 INFO TaskSetManager: Starting task 13.0 in stage 3.0 (TID 28) (master, executor driver, partition 13, NODE_LOCAL, 8569 bytes) 
+26/10/07 11:50:12 INFO Executor: Running task 13.0 in stage 3.0 (TID 28)
+26/10/07 11:50:12 INFO TaskSetManager: Finished task 11.0 in stage 3.0 (TID 26) in 8112 ms on master (executor driver) (12/14)
+26/10/07 11:50:13 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/benchmark/raw_200x/BTCBUSD/part-00001-772237c0-80a2-4fed-9109-4e195ddbdf5f-c000.csv, range: 0-37392800, partition values: [empty row]
+26/10/07 11:50:16 INFO FileScanRDD: Reading File path: hdfs://100.76.42.126:9000/datalake/benchmark/raw_200x/BTCBUSD/part-00000-772237c0-80a2-4fed-9109-4e195ddbdf5f-c000.csv, range: 52284004-58786600, partition values: [empty row]
+26/10/07 11:50:17 INFO Executor: Finished task 12.0 in stage 3.0 (TID 27). 3603 bytes result sent to driver
+26/10/07 11:50:17 INFO TaskSetManager: Finished task 12.0 in stage 3.0 (TID 27) in 7369 ms on master (executor driver) (13/14)
+26/10/07 11:50:18 INFO Executor: Finished task 13.0 in stage 3.0 (TID 28). 3603 bytes result sent to driver
+26/10/07 11:50:18 INFO TaskSetManager: Finished task 13.0 in stage 3.0 (TID 28) in 5338 ms on master (executor driver) (14/14)
+26/10/07 11:50:18 INFO TaskSchedulerImpl: Removed TaskSet 3.0, whose tasks have all completed, from pool 
+26/10/07 11:50:18 INFO DAGScheduler: ShuffleMapStage 3 (first at /home/marlon/stablecoin-depeg-detection/src/quality_opt.py:105) finished in 77.441 s
+26/10/07 11:50:18 INFO DAGScheduler: looking for newly runnable stages
+26/10/07 11:50:18 INFO DAGScheduler: running: Set()
+26/10/07 11:50:18 INFO DAGScheduler: waiting: Set()
+26/10/07 11:50:18 INFO DAGScheduler: failed: Set()
+26/10/07 11:50:18 INFO CodeGenerator: Code generated in 16.675881 ms
+26/10/07 11:50:18 INFO DAGScheduler: Got job 3 (first at /home/marlon/stablecoin-depeg-detection/src/quality_opt.py:105) with 64 output partitions
+26/10/07 11:50:18 INFO DAGScheduler: Final stage: ResultStage 5 (first at /home/marlon/stablecoin-depeg-detection/src/quality_opt.py:105)
+26/10/07 11:50:18 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 4)
+26/10/07 11:50:18 INFO DAGScheduler: Missing parents: List()
+26/10/07 11:50:18 INFO DAGScheduler: Submitting ResultStage 5 (AdaptiveSparkPlan isFinalPlan=false
++- SortAggregate(key=[simbolo#24, open_time#0L], functions=[first(open#1, false), first(high#2, false), first(low#3, false), first(close#4, false), first(volume#5, false), first(close_time#6L, false), first(quote_volume#7, false), first(trades#8L, false), first(taker_buy_base#9, false), first(taker_buy_quote#10, false), first(ignore#11, false), first(fuente_paridad#39, false), first(open_time_ts#326, false), first(close_time_ts#342, false)], output=[open_time#0L, open#385, high#387, low#389, close#391, volume#393, close_time#395L, quote_volume#397, trades#399L, taker_buy_base#401, taker_buy_quote#403, ignore#405, simbolo#24, fuente_paridad#407, open_time_ts#409, close_time_ts#411])
+   +- Sort [simbolo#24 ASC NULLS FIRST, open_time#0L ASC NULLS FIRST], false, 0
+      +- Exchange hashpartitioning(simbolo#24, open_time#0L, 64), ENSURE_REQUIREMENTS, [plan_id=99]
+         +- SortAggregate(key=[simbolo#24, open_time#0L], functions=[partial_first(open#1, false), partial_first(h... MapPartitionsRDD[39] at first at /home/marlon/stablecoin-depeg-detection/src/quality_opt.py:105), which has no missing parents
+26/10/07 11:50:18 INFO MemoryStore: Block broadcast_13 stored as values in memory (estimated size 89.6 KiB, free 1661.8 MiB)
+26/10/07 11:50:18 INFO MemoryStore: Block broadcast_13_piece0 stored as bytes in memory (estimated size 32.5 KiB, free 1661.8 MiB)
+26/10/07 11:50:18 INFO BlockManagerInfo: Added broadcast_13_piece0 in memory on master:34031 (size: 32.5 KiB, free: 1663.0 MiB)
+26/10/07 11:50:18 INFO SparkContext: Created broadcast 13 from broadcast at DAGScheduler.scala:1585
+26/10/07 11:50:18 INFO DAGScheduler: Submitting 64 missing tasks from ResultStage 5 (AdaptiveSparkPlan isFinalPlan=false
++- SortAggregate(key=[simbolo#24, open_time#0L], functions=[first(open#1, false), first(high#2, false), first(low#3, false), first(close#4, false), first(volume#5, false), first(close_time#6L, false), first(quote_volume#7, false), first(trades#8L, false), first(taker_buy_base#9, false), first(taker_buy_quote#10, false), first(ignore#11, false), first(fuente_paridad#39, false), first(open_time_ts#326, false), first(close_time_ts#342, false)], output=[open_time#0L, open#385, high#387, low#389, close#391, volume#393, close_time#395L, quote_volume#397, trades#399L, taker_buy_base#401, taker_buy_quote#403, ignore#405, simbolo#24, fuente_paridad#407, open_time_ts#409, close_time_ts#411])
+   +- Sort [simbolo#24 ASC NULLS FIRST, open_time#0L ASC NULLS FIRST], false, 0
+      +- Exchange hashpartitioning(simbolo#24, open_time#0L, 64), ENSURE_REQUIREMENTS, [plan_id=99]
+         +- SortAggregate(key=[simbolo#24, open_time#0L], functions=[partial_first(open#1, false), partial_first(h... MapPartitionsRDD[39] at first at /home/marlon/stablecoin-depeg-detection/src/quality_opt.py:105) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14))
+26/10/07 11:50:18 INFO TaskSchedulerImpl: Adding task set 5.0 with 64 tasks resource profile 0
+26/10/07 11:50:18 INFO TaskSetManager: Starting task 0.0 in stage 5.0 (TID 29) (master, executor driver, partition 0, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:50:18 INFO TaskSetManager: Starting task 1.0 in stage 5.0 (TID 30) (master, executor driver, partition 1, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:50:18 INFO Executor: Running task 0.0 in stage 5.0 (TID 29)
+26/10/07 11:50:18 INFO Executor: Running task 1.0 in stage 5.0 (TID 30)
+26/10/07 11:50:18 INFO ShuffleBlockFetcherIterator: Getting 14 (17.8 MiB) non-empty blocks including 14 (17.8 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:50:18 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+26/10/07 11:50:18 INFO ShuffleBlockFetcherIterator: Getting 14 (17.9 MiB) non-empty blocks including 14 (17.9 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:50:18 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 7 ms
+26/10/07 11:50:19 INFO CodeGenerator: Code generated in 30.872651 ms
+26/10/07 11:50:19 INFO CodeGenerator: Code generated in 16.185091 ms
+26/10/07 11:50:19 INFO CodeGenerator: Code generated in 18.855617 ms
+26/10/07 11:50:19 INFO CodeGenerator: Code generated in 80.843834 ms
+26/10/07 11:50:19 INFO CodeGenerator: Code generated in 14.197399 ms
+26/10/07 11:50:20 INFO CodeGenerator: Code generated in 23.519115 ms
+26/10/07 11:50:20 INFO CodeGenerator: Code generated in 17.547205 ms
+26/10/07 11:50:23 INFO MemoryStore: Block rdd_39_0 stored as values in memory (estimated size 11.8 MiB, free 1582.0 MiB)
+26/10/07 11:50:23 INFO BlockManagerInfo: Added rdd_39_0 in memory on master:34031 (size: 11.8 MiB, free: 1651.2 MiB)
+26/10/07 11:50:23 INFO Executor: 1 block locks were not released by task 0.0 in stage 5.0 (TID 29)
+[rdd_39_0]
+26/10/07 11:50:23 INFO Executor: Finished task 0.0 in stage 5.0 (TID 29). 5926 bytes result sent to driver
+26/10/07 11:50:23 INFO TaskSetManager: Starting task 2.0 in stage 5.0 (TID 31) (master, executor driver, partition 2, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:50:23 INFO Executor: Running task 2.0 in stage 5.0 (TID 31)
+26/10/07 11:50:23 INFO TaskSetManager: Finished task 0.0 in stage 5.0 (TID 29) in 4820 ms on master (executor driver) (1/64)
+26/10/07 11:50:23 INFO ShuffleBlockFetcherIterator: Getting 14 (17.9 MiB) non-empty blocks including 14 (17.9 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:50:23 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 4 ms
+26/10/07 11:50:23 INFO MemoryStore: Block rdd_39_1 stored as values in memory (estimated size 11.8 MiB, free 1638.2 MiB)
+26/10/07 11:50:23 INFO BlockManagerInfo: Added rdd_39_1 in memory on master:34031 (size: 11.8 MiB, free: 1639.4 MiB)
+26/10/07 11:50:23 INFO Executor: 1 block locks were not released by task 1.0 in stage 5.0 (TID 30)
+[rdd_39_1]
+26/10/07 11:50:23 INFO Executor: Finished task 1.0 in stage 5.0 (TID 30). 5883 bytes result sent to driver
+26/10/07 11:50:23 INFO TaskSetManager: Starting task 3.0 in stage 5.0 (TID 32) (master, executor driver, partition 3, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:50:23 INFO Executor: Running task 3.0 in stage 5.0 (TID 32)
+26/10/07 11:50:23 INFO TaskSetManager: Finished task 1.0 in stage 5.0 (TID 30) in 4864 ms on master (executor driver) (2/64)
+26/10/07 11:50:23 INFO ShuffleBlockFetcherIterator: Getting 14 (17.7 MiB) non-empty blocks including 14 (17.7 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:50:23 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 2 ms
+26/10/07 11:50:25 INFO MemoryStore: Block rdd_39_2 stored as values in memory (estimated size 11.8 MiB, free 1558.4 MiB)
+26/10/07 11:50:25 INFO BlockManagerInfo: Added rdd_39_2 in memory on master:34031 (size: 11.8 MiB, free: 1627.6 MiB)
+26/10/07 11:50:25 INFO Executor: 1 block locks were not released by task 2.0 in stage 5.0 (TID 31)
+[rdd_39_2]
+26/10/07 11:50:25 INFO Executor: Finished task 2.0 in stage 5.0 (TID 31). 5926 bytes result sent to driver
+26/10/07 11:50:25 INFO TaskSetManager: Starting task 4.0 in stage 5.0 (TID 33) (master, executor driver, partition 4, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:50:25 INFO TaskSetManager: Finished task 2.0 in stage 5.0 (TID 31) in 1866 ms on master (executor driver) (3/64)
+26/10/07 11:50:25 INFO Executor: Running task 4.0 in stage 5.0 (TID 33)
+26/10/07 11:50:25 INFO ShuffleBlockFetcherIterator: Getting 14 (17.9 MiB) non-empty blocks including 14 (17.9 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:50:25 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+26/10/07 11:50:25 INFO MemoryStore: Block rdd_39_3 stored as values in memory (estimated size 11.8 MiB, free 1581.6 MiB)
+26/10/07 11:50:25 INFO BlockManagerInfo: Added rdd_39_3 in memory on master:34031 (size: 11.8 MiB, free: 1615.7 MiB)
+26/10/07 11:50:25 INFO Executor: 1 block locks were not released by task 3.0 in stage 5.0 (TID 32)
+[rdd_39_3]
+26/10/07 11:50:25 INFO Executor: Finished task 3.0 in stage 5.0 (TID 32). 5883 bytes result sent to driver
+26/10/07 11:50:25 INFO TaskSetManager: Starting task 5.0 in stage 5.0 (TID 34) (master, executor driver, partition 5, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:50:25 INFO TaskSetManager: Finished task 3.0 in stage 5.0 (TID 32) in 1977 ms on master (executor driver) (4/64)
+26/10/07 11:50:25 INFO Executor: Running task 5.0 in stage 5.0 (TID 34)
+26/10/07 11:50:25 INFO ShuffleBlockFetcherIterator: Getting 14 (17.7 MiB) non-empty blocks including 14 (17.7 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:50:25 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+26/10/07 11:50:27 INFO MemoryStore: Block rdd_39_5 stored as values in memory (estimated size 11.9 MiB, free 1534.7 MiB)
+26/10/07 11:50:27 INFO BlockManagerInfo: Added rdd_39_5 in memory on master:34031 (size: 11.9 MiB, free: 1603.8 MiB)
+26/10/07 11:50:27 INFO Executor: 1 block locks were not released by task 5.0 in stage 5.0 (TID 34)
+[rdd_39_5]
+26/10/07 11:50:27 INFO Executor: Finished task 5.0 in stage 5.0 (TID 34). 5883 bytes result sent to driver
+26/10/07 11:50:27 INFO TaskSetManager: Starting task 6.0 in stage 5.0 (TID 35) (master, executor driver, partition 6, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:50:27 INFO TaskSetManager: Finished task 5.0 in stage 5.0 (TID 34) in 1816 ms on master (executor driver) (5/64)
+26/10/07 11:50:27 INFO Executor: Running task 6.0 in stage 5.0 (TID 35)
+26/10/07 11:50:27 INFO ShuffleBlockFetcherIterator: Getting 14 (17.8 MiB) non-empty blocks including 14 (17.8 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:50:27 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 2 ms
+26/10/07 11:50:27 INFO MemoryStore: Block rdd_39_4 stored as values in memory (estimated size 11.8 MiB, free 1557.9 MiB)
+26/10/07 11:50:27 INFO BlockManagerInfo: Added rdd_39_4 in memory on master:34031 (size: 11.8 MiB, free: 1592.0 MiB)
+26/10/07 11:50:27 INFO Executor: 1 block locks were not released by task 4.0 in stage 5.0 (TID 33)
+[rdd_39_4]
+26/10/07 11:50:27 INFO Executor: Finished task 4.0 in stage 5.0 (TID 33). 5926 bytes result sent to driver
+26/10/07 11:50:27 INFO TaskSetManager: Starting task 7.0 in stage 5.0 (TID 36) (master, executor driver, partition 7, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:50:27 INFO Executor: Running task 7.0 in stage 5.0 (TID 36)
+26/10/07 11:50:27 INFO TaskSetManager: Finished task 4.0 in stage 5.0 (TID 33) in 2300 ms on master (executor driver) (6/64)
+26/10/07 11:50:27 INFO ShuffleBlockFetcherIterator: Getting 14 (17.9 MiB) non-empty blocks including 14 (17.9 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:50:27 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 2 ms
+26/10/07 11:50:29 INFO MemoryStore: Block rdd_39_7 stored as values in memory (estimated size 11.9 MiB, free 1511.0 MiB)
+26/10/07 11:50:29 INFO BlockManagerInfo: Added rdd_39_7 in memory on master:34031 (size: 11.9 MiB, free: 1580.2 MiB)
+26/10/07 11:50:29 INFO Executor: 1 block locks were not released by task 7.0 in stage 5.0 (TID 36)
+[rdd_39_7]
+26/10/07 11:50:29 INFO Executor: Finished task 7.0 in stage 5.0 (TID 36). 5883 bytes result sent to driver
+26/10/07 11:50:29 INFO TaskSetManager: Starting task 8.0 in stage 5.0 (TID 37) (master, executor driver, partition 8, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:50:29 INFO Executor: Running task 8.0 in stage 5.0 (TID 37)
+26/10/07 11:50:29 INFO TaskSetManager: Finished task 7.0 in stage 5.0 (TID 36) in 1676 ms on master (executor driver) (7/64)
+26/10/07 11:50:29 INFO ShuffleBlockFetcherIterator: Getting 14 (17.9 MiB) non-empty blocks including 14 (17.9 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:50:29 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 5 ms
+26/10/07 11:50:29 INFO MemoryStore: Block rdd_39_6 stored as values in memory (estimated size 11.8 MiB, free 1531.2 MiB)
+26/10/07 11:50:29 INFO BlockManagerInfo: Added rdd_39_6 in memory on master:34031 (size: 11.8 MiB, free: 1568.4 MiB)
+26/10/07 11:50:29 INFO Executor: 1 block locks were not released by task 6.0 in stage 5.0 (TID 35)
+[rdd_39_6]
+26/10/07 11:50:29 INFO Executor: Finished task 6.0 in stage 5.0 (TID 35). 5926 bytes result sent to driver
+26/10/07 11:50:29 INFO TaskSetManager: Starting task 9.0 in stage 5.0 (TID 38) (master, executor driver, partition 9, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:50:29 INFO TaskSetManager: Finished task 6.0 in stage 5.0 (TID 35) in 2142 ms on master (executor driver) (8/64)
+26/10/07 11:50:29 INFO Executor: Running task 9.0 in stage 5.0 (TID 38)
+26/10/07 11:50:29 INFO ShuffleBlockFetcherIterator: Getting 14 (17.7 MiB) non-empty blocks including 14 (17.7 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:50:29 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+26/10/07 11:50:31 INFO MemoryStore: Block rdd_39_8 stored as values in memory (estimated size 11.9 MiB, free 1487.3 MiB)
+26/10/07 11:50:31 INFO BlockManagerInfo: Added rdd_39_8 in memory on master:34031 (size: 11.9 MiB, free: 1556.5 MiB)
+26/10/07 11:50:31 INFO Executor: 1 block locks were not released by task 8.0 in stage 5.0 (TID 37)
+[rdd_39_8]
+26/10/07 11:50:31 INFO Executor: Finished task 8.0 in stage 5.0 (TID 37). 5883 bytes result sent to driver
+26/10/07 11:50:31 INFO TaskSetManager: Starting task 10.0 in stage 5.0 (TID 39) (master, executor driver, partition 10, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:50:31 INFO TaskSetManager: Finished task 8.0 in stage 5.0 (TID 37) in 2240 ms on master (executor driver) (9/64)
+26/10/07 11:50:31 INFO Executor: Running task 10.0 in stage 5.0 (TID 39)
+26/10/07 11:50:32 INFO ShuffleBlockFetcherIterator: Getting 14 (17.8 MiB) non-empty blocks including 14 (17.8 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:50:32 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 2 ms
+26/10/07 11:50:33 INFO MemoryStore: Block rdd_39_9 stored as values in memory (estimated size 11.8 MiB, free 1510.6 MiB)
+26/10/07 11:50:33 INFO BlockManagerInfo: Added rdd_39_9 in memory on master:34031 (size: 11.8 MiB, free: 1544.7 MiB)
+26/10/07 11:50:33 INFO Executor: 1 block locks were not released by task 9.0 in stage 5.0 (TID 38)
+[rdd_39_9]
+26/10/07 11:50:33 INFO Executor: Finished task 9.0 in stage 5.0 (TID 38). 5883 bytes result sent to driver
+26/10/07 11:50:33 INFO TaskSetManager: Starting task 11.0 in stage 5.0 (TID 40) (master, executor driver, partition 11, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:50:33 INFO Executor: Running task 11.0 in stage 5.0 (TID 40)
+26/10/07 11:50:33 INFO TaskSetManager: Finished task 9.0 in stage 5.0 (TID 38) in 3467 ms on master (executor driver) (10/64)
+26/10/07 11:50:33 INFO ShuffleBlockFetcherIterator: Getting 14 (17.6 MiB) non-empty blocks including 14 (17.6 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:50:33 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+26/10/07 11:50:36 INFO MemoryStore: Block rdd_39_10 stored as values in memory (estimated size 11.8 MiB, free 1463.8 MiB)
+26/10/07 11:50:36 INFO BlockManagerInfo: Added rdd_39_10 in memory on master:34031 (size: 11.8 MiB, free: 1532.9 MiB)
+26/10/07 11:50:36 INFO Executor: 1 block locks were not released by task 10.0 in stage 5.0 (TID 39)
+[rdd_39_10]
+26/10/07 11:50:36 INFO Executor: Finished task 10.0 in stage 5.0 (TID 39). 5883 bytes result sent to driver
+26/10/07 11:50:36 INFO TaskSetManager: Starting task 12.0 in stage 5.0 (TID 41) (master, executor driver, partition 12, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:50:36 INFO TaskSetManager: Finished task 10.0 in stage 5.0 (TID 39) in 4361 ms on master (executor driver) (11/64)
+26/10/07 11:50:36 INFO Executor: Running task 12.0 in stage 5.0 (TID 41)
+26/10/07 11:50:36 INFO ShuffleBlockFetcherIterator: Getting 14 (17.7 MiB) non-empty blocks including 14 (17.7 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:50:36 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 21 ms
+26/10/07 11:50:37 INFO MemoryStore: Block rdd_39_11 stored as values in memory (estimated size 11.8 MiB, free 1452.0 MiB)
+26/10/07 11:50:37 INFO BlockManagerInfo: Added rdd_39_11 in memory on master:34031 (size: 11.8 MiB, free: 1521.1 MiB)
+26/10/07 11:50:37 INFO Executor: 1 block locks were not released by task 11.0 in stage 5.0 (TID 40)
+[rdd_39_11]
+26/10/07 11:50:37 INFO Executor: Finished task 11.0 in stage 5.0 (TID 40). 5883 bytes result sent to driver
+26/10/07 11:50:37 INFO TaskSetManager: Starting task 13.0 in stage 5.0 (TID 42) (master, executor driver, partition 13, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:50:37 INFO TaskSetManager: Finished task 11.0 in stage 5.0 (TID 40) in 4240 ms on master (executor driver) (12/64)
+26/10/07 11:50:37 INFO Executor: Running task 13.0 in stage 5.0 (TID 42)
+26/10/07 11:50:37 INFO ShuffleBlockFetcherIterator: Getting 14 (17.7 MiB) non-empty blocks including 14 (17.7 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:50:37 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 2 ms
+26/10/07 11:50:38 INFO MemoryStore: Block rdd_39_12 stored as values in memory (estimated size 11.8 MiB, free 1440.2 MiB)
+26/10/07 11:50:38 INFO BlockManagerInfo: Added rdd_39_12 in memory on master:34031 (size: 11.8 MiB, free: 1509.3 MiB)
+26/10/07 11:50:38 INFO Executor: 1 block locks were not released by task 12.0 in stage 5.0 (TID 41)
+[rdd_39_12]
+26/10/07 11:50:38 INFO Executor: Finished task 12.0 in stage 5.0 (TID 41). 5883 bytes result sent to driver
+26/10/07 11:50:38 INFO TaskSetManager: Starting task 14.0 in stage 5.0 (TID 43) (master, executor driver, partition 14, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:50:38 INFO Executor: Running task 14.0 in stage 5.0 (TID 43)
+26/10/07 11:50:38 INFO TaskSetManager: Finished task 12.0 in stage 5.0 (TID 41) in 2632 ms on master (executor driver) (13/64)
+26/10/07 11:50:38 INFO ShuffleBlockFetcherIterator: Getting 14 (17.7 MiB) non-empty blocks including 14 (17.7 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:50:38 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+26/10/07 11:50:40 INFO MemoryStore: Block rdd_39_13 stored as values in memory (estimated size 11.8 MiB, free 1428.4 MiB)
+26/10/07 11:50:40 INFO BlockManagerInfo: Added rdd_39_13 in memory on master:34031 (size: 11.8 MiB, free: 1497.5 MiB)
+26/10/07 11:50:40 INFO Executor: 1 block locks were not released by task 13.0 in stage 5.0 (TID 42)
+[rdd_39_13]
+26/10/07 11:50:40 INFO Executor: Finished task 13.0 in stage 5.0 (TID 42). 5926 bytes result sent to driver
+26/10/07 11:50:40 INFO TaskSetManager: Starting task 15.0 in stage 5.0 (TID 44) (master, executor driver, partition 15, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:50:40 INFO TaskSetManager: Finished task 13.0 in stage 5.0 (TID 42) in 3402 ms on master (executor driver) (14/64)
+26/10/07 11:50:40 INFO Executor: Running task 15.0 in stage 5.0 (TID 44)
+26/10/07 11:50:40 INFO ShuffleBlockFetcherIterator: Getting 14 (17.9 MiB) non-empty blocks including 14 (17.9 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:50:40 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+26/10/07 11:50:41 INFO MemoryStore: Block rdd_39_14 stored as values in memory (estimated size 11.8 MiB, free 1416.5 MiB)
+26/10/07 11:50:41 INFO BlockManagerInfo: Added rdd_39_14 in memory on master:34031 (size: 11.8 MiB, free: 1485.7 MiB)
+26/10/07 11:50:41 INFO Executor: 1 block locks were not released by task 14.0 in stage 5.0 (TID 43)
+[rdd_39_14]
+26/10/07 11:50:41 INFO Executor: Finished task 14.0 in stage 5.0 (TID 43). 5883 bytes result sent to driver
+26/10/07 11:50:41 INFO TaskSetManager: Starting task 16.0 in stage 5.0 (TID 45) (master, executor driver, partition 16, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:50:41 INFO Executor: Running task 16.0 in stage 5.0 (TID 45)
+26/10/07 11:50:41 INFO TaskSetManager: Finished task 14.0 in stage 5.0 (TID 43) in 2850 ms on master (executor driver) (15/64)
+26/10/07 11:50:41 INFO ShuffleBlockFetcherIterator: Getting 14 (17.8 MiB) non-empty blocks including 14 (17.8 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:50:41 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 10 ms
+26/10/07 11:50:44 INFO MemoryStore: Block rdd_39_15 stored as values in memory (estimated size 11.9 MiB, free 1404.6 MiB)
+26/10/07 11:50:44 INFO BlockManagerInfo: Added rdd_39_15 in memory on master:34031 (size: 11.9 MiB, free: 1473.8 MiB)
+26/10/07 11:50:44 INFO Executor: 1 block locks were not released by task 15.0 in stage 5.0 (TID 44)
+[rdd_39_15]
+26/10/07 11:50:44 INFO Executor: Finished task 15.0 in stage 5.0 (TID 44). 5926 bytes result sent to driver
+26/10/07 11:50:44 INFO TaskSetManager: Starting task 17.0 in stage 5.0 (TID 46) (master, executor driver, partition 17, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:50:44 INFO TaskSetManager: Finished task 15.0 in stage 5.0 (TID 44) in 3661 ms on master (executor driver) (16/64)
+26/10/07 11:50:44 INFO Executor: Running task 17.0 in stage 5.0 (TID 46)
+26/10/07 11:50:44 INFO ShuffleBlockFetcherIterator: Getting 14 (17.9 MiB) non-empty blocks including 14 (17.9 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:50:44 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 12 ms
+26/10/07 11:50:45 INFO MemoryStore: Block rdd_39_16 stored as values in memory (estimated size 11.8 MiB, free 1392.8 MiB)
+26/10/07 11:50:45 INFO BlockManagerInfo: Added rdd_39_16 in memory on master:34031 (size: 11.8 MiB, free: 1462.0 MiB)
+26/10/07 11:50:45 INFO Executor: 1 block locks were not released by task 16.0 in stage 5.0 (TID 45)
+[rdd_39_16]
+26/10/07 11:50:45 INFO Executor: Finished task 16.0 in stage 5.0 (TID 45). 5883 bytes result sent to driver
+26/10/07 11:50:45 INFO TaskSetManager: Starting task 18.0 in stage 5.0 (TID 47) (master, executor driver, partition 18, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:50:45 INFO TaskSetManager: Finished task 16.0 in stage 5.0 (TID 45) in 3808 ms on master (executor driver) (17/64)
+26/10/07 11:50:45 INFO Executor: Running task 18.0 in stage 5.0 (TID 47)
+26/10/07 11:50:45 INFO ShuffleBlockFetcherIterator: Getting 14 (17.8 MiB) non-empty blocks including 14 (17.8 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:50:45 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 3 ms
+26/10/07 11:50:47 INFO MemoryStore: Block rdd_39_17 stored as values in memory (estimated size 11.8 MiB, free 1381.0 MiB)
+26/10/07 11:50:47 INFO BlockManagerInfo: Added rdd_39_17 in memory on master:34031 (size: 11.8 MiB, free: 1450.2 MiB)
+26/10/07 11:50:47 INFO Executor: 1 block locks were not released by task 17.0 in stage 5.0 (TID 46)
+[rdd_39_17]
+26/10/07 11:50:47 INFO Executor: Finished task 17.0 in stage 5.0 (TID 46). 5883 bytes result sent to driver
+26/10/07 11:50:47 INFO TaskSetManager: Starting task 19.0 in stage 5.0 (TID 48) (master, executor driver, partition 19, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:50:47 INFO Executor: Running task 19.0 in stage 5.0 (TID 48)
+26/10/07 11:50:47 INFO TaskSetManager: Finished task 17.0 in stage 5.0 (TID 46) in 3200 ms on master (executor driver) (18/64)
+26/10/07 11:50:47 INFO ShuffleBlockFetcherIterator: Getting 14 (17.9 MiB) non-empty blocks including 14 (17.9 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:50:47 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 2 ms
+26/10/07 11:50:48 INFO MemoryStore: Block rdd_39_18 stored as values in memory (estimated size 11.8 MiB, free 1369.2 MiB)
+26/10/07 11:50:48 INFO BlockManagerInfo: Added rdd_39_18 in memory on master:34031 (size: 11.8 MiB, free: 1438.4 MiB)
+26/10/07 11:50:48 INFO Executor: 1 block locks were not released by task 18.0 in stage 5.0 (TID 47)
+[rdd_39_18]
+26/10/07 11:50:48 INFO Executor: Finished task 18.0 in stage 5.0 (TID 47). 5926 bytes result sent to driver
+26/10/07 11:50:48 INFO TaskSetManager: Starting task 20.0 in stage 5.0 (TID 49) (master, executor driver, partition 20, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:50:48 INFO TaskSetManager: Finished task 18.0 in stage 5.0 (TID 47) in 2692 ms on master (executor driver) (19/64)
+26/10/07 11:50:48 INFO Executor: Running task 20.0 in stage 5.0 (TID 49)
+26/10/07 11:50:48 INFO ShuffleBlockFetcherIterator: Getting 14 (17.7 MiB) non-empty blocks including 14 (17.7 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:50:48 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+26/10/07 11:50:49 INFO MemoryStore: Block rdd_39_19 stored as values in memory (estimated size 11.9 MiB, free 1357.3 MiB)
+26/10/07 11:50:49 INFO BlockManagerInfo: Added rdd_39_19 in memory on master:34031 (size: 11.9 MiB, free: 1426.5 MiB)
+26/10/07 11:50:49 INFO Executor: 1 block locks were not released by task 19.0 in stage 5.0 (TID 48)
+[rdd_39_19]
+26/10/07 11:50:49 INFO Executor: Finished task 19.0 in stage 5.0 (TID 48). 5926 bytes result sent to driver
+26/10/07 11:50:49 INFO TaskSetManager: Starting task 21.0 in stage 5.0 (TID 50) (master, executor driver, partition 21, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:50:49 INFO TaskSetManager: Finished task 19.0 in stage 5.0 (TID 48) in 2086 ms on master (executor driver) (20/64)
+26/10/07 11:50:49 INFO Executor: Running task 21.0 in stage 5.0 (TID 50)
+26/10/07 11:50:49 INFO ShuffleBlockFetcherIterator: Getting 14 (17.9 MiB) non-empty blocks including 14 (17.9 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:50:49 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 2 ms
+26/10/07 11:50:50 INFO MemoryStore: Block rdd_39_20 stored as values in memory (estimated size 11.8 MiB, free 1345.5 MiB)
+26/10/07 11:50:50 INFO BlockManagerInfo: Added rdd_39_20 in memory on master:34031 (size: 11.8 MiB, free: 1414.6 MiB)
+26/10/07 11:50:50 INFO Executor: 1 block locks were not released by task 20.0 in stage 5.0 (TID 49)
+[rdd_39_20]
+26/10/07 11:50:50 INFO Executor: Finished task 20.0 in stage 5.0 (TID 49). 5926 bytes result sent to driver
+26/10/07 11:50:50 INFO TaskSetManager: Starting task 22.0 in stage 5.0 (TID 51) (master, executor driver, partition 22, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:50:50 INFO TaskSetManager: Finished task 20.0 in stage 5.0 (TID 49) in 2583 ms on master (executor driver) (21/64)
+26/10/07 11:50:50 INFO Executor: Running task 22.0 in stage 5.0 (TID 51)
+26/10/07 11:50:50 INFO ShuffleBlockFetcherIterator: Getting 14 (17.8 MiB) non-empty blocks including 14 (17.8 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:50:50 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 4 ms
+26/10/07 11:50:51 INFO MemoryStore: Block rdd_39_21 stored as values in memory (estimated size 11.8 MiB, free 1333.6 MiB)
+26/10/07 11:50:51 INFO BlockManagerInfo: Added rdd_39_21 in memory on master:34031 (size: 11.8 MiB, free: 1402.8 MiB)
+26/10/07 11:50:51 INFO Executor: 1 block locks were not released by task 21.0 in stage 5.0 (TID 50)
+[rdd_39_21]
+26/10/07 11:50:51 INFO Executor: Finished task 21.0 in stage 5.0 (TID 50). 5883 bytes result sent to driver
+26/10/07 11:50:51 INFO TaskSetManager: Starting task 23.0 in stage 5.0 (TID 52) (master, executor driver, partition 23, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:50:51 INFO TaskSetManager: Finished task 21.0 in stage 5.0 (TID 50) in 1969 ms on master (executor driver) (22/64)
+26/10/07 11:50:51 INFO Executor: Running task 23.0 in stage 5.0 (TID 52)
+26/10/07 11:50:51 INFO ShuffleBlockFetcherIterator: Getting 14 (17.9 MiB) non-empty blocks including 14 (17.9 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:50:51 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 10 ms
+26/10/07 11:50:53 INFO MemoryStore: Block rdd_39_22 stored as values in memory (estimated size 11.8 MiB, free 1321.8 MiB)
+26/10/07 11:50:53 INFO BlockManagerInfo: Added rdd_39_22 in memory on master:34031 (size: 11.8 MiB, free: 1391.0 MiB)
+26/10/07 11:50:53 INFO Executor: 1 block locks were not released by task 22.0 in stage 5.0 (TID 51)
+[rdd_39_22]
+26/10/07 11:50:53 INFO Executor: Finished task 22.0 in stage 5.0 (TID 51). 5883 bytes result sent to driver
+26/10/07 11:50:53 INFO TaskSetManager: Starting task 24.0 in stage 5.0 (TID 53) (master, executor driver, partition 24, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:50:53 INFO Executor: Running task 24.0 in stage 5.0 (TID 53)
+26/10/07 11:50:53 INFO TaskSetManager: Finished task 22.0 in stage 5.0 (TID 51) in 2609 ms on master (executor driver) (23/64)
+26/10/07 11:50:53 INFO ShuffleBlockFetcherIterator: Getting 14 (17.7 MiB) non-empty blocks including 14 (17.7 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:50:53 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 5 ms
+26/10/07 11:50:55 INFO MemoryStore: Block rdd_39_23 stored as values in memory (estimated size 11.8 MiB, free 1310.0 MiB)
+26/10/07 11:50:55 INFO BlockManagerInfo: Added rdd_39_23 in memory on master:34031 (size: 11.8 MiB, free: 1379.1 MiB)
+26/10/07 11:50:55 INFO Executor: 1 block locks were not released by task 23.0 in stage 5.0 (TID 52)
+[rdd_39_23]
+26/10/07 11:50:55 INFO Executor: Finished task 23.0 in stage 5.0 (TID 52). 5883 bytes result sent to driver
+26/10/07 11:50:55 INFO TaskSetManager: Starting task 25.0 in stage 5.0 (TID 54) (master, executor driver, partition 25, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:50:55 INFO Executor: Running task 25.0 in stage 5.0 (TID 54)
+26/10/07 11:50:55 INFO TaskSetManager: Finished task 23.0 in stage 5.0 (TID 52) in 3401 ms on master (executor driver) (24/64)
+26/10/07 11:50:55 INFO ShuffleBlockFetcherIterator: Getting 14 (17.8 MiB) non-empty blocks including 14 (17.8 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:50:55 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+26/10/07 11:50:56 INFO MemoryStore: Block rdd_39_24 stored as values in memory (estimated size 11.8 MiB, free 1298.1 MiB)
+26/10/07 11:50:56 INFO BlockManagerInfo: Added rdd_39_24 in memory on master:34031 (size: 11.8 MiB, free: 1367.3 MiB)
+26/10/07 11:50:56 INFO Executor: 1 block locks were not released by task 24.0 in stage 5.0 (TID 53)
+[rdd_39_24]
+26/10/07 11:50:56 INFO Executor: Finished task 24.0 in stage 5.0 (TID 53). 5883 bytes result sent to driver
+26/10/07 11:50:56 INFO TaskSetManager: Starting task 26.0 in stage 5.0 (TID 55) (master, executor driver, partition 26, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:50:56 INFO TaskSetManager: Finished task 24.0 in stage 5.0 (TID 53) in 3540 ms on master (executor driver) (25/64)
+26/10/07 11:50:56 INFO Executor: Running task 26.0 in stage 5.0 (TID 55)
+26/10/07 11:50:56 INFO ShuffleBlockFetcherIterator: Getting 14 (17.9 MiB) non-empty blocks including 14 (17.9 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:50:56 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 2 ms
+26/10/07 11:50:57 INFO MemoryStore: Block rdd_39_25 stored as values in memory (estimated size 11.9 MiB, free 1286.3 MiB)
+26/10/07 11:50:57 INFO BlockManagerInfo: Added rdd_39_25 in memory on master:34031 (size: 11.9 MiB, free: 1355.4 MiB)
+26/10/07 11:50:57 INFO Executor: 1 block locks were not released by task 25.0 in stage 5.0 (TID 54)
+[rdd_39_25]
+26/10/07 11:50:57 INFO Executor: Finished task 25.0 in stage 5.0 (TID 54). 5883 bytes result sent to driver
+26/10/07 11:50:57 INFO TaskSetManager: Starting task 27.0 in stage 5.0 (TID 56) (master, executor driver, partition 27, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:50:57 INFO TaskSetManager: Finished task 25.0 in stage 5.0 (TID 54) in 2777 ms on master (executor driver) (26/64)
+26/10/07 11:50:57 INFO Executor: Running task 27.0 in stage 5.0 (TID 56)
+26/10/07 11:50:57 INFO ShuffleBlockFetcherIterator: Getting 14 (17.9 MiB) non-empty blocks including 14 (17.9 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:50:57 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+26/10/07 11:50:58 INFO MemoryStore: Block rdd_39_26 stored as values in memory (estimated size 11.9 MiB, free 1274.4 MiB)
+26/10/07 11:50:58 INFO BlockManagerInfo: Added rdd_39_26 in memory on master:34031 (size: 11.9 MiB, free: 1343.6 MiB)
+26/10/07 11:50:58 INFO Executor: 1 block locks were not released by task 26.0 in stage 5.0 (TID 55)
+[rdd_39_26]
+26/10/07 11:50:58 INFO Executor: Finished task 26.0 in stage 5.0 (TID 55). 5883 bytes result sent to driver
+26/10/07 11:50:58 INFO TaskSetManager: Starting task 28.0 in stage 5.0 (TID 57) (master, executor driver, partition 28, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:50:58 INFO Executor: Running task 28.0 in stage 5.0 (TID 57)
+26/10/07 11:50:58 INFO TaskSetManager: Finished task 26.0 in stage 5.0 (TID 55) in 2130 ms on master (executor driver) (27/64)
+26/10/07 11:50:59 INFO ShuffleBlockFetcherIterator: Getting 14 (17.7 MiB) non-empty blocks including 14 (17.7 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:50:59 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 6 ms
+26/10/07 11:51:03 INFO BlockManagerInfo: Removed broadcast_12_piece0 on master:34031 in memory (size: 30.6 KiB, free: 1343.6 MiB)
+26/10/07 11:51:05 INFO MemoryStore: Block rdd_39_27 stored as values in memory (estimated size 11.8 MiB, free 1262.7 MiB)
+26/10/07 11:51:05 INFO BlockManagerInfo: Added rdd_39_27 in memory on master:34031 (size: 11.8 MiB, free: 1331.8 MiB)
+26/10/07 11:51:05 INFO Executor: 1 block locks were not released by task 27.0 in stage 5.0 (TID 56)
+[rdd_39_27]
+26/10/07 11:51:05 INFO Executor: Finished task 27.0 in stage 5.0 (TID 56). 5883 bytes result sent to driver
+26/10/07 11:51:05 INFO TaskSetManager: Starting task 29.0 in stage 5.0 (TID 58) (master, executor driver, partition 29, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:51:05 INFO Executor: Running task 29.0 in stage 5.0 (TID 58)
+26/10/07 11:51:05 INFO TaskSetManager: Finished task 27.0 in stage 5.0 (TID 56) in 7915 ms on master (executor driver) (28/64)
+26/10/07 11:51:05 INFO ShuffleBlockFetcherIterator: Getting 14 (17.9 MiB) non-empty blocks including 14 (17.9 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:51:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 7 ms
+26/10/07 11:51:06 INFO MemoryStore: Block rdd_39_28 stored as values in memory (estimated size 11.8 MiB, free 1282.9 MiB)
+26/10/07 11:51:06 INFO BlockManagerInfo: Added rdd_39_28 in memory on master:34031 (size: 11.8 MiB, free: 1320.0 MiB)
+26/10/07 11:51:06 INFO Executor: 1 block locks were not released by task 28.0 in stage 5.0 (TID 57)
+[rdd_39_28]
+26/10/07 11:51:06 INFO Executor: Finished task 28.0 in stage 5.0 (TID 57). 5883 bytes result sent to driver
+26/10/07 11:51:06 INFO TaskSetManager: Starting task 30.0 in stage 5.0 (TID 59) (master, executor driver, partition 30, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:51:06 INFO Executor: Running task 30.0 in stage 5.0 (TID 59)
+26/10/07 11:51:06 INFO TaskSetManager: Finished task 28.0 in stage 5.0 (TID 57) in 8060 ms on master (executor driver) (29/64)
+26/10/07 11:51:07 INFO ShuffleBlockFetcherIterator: Getting 14 (17.9 MiB) non-empty blocks including 14 (17.9 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:51:07 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+26/10/07 11:51:10 INFO MemoryStore: Block rdd_39_29 stored as values in memory (estimated size 11.8 MiB, free 1239.1 MiB)
+26/10/07 11:51:10 INFO BlockManagerInfo: Added rdd_39_29 in memory on master:34031 (size: 11.8 MiB, free: 1308.2 MiB)
+26/10/07 11:51:10 INFO Executor: 1 block locks were not released by task 29.0 in stage 5.0 (TID 58)
+[rdd_39_29]
+26/10/07 11:51:10 INFO Executor: Finished task 29.0 in stage 5.0 (TID 58). 5883 bytes result sent to driver
+26/10/07 11:51:10 INFO TaskSetManager: Starting task 31.0 in stage 5.0 (TID 60) (master, executor driver, partition 31, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:51:10 INFO Executor: Running task 31.0 in stage 5.0 (TID 60)
+26/10/07 11:51:10 INFO ShuffleBlockFetcherIterator: Getting 14 (17.8 MiB) non-empty blocks including 14 (17.8 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:51:10 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+26/10/07 11:51:10 INFO TaskSetManager: Finished task 29.0 in stage 5.0 (TID 58) in 4783 ms on master (executor driver) (30/64)
+26/10/07 11:51:10 INFO MemoryStore: Block rdd_39_30 stored as values in memory (estimated size 11.9 MiB, free 1262.8 MiB)
+26/10/07 11:51:10 INFO BlockManagerInfo: Added rdd_39_30 in memory on master:34031 (size: 11.9 MiB, free: 1296.3 MiB)
+26/10/07 11:51:10 INFO Executor: 1 block locks were not released by task 30.0 in stage 5.0 (TID 59)
+[rdd_39_30]
+26/10/07 11:51:10 INFO Executor: Finished task 30.0 in stage 5.0 (TID 59). 5883 bytes result sent to driver
+26/10/07 11:51:10 INFO TaskSetManager: Starting task 32.0 in stage 5.0 (TID 61) (master, executor driver, partition 32, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:51:10 INFO Executor: Running task 32.0 in stage 5.0 (TID 61)
+26/10/07 11:51:10 INFO TaskSetManager: Finished task 30.0 in stage 5.0 (TID 59) in 3823 ms on master (executor driver) (31/64)
+26/10/07 11:51:10 INFO ShuffleBlockFetcherIterator: Getting 14 (17.9 MiB) non-empty blocks including 14 (17.9 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:51:10 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 2 ms
+26/10/07 11:51:15 INFO MemoryStore: Block rdd_39_32 stored as values in memory (estimated size 11.8 MiB, free 1215.5 MiB)
+26/10/07 11:51:15 INFO BlockManagerInfo: Added rdd_39_32 in memory on master:34031 (size: 11.8 MiB, free: 1284.6 MiB)
+26/10/07 11:51:15 INFO Executor: 1 block locks were not released by task 32.0 in stage 5.0 (TID 61)
+[rdd_39_32]
+26/10/07 11:51:15 INFO Executor: Finished task 32.0 in stage 5.0 (TID 61). 5883 bytes result sent to driver
+26/10/07 11:51:15 INFO TaskSetManager: Starting task 33.0 in stage 5.0 (TID 62) (master, executor driver, partition 33, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:51:15 INFO Executor: Running task 33.0 in stage 5.0 (TID 62)
+26/10/07 11:51:15 INFO TaskSetManager: Finished task 32.0 in stage 5.0 (TID 61) in 4519 ms on master (executor driver) (32/64)
+26/10/07 11:51:15 INFO ShuffleBlockFetcherIterator: Getting 14 (17.8 MiB) non-empty blocks including 14 (17.8 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:51:15 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+26/10/07 11:51:16 INFO MemoryStore: Block rdd_39_31 stored as values in memory (estimated size 11.9 MiB, free 1203.6 MiB)
+26/10/07 11:51:16 INFO BlockManagerInfo: Added rdd_39_31 in memory on master:34031 (size: 11.9 MiB, free: 1272.7 MiB)
+26/10/07 11:51:16 INFO Executor: 1 block locks were not released by task 31.0 in stage 5.0 (TID 60)
+[rdd_39_31]
+26/10/07 11:51:16 INFO Executor: Finished task 31.0 in stage 5.0 (TID 60). 5883 bytes result sent to driver
+26/10/07 11:51:16 INFO TaskSetManager: Starting task 34.0 in stage 5.0 (TID 63) (master, executor driver, partition 34, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:51:16 INFO Executor: Running task 34.0 in stage 5.0 (TID 63)
+26/10/07 11:51:16 INFO TaskSetManager: Finished task 31.0 in stage 5.0 (TID 60) in 6199 ms on master (executor driver) (33/64)
+26/10/07 11:51:16 INFO ShuffleBlockFetcherIterator: Getting 14 (17.9 MiB) non-empty blocks including 14 (17.9 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:51:16 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 2 ms
+26/10/07 11:51:18 INFO MemoryStore: Block rdd_39_33 stored as values in memory (estimated size 11.9 MiB, free 1191.8 MiB)
+26/10/07 11:51:18 INFO BlockManagerInfo: Added rdd_39_33 in memory on master:34031 (size: 11.9 MiB, free: 1260.8 MiB)
+26/10/07 11:51:18 INFO Executor: 1 block locks were not released by task 33.0 in stage 5.0 (TID 62)
+[rdd_39_33]
+26/10/07 11:51:18 INFO Executor: Finished task 33.0 in stage 5.0 (TID 62). 5883 bytes result sent to driver
+26/10/07 11:51:18 INFO TaskSetManager: Starting task 35.0 in stage 5.0 (TID 64) (master, executor driver, partition 35, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:51:18 INFO TaskSetManager: Finished task 33.0 in stage 5.0 (TID 62) in 3719 ms on master (executor driver) (34/64)
+26/10/07 11:51:18 INFO Executor: Running task 35.0 in stage 5.0 (TID 64)
+26/10/07 11:51:19 INFO ShuffleBlockFetcherIterator: Getting 14 (17.7 MiB) non-empty blocks including 14 (17.7 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:51:19 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+26/10/07 11:51:19 INFO MemoryStore: Block rdd_39_34 stored as values in memory (estimated size 11.8 MiB, free 1215.0 MiB)
+26/10/07 11:51:19 INFO BlockManagerInfo: Added rdd_39_34 in memory on master:34031 (size: 11.8 MiB, free: 1249.0 MiB)
+26/10/07 11:51:19 INFO Executor: 1 block locks were not released by task 34.0 in stage 5.0 (TID 63)
+[rdd_39_34]
+26/10/07 11:51:19 INFO Executor: Finished task 34.0 in stage 5.0 (TID 63). 5883 bytes result sent to driver
+26/10/07 11:51:19 INFO TaskSetManager: Starting task 36.0 in stage 5.0 (TID 65) (master, executor driver, partition 36, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:51:19 INFO Executor: Running task 36.0 in stage 5.0 (TID 65)
+26/10/07 11:51:19 INFO TaskSetManager: Finished task 34.0 in stage 5.0 (TID 63) in 3256 ms on master (executor driver) (35/64)
+26/10/07 11:51:19 INFO ShuffleBlockFetcherIterator: Getting 14 (17.8 MiB) non-empty blocks including 14 (17.8 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:51:19 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 2 ms
+26/10/07 11:51:22 INFO MemoryStore: Block rdd_39_36 stored as values in memory (estimated size 11.8 MiB, free 1168.1 MiB)
+26/10/07 11:51:22 INFO BlockManagerInfo: Added rdd_39_36 in memory on master:34031 (size: 11.8 MiB, free: 1237.2 MiB)
+26/10/07 11:51:22 INFO Executor: 1 block locks were not released by task 36.0 in stage 5.0 (TID 65)
+[rdd_39_36]
+26/10/07 11:51:22 INFO Executor: Finished task 36.0 in stage 5.0 (TID 65). 5883 bytes result sent to driver
+26/10/07 11:51:22 INFO TaskSetManager: Starting task 37.0 in stage 5.0 (TID 66) (master, executor driver, partition 37, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:51:22 INFO TaskSetManager: Finished task 36.0 in stage 5.0 (TID 65) in 3175 ms on master (executor driver) (36/64)
+26/10/07 11:51:22 INFO Executor: Running task 37.0 in stage 5.0 (TID 66)
+26/10/07 11:51:22 INFO ShuffleBlockFetcherIterator: Getting 14 (17.8 MiB) non-empty blocks including 14 (17.8 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:51:22 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+26/10/07 11:51:23 INFO MemoryStore: Block rdd_39_35 stored as values in memory (estimated size 11.8 MiB, free 1156.3 MiB)
+26/10/07 11:51:23 INFO BlockManagerInfo: Added rdd_39_35 in memory on master:34031 (size: 11.8 MiB, free: 1225.4 MiB)
+26/10/07 11:51:23 INFO Executor: 1 block locks were not released by task 35.0 in stage 5.0 (TID 64)
+[rdd_39_35]
+26/10/07 11:51:23 INFO Executor: Finished task 35.0 in stage 5.0 (TID 64). 5883 bytes result sent to driver
+26/10/07 11:51:23 INFO TaskSetManager: Starting task 38.0 in stage 5.0 (TID 67) (master, executor driver, partition 38, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:51:23 INFO Executor: Running task 38.0 in stage 5.0 (TID 67)
+26/10/07 11:51:23 INFO TaskSetManager: Finished task 35.0 in stage 5.0 (TID 64) in 4188 ms on master (executor driver) (37/64)
+26/10/07 11:51:23 INFO ShuffleBlockFetcherIterator: Getting 14 (17.8 MiB) non-empty blocks including 14 (17.8 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:51:23 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+26/10/07 11:51:24 INFO MemoryStore: Block rdd_39_37 stored as values in memory (estimated size 11.9 MiB, free 1176.4 MiB)
+26/10/07 11:51:24 INFO BlockManagerInfo: Added rdd_39_37 in memory on master:34031 (size: 11.9 MiB, free: 1213.5 MiB)
+26/10/07 11:51:24 INFO Executor: 1 block locks were not released by task 37.0 in stage 5.0 (TID 66)
+[rdd_39_37]
+26/10/07 11:51:24 INFO Executor: Finished task 37.0 in stage 5.0 (TID 66). 5883 bytes result sent to driver
+26/10/07 11:51:24 INFO TaskSetManager: Starting task 39.0 in stage 5.0 (TID 68) (master, executor driver, partition 39, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:51:24 INFO Executor: Running task 39.0 in stage 5.0 (TID 68)
+26/10/07 11:51:24 INFO TaskSetManager: Finished task 37.0 in stage 5.0 (TID 66) in 1967 ms on master (executor driver) (38/64)
+26/10/07 11:51:24 INFO ShuffleBlockFetcherIterator: Getting 14 (17.9 MiB) non-empty blocks including 14 (17.9 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:51:24 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+26/10/07 11:51:26 INFO MemoryStore: Block rdd_39_38 stored as values in memory (estimated size 11.8 MiB, free 1132.6 MiB)
+26/10/07 11:51:26 INFO BlockManagerInfo: Added rdd_39_38 in memory on master:34031 (size: 11.8 MiB, free: 1201.7 MiB)
+26/10/07 11:51:26 INFO Executor: 1 block locks were not released by task 38.0 in stage 5.0 (TID 67)
+[rdd_39_38]
+26/10/07 11:51:26 INFO Executor: Finished task 38.0 in stage 5.0 (TID 67). 5883 bytes result sent to driver
+26/10/07 11:51:26 INFO TaskSetManager: Starting task 40.0 in stage 5.0 (TID 69) (master, executor driver, partition 40, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:51:26 INFO Executor: Running task 40.0 in stage 5.0 (TID 69)
+26/10/07 11:51:26 INFO TaskSetManager: Finished task 38.0 in stage 5.0 (TID 67) in 3801 ms on master (executor driver) (39/64)
+26/10/07 11:51:26 INFO ShuffleBlockFetcherIterator: Getting 14 (17.7 MiB) non-empty blocks including 14 (17.7 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:51:26 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 7 ms
+26/10/07 11:51:28 INFO MemoryStore: Block rdd_39_39 stored as values in memory (estimated size 11.8 MiB, free 1120.8 MiB)
+26/10/07 11:51:29 INFO BlockManagerInfo: Added rdd_39_39 in memory on master:34031 (size: 11.8 MiB, free: 1189.9 MiB)
+26/10/07 11:51:29 INFO Executor: 1 block locks were not released by task 39.0 in stage 5.0 (TID 68)
+[rdd_39_39]
+26/10/07 11:51:29 INFO Executor: Finished task 39.0 in stage 5.0 (TID 68). 5926 bytes result sent to driver
+26/10/07 11:51:29 INFO TaskSetManager: Starting task 41.0 in stage 5.0 (TID 70) (master, executor driver, partition 41, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:51:29 INFO TaskSetManager: Finished task 39.0 in stage 5.0 (TID 68) in 4739 ms on master (executor driver) (40/64)
+26/10/07 11:51:29 INFO Executor: Running task 41.0 in stage 5.0 (TID 70)
+26/10/07 11:51:29 INFO ShuffleBlockFetcherIterator: Getting 14 (17.9 MiB) non-empty blocks including 14 (17.9 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:51:29 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 2 ms
+26/10/07 11:51:30 INFO MemoryStore: Block rdd_39_40 stored as values in memory (estimated size 11.8 MiB, free 1143.0 MiB)
+26/10/07 11:51:30 INFO BlockManagerInfo: Added rdd_39_40 in memory on master:34031 (size: 11.8 MiB, free: 1178.0 MiB)
+26/10/07 11:51:30 INFO Executor: 1 block locks were not released by task 40.0 in stage 5.0 (TID 69)
+[rdd_39_40]
+26/10/07 11:51:30 INFO Executor: Finished task 40.0 in stage 5.0 (TID 69). 5883 bytes result sent to driver
+26/10/07 11:51:30 INFO TaskSetManager: Starting task 42.0 in stage 5.0 (TID 71) (master, executor driver, partition 42, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:51:30 INFO TaskSetManager: Finished task 40.0 in stage 5.0 (TID 69) in 3370 ms on master (executor driver) (41/64)
+26/10/07 11:51:30 INFO Executor: Running task 42.0 in stage 5.0 (TID 71)
+26/10/07 11:51:30 INFO ShuffleBlockFetcherIterator: Getting 14 (17.9 MiB) non-empty blocks including 14 (17.9 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:51:30 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+26/10/07 11:51:33 INFO MemoryStore: Block rdd_39_41 stored as values in memory (estimated size 11.8 MiB, free 1097.2 MiB)
+26/10/07 11:51:33 INFO BlockManagerInfo: Added rdd_39_41 in memory on master:34031 (size: 11.8 MiB, free: 1166.2 MiB)
+26/10/07 11:51:33 INFO Executor: 1 block locks were not released by task 41.0 in stage 5.0 (TID 70)
+[rdd_39_41]
+26/10/07 11:51:33 INFO Executor: Finished task 41.0 in stage 5.0 (TID 70). 5883 bytes result sent to driver
+26/10/07 11:51:33 INFO TaskSetManager: Starting task 43.0 in stage 5.0 (TID 72) (master, executor driver, partition 43, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:51:33 INFO TaskSetManager: Finished task 41.0 in stage 5.0 (TID 70) in 3793 ms on master (executor driver) (42/64)
+26/10/07 11:51:33 INFO Executor: Running task 43.0 in stage 5.0 (TID 72)
+26/10/07 11:51:33 INFO ShuffleBlockFetcherIterator: Getting 14 (17.7 MiB) non-empty blocks including 14 (17.7 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:51:33 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 14 ms
+26/10/07 11:51:33 INFO MemoryStore: Block rdd_39_42 stored as values in memory (estimated size 11.8 MiB, free 1119.3 MiB)
+26/10/07 11:51:33 INFO BlockManagerInfo: Added rdd_39_42 in memory on master:34031 (size: 11.8 MiB, free: 1154.4 MiB)
+26/10/07 11:51:33 INFO Executor: 1 block locks were not released by task 42.0 in stage 5.0 (TID 71)
+[rdd_39_42]
+26/10/07 11:51:33 INFO Executor: Finished task 42.0 in stage 5.0 (TID 71). 5926 bytes result sent to driver
+26/10/07 11:51:33 INFO TaskSetManager: Finished task 42.0 in stage 5.0 (TID 71) in 3454 ms on master (executor driver) (43/64)
+26/10/07 11:51:33 INFO TaskSetManager: Starting task 44.0 in stage 5.0 (TID 73) (master, executor driver, partition 44, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:51:33 INFO Executor: Running task 44.0 in stage 5.0 (TID 73)
+26/10/07 11:51:33 INFO ShuffleBlockFetcherIterator: Getting 14 (17.8 MiB) non-empty blocks including 14 (17.8 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:51:33 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+26/10/07 11:51:36 INFO MemoryStore: Block rdd_39_43 stored as values in memory (estimated size 11.8 MiB, free 1073.5 MiB)
+26/10/07 11:51:36 INFO BlockManagerInfo: Added rdd_39_43 in memory on master:34031 (size: 11.8 MiB, free: 1142.6 MiB)
+26/10/07 11:51:36 INFO Executor: 1 block locks were not released by task 43.0 in stage 5.0 (TID 72)
+[rdd_39_43]
+26/10/07 11:51:36 INFO Executor: Finished task 43.0 in stage 5.0 (TID 72). 5883 bytes result sent to driver
+26/10/07 11:51:36 INFO TaskSetManager: Starting task 45.0 in stage 5.0 (TID 74) (master, executor driver, partition 45, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:51:36 INFO Executor: Running task 45.0 in stage 5.0 (TID 74)
+26/10/07 11:51:36 INFO TaskSetManager: Finished task 43.0 in stage 5.0 (TID 72) in 3805 ms on master (executor driver) (44/64)
+26/10/07 11:51:36 INFO ShuffleBlockFetcherIterator: Getting 14 (17.7 MiB) non-empty blocks including 14 (17.7 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:51:36 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+26/10/07 11:51:37 INFO MemoryStore: Block rdd_39_44 stored as values in memory (estimated size 11.8 MiB, free 1061.7 MiB)
+26/10/07 11:51:37 INFO BlockManagerInfo: Added rdd_39_44 in memory on master:34031 (size: 11.8 MiB, free: 1130.8 MiB)
+26/10/07 11:51:37 INFO Executor: 1 block locks were not released by task 44.0 in stage 5.0 (TID 73)
+[rdd_39_44]
+26/10/07 11:51:37 INFO Executor: Finished task 44.0 in stage 5.0 (TID 73). 5883 bytes result sent to driver
+26/10/07 11:51:37 INFO TaskSetManager: Starting task 46.0 in stage 5.0 (TID 75) (master, executor driver, partition 46, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:51:37 INFO TaskSetManager: Finished task 44.0 in stage 5.0 (TID 73) in 3429 ms on master (executor driver) (45/64)
+26/10/07 11:51:37 INFO Executor: Running task 46.0 in stage 5.0 (TID 75)
+26/10/07 11:51:37 INFO ShuffleBlockFetcherIterator: Getting 14 (17.7 MiB) non-empty blocks including 14 (17.7 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:51:37 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 5 ms
+26/10/07 11:51:39 INFO MemoryStore: Block rdd_39_45 stored as values in memory (estimated size 11.8 MiB, free 1049.9 MiB)
+26/10/07 11:51:39 INFO BlockManagerInfo: Added rdd_39_45 in memory on master:34031 (size: 11.8 MiB, free: 1118.9 MiB)
+26/10/07 11:51:39 INFO Executor: 1 block locks were not released by task 45.0 in stage 5.0 (TID 74)
+[rdd_39_45]
+26/10/07 11:51:39 INFO Executor: Finished task 45.0 in stage 5.0 (TID 74). 5926 bytes result sent to driver
+26/10/07 11:51:39 INFO TaskSetManager: Starting task 47.0 in stage 5.0 (TID 76) (master, executor driver, partition 47, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:51:39 INFO Executor: Running task 47.0 in stage 5.0 (TID 76)
+26/10/07 11:51:39 INFO TaskSetManager: Finished task 45.0 in stage 5.0 (TID 74) in 3006 ms on master (executor driver) (46/64)
+26/10/07 11:51:39 INFO ShuffleBlockFetcherIterator: Getting 14 (17.7 MiB) non-empty blocks including 14 (17.7 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:51:39 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 11 ms
+26/10/07 11:51:40 INFO MemoryStore: Block rdd_39_46 stored as values in memory (estimated size 11.8 MiB, free 1073.0 MiB)
+26/10/07 11:51:40 INFO BlockManagerInfo: Added rdd_39_46 in memory on master:34031 (size: 11.8 MiB, free: 1107.1 MiB)
+26/10/07 11:51:40 INFO Executor: 1 block locks were not released by task 46.0 in stage 5.0 (TID 75)
+[rdd_39_46]
+26/10/07 11:51:40 INFO Executor: Finished task 46.0 in stage 5.0 (TID 75). 5883 bytes result sent to driver
+26/10/07 11:51:40 INFO TaskSetManager: Starting task 48.0 in stage 5.0 (TID 77) (master, executor driver, partition 48, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:51:40 INFO TaskSetManager: Finished task 46.0 in stage 5.0 (TID 75) in 3267 ms on master (executor driver) (47/64)
+26/10/07 11:51:40 INFO Executor: Running task 48.0 in stage 5.0 (TID 77)
+26/10/07 11:51:40 INFO ShuffleBlockFetcherIterator: Getting 14 (17.6 MiB) non-empty blocks including 14 (17.6 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:51:40 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+26/10/07 11:51:43 INFO MemoryStore: Block rdd_39_48 stored as values in memory (estimated size 11.8 MiB, free 1026.2 MiB)
+26/10/07 11:51:43 INFO BlockManagerInfo: Added rdd_39_48 in memory on master:34031 (size: 11.8 MiB, free: 1095.3 MiB)
+26/10/07 11:51:43 INFO Executor: 1 block locks were not released by task 48.0 in stage 5.0 (TID 77)
+[rdd_39_48]
+26/10/07 11:51:43 INFO Executor: Finished task 48.0 in stage 5.0 (TID 77). 5883 bytes result sent to driver
+26/10/07 11:51:43 INFO TaskSetManager: Starting task 49.0 in stage 5.0 (TID 78) (master, executor driver, partition 49, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:51:43 INFO TaskSetManager: Finished task 48.0 in stage 5.0 (TID 77) in 3129 ms on master (executor driver) (48/64)
+26/10/07 11:51:43 INFO Executor: Running task 49.0 in stage 5.0 (TID 78)
+26/10/07 11:51:43 INFO ShuffleBlockFetcherIterator: Getting 14 (17.9 MiB) non-empty blocks including 14 (17.9 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:51:43 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 6 ms
+26/10/07 11:51:44 INFO MemoryStore: Block rdd_39_47 stored as values in memory (estimated size 11.8 MiB, free 1014.4 MiB)
+26/10/07 11:51:44 INFO BlockManagerInfo: Added rdd_39_47 in memory on master:34031 (size: 11.8 MiB, free: 1083.5 MiB)
+26/10/07 11:51:44 INFO Executor: 1 block locks were not released by task 47.0 in stage 5.0 (TID 76)
+[rdd_39_47]
+26/10/07 11:51:44 INFO Executor: Finished task 47.0 in stage 5.0 (TID 76). 5883 bytes result sent to driver
+26/10/07 11:51:44 INFO TaskSetManager: Starting task 50.0 in stage 5.0 (TID 79) (master, executor driver, partition 50, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:51:44 INFO TaskSetManager: Finished task 47.0 in stage 5.0 (TID 76) in 4139 ms on master (executor driver) (49/64)
+26/10/07 11:51:44 INFO Executor: Running task 50.0 in stage 5.0 (TID 79)
+26/10/07 11:51:44 INFO ShuffleBlockFetcherIterator: Getting 14 (17.7 MiB) non-empty blocks including 14 (17.7 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:51:44 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+26/10/07 11:51:46 INFO MemoryStore: Block rdd_39_49 stored as values in memory (estimated size 11.8 MiB, free 1002.6 MiB)
+26/10/07 11:51:46 INFO BlockManagerInfo: Added rdd_39_49 in memory on master:34031 (size: 11.8 MiB, free: 1071.7 MiB)
+26/10/07 11:51:46 INFO Executor: 1 block locks were not released by task 49.0 in stage 5.0 (TID 78)
+[rdd_39_49]
+26/10/07 11:51:46 INFO Executor: Finished task 49.0 in stage 5.0 (TID 78). 5883 bytes result sent to driver
+26/10/07 11:51:46 INFO TaskSetManager: Starting task 51.0 in stage 5.0 (TID 80) (master, executor driver, partition 51, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:51:46 INFO TaskSetManager: Finished task 49.0 in stage 5.0 (TID 78) in 3424 ms on master (executor driver) (50/64)
+26/10/07 11:51:46 INFO Executor: Running task 51.0 in stage 5.0 (TID 80)
+26/10/07 11:51:46 INFO ShuffleBlockFetcherIterator: Getting 14 (17.9 MiB) non-empty blocks including 14 (17.9 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:51:46 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 15 ms
+26/10/07 11:51:47 INFO MemoryStore: Block rdd_39_50 stored as values in memory (estimated size 11.8 MiB, free 990.8 MiB)
+26/10/07 11:51:47 INFO BlockManagerInfo: Added rdd_39_50 in memory on master:34031 (size: 11.8 MiB, free: 1059.9 MiB)
+26/10/07 11:51:47 INFO Executor: 1 block locks were not released by task 50.0 in stage 5.0 (TID 79)
+[rdd_39_50]
+26/10/07 11:51:47 INFO Executor: Finished task 50.0 in stage 5.0 (TID 79). 5883 bytes result sent to driver
+26/10/07 11:51:47 INFO TaskSetManager: Starting task 52.0 in stage 5.0 (TID 81) (master, executor driver, partition 52, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:51:47 INFO TaskSetManager: Finished task 50.0 in stage 5.0 (TID 79) in 3590 ms on master (executor driver) (51/64)
+26/10/07 11:51:47 INFO Executor: Running task 52.0 in stage 5.0 (TID 81)
+26/10/07 11:51:47 INFO ShuffleBlockFetcherIterator: Getting 14 (17.8 MiB) non-empty blocks including 14 (17.8 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:51:47 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+26/10/07 11:51:50 INFO MemoryStore: Block rdd_39_51 stored as values in memory (estimated size 11.9 MiB, free 979.0 MiB)
+26/10/07 11:51:50 INFO BlockManagerInfo: Added rdd_39_51 in memory on master:34031 (size: 11.9 MiB, free: 1048.0 MiB)
+26/10/07 11:51:50 INFO Executor: 1 block locks were not released by task 51.0 in stage 5.0 (TID 80)
+[rdd_39_51]
+26/10/07 11:51:50 INFO Executor: Finished task 51.0 in stage 5.0 (TID 80). 5883 bytes result sent to driver
+26/10/07 11:51:50 INFO TaskSetManager: Starting task 53.0 in stage 5.0 (TID 82) (master, executor driver, partition 53, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:51:50 INFO Executor: Running task 53.0 in stage 5.0 (TID 82)
+26/10/07 11:51:50 INFO TaskSetManager: Finished task 51.0 in stage 5.0 (TID 80) in 3151 ms on master (executor driver) (52/64)
+26/10/07 11:51:50 INFO ShuffleBlockFetcherIterator: Getting 14 (17.9 MiB) non-empty blocks including 14 (17.9 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:51:50 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 10 ms
+26/10/07 11:51:50 INFO MemoryStore: Block rdd_39_52 stored as values in memory (estimated size 11.8 MiB, free 1002.6 MiB)
+26/10/07 11:51:50 INFO BlockManagerInfo: Added rdd_39_52 in memory on master:34031 (size: 11.8 MiB, free: 1036.2 MiB)
+26/10/07 11:51:50 INFO Executor: 1 block locks were not released by task 52.0 in stage 5.0 (TID 81)
+[rdd_39_52]
+26/10/07 11:51:50 INFO Executor: Finished task 52.0 in stage 5.0 (TID 81). 5883 bytes result sent to driver
+26/10/07 11:51:50 INFO TaskSetManager: Starting task 54.0 in stage 5.0 (TID 83) (master, executor driver, partition 54, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:51:50 INFO TaskSetManager: Finished task 52.0 in stage 5.0 (TID 81) in 2684 ms on master (executor driver) (53/64)
+26/10/07 11:51:50 INFO Executor: Running task 54.0 in stage 5.0 (TID 83)
+26/10/07 11:51:50 INFO ShuffleBlockFetcherIterator: Getting 14 (17.9 MiB) non-empty blocks including 14 (17.9 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:51:50 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+26/10/07 11:51:52 INFO MemoryStore: Block rdd_39_54 stored as values in memory (estimated size 11.8 MiB, free 955.3 MiB)
+26/10/07 11:51:52 INFO BlockManagerInfo: Added rdd_39_54 in memory on master:34031 (size: 11.8 MiB, free: 1024.4 MiB)
+26/10/07 11:51:52 INFO Executor: 1 block locks were not released by task 54.0 in stage 5.0 (TID 83)
+[rdd_39_54]
+26/10/07 11:51:52 INFO Executor: Finished task 54.0 in stage 5.0 (TID 83). 5883 bytes result sent to driver
+26/10/07 11:51:52 INFO TaskSetManager: Starting task 55.0 in stage 5.0 (TID 84) (master, executor driver, partition 55, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:51:52 INFO Executor: Running task 55.0 in stage 5.0 (TID 84)
+26/10/07 11:51:52 INFO TaskSetManager: Finished task 54.0 in stage 5.0 (TID 83) in 2232 ms on master (executor driver) (54/64)
+26/10/07 11:51:52 INFO ShuffleBlockFetcherIterator: Getting 14 (17.8 MiB) non-empty blocks including 14 (17.8 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:51:52 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 2 ms
+26/10/07 11:51:52 INFO MemoryStore: Block rdd_39_53 stored as values in memory (estimated size 11.8 MiB, free 979.4 MiB)
+26/10/07 11:51:52 INFO BlockManagerInfo: Added rdd_39_53 in memory on master:34031 (size: 11.8 MiB, free: 1012.5 MiB)
+26/10/07 11:51:52 INFO Executor: 1 block locks were not released by task 53.0 in stage 5.0 (TID 82)
+[rdd_39_53]
+26/10/07 11:51:52 INFO Executor: Finished task 53.0 in stage 5.0 (TID 82). 5883 bytes result sent to driver
+26/10/07 11:51:52 INFO TaskSetManager: Starting task 56.0 in stage 5.0 (TID 85) (master, executor driver, partition 56, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:51:52 INFO Executor: Running task 56.0 in stage 5.0 (TID 85)
+26/10/07 11:51:52 INFO TaskSetManager: Finished task 53.0 in stage 5.0 (TID 82) in 2505 ms on master (executor driver) (55/64)
+26/10/07 11:51:52 INFO ShuffleBlockFetcherIterator: Getting 14 (17.9 MiB) non-empty blocks including 14 (17.9 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:51:52 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+26/10/07 11:51:55 INFO MemoryStore: Block rdd_39_56 stored as values in memory (estimated size 11.8 MiB, free 931.7 MiB)
+26/10/07 11:51:56 INFO BlockManagerInfo: Added rdd_39_56 in memory on master:34031 (size: 11.8 MiB, free: 1000.7 MiB)
+26/10/07 11:51:56 INFO Executor: 1 block locks were not released by task 56.0 in stage 5.0 (TID 85)
+[rdd_39_56]
+26/10/07 11:51:56 INFO Executor: Finished task 56.0 in stage 5.0 (TID 85). 5883 bytes result sent to driver
+26/10/07 11:51:56 INFO TaskSetManager: Starting task 57.0 in stage 5.0 (TID 86) (master, executor driver, partition 57, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:51:56 INFO Executor: Running task 57.0 in stage 5.0 (TID 86)
+26/10/07 11:51:56 INFO TaskSetManager: Finished task 56.0 in stage 5.0 (TID 85) in 3565 ms on master (executor driver) (56/64)
+26/10/07 11:51:56 INFO ShuffleBlockFetcherIterator: Getting 14 (17.9 MiB) non-empty blocks including 14 (17.9 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:51:56 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+26/10/07 11:51:56 INFO MemoryStore: Block rdd_39_55 stored as values in memory (estimated size 11.8 MiB, free 955.3 MiB)
+26/10/07 11:51:56 INFO BlockManagerInfo: Added rdd_39_55 in memory on master:34031 (size: 11.8 MiB, free: 988.9 MiB)
+26/10/07 11:51:56 INFO Executor: 1 block locks were not released by task 55.0 in stage 5.0 (TID 84)
+[rdd_39_55]
+26/10/07 11:51:56 INFO Executor: Finished task 55.0 in stage 5.0 (TID 84). 5883 bytes result sent to driver
+26/10/07 11:51:56 INFO TaskSetManager: Starting task 58.0 in stage 5.0 (TID 87) (master, executor driver, partition 58, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:51:56 INFO TaskSetManager: Finished task 55.0 in stage 5.0 (TID 84) in 3802 ms on master (executor driver) (57/64)
+26/10/07 11:51:56 INFO Executor: Running task 58.0 in stage 5.0 (TID 87)
+26/10/07 11:51:56 INFO ShuffleBlockFetcherIterator: Getting 14 (17.7 MiB) non-empty blocks including 14 (17.7 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:51:56 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+26/10/07 11:51:58 INFO MemoryStore: Block rdd_39_57 stored as values in memory (estimated size 11.8 MiB, free 908.0 MiB)
+26/10/07 11:51:58 INFO BlockManagerInfo: Added rdd_39_57 in memory on master:34031 (size: 11.8 MiB, free: 977.1 MiB)
+26/10/07 11:51:58 INFO Executor: 1 block locks were not released by task 57.0 in stage 5.0 (TID 86)
+[rdd_39_57]
+26/10/07 11:51:58 INFO Executor: Finished task 57.0 in stage 5.0 (TID 86). 5926 bytes result sent to driver
+26/10/07 11:51:59 INFO TaskSetManager: Starting task 59.0 in stage 5.0 (TID 88) (master, executor driver, partition 59, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:51:59 INFO TaskSetManager: Finished task 57.0 in stage 5.0 (TID 86) in 2899 ms on master (executor driver) (58/64)
+26/10/07 11:51:59 INFO Executor: Running task 59.0 in stage 5.0 (TID 88)
+26/10/07 11:51:59 INFO ShuffleBlockFetcherIterator: Getting 14 (17.7 MiB) non-empty blocks including 14 (17.7 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:51:59 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 2 ms
+26/10/07 11:51:59 INFO MemoryStore: Block rdd_39_58 stored as values in memory (estimated size 11.8 MiB, free 931.2 MiB)
+26/10/07 11:51:59 INFO BlockManagerInfo: Added rdd_39_58 in memory on master:34031 (size: 11.8 MiB, free: 965.3 MiB)
+26/10/07 11:51:59 INFO Executor: 1 block locks were not released by task 58.0 in stage 5.0 (TID 87)
+[rdd_39_58]
+26/10/07 11:51:59 INFO Executor: Finished task 58.0 in stage 5.0 (TID 87). 5926 bytes result sent to driver
+26/10/07 11:51:59 INFO TaskSetManager: Starting task 60.0 in stage 5.0 (TID 89) (master, executor driver, partition 60, NODE_LOCAL, 7615 bytes) 
+26/10/07 11:51:59 INFO Executor: Running task 60.0 in stage 5.0 (TID 89)
+26/10/07 11:51:59 INFO TaskSetManager: Finished task 58.0 in stage 5.0 (TID 87) in 3077 ms on master (executor driver) (59/64)
+26/10/07 11:51:59 INFO ShuffleBlockFetcherIterator: Getting 14 (17.8 MiB) non-empty blocks including 14 (17.8 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/10/07 11:51:59 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 7 ms
+./bench_local.sh: línea 28: 47327 Terminado (killed)      timeout $LIM spark-submit "${FLAGS[@]}" src/$SCR --input $4 --output $OUT $EXTRA
+real 247,042 | user 174,886 | sys 124,448
