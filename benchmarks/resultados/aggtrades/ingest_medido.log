@@ -1,0 +1,59 @@
+26/10/08 09:52:27 INFO SparkContext: Running Spark version 3.5.1
+26/10/08 09:52:27 INFO SparkContext: OS info Linux, 6.1.0-53-amd64, amd64
+26/10/08 09:52:27 INFO SparkContext: Java version 17.0.20.1
+26/10/08 09:52:27 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/10/08 09:52:28 INFO ResourceUtils: ==============================================================
+26/10/08 09:52:28 INFO ResourceUtils: No custom resources configured for spark.driver.
+26/10/08 09:52:28 INFO ResourceUtils: ==============================================================
+26/10/08 09:52:28 INFO SparkContext: Submitted application: ingest_aggtrades
+26/10/08 09:52:28 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+26/10/08 09:52:28 INFO ResourceProfile: Limiting resource is cpu
+26/10/08 09:52:28 INFO ResourceProfileManager: Added ResourceProfile id: 0
+26/10/08 09:52:28 INFO SecurityManager: Changing view acls to: marlon
+26/10/08 09:52:28 INFO SecurityManager: Changing modify acls to: marlon
+26/10/08 09:52:28 INFO SecurityManager: Changing view acls groups to: 
+26/10/08 09:52:28 INFO SecurityManager: Changing modify acls groups to: 
+26/10/08 09:52:28 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: marlon; groups with view permissions: EMPTY; users with modify permissions: marlon; groups with modify permissions: EMPTY
+26/10/08 09:52:28 INFO Utils: Successfully started service 'sparkDriver' on port 38695.
+26/10/08 09:52:28 INFO SparkEnv: Registering MapOutputTracker
+26/10/08 09:52:28 INFO SparkEnv: Registering BlockManagerMaster
+26/10/08 09:52:28 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+26/10/08 09:52:28 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+26/10/08 09:52:28 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+26/10/08 09:52:28 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-dc685881-d2f1-4fc1-9c1c-9ba83504b7d7
+26/10/08 09:52:28 INFO MemoryStore: MemoryStore started with capacity 1048.8 MiB
+26/10/08 09:52:28 INFO SparkEnv: Registering OutputCommitCoordinator
+26/10/08 09:52:28 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+26/10/08 09:52:29 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+26/10/08 09:52:29 INFO Executor: Starting executor ID driver on host master
+26/10/08 09:52:29 INFO Executor: OS info Linux, 6.1.0-53-amd64, amd64
+26/10/08 09:52:29 INFO Executor: Java version 17.0.20.1
+26/10/08 09:52:29 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+26/10/08 09:52:29 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@2f50c4f0 for default.
+26/10/08 09:52:29 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 40437.
+26/10/08 09:52:29 INFO NettyBlockTransferService: Server created on master:40437
+26/10/08 09:52:29 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+26/10/08 09:52:29 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, master, 40437, None)
+26/10/08 09:52:29 INFO BlockManagerMasterEndpoint: Registering block manager master:40437 with 1048.8 MiB RAM, BlockManagerId(driver, master, 40437, None)
+26/10/08 09:52:29 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, master, 40437, None)
+26/10/08 09:52:29 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, master, 40437, None)
+QC unidad transact_time (digitos -> filas):
+QC   digitos=13 filas=7,965,158  (milisegundos)
+QC_ARCHIVO simbolo fecha total dup nulo precio cant dia validas
+QC_ARCHIVO BUSDUSDT 2022-11-07 484837 0 0 0 0 0 484837
+QC_ARCHIVO BUSDUSDT 2022-11-08 1011915 0 0 0 0 0 1011915
+QC_ARCHIVO BUSDUSDT 2022-11-09 1043975 0 0 0 0 0 1043975
+QC_ARCHIVO BUSDUSDT 2022-11-10 1356057 0 0 0 0 0 1356057
+QC_ARCHIVO BUSDUSDT 2022-11-11 824825 0 0 0 0 0 824825
+QC_ARCHIVO BUSDUSDT 2023-03-10 514685 0 0 0 0 0 514685
+QC_ARCHIVO USDCUSDT 2022-05-09 197452 0 0 0 0 0 197452
+QC_ARCHIVO USDCUSDT 2022-05-10 269327 0 0 0 0 0 269327
+QC_ARCHIVO USDCUSDT 2022-05-11 339320 0 0 0 0 0 339320
+QC_ARCHIVO USDCUSDT 2022-05-12 594047 0 0 0 0 0 594047
+QC_ARCHIVO USDCUSDT 2022-05-13 267108 0 0 0 0 0 267108
+QC_ARCHIVO USDCUSDT 2023-03-11 166121 0 0 0 0 0 166121
+QC_ARCHIVO USDCUSDT 2023-03-12 570066 0 0 0 0 0 570066
+QC_ARCHIVO USDCUSDT 2023-03-13 325423 0 0 0 0 0 325423
+QC_TOTAL registros_raw=7,965,158 duplicados=0 nulos=0 precio_no_positivo=0 cantidad_no_positiva=0 fuera_del_dia=0
+QC_TOTAL registros_validos=7,965,158 descartados=0
+QC_ESCRITO hdfs:///datalake/processed/binance/aggtrades_clean filas=7,965,158

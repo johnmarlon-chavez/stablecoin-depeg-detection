@@ -1,0 +1,60 @@
+26/10/08 09:54:28 INFO SparkContext: Running Spark version 3.5.1
+26/10/08 09:54:28 INFO SparkContext: OS info Linux, 6.1.0-53-amd64, amd64
+26/10/08 09:54:28 INFO SparkContext: Java version 17.0.20.1
+26/10/08 09:54:29 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/10/08 09:54:29 INFO ResourceUtils: ==============================================================
+26/10/08 09:54:29 INFO ResourceUtils: No custom resources configured for spark.driver.
+26/10/08 09:54:29 INFO ResourceUtils: ==============================================================
+26/10/08 09:54:29 INFO SparkContext: Submitted application: aggtrades_hourly
+26/10/08 09:54:29 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+26/10/08 09:54:29 INFO ResourceProfile: Limiting resource is cpu
+26/10/08 09:54:29 INFO ResourceProfileManager: Added ResourceProfile id: 0
+26/10/08 09:54:29 INFO SecurityManager: Changing view acls to: marlon
+26/10/08 09:54:29 INFO SecurityManager: Changing modify acls to: marlon
+26/10/08 09:54:29 INFO SecurityManager: Changing view acls groups to: 
+26/10/08 09:54:29 INFO SecurityManager: Changing modify acls groups to: 
+26/10/08 09:54:29 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: marlon; groups with view permissions: EMPTY; users with modify permissions: marlon; groups with modify permissions: EMPTY
+26/10/08 09:54:29 INFO Utils: Successfully started service 'sparkDriver' on port 41877.
+26/10/08 09:54:30 INFO SparkEnv: Registering MapOutputTracker
+26/10/08 09:54:30 INFO SparkEnv: Registering BlockManagerMaster
+26/10/08 09:54:30 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+26/10/08 09:54:30 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+26/10/08 09:54:30 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+26/10/08 09:54:30 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-58cb77b0-1631-411e-9fda-4c62c5a91843
+26/10/08 09:54:30 INFO MemoryStore: MemoryStore started with capacity 1048.8 MiB
+26/10/08 09:54:30 INFO SparkEnv: Registering OutputCommitCoordinator
+26/10/08 09:54:31 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+26/10/08 09:54:31 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+26/10/08 09:54:31 INFO Executor: Starting executor ID driver on host master
+26/10/08 09:54:31 INFO Executor: OS info Linux, 6.1.0-53-amd64, amd64
+26/10/08 09:54:31 INFO Executor: Java version 17.0.20.1
+26/10/08 09:54:31 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+26/10/08 09:54:31 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@af6e4b3 for default.
+26/10/08 09:54:31 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 40985.
+26/10/08 09:54:31 INFO NettyBlockTransferService: Server created on master:40985
+26/10/08 09:54:31 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+26/10/08 09:54:31 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, master, 40985, None)
+26/10/08 09:54:31 INFO BlockManagerMasterEndpoint: Registering block manager master:40985 with 1048.8 MiB RAM, BlockManagerId(driver, master, 40985, None)
+26/10/08 09:54:31 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, master, 40985, None)
+26/10/08 09:54:31 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, master, 40985, None)
+QC_CLEAN registros_aggtrades_limpios=7,965,158
+QC_HORARIO evento simbolo horas_presentes dias horas_esperadas
+QC_HORARIO FTX BUSDUSDT 120 5 120
+QC_HORARIO SVB BUSDUSDT 24 1 24
+QC_HORARIO SVB USDCUSDT 58 3 72
+QC_HORARIO Terra USDCUSDT 120 5 120
+QC_HORARIO total_filas_resumen=322
+QC_KLINES columnas: ['open_time', 'open', 'high', 'low', 'close', 'volume', 'close_time', 'quote_volume', 'trades', 'taker_buy_base', 'taker_buy_quote', 'ignore', 'fuente_paridad', 'open_time_ts', 'close_time_ts', 'simbolo', 'anio', 'mes']
+QC_JOIN filas_resumen=322 filas_con_match=322 horas_aggtrades_sin_match_en_klines=0
+QC_KLINES_SIN_AGGTRADES horas_de_klines_en_esos_dias_sin_aggtrades=0
+QC_CRUCE horas_comparadas=322 tolerancia_volumen=0.0001
+QC_CRUCE max_abs_dif_volumen=2.9802322387695312e-08 horas_volumen_no_coincide=0
+QC_CRUCE max_abs_dif_trades=0 horas_trades_no_coincide=0
+QC_CRUCE horas_con_alguna_diferencia=0
+QC_CRUCE_EVENTO evento simbolo horas mal_vol mal_trades max_dif_vol max_dif_trades
+QC_CRUCE_EVENTO FTX BUSDUSDT 120 0 0 0.0 0
+QC_CRUCE_EVENTO SVB BUSDUSDT 24 0 0 0.0 0
+QC_CRUCE_EVENTO SVB USDCUSDT 58 0 0 0.0 0
+QC_CRUCE_EVENTO Terra USDCUSDT 120 0 0 2.9802322387695312e-08 0
+QC_TOP simbolo hora volumen_agg volume_kl dif_vol n_trades_agg n_trades_kl dif_trades
+QC_TOTALES aggtrades_limpios=7,965,158 klines_clean=51,919 suma=8,017,077

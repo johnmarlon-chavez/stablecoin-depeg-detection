@@ -1,0 +1,2 @@
+MEDIDO ingest duracion_s=117 ram_sistema_max_MB=3213 swap_max_MB=417 rss_driver_max_MB=1577
+MEDIDO hourly duracion_s=55 ram_sistema_max_MB=2748 swap_max_MB=357 rss_driver_max_MB=1054
