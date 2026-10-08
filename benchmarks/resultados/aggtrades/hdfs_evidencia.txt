@@ -1,0 +1,39 @@
+== raw/binance ==
+Found 2 items
+drwxr-xr-x   - marlon supergroup          0 2026-10-08 09:00 /datalake/raw/binance/aggtrades
+drwxr-xr-x   - marlon supergroup          0 2026-09-23 16:49 /datalake/raw/binance/klines
+== aggtrades en raw (zips y carpeta csv, por simbolo) ==
+6.4 M    12.9 M   /datalake/raw/binance/aggtrades/BUSDUSDT/BUSDUSDT-aggTrades-2022-11-07.zip
+13.3 M   26.6 M   /datalake/raw/binance/aggtrades/BUSDUSDT/BUSDUSDT-aggTrades-2022-11-08.zip
+13.8 M   27.6 M   /datalake/raw/binance/aggtrades/BUSDUSDT/BUSDUSDT-aggTrades-2022-11-09.zip
+18.0 M   35.9 M   /datalake/raw/binance/aggtrades/BUSDUSDT/BUSDUSDT-aggTrades-2022-11-10.zip
+10.9 M   21.8 M   /datalake/raw/binance/aggtrades/BUSDUSDT/BUSDUSDT-aggTrades-2022-11-11.zip
+6.7 M    13.4 M   /datalake/raw/binance/aggtrades/BUSDUSDT/BUSDUSDT-aggTrades-2023-03-10.zip
+391.1 M  782.2 M  /datalake/raw/binance/aggtrades/BUSDUSDT/csv
+2.7 M    5.3 M    /datalake/raw/binance/aggtrades/USDCUSDT/USDCUSDT-aggTrades-2022-05-09.zip
+3.6 M    7.3 M    /datalake/raw/binance/aggtrades/USDCUSDT/USDCUSDT-aggTrades-2022-05-10.zip
+4.6 M    9.2 M    /datalake/raw/binance/aggtrades/USDCUSDT/USDCUSDT-aggTrades-2022-05-11.zip
+8.1 M    16.1 M   /datalake/raw/binance/aggtrades/USDCUSDT/USDCUSDT-aggTrades-2022-05-12.zip
+3.6 M    7.2 M    /datalake/raw/binance/aggtrades/USDCUSDT/USDCUSDT-aggTrades-2022-05-13.zip
+2.2 M    4.4 M    /datalake/raw/binance/aggtrades/USDCUSDT/USDCUSDT-aggTrades-2023-03-11.zip
+7.3 M    14.7 M   /datalake/raw/binance/aggtrades/USDCUSDT/USDCUSDT-aggTrades-2023-03-12.zip
+4.2 M    8.5 M    /datalake/raw/binance/aggtrades/USDCUSDT/USDCUSDT-aggTrades-2023-03-13.zip
+196.8 M  393.5 M  /datalake/raw/binance/aggtrades/USDCUSDT/csv
+== tamanos (tamano, tamano con replicas) ==
+693.3 M  1.4 G   /datalake/raw/binance/aggtrades
+7.6 M    30.5 M  /datalake/raw/binance/klines
+700.9 M  1.4 G   /datalake/raw/binance
+== processed/binance ==
+Found 4 items
+drwxr-xr-x   - marlon supergroup          0 2026-10-08 09:30 /datalake/processed/binance/aggtrades_clean
+drwxr-xr-x   - marlon supergroup          0 2026-10-08 09:32 /datalake/processed/binance/aggtrades_hourly
+drwxr-xr-x   - marlon supergroup          0 2026-10-08 09:32 /datalake/processed/binance/aggtrades_klines_join
+drwxr-xr-x   - marlon supergroup          0 2026-10-01 18:03 /datalake/processed/binance/klines_clean
+148.4 M  296.9 M  /datalake/processed/binance/aggtrades_clean
+18.3 K   36.5 K   /datalake/processed/binance/aggtrades_hourly
+25.9 K   51.8 K   /datalake/processed/binance/aggtrades_klines_join
+4.3 M    17.3 M   /datalake/processed/binance/klines_clean
+== salud HDFS ==
+Status: HEALTHY
+ Missing blocks:		0
+ Corrupt blocks:		0

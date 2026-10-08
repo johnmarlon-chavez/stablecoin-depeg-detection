@@ -52,3 +52,18 @@ Master debian-bigdata: 2 vCPU, 3,915 MB de RAM, 974 MiB de swap. `spark-submit -
 Evidencia del kernel (`dmesg`): proceso 47328 (200x, anon-rss 3,042,552 kB) y proceso 48806 (150x, anon-rss 3,104,580 kB). Los conteos de 100x local coinciden con el cluster: 5,191,900 (limpieza) y 5,390,242 (join). Replicas: `replicate_150x_local.log`, `replicate_200x_local.log`.
 
 Adenda (misma version en 10x y 100x): `quality_opt.py` 10x local con la misma configuracion que 100x (`SP=64`, ventana por mes). Limpieza 281.739 s (RSS max 1,742 MB, RAM max 3,053 MB, swap max 910 MB, 519,190 filas) y join 49.418 s (RSS max 1,252 MB, RAM max 2,516 MB, swap max 782 MB, 533,892 filas). Logs: `escalabilidad/local_opt_10x_quality.log` y `escalabilidad/local_opt_10x_join.log`. Verificacion de equivalencia en 10x: las limpiezas del original (local y cluster) y de la optimizada dan 519,190 filas, y el join del cluster y el de esta corrida dan 533,892; la diferencia de tamano en HDFS (44.4 MiB frente a 28.8 MiB) es compresion de Parquet. Esta corrida sobrescribio el directorio `join_10x_local` de la corrida con `quality.py`; los logs de esa corrida se conservan.
+
+## Pedido 6 - aggTrades por ventana de evento
+
+Segunda fuente de datos (aggTrades diarios de data.binance.vision) para las 3 ventanas de evento, 14 archivos: Terra (USDCUSDT, 9-13 may 2022), FTX (BUSDUSDT, 7-11 nov 2022), SVB (BUSDUSDT 10 mar 2023; USDCUSDT 11-13 mar 2023).
+Zonas nuevas, hermanas de klines (no se tocaron klines, klines_clean ni scripts existentes):
+`hdfs:///datalake/raw/binance/aggtrades/<SIMBOLO>/*.zip` (sin renombrar) y `.../csv/*.csv`; `hdfs:///datalake/processed/binance/{aggtrades_clean,aggtrades_hourly,aggtrades_klines_join}`.
+
+Scripts: `scripts/download_aggtrades.py` (descarga + SHA-256), `scripts/upload_aggtrades.sh` (subida a raw), `src/ingest_aggtrades.py` (esquema explicito, reglas de calidad), `src/aggtrades_hourly.py` (resumen horario UTC, join con klines_clean y validacion cruzada).
+Logs y evidencia en `benchmarks/resultados/aggtrades/`.
+
+Resultados: 14/14 archivos con SHA-256 verificado; 7,965,158 registros; transact_time en milisegundos (13 digitos);
+0 duplicados, 0 nulos, 0 precio<=0, 0 cantidad<=0, 0 fuera del dia; 322 horas resumidas, 322 con match en klines_clean;
+validacion cruzada: max |dif volumen| = 2.98e-08, max |dif n. de operaciones| = 0, 0 horas que no coinciden.
+Hueco real: SVB USDCUSDT 11-13 mar tiene 58 de 72 horas (sin operaciones, tampoco hay vela en klines); no se rellenan.
+Incidente: el disco de la VM paso a solo lectura durante la primera escritura de aggtrades_clean (fsck manual, HDFS verificado, zips comparados por SHA-256 contra la copia local, salida parcial borrada y repetida).

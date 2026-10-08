@@ -1,0 +1,35 @@
+=== contenido de /datalake/raw/binance/aggtrades ===
+drwxr-xr-x   - marlon supergroup          0 2026-10-08 09:00 /datalake/raw/binance/aggtrades/BUSDUSDT
+-rw-r--r--   2 marlon supergroup    6758936 2026-10-08 09:00 /datalake/raw/binance/aggtrades/BUSDUSDT/BUSDUSDT-aggTrades-2022-11-07.zip
+-rw-r--r--   2 marlon supergroup   13953334 2026-10-08 09:00 /datalake/raw/binance/aggtrades/BUSDUSDT/BUSDUSDT-aggTrades-2022-11-08.zip
+-rw-r--r--   2 marlon supergroup   14464361 2026-10-08 09:00 /datalake/raw/binance/aggtrades/BUSDUSDT/BUSDUSDT-aggTrades-2022-11-09.zip
+-rw-r--r--   2 marlon supergroup   18846050 2026-10-08 09:00 /datalake/raw/binance/aggtrades/BUSDUSDT/BUSDUSDT-aggTrades-2022-11-10.zip
+-rw-r--r--   2 marlon supergroup   11424945 2026-10-08 09:00 /datalake/raw/binance/aggtrades/BUSDUSDT/BUSDUSDT-aggTrades-2022-11-11.zip
+-rw-r--r--   2 marlon supergroup    7000630 2026-10-08 09:00 /datalake/raw/binance/aggtrades/BUSDUSDT/BUSDUSDT-aggTrades-2023-03-10.zip
+drwxr-xr-x   - marlon supergroup          0 2026-10-08 09:00 /datalake/raw/binance/aggtrades/BUSDUSDT/csv
+-rw-r--r--   2 marlon supergroup   37975576 2026-10-08 09:00 /datalake/raw/binance/aggtrades/BUSDUSDT/csv/BUSDUSDT-aggTrades-2022-11-07.csv
+-rw-r--r--   2 marlon supergroup   79210277 2026-10-08 09:00 /datalake/raw/binance/aggtrades/BUSDUSDT/csv/BUSDUSDT-aggTrades-2022-11-08.csv
+-rw-r--r--   2 marlon supergroup   81714282 2026-10-08 09:00 /datalake/raw/binance/aggtrades/BUSDUSDT/csv/BUSDUSDT-aggTrades-2022-11-09.csv
+-rw-r--r--   2 marlon supergroup  106271542 2026-10-08 09:00 /datalake/raw/binance/aggtrades/BUSDUSDT/csv/BUSDUSDT-aggTrades-2022-11-10.csv
+-rw-r--r--   2 marlon supergroup   64686342 2026-10-08 09:00 /datalake/raw/binance/aggtrades/BUSDUSDT/csv/BUSDUSDT-aggTrades-2022-11-11.csv
+-rw-r--r--   2 marlon supergroup   40232326 2026-10-08 09:00 /datalake/raw/binance/aggtrades/BUSDUSDT/csv/BUSDUSDT-aggTrades-2023-03-10.csv
+drwxr-xr-x   - marlon supergroup          0 2026-10-08 09:00 /datalake/raw/binance/aggtrades/USDCUSDT
+-rw-r--r--   2 marlon supergroup    2800718 2026-10-08 09:00 /datalake/raw/binance/aggtrades/USDCUSDT/USDCUSDT-aggTrades-2022-05-09.zip
+-rw-r--r--   2 marlon supergroup    3803825 2026-10-08 09:00 /datalake/raw/binance/aggtrades/USDCUSDT/USDCUSDT-aggTrades-2022-05-10.zip
+-rw-r--r--   2 marlon supergroup    4809809 2026-10-08 09:00 /datalake/raw/binance/aggtrades/USDCUSDT/USDCUSDT-aggTrades-2022-05-11.zip
+-rw-r--r--   2 marlon supergroup    8452083 2026-10-08 09:00 /datalake/raw/binance/aggtrades/USDCUSDT/USDCUSDT-aggTrades-2022-05-12.zip
+-rw-r--r--   2 marlon supergroup    3791074 2026-10-08 09:00 /datalake/raw/binance/aggtrades/USDCUSDT/USDCUSDT-aggTrades-2022-05-13.zip
+-rw-r--r--   2 marlon supergroup    2319360 2026-10-08 09:00 /datalake/raw/binance/aggtrades/USDCUSDT/USDCUSDT-aggTrades-2023-03-11.zip
+-rw-r--r--   2 marlon supergroup    7689358 2026-10-08 09:00 /datalake/raw/binance/aggtrades/USDCUSDT/USDCUSDT-aggTrades-2023-03-12.zip
+-rw-r--r--   2 marlon supergroup    4439664 2026-10-08 09:00 /datalake/raw/binance/aggtrades/USDCUSDT/USDCUSDT-aggTrades-2023-03-13.zip
+drwxr-xr-x   - marlon supergroup          0 2026-10-08 09:01 /datalake/raw/binance/aggtrades/USDCUSDT/csv
+-rw-r--r--   2 marlon supergroup   14976459 2026-10-08 09:01 /datalake/raw/binance/aggtrades/USDCUSDT/csv/USDCUSDT-aggTrades-2022-05-09.csv
+-rw-r--r--   2 marlon supergroup   20353558 2026-10-08 09:01 /datalake/raw/binance/aggtrades/USDCUSDT/csv/USDCUSDT-aggTrades-2022-05-10.csv
+-rw-r--r--   2 marlon supergroup   25652446 2026-10-08 09:01 /datalake/raw/binance/aggtrades/USDCUSDT/csv/USDCUSDT-aggTrades-2022-05-11.csv
+-rw-r--r--   2 marlon supergroup   44935552 2026-10-08 09:01 /datalake/raw/binance/aggtrades/USDCUSDT/csv/USDCUSDT-aggTrades-2022-05-12.csv
+-rw-r--r--   2 marlon supergroup   20207399 2026-10-08 09:01 /datalake/raw/binance/aggtrades/USDCUSDT/csv/USDCUSDT-aggTrades-2022-05-13.csv
+-rw-r--r--   2 marlon supergroup   12548308 2026-10-08 09:01 /datalake/raw/binance/aggtrades/USDCUSDT/csv/USDCUSDT-aggTrades-2023-03-11.csv
+-rw-r--r--   2 marlon supergroup   43030821 2026-10-08 09:01 /datalake/raw/binance/aggtrades/USDCUSDT/csv/USDCUSDT-aggTrades-2023-03-12.csv
+-rw-r--r--   2 marlon supergroup   24627424 2026-10-08 09:01 /datalake/raw/binance/aggtrades/USDCUSDT/csv/USDCUSDT-aggTrades-2023-03-13.csv
+=== tamano aggtrades (total) ===
+693.3 M  1.4 G  /datalake/raw/binance/aggtrades

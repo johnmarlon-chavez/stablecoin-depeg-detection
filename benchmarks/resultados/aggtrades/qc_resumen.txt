@@ -1,0 +1,42 @@
+QC unidad transact_time (digitos -> filas):
+QC   digitos=13 filas=7,965,158  (milisegundos)
+QC_ARCHIVO simbolo fecha total dup nulo precio cant dia validas
+QC_ARCHIVO BUSDUSDT 2022-11-07 484837 0 0 0 0 0 484837
+QC_ARCHIVO BUSDUSDT 2022-11-08 1011915 0 0 0 0 0 1011915
+QC_ARCHIVO BUSDUSDT 2022-11-09 1043975 0 0 0 0 0 1043975
+QC_ARCHIVO BUSDUSDT 2022-11-10 1356057 0 0 0 0 0 1356057
+QC_ARCHIVO BUSDUSDT 2022-11-11 824825 0 0 0 0 0 824825
+QC_ARCHIVO BUSDUSDT 2023-03-10 514685 0 0 0 0 0 514685
+QC_ARCHIVO USDCUSDT 2022-05-09 197452 0 0 0 0 0 197452
+QC_ARCHIVO USDCUSDT 2022-05-10 269327 0 0 0 0 0 269327
+QC_ARCHIVO USDCUSDT 2022-05-11 339320 0 0 0 0 0 339320
+QC_ARCHIVO USDCUSDT 2022-05-12 594047 0 0 0 0 0 594047
+QC_ARCHIVO USDCUSDT 2022-05-13 267108 0 0 0 0 0 267108
+QC_ARCHIVO USDCUSDT 2023-03-11 166121 0 0 0 0 0 166121
+QC_ARCHIVO USDCUSDT 2023-03-12 570066 0 0 0 0 0 570066
+QC_ARCHIVO USDCUSDT 2023-03-13 325423 0 0 0 0 0 325423
+QC_TOTAL registros_raw=7,965,158 duplicados=0 nulos=0 precio_no_positivo=0 cantidad_no_positiva=0 fuera_del_dia=0
+QC_TOTAL registros_validos=7,965,158 descartados=0
+QC_ESCRITO hdfs:///datalake/processed/binance/aggtrades_clean filas=7,965,158
+QC_CLEAN registros_aggtrades_limpios=7,965,158
+QC_HORARIO evento simbolo horas_presentes dias horas_esperadas
+QC_HORARIO FTX BUSDUSDT 120 5 120
+QC_HORARIO SVB BUSDUSDT 24 1 24
+QC_HORARIO SVB USDCUSDT 58 3 72
+QC_HORARIO Terra USDCUSDT 120 5 120
+QC_HORARIO total_filas_resumen=322
+QC_KLINES columnas: ['open_time', 'open', 'high', 'low', 'close', 'volume', 'close_time', 'quote_volume', 'trades', 'taker_buy_base', 'taker_buy_quote', 'ignore', 'fuente_paridad', 'open_time_ts', 'close_time_ts', 'simbolo', 'anio', 'mes']
+QC_JOIN filas_resumen=322 filas_con_match=322 horas_aggtrades_sin_match_en_klines=0
+QC_KLINES_SIN_AGGTRADES horas_de_klines_en_esos_dias_sin_aggtrades=0
+QC_CRUCE horas_comparadas=322 tolerancia_volumen=0.0001
+QC_CRUCE max_abs_dif_volumen=2.9802322387695312e-08 horas_volumen_no_coincide=0
+QC_CRUCE max_abs_dif_trades=0 horas_trades_no_coincide=0
+QC_CRUCE horas_con_alguna_diferencia=0
+QC_CRUCE_EVENTO evento simbolo horas mal_vol mal_trades max_dif_vol max_dif_trades
+QC_CRUCE_EVENTO FTX BUSDUSDT 120 0 0 0.0 0
+QC_CRUCE_EVENTO SVB BUSDUSDT 24 0 0 0.0 0
+QC_CRUCE_EVENTO SVB USDCUSDT 58 0 0 0.0 0
+QC_CRUCE_EVENTO Terra USDCUSDT 120 0 0 2.9802322387695312e-08 0
+QC_TOP simbolo hora volumen_agg volume_kl dif_vol n_trades_agg n_trades_kl dif_trades
+QC_TOTALES aggtrades_limpios=7,965,158 klines_clean=51,919 suma=8,017,077
+QC_UI sesion viva 240s en el puerto 4040 para la captura

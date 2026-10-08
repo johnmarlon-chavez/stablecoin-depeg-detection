@@ -1,0 +1,26 @@
+
+=== Terra: USDCUSDT 2022-05-09 a 2022-05-13 ===
+  [OK] USDCUSDT-aggTrades-2022-05-09.zip zip=2,800,718 csv=14,976,459 filas=197,452 ts_digitos=13
+  [OK] USDCUSDT-aggTrades-2022-05-10.zip zip=3,803,825 csv=20,353,558 filas=269,327 ts_digitos=13
+  [OK] USDCUSDT-aggTrades-2022-05-11.zip zip=4,809,809 csv=25,652,446 filas=339,320 ts_digitos=13
+  [OK] USDCUSDT-aggTrades-2022-05-12.zip zip=8,452,083 csv=44,935,552 filas=594,047 ts_digitos=13
+  [OK] USDCUSDT-aggTrades-2022-05-13.zip zip=3,791,074 csv=20,207,399 filas=267,108 ts_digitos=13
+
+=== FTX: BUSDUSDT 2022-11-07 a 2022-11-11 ===
+  [OK] BUSDUSDT-aggTrades-2022-11-07.zip zip=6,758,936 csv=37,975,576 filas=484,837 ts_digitos=13
+  [OK] BUSDUSDT-aggTrades-2022-11-08.zip zip=13,953,334 csv=79,210,277 filas=1,011,915 ts_digitos=13
+  [OK] BUSDUSDT-aggTrades-2022-11-09.zip zip=14,464,361 csv=81,714,282 filas=1,043,975 ts_digitos=13
+  [OK] BUSDUSDT-aggTrades-2022-11-10.zip zip=18,846,050 csv=106,271,542 filas=1,356,057 ts_digitos=13
+  [OK] BUSDUSDT-aggTrades-2022-11-11.zip zip=11,424,945 csv=64,686,342 filas=824,825 ts_digitos=13
+
+=== SVB: BUSDUSDT 2023-03-10 a 2023-03-10 ===
+  [OK] BUSDUSDT-aggTrades-2023-03-10.zip zip=7,000,630 csv=40,232,326 filas=514,685 ts_digitos=13
+
+=== SVB: USDCUSDT 2023-03-11 a 2023-03-13 ===
+  [OK] USDCUSDT-aggTrades-2023-03-11.zip zip=2,319,360 csv=12,548,308 filas=166,121 ts_digitos=13
+  [OK] USDCUSDT-aggTrades-2023-03-12.zip zip=7,689,358 csv=43,030,821 filas=570,066 ts_digitos=13
+  [OK] USDCUSDT-aggTrades-2023-03-13.zip zip=4,439,664 csv=24,627,424 filas=325,423 ts_digitos=13
+
+=== RESUMEN ===
+archivos esperados: 14 | descargados: 14 | con problema: 0
+zip total: 110.6 MB | csv total: 616.4 MB | registros totales: 7,965,158
