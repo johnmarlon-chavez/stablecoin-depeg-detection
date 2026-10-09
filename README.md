@@ -34,22 +34,25 @@ data/sample/    muestras reales (100 filas por simbolo)
 data/           klines_clean y features.parquet usados por los notebooks
 ```
 
-## 4. Orden de ejecucion
+## 4. Arquitectura del sistema
+![Arquitectura Lambda](./architecture/system_architecture.png)
 
-### 4.1 Descargar klines
+## 5. Orden de ejecucion
+
+### 5.1 Descargar klines
 ```bash
 python3 scripts/download_klines.py
 # opciones: --solo-proxy  --solo-proxy-svb  --solo-proxy-btc  --solo-proxy-btc-svb  --solo-marzo
 ```
 Los .zip se descargan a `zona_cruda/` y se extraen con `unzip`.
 
-### 4.2 Cargar klines a HDFS
+### 5.2 Cargar klines a HDFS
 ```bash
 hdfs dfs -mkdir -p /datalake/raw/binance/klines
 hdfs dfs -put -f zona_cruda/klines/* /datalake/raw/binance/klines/
 ```
 
-### 4.3 Calidad y limpieza de klines
+### 5.3 Calidad y limpieza de klines
 ```bash
 spark-submit --master yarn --deploy-mode client src/quality.py \
   --input hdfs:///datalake/raw/binance/klines \
@@ -57,7 +60,7 @@ spark-submit --master yarn --deploy-mode client src/quality.py \
 ```
 `src/quality_opt.py` es la version optimizada (ver encabezado del script).
 
-### 4.4 Benchmarks de join y escalabilidad
+### 5.4 Benchmarks de join y escalabilidad
 ```bash
 spark-submit src/benchmark_join.py
 bash run_pedido5.sh
@@ -66,7 +69,7 @@ bash bench_local.sh <orig|opt> <10|100|150|200>
 ```
 Resultados en `benchmarks/resultados/`.
 
-### 4.5 aggTrades de las ventanas de eventos
+### 5.5 aggTrades de las ventanas de eventos
 ```bash
 python3 scripts/download_aggtrades.py      # descarga, verifica SHA-256 y extrae
 bash scripts/upload_aggtrades.sh           # sube a HDFS
@@ -74,20 +77,20 @@ spark-submit --master 'local[*]' --driver-memory 2g src/ingest_aggtrades.py
 spark-submit --master 'local[*]' --driver-memory 2g src/aggtrades_hourly.py
 ```
 
-### 4.6 Notebooks (en este orden)
+### 5.6 Notebooks (en este orden)
 `notebooks/01_ingesta` -> `02_calidad_datos` -> `03_eda` -> `04_features` -> `05_modelo_baseline` -> `05_modelo_definitivo` -> `06_benchmarks`.
 Leen `data/klines_clean/` y `data/features.parquet`.
 
-### 4.7 Verificacion de calidad (sin cluster)
+### 5.7 Verificacion de calidad (sin cluster)
 ```bash
 python aportes/adriel/verificar_calidad.py
 ```
 Revisa `data/klines_clean/` con pandas (esquema, nulos, duplicados, OHLC, huecos, particiones, proxy) y deja resultados en `aportes/adriel/resultados/`. Hallazgos en `aportes/adriel/reporte_verificacion.md`.
 
-### 4.8 Informe
+### 5.8 Informe
 Las figuras del informe estan en `informe/`.
 
-## 5. Rutas en HDFS
+## 6. Rutas en HDFS
 
 ```
 /datalake/raw/binance/klines/<SIMBOLO>/
@@ -98,21 +101,21 @@ Las figuras del informe estan en `informe/`.
 /datalake/processed/binance/aggtrades_klines_join
 ```
 
-## 6. Resultados
+## 7. Resultados
 
 - aggTrades: 14 archivos diarios, 7,965,158 registros, 0 violaciones de calidad, resumen horario de 322 horas y cruce 322/322 con klines.
 - Hueco real: USDCUSDT 2023-03-11 00:00-13:00 UTC sin operaciones.
 - Logs y tablas en `benchmarks/resultados/`.
 
-## 7. Datos de muestra
+## 8. Datos de muestra
 
 `data/sample/` contiene las primeras 100 filas reales de klines y aggTrades. Los datos completos no se versionan.
 
-## 8. Fuente y licencia de los datos
+## 9. Fuente y licencia de los datos
 
 Datos publicos de Binance (https://data.binance.vision), publicados bajo licencia **MIT**.
 
-## 9. Integrantes
+## 10. Integrantes
 
 - John Marlon Chavez Vargas - ingenieria de datos
 - Andres Pagan - analisis y modelado
