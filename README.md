@@ -25,8 +25,10 @@ Librerias de Python: `pip install -r requirements.txt`
 ```
 scripts/        descarga y carga de datos (download_klines.py, download_aggtrades.py, upload_aggtrades.sh)
 src/            jobs de Spark (quality.py, quality_opt.py, benchmark_join.py, ingest_aggtrades.py, aggtrades_hourly.py)
-notebooks/      02_*, 03_eda, 04_features, 05_baseline, 05_definitivo
-benchmarks/     scripts y resultados (resultados/pedido5, escalabilidad, aggtrades)
+notebooks/      01_ingesta, 02_calidad_datos, 03_eda, 04_features, 05_modelo_baseline, 05_modelo_definitivo, 06_benchmarks
+benchmarks/     resultados de benchmarks (resultados/pedido5, escalabilidad, aggtrades)
+./              scripts de benchmark (run_pedido5.sh, bench_scale.sh, bench_local.sh, bench_opt.sh, bench_join.sh)
+aportes/        aportes individuales (aportes/adriel: verificacion de calidad de klines_clean)
 informe/        figuras del informe
 data/sample/    muestras reales (100 filas por simbolo)
 data/           klines_clean y features.parquet usados por los notebooks
@@ -58,9 +60,9 @@ spark-submit --master yarn --deploy-mode client src/quality.py \
 ### 4.4 Benchmarks de join y escalabilidad
 ```bash
 spark-submit src/benchmark_join.py
-bash benchmarks/run_pedido5.sh
-bash benchmarks/bench_scale.sh <E>
-bash benchmarks/bench_local.sh <orig|opt> <10|100|150|200>
+bash run_pedido5.sh
+bash bench_scale.sh <E>
+bash bench_local.sh <orig|opt> <10|100|150|200>
 ```
 Resultados en `benchmarks/resultados/`.
 
@@ -73,10 +75,16 @@ spark-submit --master 'local[*]' --driver-memory 2g src/aggtrades_hourly.py
 ```
 
 ### 4.6 Notebooks (en este orden)
-`notebooks/02_*` -> `03_eda` -> `04_features` -> `05_baseline` -> `05_definitivo`.
+`notebooks/01_ingesta` -> `02_calidad_datos` -> `03_eda` -> `04_features` -> `05_modelo_baseline` -> `05_modelo_definitivo` -> `06_benchmarks`.
 Leen `data/klines_clean/` y `data/features.parquet`.
 
-### 4.7 Informe
+### 4.7 Verificacion de calidad (sin cluster)
+```bash
+python aportes/adriel/verificar_calidad.py
+```
+Revisa `data/klines_clean/` con pandas (esquema, nulos, duplicados, OHLC, huecos, particiones, proxy) y deja resultados en `aportes/adriel/resultados/`. Hallazgos en `aportes/adriel/reporte_verificacion.md`.
+
+### 4.8 Informe
 Las figuras del informe estan en `informe/`.
 
 ## 5. Rutas en HDFS
@@ -109,4 +117,4 @@ Datos publicos de Binance (https://data.binance.vision), publicados bajo licenci
 - John Marlon Chavez Vargas - ingenieria de datos
 - Andres Pagan - analisis y modelado
 - Juan Carlos Vilca Jimenez - coordinacion
-- Adriel Zumaeta - integrante del equipo
+- Adriel Zumaeta Calderon - calidad y documentacion
