@@ -1,0 +1,77 @@
+{
+  "filas": 51919,
+  "chequeos": [
+    {
+      "chequeo": "Esquema: columnas y tipos",
+      "fallas": 0,
+      "estado": "OK",
+      "detalle": "faltantes=[] tipos_distintos=[]"
+    },
+    {
+      "chequeo": "Nulos en columnas obligatorias",
+      "fallas": 0,
+      "estado": "OK",
+      "detalle": "{}"
+    },
+    {
+      "chequeo": "Duplicados por (simbolo, open_time)",
+      "fallas": 0,
+      "estado": "OK",
+      "detalle": ""
+    },
+    {
+      "chequeo": "Coherencia OHLC (precios > 0, low <= open/close <= high)",
+      "fallas": 0,
+      "estado": "OK",
+      "detalle": ""
+    },
+    {
+      "chequeo": "Volúmenes y trades no negativos",
+      "fallas": 0,
+      "estado": "OK",
+      "detalle": ""
+    },
+    {
+      "chequeo": "taker_buy_base <= volume",
+      "fallas": 0,
+      "estado": "OK",
+      "detalle": ""
+    },
+    {
+      "chequeo": "close_time = open_time + 1h - 1ms (vela horaria)",
+      "fallas": 3,
+      "estado": "REVISAR",
+      "detalle": ""
+    },
+    {
+      "chequeo": "open_time alineado a la hora exacta",
+      "fallas": 0,
+      "estado": "OK",
+      "detalle": ""
+    },
+    {
+      "chequeo": "open_time_ts en UTC (coincide con open_time)",
+      "fallas": 0,
+      "estado": "OK",
+      "detalle": ""
+    },
+    {
+      "chequeo": "Partición anio/mes coincide con el timestamp",
+      "fallas": 350,
+      "estado": "REVISAR",
+      "detalle": ""
+    },
+    {
+      "chequeo": "fuente_paridad correcta por símbolo (decisión B.1)",
+      "fallas": 0,
+      "estado": "OK",
+      "detalle": ""
+    },
+    {
+      "chequeo": "Stablecoins dentro de [0.8, 1.2]",
+      "fallas": 1,
+      "estado": "REVISAR",
+      "detalle": ""
+    }
+  ]
+}
