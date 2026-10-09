@@ -1,0 +1,11 @@
+__pycache__/
+.ipynb_checkpoints/
+spark-warehouse/
+*.crc
+data/raw/
+data/processed/
+zona_cruda/
+*.zip
+*.parquet
+!data/features.parquet
+!data/klines_clean/**/*.parquet
