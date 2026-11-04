@@ -1,0 +1,5 @@
+﻿id_evento,nombre,fecha_inicio,fecha_fin,mecanismo
+0,fuera de evento,,,no aplica
+1,Terra,2022-05-07,2022-05-17,contagio de mercado
+2,FTX,2022-11-05,2022-11-15,contagio de mercado
+3,SVB,2023-03-08,2023-03-18,exposición bancaria

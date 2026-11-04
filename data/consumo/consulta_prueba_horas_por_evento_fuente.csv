@@ -1,0 +1,7 @@
+﻿evento,fuente,horas,horas_alerta,horas_estres,pct_alerta_o_estres,horas_sobre_1pct,desviacion_max
+FTX,BUSDUSDT_proxy,241,121,13,55.6,2,0.0129
+SVB,BUSDUSDT_proxy,24,3,0,12.5,0,0.0032
+SVB,USDCUSDT,155,48,107,100.0,46,0.0872
+Terra,USDCUSDT,241,110,22,54.8,6,0.05
+fuera de evento,BUSDUSDT_proxy,3383,144,0,4.3,0,0.0023
+fuera de evento,USDCUSDT,13128,1161,31,9.1,0,0.0041

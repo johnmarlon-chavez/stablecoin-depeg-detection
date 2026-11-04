@@ -1,0 +1,4 @@
+﻿id_severidad,nivel,umbral_min,umbral_max,accion_sugerida
+1,normal,0.0,0.0011,sin acción
+2,alerta,0.0011,0.0034,revisión del área de riesgo
+3,estrés,0.0034,,escalar a la jefatura de riesgo
