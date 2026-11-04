@@ -1,0 +1,6 @@
+inicio 2026-11-04T11:09:17-05:00 | disco maestro: /dev/sda1         39G    25G   12G  69% /
+=== RESUMEN local_2x_r2 ===
+exit: 137 (124 = limite LIM=7200s; 137 = matado por falta de memoria) | segundos totales: 704
+max RSS Spark (MB): 2237 | max RAM usada (MB): 3914 | max swap (MB): 974
+OOM en log: 0 | heartbeats perdidos: 0
+dmesg (disco/oom): 0

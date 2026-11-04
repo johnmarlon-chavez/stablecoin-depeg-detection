@@ -1,0 +1,11 @@
+inicio 2026-11-04T10:35:26-05:00 | disco maestro: /dev/sda1         39G    25G   12G  68% /
+=== RESUMEN cluster_1x_r1 ===
+exit: 0 (124 = limite LIM=7200s; 137 = matado por falta de memoria) | segundos totales: 58
+QC registros=7,965,158 duplicados=0 precio_mal=0 cantidad_mal=0 id_nulo=0
+ETAPA calidad 9.8
+ETAPA resumen_horario 4.0
+ETAPA union_klines 20.3
+QC filas_union=322
+max RSS Spark (MB): 464 | max RAM usada (MB): 2534 | max swap (MB): 769
+OOM en log: 0 | heartbeats perdidos: 0
+dmesg (disco/oom): 0
