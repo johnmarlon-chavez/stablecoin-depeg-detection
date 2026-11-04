@@ -1,0 +1,44 @@
+QC ENTRADA filas_serie_horaria=17172
+QC ESCRITURA tablas escritas en hdfs:///datalake/processed/binance/consumo
+QC HECHOS filas=17172 esperado=17172 ok=True
+QC HECHOS horas_duplicadas=0
+QC FK id_tiempo huerfanos=0 nulos=0
+QC FK id_fuente huerfanos=0 nulos=0
+QC FK id_evento huerfanos=0 nulos=0
+QC FK id_severidad huerfanos=0 nulos=0
+QC DIM filas dim_tiempo=17520 dim_fuente=2 dim_evento=4 dim_severidad=3
+QC DIM_TIEMPO horas_con_dato=17172 horas_sin_dato(huecos)=348
+QC COLUMNAS_HECHOS id_tiempo,id_fuente,id_evento,id_severidad,close_paridad,desviacion_paridad,volumen,volumen_relativo,volatilidad_ventana,en_alerta_o_estres,supera_1pct,anio,mes
+QC SPREAD_EN_HECHOS=False
+QC CONTEO_POR_SEVERIDAD
+QC   alerta 1587
+QC   estrés 173
+QC   normal 15412
+QC CONTEO_POR_FUENTE
+QC   BUSDUSDT_proxy 3648
+QC   USDCUSDT 13524
+QC CONTEO_POR_EVENTO
+QC   FTX 241
+QC   SVB 179
+QC   Terra 241
+QC   fuera de evento 16511
+QC NULOS_POR_COLUMNA volatilidad_ventana=2
+QC COHERENCIA severidad_inconsistente_con_umbrales=0
+QC BANDERAS en_alerta_o_estres=1760 supera_1pct=54
+QC KLINES_CLEAN horas_comparadas=17172 sin_fila_en_klines=0 volumen_distinto=0
+CONSULTA_DE_PRUEBA: horas en alerta y estrés por evento y fuente
++---------------+--------------+-----+------------+------------+-------------------+----------------+--------------+
+|evento         |fuente        |horas|horas_alerta|horas_estres|pct_alerta_o_estres|horas_sobre_1pct|desviacion_max|
++---------------+--------------+-----+------------+------------+-------------------+----------------+--------------+
+|FTX            |BUSDUSDT_proxy|241  |121         |13          |55.6               |2               |0.0129        |
+|SVB            |BUSDUSDT_proxy|24   |3           |0           |12.5               |0               |0.0032        |
+|SVB            |USDCUSDT      |155  |48          |107         |100.0              |46              |0.0872        |
+|Terra          |USDCUSDT      |241  |110         |22          |54.8               |6               |0.05          |
+|fuera de evento|BUSDUSDT_proxy|3383 |144         |0           |4.3                |0               |0.0023        |
+|fuera de evento|USDCUSDT      |13128|1161        |31          |9.1                |0               |0.0041        |
++---------------+--------------+-----+------------+------------+-------------------+----------------+--------------+
+QC CSV fact_paridad_hora.csv filas=17172
+QC CSV dim_tiempo.csv filas=17520
+QC CSV dim_fuente.csv filas=2
+QC CSV dim_evento.csv filas=4
+QC CSV dim_severidad.csv filas=3
