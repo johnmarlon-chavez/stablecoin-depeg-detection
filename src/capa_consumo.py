@@ -7,8 +7,8 @@ Entrada : data/features.parquet (serie horaria del modelo)  y  klines_clean (sol
 Salidas : Parquet en <salida>/ (una carpeta por tabla; la tabla de hechos particionada por anio y mes)
           CSV en <csv_dir>/ (cinco archivos) para el tablero.
 Reglas  : no se cambian umbrales ni la serie; no se rellenan huecos; spread_btc_usdc_usdt NO entra en la tabla de hechos.
-Nota    : features.parquet guarda las marcas de tiempo en nanosegundos y Spark 3.5 no las lee; el archivo (800 KB) se
-          lee con pandas en el driver y desde ahi todo el modelo se construye y valida en Spark.
+Nota    : features.parquet guarda las marcas de tiempo en nanosegundos; Spark 3.5 las lee como entero largo con
+          spark.sql.legacy.parquet.nanosAsLong=true y el script las convierte a timestamp. No requiere pandas.
 
 Uso: spark-submit --master local[*] src/capa_consumo.py \
         --features data/features.parquet \
@@ -17,12 +17,12 @@ Uso: spark-submit --master local[*] src/capa_consumo.py \
         --csv-dir data/consumo
 """
 import argparse
+import csv
 import os
 import sys
 
-import pandas as pd
 from pyspark.sql import SparkSession, functions as F
-from pyspark.sql.types import (DoubleType, IntegerType, LongType, StringType, StructField, StructType)
+from pyspark.sql.types import DoubleType, IntegerType, StringType, StructField, StructType
 
 # Mismas ventanas del notebook 03_eda.ipynb: open_time_ts >= inicio y <= fin (comparacion con medianoche)
 EVENTOS = [
@@ -55,19 +55,18 @@ def main():
     spark.sparkContext.setLogLevel("WARN")
 
     # ---------------- entrada: serie horaria del modelo ----------------
-    pdf = pd.read_parquet(a.features)
-    cols = ["open_time_ts", "fuente_paridad", "close", "volume", "desviacion_paridad",
-            "severidad", "volumen_relativo", "volatilidad_ventana"]   # spread_btc_usdc_usdt queda fuera a proposito
-    pdf = pdf[cols].copy()
-    pdf["open_time_ts"] = pdf["open_time_ts"].dt.strftime("%Y-%m-%d %H:%M:%S")   # texto UTC, sin zonas horarias
-    pdf = pdf.astype(object).where(pdf.notna(), None)                              # NaN -> null
-    esquema = StructType([
-        StructField("ts", StringType()), StructField("fuente_paridad", StringType()),
-        StructField("close", DoubleType()), StructField("volume", DoubleType()),
-        StructField("desviacion_paridad", DoubleType()), StructField("severidad", StringType()),
-        StructField("volumen_relativo", DoubleType()), StructField("volatilidad_ventana", DoubleType())])
-    base = spark.createDataFrame(pdf.itertuples(index=False, name=None), esquema)
-    base = base.withColumn("ts", F.to_timestamp("ts"))
+    spark.conf.set("spark.sql.legacy.parquet.nanosAsLong", "true")
+    ruta = a.features if "://" in a.features else "file://" + os.path.abspath(a.features)
+    raw = spark.read.parquet(ruta)
+    if str(raw.schema["open_time_ts"].dataType) == "LongType()":          # nanosegundos -> timestamp
+        ts = F.timestamp_micros((F.col("open_time_ts") / 1000).cast("long"))
+    else:
+        ts = F.col("open_time_ts").cast("timestamp")
+    # spread_btc_usdc_usdt queda fuera a proposito
+    base = raw.select(ts.alias("ts"), "fuente_paridad", "close", F.col("volume"), "desviacion_paridad", "severidad",
+                      "volumen_relativo", "volatilidad_ventana")
+    for c in ("close", "volume", "desviacion_paridad", "volumen_relativo", "volatilidad_ventana"):
+        base = base.withColumn(c, F.when(F.isnan(F.col(c)), None).otherwise(F.col(c).cast("double")))
     n_base = base.count()
     qc(f"ENTRADA filas_serie_horaria={n_base}")
 
@@ -200,14 +199,23 @@ def main():
     print("\nCONSULTA_DE_PRUEBA: horas en alerta y estrés por evento y fuente")
     q.show(20, truncate=False)
 
-    # ---------------- exportacion CSV (tablas pequeñas) ----------------
+    # ---------------- exportacion CSV (tablas pequeñas, sin pandas) ----------------
     os.makedirs(a.csv_dir, exist_ok=True)
+
+    def a_csv(df, nombre):
+        filas = df.collect()
+        with open(os.path.join(a.csv_dir, nombre + ".csv"), "w", newline="", encoding="utf-8-sig") as fh:
+            w = csv.writer(fh, lineterminator="\n")
+            w.writerow(df.columns)
+            for r in filas:
+                w.writerow(["" if v is None else v for v in r])
+        return len(filas)
+
     f_out = f.drop("anio", "mes").orderBy("id_tiempo")
     for nombre, t in [("fact_paridad_hora", f_out), ("dim_tiempo", dt.orderBy("id_tiempo")), ("dim_fuente", df_.orderBy("id_fuente")),
                       ("dim_evento", de.orderBy("id_evento")), ("dim_severidad", ds.orderBy("id_severidad"))]:
-        t.toPandas().to_csv(os.path.join(a.csv_dir, nombre + ".csv"), index=False, encoding="utf-8-sig")
-        qc(f"CSV {nombre}.csv filas={t.count()}")
-    q.toPandas().to_csv(os.path.join(a.csv_dir, "consulta_prueba_horas_por_evento_fuente.csv"), index=False, encoding="utf-8-sig")
+        qc(f"CSV {nombre}.csv filas={a_csv(t, nombre)}")
+    a_csv(q, "consulta_prueba_horas_por_evento_fuente")
     spark.stop()
 
 
