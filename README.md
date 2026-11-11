@@ -121,7 +121,7 @@ spark-submit --master 'local[*]' src/capa_consumo.py \
   --klines hdfs:///datalake/processed/binance/klines_clean \
   --csv-dir data/consumo
 ```
-Escribe en modo `overwrite`: para repetir la prueba sin tocar la zona procesada, usar otra ruta en `--salida` (por ejemplo `hdfs:///tmp/repro_consumo`). Imprime las lineas `QC ...` de validacion y la consulta de prueba.
+Escribe en modo `overwrite`: para repetir la prueba sin tocar la zona procesada, usar otra ruta en `--salida`; el script exige que contenga `/consumo` (por ejemplo `hdfs:///tmp/repro/consumo`, que luego se borra con `hdfs dfs -rm -r -skipTrash /tmp/repro`). Imprime las lineas `QC ...` de validacion y la consulta de prueba.
 
 ### 5.10 Verificacion de calidad (sin cluster)
 ```bash
