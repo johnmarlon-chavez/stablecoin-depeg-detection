@@ -58,7 +58,12 @@ architecture/   figura de arquitectura (system_architecture.png; copia en inform
 data/sample/    muestras reales (100 filas por simbolo)
 data/consumo/   CSV de la capa de consumo para el tablero (tabla de hechos y 4 dimensiones, mas la consulta de prueba)
 data/           klines_clean y features.parquet usados por los notebooks
+docs/           decisiones del equipo (decisiones_abiertas.md: proxy BUSD, decision B.1)
+./              generadores de notebooks (build_notebook.py, build_features_notebook.py, build_modelo_notebook.py)
+                y descargar_dataset.py (primera version del descargador; el vigente esta en scripts/)
 ```
+
+Cada carpeta tiene su propio `README.md` que explica para que sirve y que contiene cada archivo.
 
 ## 4. Arquitectura del sistema
 ![Arquitectura del sistema](./architecture/system_architecture.png)
