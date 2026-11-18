@@ -11,10 +11,10 @@ Proyecto del curso **Big Data y Analitica de Datos** (UPAO, NRC 9770). Se proces
 | Spark | 3.5.1 |
 | Python | 3.11 |
 
-Librerias de Python (se recomienda un entorno virtual; los notebooks se ejecutan con `nbconvert`):
+Librerias de Python (se recomienda un entorno virtual; `requirements.txt` incluye `nbconvert`, con el que se ejecutan los notebooks):
 ```bash
 python3 -m venv .venv && . .venv/bin/activate
-pip install -r requirements.txt nbconvert
+pip install -r requirements.txt
 ```
 
 ## 2. Cluster
@@ -34,6 +34,7 @@ src/            jobs de Spark (quality.py, quality_opt.py, benchmark_join.py, in
                 capa_consumo.py, replicate_aggtrades.py, bench_aggtrades.py)
 notebooks/      01_ingesta, 02_calidad_datos, 03_eda, 04_features, 05_modelo_baseline, 05_modelo_definitivo (historico),
                 06_linea_base, 07_validacion_fuga, 06_benchmarks
+tablero/        tablero_paridad_usdc.html (pagina autocontenida del tablero)
 benchmarks/     resultados de benchmarks (resultados/pedido5, escalabilidad, aggtrades, escalabilidad_aggtrades, consumo)
 ./              scripts de benchmark (run_pedido5.sh, bench_scale.sh, bench_local.sh, bench_opt.sh, bench_join.sh,
                 run_escalabilidad_aggtrades.sh)
@@ -91,8 +92,15 @@ spark-submit --master 'local[*]' --driver-memory 2g src/aggtrades_hourly.py
 ```
 
 ### 5.6 Notebooks (orden de lectura)
-`notebooks/01_ingesta` -> `02_calidad_datos` -> `03_eda` -> `04_features` -> `05_modelo_baseline` -> `05_modelo_definitivo` (historico) -> `06_linea_base` -> `07_validacion_fuga`. `06_benchmarks` documenta los benchmarks de join.
-Leen `data/klines_clean/` y `data/features.parquet`.
+`notebooks/01_ingesta` (con la variable `EJECUTAR_DESCARGA`, en `False` por defecto: no descarga ni sube nada; con `True` llama a los scripts de 5.1 y 5.5) -> `02_calidad_datos` -> `03_eda` -> `04_features` -> `05_modelo_baseline` -> `05_modelo_definitivo` (historico) -> `06_linea_base` -> `07_validacion_fuga`. `06_benchmarks` lee los resultados que ya estan en `benchmarks/resultados/` (broadcast frente a sort-merge, original frente a optimizada, escalabilidad local y de aggTrades) y los muestra en tablas y graficos; no vuelve a correr ningun benchmark.
+Los notebooks 02 a 07 leen `data/klines_clean/` y `data/features.parquet`.
+
+Para ejecutar un notebook desde la carpeta `notebooks/` (las rutas son relativas a ella), con el tiempo limite desactivado (por defecto `nbconvert` corta cada celda a los 30 s y los notebooks largos fallan):
+```bash
+cd notebooks
+jupyter nbconvert --to notebook --execute <notebook>.ipynb --ExecutePreprocessor.timeout=-1 --output-dir /tmp/repro
+cd ..
+```
 
 `05_modelo_definitivo` queda como **historico**: sus cifras se retiraron por la fuga de la brecha de arbitraje (`spread_btc_usdc_usdt` deriva de la etiqueta). La evaluacion vigente esta en `07_validacion_fuga`.
 
@@ -131,6 +139,17 @@ Revisa `data/klines_clean/` con pandas (esquema, nulos, duplicados, OHLC, huecos
 
 ### 5.11 Informe
 Las figuras del informe estan en `informe/`. `fig_matrices_confusion.png` y `fig_matrices_confusion_definitivo.png` corresponden a cifras **retiradas**; la figura vigente es `fig_matrices_validacion_temporal.png`.
+
+### 5.12 Tablero
+`tablero/tablero_paridad_usdc.html` es una pagina **autocontenida**: los datos van dentro del propio HTML y se generaron a partir de `data/consumo/` (tabla de hechos y dimensiones de la capa de consumo); no consulta HDFS ni ningun servicio. La unica referencia externa es la fuente tipografica de Google Fonts; sin red el navegador usa una fuente del sistema. SHA-256 del archivo: `3af24ccb20684758d54cd8c00d9aef9d7d584767e0fd5454fab95d9a9a7e7b3c`.
+
+Para verlo en local o publicarlo (solo la carpeta `tablero/`, **nunca la raiz del repositorio**, y solo el puerto 8080; no se expone 9870, 8088 ni 8888):
+```bash
+cd tablero
+python3 -m http.server 8080 --bind 127.0.0.1
+ngrok http 8080     # en otra terminal
+```
+Local: http://127.0.0.1:8080/tablero_paridad_usdc.html. La URL publica que muestra ngrok es temporal y se cierra con Ctrl+C.
 
 ## 6. Rutas en HDFS
 
