@@ -1,9 +1,13 @@
 #!/bin/bash
+# Pedido 5: prueba de escalabilidad completa en YARN (1x, 10x y 100x).
+# Para cada escala: replica los datos raw (salvo 1x), limpia con quality.py y une con join_broadcast_solo.py.
+# Todo se escribe en hdfs:///datalake/benchmark/.
 set -e
 
 RAW_ORIGINAL="hdfs:///datalake/raw/binance/klines"
 BENCH="hdfs:///datalake/benchmark"
 
+# Flags de red y de librerias de Spark en HDFS (spark.yarn.jars) comunes a todos los pasos.
 SPARK_YARN_NET_FLAGS="--conf spark.driver.host=100.76.42.126 --conf spark.driver.bindAddress=0.0.0.0 --conf spark.yarn.jars=hdfs:///user/marlon/spark-libs/*.jar --conf spark.task.maxDirectResultSize=104857600"
 
 echo "=========================================="
@@ -15,6 +19,7 @@ for ESCALA in 1 10 100; do
     echo ""
     echo "---------- ESCALA ${ESCALA}x ----------"
 
+    # 1x usa el raw original; las demas escalas generan antes una replica con replicate_raw.py.
     if [ "$ESCALA" -eq 1 ]; then
         RAW_PATH="$RAW_ORIGINAL"
     else

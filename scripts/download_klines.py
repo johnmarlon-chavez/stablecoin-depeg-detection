@@ -9,13 +9,15 @@ BTC cotizado contra la stablecoin sustituta).
 
 Rango fijo del proyecto: 2022-01 a 2023-12 (24 meses), no "hasta hoy".
 
-Uso:
-    python3 descargar_klines.py                    # todo
-    python3 descargar_klines.py --solo-proxy        # solo BUSDUSDT mensual
-    python3 descargar_klines.py --solo-proxy-svb    # solo BUSDUSDT diario (10 mar)
-    python3 descargar_klines.py --solo-proxy-btc    # solo BTCBUSD mensual
-    python3 descargar_klines.py --solo-proxy-btc-svb # solo BTCBUSD diario (10 mar)
-    python3 descargar_klines.py --solo-marzo        # chequeo del archivo de marzo
+Uso (desde la raiz del repositorio):
+    python3 scripts/download_klines.py                     # todo
+    python3 scripts/download_klines.py --solo-proxy         # solo BUSDUSDT mensual
+    python3 scripts/download_klines.py --solo-proxy-svb     # solo BUSDUSDT diario (10 mar)
+    python3 scripts/download_klines.py --solo-proxy-btc     # solo BTCBUSD mensual
+    python3 scripts/download_klines.py --solo-proxy-btc-svb # solo BTCBUSD diario (10 mar)
+    python3 scripts/download_klines.py --solo-marzo         # chequeo del archivo de marzo
+
+Salida: zona_cruda/klines/<SIMBOLO>/*.zip (y zona_cruda/missing.log con lo que no existe en la fuente).
 """
 
 import argparse
@@ -31,10 +33,12 @@ from pathlib import Path
 import requests
 
 
+# Repositorio publico de Binance (archivos mensuales) y carpetas locales de salida.
 BASE_URL = "https://data.binance.vision/data/spot/monthly/klines"
 CARPETA_SALIDA = Path("zona_cruda") / "klines"
 MISSING_LOG = Path("zona_cruda") / "missing.log"
 
+# Velas de 1 hora para los tres pares principales del proyecto.
 INTERVALO = "1h"
 PARES = ["USDCUSDT", "BTCUSDC", "BTCUSDT"]
 
@@ -54,10 +58,12 @@ PAR_PROXY_BTC = "BTCBUSD"
 MESES_PROXY_BTC = ["2022-10", "2022-11", "2022-12", "2023-01", "2023-02"]
 DIAS_PROXY_BTC = ["2023-03-10"]
 
+# Tiempo maximo por peticion HTTP (s) y pausa entre descargas para no saturar el servidor.
 TIMEOUT = 30
 PAUSA = 0.3
 
 
+# Genera (anio, mes) desde inicio hasta fin, ambos incluidos.
 def meses_entre(inicio: date, fin: date):
     actual = date(inicio.year, inicio.month, 1)
     while actual <= fin:
@@ -66,6 +72,7 @@ def meses_entre(inicio: date, fin: date):
             else date(actual.year, actual.month + 1, 1)
 
 
+# Calcula el SHA-256 de un archivo leyendo por bloques (no lo carga entero en memoria).
 def sha256_de(ruta: Path) -> str:
     h = hashlib.sha256()
     with open(ruta, "rb") as f:
@@ -74,12 +81,15 @@ def sha256_de(ruta: Path) -> str:
     return h.hexdigest()
 
 
+# Anota en missing.log un archivo que no existe en la fuente o cuyo checksum fallo.
 def registrar_faltante(nombre: str):
     MISSING_LOG.parent.mkdir(parents=True, exist_ok=True)
     with open(MISSING_LOG, "a") as f:
         f.write(f"{nombre}\n")
 
 
+# Descarga un .zip y lo verifica contra su .CHECKSUM publicado.
+# Devuelve True si queda guardado (o ya existia); False si no existe o el hash no coincide (se borra).
 def descargar_archivo(url: str, destino: Path) -> bool:
     if destino.exists():
         print(f"  [ya existe] {destino.name}")
@@ -113,6 +123,7 @@ def descargar_archivo(url: str, destino: Path) -> bool:
     return True
 
 
+# Descarga todos los meses de un par en el rango del proyecto.
 def descargar_klines_par(simbolo: str, desde: date, hasta: date):
     print(f"\n=== Klines {INTERVALO} de {simbolo} ({desde} a {hasta}) ===")
     ok, fallidos = 0, 0
@@ -129,6 +140,7 @@ def descargar_klines_par(simbolo: str, desde: date, hasta: date):
     return ok, fallidos
 
 
+# Descarga BUSDUSDT mensual para los meses en que USDCUSDT no tiene datos.
 def descargar_proxy():
     print(f"\n=== Proxy {PAR_PROXY} para el hueco FTX (Anexo B.1) ===")
     ok, fallidos = 0, 0
@@ -143,6 +155,7 @@ def descargar_proxy():
     print(f"{PAR_PROXY} (proxy): {ok} OK, {fallidos} no disponibles.")
 
 
+# Descarga BUSDUSDT diario del 10-mar-2023 (primer dia del evento SVB, antes de que vuelva USDCUSDT).
 def descargar_proxy_dia_svb():
     print(f"\n=== Proxy {PAR_PROXY} diario para el día puntual de SVB ===")
     ok, fallidos = 0, 0
@@ -187,6 +200,7 @@ def descargar_proxy_btc_dia_svb():
     print(f"{PAR_PROXY_BTC} (proxy diario SVB): {ok} OK, {fallidos} no disponibles.")
 
 
+# Comprueba en que dia empieza el archivo mensual USDCUSDT de marzo 2023 (lee solo la primera fila).
 def verificar_marzo_2023():
     print("\n=== Verificación del archivo USDCUSDT-1h-2023-03 (evento SVB) ===")
     nombre = f"USDCUSDT-{INTERVALO}-2023-03.zip"
@@ -224,6 +238,7 @@ def main():
 
     CARPETA_SALIDA.mkdir(parents=True, exist_ok=True)
 
+    # Sin opciones se descarga todo; con una opcion --solo-* solo esa parte.
     if args.solo_proxy:
         descargar_proxy()
     elif args.solo_proxy_svb:

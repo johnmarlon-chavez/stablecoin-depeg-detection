@@ -3,6 +3,8 @@
 # local  : VM maestra, local[*], driver 2g (igual que la prueba anterior)
 # cluster: YARN, ajusta EXEC_INST / EXEC_MEM / EXEC_CORES a lo que permita el nodo de Andres
 # Entrada : hdfs:///datalake/benchmark/aggtrades_${E}x   Salida: hdfs:///datalake/benchmark/salida_*
+# M = local|cluster, E = escala de la replica, R = numero de repeticion;
+# LIM = tiempo maximo (s), PART = shuffle.partitions.
 M=$1; E=$2; R=${3:-1}; LIM=${LIM:-7200}; PART=${PART:-200}
 B=hdfs:///datalake/benchmark
 IN=$B/aggtrades_${E}x
@@ -10,6 +12,7 @@ OUT=$B/salida_${M}_${E}x_r${R}
 TAG=${M}_${E}x_r${R}
 RES=~/stablecoin-depeg-detection/benchmarks/resultados/escalabilidad_aggtrades
 mkdir -p $RES; cd ~/stablecoin-depeg-detection
+# Timeouts de red comunes a ambos modos.
 COMUN=(--conf spark.network.timeout=600s --conf spark.rpc.askTimeout=600s
        --conf spark.executor.heartbeatInterval=60s)
 if [ "$M" = "local" ]; then
@@ -29,12 +32,16 @@ muestrear() { # cada 2 s: RSS del proceso Spark, RAM usada y swap del sistema
     sleep 2
   done
 }
+# Log de Spark y CSV de memoria quedan en benchmarks/resultados/escalabilidad_aggtrades/.
 LOG=$RES/${TAG}.log; CSV=$RES/${TAG}_mem.csv
 hdfs dfs -rm -r -f -skipTrash $OUT >/dev/null 2>&1
+# Inicio de la corrida: fecha y espacio libre en el disco del master.
 echo "inicio $(date -Is) | disco maestro: $(df -h / | tail -1)" | tee $RES/${TAG}_resumen.txt
 muestrear $CSV & SP_PID=$!
 S=$(date +%s)
+# El mismo src/bench_aggtrades.py en ambos modos; timeout corta la corrida si pasa de LIM.
 timeout $LIM spark-submit "${FLAGS[@]}" src/bench_aggtrades.py --input $IN --out $OUT --particiones $PART 2>&1 | tee $LOG
+# Codigo de salida de timeout/spark-submit (no el de tee).
 RC=${PIPESTATUS[0]}
 kill $SP_PID 2>/dev/null; wait $SP_PID 2>/dev/null
 {

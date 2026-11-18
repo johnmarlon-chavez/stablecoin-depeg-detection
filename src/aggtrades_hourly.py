@@ -17,6 +17,7 @@ TOL_VOL = 1e-4   # unidades base de la moneda; el error de coma flotante esta mu
 P = "hdfs:///datalake/processed/binance/"
 
 
+# Trunca una marca en milisegundos a la hora UTC (inicio de la hora) como timestamp.
 def hora_utc(col_ms):
     return (F.floor(F.col(col_ms) / 3600000) * 3600).cast("timestamp")
 
@@ -39,6 +40,12 @@ def main():
     # ---------- resumen horario ----------
     clean = spark.read.parquet(a.clean)
     n_clean = clean.count()
+    # Metricas por (simbolo, hora):
+    #   n_agg_trades        = numero de operaciones agregadas
+    #   volumen_agg         = suma de cantidades (comparable con volume de klines)
+    #   n_trades_agg        = operaciones individuales (last_id - first_id + 1; comparable con trades de klines)
+    #   prop_venta_agresiva = fraccion del volumen en que el comprador fue maker (venta agresiva)
+    #   desv_max_intrahora  = maxima |precio - 1| dentro de la hora
     h = (clean.withColumn("hora", hora_utc("transact_time"))
          .groupBy("simbolo", "hora")
          .agg(F.count("*").alias("n_agg_trades"),
@@ -50,6 +57,7 @@ def main():
          .withColumn("anio", F.year("hora")).withColumn("mes", F.month("hora")))
     h.write.mode("overwrite").partitionBy("simbolo", "anio", "mes").parquet(a.hourly)
     h2 = spark.read.parquet(a.hourly)          # tabla pequena: de aqui en adelante todo es barato
+    # Etiqueta de evento segun el mes (solo hay aggTrades de las tres ventanas de evento).
     ev = (F.when((F.col("anio") == 2022) & (F.col("mes") == 5), "Terra")
           .when((F.col("anio") == 2022) & (F.col("mes") == 11), "FTX")
           .when((F.col("anio") == 2023) & (F.col("mes") == 3), "SVB"))
@@ -67,9 +75,11 @@ def main():
     # ---------- klines_clean ----------
     k = spark.read.parquet(a.klines)
     print("QC_KLINES columnas:", k.columns)
+    # Control: klines_clean debe tener las columnas que se usan en el cruce.
     falt = {"simbolo", "open_time", "volume", "trades"} - set(k.columns)
     assert not falt, f"faltan columnas en klines_clean: {falt}"
     n_k = k.count()
+    # klines reducidos a la llave (simbolo, hora) y las dos columnas que se contrastan.
     ks = (k.select(F.col("simbolo").alias("k_sim"), hora_utc("open_time").alias("k_hora"),
                    F.col("volume").cast("double").alias("volume_kl"),
                    F.col("trades").cast("long").alias("n_trades_kl")))
@@ -98,6 +108,7 @@ def main():
         print(f"QC_KLINES_SIN_AGG {r['k_sim']} {r['k_hora']}")
 
     # ---------- validacion cruzada ----------
+    # Diferencias entre lo que dicen aggTrades y klines para la misma hora.
     x = (m.withColumn("dif_vol", F.col("volumen_agg") - F.col("volume_kl"))
          .withColumn("dif_trades", F.col("n_trades_agg") - F.col("n_trades_kl"))
          .withColumn("mal_vol", F.abs(F.col("dif_vol")) > TOL_VOL)

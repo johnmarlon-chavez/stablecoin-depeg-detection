@@ -11,6 +11,7 @@ import argparse
 from functools import reduce
 from pyspark.sql import SparkSession, functions as F
 
+# Prefijo de la zona processed en HDFS.
 P = "hdfs:///datalake/processed/binance/"
 
 
@@ -20,6 +21,7 @@ def main():
     ap.add_argument("--output", required=True)
     ap.add_argument("--factor", type=int, required=True)
     a = ap.parse_args()
+    # Proteccion: las replicas solo pueden escribirse en la zona benchmark.
     assert "/benchmark/" in a.output, "la salida debe ir en /datalake/benchmark/"
     assert a.output != a.input
 
@@ -28,13 +30,16 @@ def main():
     base = spark.read.parquet(a.input)
     n0 = base.count()
     copias = []
+    # Copia k: mismos datos, ids desplazados en k * 10^12 para que no se repitan.
     for k in range(a.factor):
         d = k * 10**12
         copias.append(base.withColumn("agg_trade_id", F.col("agg_trade_id") + F.lit(d))
                           .withColumn("first_trade_id", F.col("first_trade_id") + F.lit(d))
                           .withColumn("last_trade_id", F.col("last_trade_id") + F.lit(d)))
+    # Une todas las copias y las escribe con la misma particion que aggtrades_clean.
     todo = reduce(lambda x, y: x.unionByName(y), copias)
     todo.write.mode("overwrite").partitionBy("simbolo", "anio", "mes").parquet(a.output)
+    # Control: la replica debe tener exactamente filas_base * factor.
     n = spark.read.parquet(a.output).count()
     print(f"REPLICA factor={a.factor} filas_base={n0:,} filas_replica={n:,} esperado={n0*a.factor:,} ok={n == n0*a.factor}")
     spark.stop()

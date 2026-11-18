@@ -36,6 +36,7 @@ TOL = 1e-9               # los umbrales exactos del notebook 04 difieren de 0.00
 DIAS = ["lunes", "martes", "miércoles", "jueves", "viernes", "sábado", "domingo"]
 
 
+# Imprime una linea de validacion con prefijo QC (facil de filtrar con grep).
 def qc(msg):
     print("QC " + msg, flush=True)
 
@@ -55,6 +56,7 @@ def main():
     spark.sparkContext.setLogLevel("WARN")
 
     # ---------------- entrada: serie horaria del modelo ----------------
+    # features.parquet lo escribio pandas con marcas en nanosegundos; esta opcion permite leerlas.
     spark.conf.set("spark.sql.legacy.parquet.nanosAsLong", "true")
     ruta = a.features if "://" in a.features else "file://" + os.path.abspath(a.features)
     raw = spark.read.parquet(ruta)
@@ -65,6 +67,7 @@ def main():
     # spread_btc_usdc_usdt queda fuera a proposito
     base = raw.select(ts.alias("ts"), "fuente_paridad", "close", F.col("volume"), "desviacion_paridad", "severidad",
                       "volumen_relativo", "volatilidad_ventana")
+    # NaN (de pandas) -> null (de Spark), para que los conteos de nulos sean correctos.
     for c in ("close", "volume", "desviacion_paridad", "volumen_relativo", "volatilidad_ventana"):
         base = base.withColumn(c, F.when(F.isnan(F.col(c)), None).otherwise(F.col(c).cast("double")))
     n_base = base.count()
@@ -85,13 +88,16 @@ def main():
                           F.coalesce(F.col("tiene_dato"), F.lit(0)).alias("tiene_dato"))
                   .orderBy("id_tiempo"))
 
+    # dim_fuente: de donde sale el precio de paridad (dato real o proxy).
     dim_fuente = spark.createDataFrame(
         [(1, "USDCUSDT", "sí"), (2, "BUSDUSDT_proxy", "no")], ["id_fuente", "nombre", "es_real"])
 
+    # dim_evento: id 0 = fuera de evento, 1..3 = Terra, FTX, SVB.
     filas_ev = [(0, "fuera de evento", None, None, "no aplica")] + [(i, n, f1, f2, m) for i, n, f1, f2, m in EVENTOS]
     dim_evento = (spark.createDataFrame(filas_ev, ["id_evento", "nombre", "fecha_inicio", "fecha_fin", "mecanismo"])
                   .withColumn("fecha_inicio", F.to_date("fecha_inicio")).withColumn("fecha_fin", F.to_date("fecha_fin")))
 
+    # dim_severidad: los tres niveles con sus umbrales y la accion sugerida.
     dim_severidad = spark.createDataFrame([
         (1, "normal", 0.0, UMBRAL_ALERTA, "sin acción"),
         (2, "alerta", UMBRAL_ALERTA, UMBRAL_ESTRES, "revisión del área de riesgo"),
@@ -101,12 +107,15 @@ def main():
                     StructField("accion_sugerida", StringType())]))
 
     # ---------------- tabla de hechos ----------------
+    # id_evento de cada hora: se arma un CASE WHEN encadenado con las ventanas de EVENTOS.
     evento_expr = F.lit(0)
     for i, _, f1, f2, _ in reversed(EVENTOS):
         evento_expr = F.when((F.col("ts") >= F.to_timestamp(F.lit(f1))) & (F.col("ts") <= F.to_timestamp(F.lit(f2))),
                              F.lit(i)).otherwise(evento_expr)
+    # Texto de severidad -> id_severidad.
     sev_expr = (F.when(F.col("severidad") == "normal", 1).when(F.col("severidad") == "alerta", 2)
                 .when(F.col("severidad") == "estres", 3))
+    # Tabla de hechos: una fila por hora, con llaves foraneas a las 4 dimensiones y las medidas.
     fact = (base.select(
         F.date_format("ts", "yyyyMMddHH").cast("long").alias("id_tiempo"),
         F.when(F.col("fuente_paridad") == "USDCUSDT", 1).when(F.col("fuente_paridad") == "BUSDUSDT_proxy", 2).alias("id_fuente"),
@@ -128,6 +137,7 @@ def main():
     qc(f"ESCRITURA tablas escritas en {s}")
 
     # ---------------- validacion (sobre lo que quedo escrito) ----------------
+    # Se releen las tablas escritas y se validan: filas, duplicados, huerfanos y nulos por llave.
     f = spark.read.parquet(f"{s}/fact_paridad_hora")
     dt, df_, de, ds = (spark.read.parquet(f"{s}/{n}") for n in ("dim_tiempo", "dim_fuente", "dim_evento", "dim_severidad"))
     n_f = f.count()
@@ -202,6 +212,7 @@ def main():
     # ---------------- exportacion CSV (tablas pequeñas, sin pandas) ----------------
     os.makedirs(a.csv_dir, exist_ok=True)
 
+    # Escribe un DataFrame chico a CSV con el modulo csv (UTF-8 con BOM para que Excel muestre bien las tildes).
     def a_csv(df, nombre):
         filas = df.collect()
         with open(os.path.join(a.csv_dir, nombre + ".csv"), "w", newline="", encoding="utf-8-sig") as fh:

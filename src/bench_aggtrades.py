@@ -9,9 +9,11 @@ import argparse
 import time
 from pyspark.sql import SparkSession, functions as F
 
+# Prefijo de la zona processed en HDFS.
 P = "hdfs:///datalake/processed/binance/"
 
 
+# Trunca una marca en milisegundos a la hora UTC (inicio de la hora) como timestamp.
 def hora_utc(c):
     return (F.floor(F.col(c) / 3600000) * 3600).cast("timestamp")
 
@@ -23,12 +25,14 @@ def main():
     ap.add_argument("--out", required=True)             # .../benchmark/salida_<tag>
     ap.add_argument("--particiones", type=int, default=200)
     a = ap.parse_args()
+    # Proteccion: este benchmark nunca escribe fuera de la zona benchmark.
     assert "/benchmark/" in a.out
     spark = (SparkSession.builder.appName("bench_aggtrades")
              .config("spark.sql.shuffle.partitions", str(a.particiones))
              .config("spark.sql.session.timeZone", "UTC").getOrCreate())
     spark.sparkContext.setLogLevel("WARN")
 
+    # Imprime 'ETAPA <nombre> <segundos>'; run_escalabilidad_aggtrades.sh busca estas lineas.
     def etapa(nombre, t0):
         print(f"ETAPA {nombre} {time.time() - t0:.1f}", flush=True)
 

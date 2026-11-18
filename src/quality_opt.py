@@ -30,6 +30,7 @@ from pyspark.sql.types import (
     StructType, StructField, LongType, DoubleType, StringType
 )
 
+# Esquema explicito de los CSV de klines (igual que en quality.py).
 ESQUEMA_KLINES = StructType([
     StructField("open_time", LongType(), False),
     StructField("open", DoubleType(), False),
@@ -45,6 +46,7 @@ ESQUEMA_KLINES = StructType([
     StructField("ignore", StringType(), True),
 ])
 
+# Simbolo -> fuente_paridad (los BUSD son proxies; ver docs/decisiones_abiertas.md).
 SIMBOLOS = {
     "USDCUSDT": "USDCUSDT",
     "BTCUSDC": "BTCUSDC",
@@ -56,6 +58,7 @@ SIMBOLOS = {
 INTERVALO_ESPERADO_MS = 60 * 60 * 1000  # 1 hora
 
 
+# Lee los CSV de un simbolo (mas la carpeta diario/ en los proxies) y agrega simbolo/fuente_paridad.
 def leer_simbolo(spark, base_path, simbolo, fuente_paridad):
     rutas = [f"{base_path}/{simbolo}/*.csv"]
     if simbolo in ("BUSDUSDT", "BTCBUSD"):
@@ -65,12 +68,14 @@ def leer_simbolo(spark, base_path, simbolo, fuente_paridad):
              .withColumn("fuente_paridad", F.lit(fuente_paridad))
 
 
+# Convierte open_time/close_time (ms UTC) a timestamp.
 def convertir_tipos(df):
     return df \
         .withColumn("open_time_ts", (F.col("open_time") / 1000).cast("timestamp")) \
         .withColumn("close_time_ts", (F.col("close_time") / 1000).cast("timestamp"))
 
 
+# Condicion de vela valida: precios positivos y low <= open/close <= high.
 def condicion_rango_valido():
     return (
         (F.col("open") > 0) & (F.col("high") > 0) &
@@ -81,6 +86,7 @@ def condicion_rango_valido():
     )
 
 
+# Imprime el tiempo transcurrido desde t0 (para medir cada etapa en los logs).
 def t(msg, t0):
     print(f"[TIEMPO] {msg}: {time.time() - t0:.1f} s", flush=True)
 
@@ -113,6 +119,8 @@ def aplicar_reglas_calidad(spark, df, ventana):
 
     # Regla 1: huecos de tiempo
     boundary_huecos = []  # solo modo 'mes'
+    # Modo 'simbolo': igual que quality.py (una particion de ventana por simbolo).
+    # Modo 'mes': una particion por (simbolo, anio-mes); da mas tareas en paralelo.
     if ventana == "simbolo":
         w = Window.partitionBy("simbolo").orderBy("open_time")
         df_gap = df_valido.withColumn(
@@ -147,6 +155,7 @@ def aplicar_reglas_calidad(spark, df, ventana):
             F.min("open_time").alias("t_min"),
             F.max("open_time").alias("t_max")
         ).orderBy("simbolo", "_per").collect()
+        # Recorre los meses en orden y compara el primer open_time de cada mes con el ultimo del mes anterior.
         prev = {}
         for f in filas:
             s = f["simbolo"]
@@ -174,10 +183,12 @@ def aplicar_reglas_calidad(spark, df, ventana):
         "total_final": total_final,
     }
 
+    # Se quitan las columnas auxiliares antes de devolver el DataFrame limpio.
     cols_extra = ["gap_ms"] + (["_per"] if ventana == "mes" else [])
     return df_gap.drop(*cols_extra), reporte, huecos_df, conteo_huecos
 
 
+# Comprueba (via la API de Hadoop) que la escritura dejo el marcador _SUCCESS en la salida.
 def existe_success(spark, ruta):
     jvm = spark._jvm
     p = jvm.org.apache.hadoop.fs.Path(ruta.rstrip("/") + "/_SUCCESS")
@@ -197,6 +208,7 @@ def main():
     args = parser.parse_args()
 
     spark = SparkSession.builder.appName("FTX-SVB-Calidad-Klines-OPT").getOrCreate()
+    # codigo = codigo de salida del proceso (0 = todo bien). Se usa en los scripts de benchmark.
     t_inicio = time.time()
     codigo = 0
     try:
@@ -229,6 +241,7 @@ def main():
 
         df_salida = df_limpio.withColumn("anio", F.year("open_time_ts")) \
                              .withColumn("mes", F.month("open_time_ts"))
+        # Opcional: reparticionar antes de escribir para controlar cuantos archivos Parquet salen.
         if args.rep_escritura > 0:
             df_salida = df_salida.repartition(
                 args.rep_escritura, "simbolo", "anio", "mes")

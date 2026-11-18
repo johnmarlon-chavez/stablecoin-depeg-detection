@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# NOTA: version inicial del descargador. El flujo vigente usa scripts/download_klines.py
+# (klines con rango fijo y proxies BUSD) y scripts/download_aggtrades.py (aggTrades de las ventanas).
 """
 Descarga el dataset del proyecto "Detección temprana de pérdida de paridad
 en stablecoins" (Big Data y Analítica de Datos, UPAO) desde data.binance.vision.

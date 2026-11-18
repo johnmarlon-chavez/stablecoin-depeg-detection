@@ -1,3 +1,6 @@
+# Generador del notebook notebooks/04_features.ipynb (celdas escritas con nbformat).
+# Uso: python3 build_features_notebook.py   (desde la raiz del repositorio)
+# OJO: sobrescribe el notebook; el notebook versionado ya incluye resultados y cambios posteriores.
 import nbformat as nbf
 
 nb = nbf.v4.new_notebook()

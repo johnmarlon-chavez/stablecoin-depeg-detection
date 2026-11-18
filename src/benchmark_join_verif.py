@@ -17,11 +17,13 @@ import time
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import broadcast
 
+# Mismas tablas que benchmark_join.py: pares reales (principal) y proxies.
 SIMBOLOS_PRINCIPAL = ["USDCUSDT", "BTCUSDC", "BTCUSDT"]
 SIMBOLOS_PROXY = ["BUSDUSDT", "BTCBUSD"]
 ARCHIVO_LISTO = "/tmp/pedido2_ui_listo"
 
 
+# Lee klines_clean, separa principal/proxy y renombra las columnas del proxy con prefijo proxy_.
 def preparar(spark, processed):
     df = spark.read.parquet(processed)
     principal = df.filter(df.simbolo.isin(SIMBOLOS_PRINCIPAL))
@@ -32,6 +34,7 @@ def preparar(spark, processed):
     return principal, proxy
 
 
+# Corre una sola vez el broadcast join y deja la sesion viva para capturar la Spark UI.
 def modo_ui(spark, processed, salida):
     spark.conf.set("spark.sql.autoBroadcastJoinThreshold", -1)
     spark.conf.set("spark.sql.adaptive.enabled", "false")
@@ -56,6 +59,7 @@ def modo_ui(spark, processed, salida):
         time.sleep(2)
 
 
+# Compara las dos salidas ya escritas: conteo de filas y exceptAll en ambos sentidos.
 def modo_verif(spark, antes, despues):
     spark.conf.set("spark.sql.shuffle.partitions", 8)
     df_a = spark.read.parquet(antes)

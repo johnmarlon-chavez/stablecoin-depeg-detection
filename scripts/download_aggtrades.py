@@ -23,6 +23,7 @@ import zipfile
 from datetime import date, timedelta
 from pathlib import Path
 
+# Carpeta de aggTrades diarios en data.binance.vision; timeout por peticion y numero de reintentos.
 BASE = "https://data.binance.vision/data/spot/daily/aggTrades"
 TIMEOUT = 60
 INTENTOS = 3
@@ -36,6 +37,7 @@ VENTANAS = [
 ]
 
 
+# Genera las fechas desde 'desde' hasta 'hasta', ambas incluidas.
 def dias(desde, hasta):
     d = desde
     while d <= hasta:
@@ -43,6 +45,7 @@ def dias(desde, hasta):
         d += timedelta(days=1)
 
 
+# SHA-256 de un archivo, leido en bloques de 1 MiB.
 def sha256_de(ruta):
     h = hashlib.sha256()
     with open(ruta, "rb") as f:
@@ -51,11 +54,13 @@ def sha256_de(ruta):
     return h.hexdigest()
 
 
+# Abre una URL con un User-Agent de navegador (algunos servidores rechazan el de urllib).
 def abrir(url):
     req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
     return urllib.request.urlopen(req, timeout=TIMEOUT)
 
 
+# Descarga a un archivo .part y lo renombra al terminar: un corte no deja un .zip a medias.
 def bajar(url, destino):
     tmp = destino.with_suffix(destino.suffix + ".part")
     with abrir(url) as r, open(tmp, "wb") as f:
@@ -64,6 +69,7 @@ def bajar(url, destino):
     tmp.rename(destino)
 
 
+# Devuelve el SHA-256 publicado en <url>.CHECKSUM, o None si no existe (404).
 def checksum_publicado(url):
     try:
         with abrir(url + ".CHECKSUM") as r:
@@ -74,6 +80,7 @@ def checksum_publicado(url):
         raise
 
 
+# Cuenta las lineas del CSV y devuelve tambien la primera (para revisar cabecera y unidad de tiempo).
 def contar_y_primera(ruta):
     n = 0
     primera = ""
@@ -85,6 +92,8 @@ def contar_y_primera(ruta):
     return n, primera
 
 
+# Descarga, verifica y extrae un dia de un simbolo. Devuelve una fila para descarga_resumen.tsv.
+# Estados posibles de 'checksum': OK, SIN_CHECKSUM, NO_DISPONIBLE_EN_FUENTE, FALLA_TRAS_REINTENTOS.
 def procesar(evento, sim, dia, out):
     nombre = f"{sim}-aggTrades-{dia.isoformat()}.zip"
     url = f"{BASE}/{sim}/{nombre}"
@@ -102,6 +111,7 @@ def procesar(evento, sim, dia, out):
         print(f"  [sin .CHECKSUM publicado] {nombre}")
 
     estado = None
+    # Hasta INTENTOS descargas: si el hash no coincide se borra el .zip y se vuelve a bajar.
     for intento in range(1, INTENTOS + 1):
         try:
             if not dz.exists():
@@ -136,6 +146,8 @@ def procesar(evento, sim, dia, out):
 
     fila["checksum"] = estado
     fila["zip_bytes"] = dz.stat().st_size
+    # Extrae el CSV del .zip y registra tamano, filas y numero de digitos de transact_time
+    # (13 = milisegundos, 16 = microsegundos).
     dcsv = out / "csv" / sim
     dcsv.mkdir(parents=True, exist_ok=True)
     with zipfile.ZipFile(dz) as zf:
@@ -166,6 +178,7 @@ def main():
         for d in dias(d0, d1):
             filas.append(procesar(evento, sim, d, out))
 
+    # Resumen de la descarga (este archivo se copia a benchmarks/resultados/aggtrades/).
     cols = ["evento", "simbolo", "fecha", "archivo", "zip_bytes", "csv_bytes",
             "registros", "checksum", "ts_digitos"]
     with open(out / "descarga_resumen.tsv", "w") as f:
@@ -183,6 +196,7 @@ def main():
     for r in filas:
         if r not in ok:
             print(f"  PROBLEMA: {r['archivo']} -> {r['checksum']}")
+    # Codigo de salida 1 si algun archivo tuvo problema (lo usa el notebook 01_ingesta).
     sys.exit(0 if len(ok) == len(filas) else 1)
 
 

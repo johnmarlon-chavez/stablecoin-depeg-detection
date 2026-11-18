@@ -18,16 +18,21 @@ import os
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import broadcast
 
+# Rutas de entrada (solo lectura) y de salida (solo zona benchmark).
 RUTA_PROCESSED = "hdfs:///datalake/processed/binance/klines_clean"
 RUTA_BENCHMARK_ANTES = "hdfs:///datalake/benchmark/join_tmp_antes"
 RUTA_BENCHMARK_DESPUES = "hdfs:///datalake/benchmark/join_tmp_despues"
 ARCHIVO_EXPLAIN = "benchmark_explain_output.txt"
 
+# Tabla principal (pares reales) y tabla chica (proxies) que se unen por open_time_ts.
 SIMBOLOS_PRINCIPAL = ["USDCUSDT", "BTCUSDC", "BTCUSDT"]
 SIMBOLOS_PROXY = ["BUSDUSDT", "BTCBUSD"]
+# Corridas por variante; la primera es de calentamiento y se descarta.
 N_CORRIDAS = 6
 
 
+# Guarda el plan fisico (df.explain()) en pantalla y en ARCHIVO_EXPLAIN, para mostrar
+# si Spark uso SortMergeJoin o BroadcastHashJoin.
 def capturar_explain(df, nombre, archivo):
     buf = io.StringIO()
     with contextlib.redirect_stdout(buf):
@@ -39,6 +44,8 @@ def capturar_explain(df, nombre, archivo):
         f.write(f"\n=== PLAN FISICO - {nombre} ===\n{texto}\n")
 
 
+# Pausa el script hasta que se crea un archivo senal (touch), para tener tiempo de
+# revisar la Spark UI antes de seguir.
 def esperar_senal(ruta_senal, mensaje):
     print(mensaje)
     print(f"(Cuando hayas anotado los valores, en OTRA terminal ejecuta: touch {ruta_senal})")
@@ -49,6 +56,7 @@ def esperar_senal(ruta_senal, mensaje):
     os.remove(ruta_senal)
 
 
+# Imprime los ejecutores y la configuracion de memoria/nucleos usados en la prueba.
 def imprimir_config_cluster(spark):
     sc = spark.sparkContext
     print("\n=== CONFIGURACION DEL CLUSTER DURANTE LA PRUEBA ===")
@@ -67,6 +75,7 @@ def imprimir_config_cluster(spark):
     print(f"spark.default.parallelism (referencia) = {sc.defaultParallelism}")
 
 
+# Escribe el resultado n veces y mide cada escritura (la escritura es la accion que fuerza el join).
 def medir_corridas(resultado, ruta_salida, etiqueta, n=N_CORRIDAS):
     tiempos = []
     for i in range(n):
@@ -97,6 +106,7 @@ if __name__ == "__main__":
     with open(ARCHIVO_EXPLAIN, "w") as f:
         f.write("Pedido 2 - Salida de .explain() - antes vs. despues\n")
 
+    # Lectura de klines_clean y separacion en tabla principal y tabla de proxies.
     df = spark.read.parquet(RUTA_PROCESSED)
     principal = df.filter(df.simbolo.isin(SIMBOLOS_PRINCIPAL))
     proxy = df.filter(df.simbolo.isin(SIMBOLOS_PROXY))
@@ -142,6 +152,7 @@ if __name__ == "__main__":
         resultado_despues, RUTA_BENCHMARK_DESPUES, "despues"
     )
 
+    # Se releen ambas salidas y se comparan con exceptAll en los dos sentidos.
     # ===================== VERIFICACION: MISMO RESULTADO =====================
     df_antes = spark.read.parquet(RUTA_BENCHMARK_ANTES)
     df_despues = spark.read.parquet(RUTA_BENCHMARK_DESPUES)

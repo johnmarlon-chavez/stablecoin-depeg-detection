@@ -19,8 +19,10 @@ from pathlib import Path
 
 import pandas as pd
 
+# Una hora en milisegundos (distancia esperada entre velas).
 HORA_MS = 60 * 60 * 1000
 
+# Columnas obligatorias de klines_clean y el tipo de pandas que deben tener.
 COLUMNAS_ESPERADAS = {
     "open_time": "int64", "open": "float64", "high": "float64",
     "low": "float64", "close": "float64", "volume": "float64",
@@ -38,12 +40,14 @@ FUENTE_ESPERADA = {
     "BTCBUSD": "BTCBUSD_proxy",
 }
 
+# Pares de stablecoin cuyo precio deberia estar cerca de 1.
 STABLECOINS = ["USDCUSDT", "BUSDUSDT"]
 # Banda amplia: el mínimo histórico de USDC en SVB fue ~0.87, así que fuera
 # de [0.80, 1.20] se considera dato sospechoso, no un depeg.
 RANGO_STABLE = (0.80, 1.20)
 
 
+# Lee el Parquet particionado; las columnas de particion llegan como categoria y se pasan a texto.
 def cargar(ruta: Path) -> pd.DataFrame:
     df = pd.read_parquet(ruta)
     for col in ("simbolo", "anio", "mes"):
@@ -51,11 +55,13 @@ def cargar(ruta: Path) -> pd.DataFrame:
     return df.sort_values(["simbolo", "open_time"]).reset_index(drop=True)
 
 
+# Arma el registro de un chequeo: OK si no hay fallas, REVISAR si las hay.
 def chequeo(nombre, fallas, detalle=""):
     return {"chequeo": nombre, "fallas": int(fallas),
             "estado": "OK" if fallas == 0 else "REVISAR", "detalle": detalle}
 
 
+# Corre los doce chequeos de calidad sobre la zona procesada y devuelve la lista de resultados.
 def verificar(df: pd.DataFrame):
     resultados = []
 
@@ -113,6 +119,7 @@ def verificar(df: pd.DataFrame):
     return resultados
 
 
+# Tramos de horas faltantes por simbolo (desde, hasta y cuantas horas faltan).
 def huecos(df: pd.DataFrame) -> pd.DataFrame:
     df = df.copy()
     df["gap_ms"] = df.groupby("simbolo")["open_time"].diff()
@@ -123,6 +130,7 @@ def huecos(df: pd.DataFrame) -> pd.DataFrame:
     return h[["simbolo", "desde", "hasta", "horas_faltantes"]].reset_index(drop=True)
 
 
+# Filas, rango de fechas, precios extremos y % de completitud por simbolo.
 def cobertura(df: pd.DataFrame) -> pd.DataFrame:
     g = df.groupby("simbolo").agg(
         filas=("open_time", "size"),
@@ -136,6 +144,7 @@ def cobertura(df: pd.DataFrame) -> pd.DataFrame:
     return g.reset_index()
 
 
+# Grafico de barras horizontales: tramos continuos de datos por simbolo y fechas de los eventos.
 def figura_cobertura(df: pd.DataFrame, ruta: Path):
     import matplotlib
     matplotlib.use("Agg")
@@ -182,6 +191,7 @@ def main():
     if len(hue):
         print(hue.groupby("simbolo")["horas_faltantes"].agg(["count", "sum", "max"]).to_string())
 
+    # Archivos de salida en aportes/adriel/resultados/.
     cob.to_csv(salida / "cobertura_por_simbolo.csv", index=False)
     hue.to_csv(salida / "huecos_horarios.csv", index=False)
     with open(salida / "chequeos.json", "w", encoding="utf-8") as f:

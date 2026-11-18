@@ -8,6 +8,7 @@ import time
 
 from pyspark.sql import SparkSession, functions as F
 
+# Pares reales (lado grande) y proxies (lado chico, el que se difunde a todos los ejecutores).
 SIMBOLOS_PRINCIPAL = ["USDCUSDT", "BTCUSDC", "BTCUSDT"]
 SIMBOLOS_PROXY = ["BUSDUSDT", "BTCBUSD"]
 
@@ -22,16 +23,19 @@ def main():
 
     df = spark.read.parquet(args.input)
 
+    # Separa la tabla principal y la de proxies; en el proxy se descartan filas sin timestamp.
     df_principal = df.filter(F.col("simbolo").isin(SIMBOLOS_PRINCIPAL))
     df_proxy = df.filter(F.col("simbolo").isin(SIMBOLOS_PROXY)) \
                  .filter(F.col("open_time_ts").isNotNull())
 
+    # Prefijo proxy_ en las columnas del proxy (menos la llave) para que no choquen al escribir.
     columnas_proxy_renombradas = [
         F.col(c).alias(f"proxy_{c}") if c != "open_time_ts" else F.col(c)
         for c in df_proxy.columns
     ]
     df_proxy = df_proxy.select(*columnas_proxy_renombradas)
 
+    # Join izquierdo con broadcast explicito: evita el shuffle del sort-merge join.
     df_join = df_principal.join(
         F.broadcast(df_proxy),
         on="open_time_ts",
@@ -41,6 +45,7 @@ def main():
     print("\n=== PLAN FISICO (broadcast) ===")
     df_join.explain()
 
+    # Se mide solo la escritura, que es la accion que dispara todo el calculo.
     inicio = time.perf_counter()
     df_join.write.mode("overwrite").parquet(args.output)
     fin = time.perf_counter()

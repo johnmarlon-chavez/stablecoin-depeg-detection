@@ -25,6 +25,7 @@ from pyspark.sql.types import (
     StructType, StructField, LongType, DoubleType, StringType
 )
 
+# Esquema de los CSV crudos de klines (el mismo de quality.py).
 ESQUEMA_KLINES = StructType([
     StructField("open_time", LongType(), False),
     StructField("open", DoubleType(), False),
@@ -42,12 +43,14 @@ ESQUEMA_KLINES = StructType([
 
 COLUMNAS_SALIDA = [campo.name for campo in ESQUEMA_KLINES.fields]
 
+# Simbolos que se replican; los proxies tienen ademas archivos diarios.
 SIMBOLOS = ["USDCUSDT", "BTCUSDC", "BTCUSDT", "BUSDUSDT", "BTCBUSD"]
 SIMBOLOS_CON_DIARIO = {"BUSDUSDT", "BTCBUSD"}
 
 INTERVALO_ESPERADO_MS = 60 * 60 * 1000
 
 
+# Lee los CSV crudos de un simbolo (sin agregar columnas: la salida debe parecerse al raw).
 def leer_crudo_simbolo(spark, base_path: str, simbolo: str):
     rutas = [f"{base_path}/{simbolo}/*.csv"]
     if simbolo in SIMBOLOS_CON_DIARIO:
@@ -64,6 +67,8 @@ def replicar_simbolo(df_base, factor: int):
     ).collect()[0]
     rango_ms = (stats["max_ts"] - stats["min_ts"]) + INTERVALO_ESPERADO_MS
 
+    # Cross join con una tabla 0..factor-1: cada fila sale 'factor' veces, cada copia
+    # desplazada replica_id * rango_ms en el tiempo.
     ids = df_base.sparkSession.range(factor).withColumnRenamed("id", "replica_id")
     df_rep = df_base.crossJoin(F.broadcast(ids))
     df_rep = df_rep.withColumn("offset_ms", F.col("replica_id") * F.lit(rango_ms))
@@ -98,6 +103,7 @@ def main():
     spark = SparkSession.builder.appName(f"Pedido5-Replicar-{args.factor}x").getOrCreate()
 
     total_filas_salida = 0
+    # Un directorio por simbolo, con la misma estructura que espera quality.py.
     for simbolo in SIMBOLOS:
         print(f"Replicando {simbolo} x{args.factor} ...")
         df_crudo = leer_crudo_simbolo(spark, args.input, simbolo)

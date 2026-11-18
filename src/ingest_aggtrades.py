@@ -22,6 +22,8 @@ from pyspark.sql import SparkSession, Window, functions as F
 from pyspark.sql.types import (BooleanType, DoubleType, LongType, StructField,
                                StructType)
 
+# Esquema de los CSV de aggTrades de Binance (8 columnas, sin cabecera).
+# Todas son nullable para poder detectar filas malformadas (regla f_nulo).
 ESQUEMA = StructType([
     StructField("agg_trade_id", LongType(), True),
     StructField("price", DoubleType(), True),
@@ -47,6 +49,8 @@ def main():
              .getOrCreate())
     spark.sparkContext.setLogLevel("WARN")
 
+    # Lectura de todos los CSV. El simbolo y la fecha del archivo se sacan del nombre:
+    # <SIMBOLO>-aggTrades-<AAAA-MM-DD>.csv
     df = (spark.read.schema(ESQUEMA).option("header", "false")
           .option("mode", "PERMISSIVE").csv(a.raw + "/*/csv/*.csv")
           .withColumn("_f", F.input_file_name())
@@ -55,10 +59,13 @@ def main():
                       F.to_date(F.regexp_extract("_f", r"aggTrades-(\d{4}-\d{2}-\d{2})\.csv", 1)))
           .drop("_f"))
 
+    # Limites del dia UTC del archivo, en milisegundos (para la regla f_dia).
     ini = F.unix_timestamp(F.col("fecha_archivo").cast("timestamp")) * 1000
     fin = ini + 86400000
+    # Ventana para numerar repeticiones de (simbolo, agg_trade_id): la fila 1 se conserva.
     w = Window.partitionBy("simbolo", "agg_trade_id").orderBy("fecha_archivo")
 
+    # Una columna booleana por regla; 'valida' es verdadera solo si no viola ninguna.
     df = (df.withColumn("_rn", F.row_number().over(w))
           .withColumn("f_dup", (F.col("_rn") > 1) & F.col("agg_trade_id").isNotNull())
           .withColumn("f_nulo", reduce(lambda x, y: x | y, [F.col(c).isNull() for c in COLS]))
@@ -69,6 +76,7 @@ def main():
           .withColumn("valida", ~(F.col("f_dup") | F.col("f_nulo") | F.col("f_precio") |
                                   F.col("f_cant") | F.col("f_dia")))
           .drop("_rn"))
+    # Se persiste en disco porque el DataFrame se recorre varias veces (conteos y escritura).
     df.persist(StorageLevel.DISK_ONLY)
 
     # --- unidad de transact_time ---

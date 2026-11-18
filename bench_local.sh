@@ -1,6 +1,7 @@
 #!/bin/bash
 # uso: [LIM=segundos] [SP=64] bench_local.sh <orig|opt> <escala 10|100>
 # Modo single-node (local[*]) en el master. Salidas solo en hdfs:///datalake/benchmark/
+# M = orig|opt (quality.py o quality_opt.py), E = escala; SP = shuffle.partitions; LIM = tiempo maximo (s).
 M=$1; E=$2; SP=${SP:-200}; LIM=${LIM:-7200}
 B=hdfs:///datalake/benchmark
 RAW=$B/raw_${E}x
@@ -8,12 +9,14 @@ if [ "$M" = "opt" ]; then CLEAN=$B/cleanopt_${E}x_local; else CLEAN=$B/clean_${E
 JOIN=$B/join_${E}x_local
 TAG=local_${M}_${E}x
 cd ~/stablecoin-depeg-detection
+# Spark en una sola maquina (local[*]) con 3 GB para el driver.
 FLAGS=(--master local[*] --driver-memory 3g
   --conf spark.network.timeout=600s --conf spark.rpc.askTimeout=600s
   --conf spark.rpc.lookupTimeout=600s --conf spark.executor.heartbeatInterval=60s
   --conf spark.sql.shuffle.partitions=$SP)
 export TIMEFORMAT='real %3R | user %3U | sys %3S'
 
+# Cada 5 s anota en un CSV la memoria del proceso de Spark (RSS), la RAM usada y el swap del sistema.
 muestrear() {
   echo "epoch,rss_mb,ram_usada_mb,swap_usado_mb" > $1
   while true; do
@@ -25,6 +28,8 @@ muestrear() {
   done
 }
 
+# Ejecuta un paso (limpieza o join) midiendo tiempo y memoria, y agrega un resumen a ~/<TAG>_resumen.txt.
+# Devuelve exito solo si la salida tiene _SUCCESS.
 paso() { # $1=nombre $2=script $3=salida
   local N=$1 SCR=$2 OUT=$3 LOG=~/${TAG}_$1.log CSV=~/${TAG}_$1_mem.csv EXTRA=""
   [ "$SCR" = "quality_opt.py" ] && EXTRA="--ventana mes --rep-escritura 0"
@@ -47,5 +52,6 @@ paso() { # $1=nombre $2=script $3=salida
 }
 
 echo "nproc: $(nproc) | $(LC_ALL=C free -m | awk '/^Mem/{print "RAM total MB: " $2}')" | tee ~/${TAG}_resumen.txt
+# Primero la limpieza; el join solo corre si la limpieza termino bien.
 SCRQ=quality.py; [ "$M" = "opt" ] && SCRQ=quality_opt.py
 paso quality $SCRQ $CLEAN $RAW && paso join join_broadcast_solo.py $JOIN $CLEAN
