@@ -26,6 +26,20 @@ pip install -r requirements.txt
 - Spark en modo local para los jobs pequenos: `--master 'local[*]' --driver-memory 2g`.
 - Zona horaria de sesion de Spark: UTC. Particiones de shuffle: 8.
 
+### 2.1 Ejecucion en el cluster
+
+- Todo lo que leen los ejecutores debe estar en HDFS o en la misma ruta en cada nodo.
+- Entorno de Python comun en todos los nodos: `/opt/bigdata_env` (Python 3.11, numpy 2.4.6, pandas 3.0.5, pyarrow 25.0.1), declarado en `spark-defaults.conf`:
+
+```
+spark.pyspark.python          /opt/bigdata_env/bin/python
+spark.pyspark.driver.python   /opt/bigdata_env/bin/python
+```
+
+- Configuracion de los trabajos: `--master yarn --deploy-mode client --num-executors 2 --executor-memory 4g --executor-cores 2`.
+- Replicacion 2 en todo `/datalake` (con dos nodos no puede haber mas copias).
+- En modo cliente, YARN marca `SUCCEEDED` aunque el trabajo falle en el driver: el resultado se verifica con el codigo de salida de `spark-submit`.
+
 ## 3. Estructura de carpetas
 
 ```
@@ -123,8 +137,9 @@ Las replicas son datos sinteticos y solo existen en `/datalake/benchmark/`. Resu
 
 ### 5.9 Capa de consumo (modelo dimensional)
 ```bash
+hdfs dfs -put -f data/features.parquet /datalake/processed/binance/features.parquet
 spark-submit --master 'local[*]' src/capa_consumo.py \
-  --features data/features.parquet \
+  --features hdfs:///datalake/processed/binance/features.parquet \
   --salida hdfs:///datalake/processed/binance/consumo \
   --klines hdfs:///datalake/processed/binance/klines_clean \
   --csv-dir data/consumo
